@@ -7676,7 +7676,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "chart options -dataZoom",
-        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: {\n        type: 'inside'\n    }\n}\n\nObject.assign(chartOptions, add)\nui_update.chartOptions = chartOptions;\nmsg.ui_update = Object.assign(ui_update, chartOptions)\n\nreturn msg;",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: {\n        type: 'inside'\n    }\n}\n\nObject.assign(chartOptions, add)\nui_update.chartOptions = chartOptions;\nmsg.ui_update = ui_update;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
