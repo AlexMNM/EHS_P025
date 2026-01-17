@@ -4905,7 +4905,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "find_actuation_force",
-        "func": "const values = msg.payload\nconst data = global.get(\"session.features.button.value\")\nconst math = global.get('mathjs')\nconst tools = global.get(\"settings.limits.tools\", \"file\")\nconst findPeaks = chart => chart.reduce((agg, current, i) => {\n    const prev = chart[i - 1];\n    const next = chart[i + 1];\n    return current > prev + 0.05 && current >= next + 0.05 ? [...agg, current] : agg;\n}, []);\n\nconst strain = values.map(({ strain }) => (strain))\nconst position = values.map(({ position }) => (position))\n\nconst peaks = findPeaks(strain)\nconst start = strain.findIndex(f => f > strain[0] + 0.1)\nconst end = peaks.length === 2 ? strain.slice(peaks[0]?.ind, peaks[1]?.ind).findIndex((f, i, ar) => f < ar[i-1] && f <= ar[i+1]) : 0\nconst force = peaks.length === 2 ? peaks[0] : 0\nconst travel = math.abs(end - start)\n\nconst f_lims = tools.window.relative_multiply(data.force, data.force_limit)\nconst t_lims = tools.window.relative_offset(data.travel, data.travel_limit)\n\nmsg.payload = {\n    \"peaks\" : peaks,\n    \"ends\": [start, end],\n    \"force\": force,\n    \"travel\" : travel,\n    \"f_lims\" : f_lims,\n    \"t_lims\" : t_lims,\n    \"status_force\": tools.in_window(force, f_lims),\n    \"status_travel\": tools.in_window(travel, t_lims),\n}\n\nreturn msg;\n\n    \n",
+        "func": "const math = global.get(\"mathjs\")\n\nvar component\nswitch (msg.component) {\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\n\nconst strain = msg.payload.filter(({ timeStamp }) => (timeStamp > 1)).map(({ strain }) => (strain))\nconst detents = findPeaks(strain);\n\nconst values = [];\nconst crt = {};\ncrt.component = component\n\ncrt.measurement = \"detents\"\ncrt.label = \"Detents\";\ncrt.value = detents.length;\nvalues.push({ ...crt });\n\ncrt.measurement = \"torque\"\ncrt.label = \"Mean torque\";\ncrt.value = math.mean(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.label = \"Max torque\";\ncrt.value = math.max(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.label = \"Min torque\";\ncrt.value = math.min(detents).toFixed(3);\nvalues.push({ ...crt });\n\nmsg.payload = [...values]\n\nreturn msg;\n\n\n\n/**\n* @param {any[]} chart\n*/\nfunction findPeaks(chart) {\n    return chart.reduce((/** @type {array} */ agg, /** @type {number} */ current, /** @type {number} */ i) => {\n        const prev = chart[i - 1];\n        const next = chart[i + 1];\n        return current > prev && current >= next ? [...agg, current] : agg;\n    }, []);\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*\nconst values = msg.payload\nconst data = global.get(\"session.features.button.value\")\nconst math = global.get('mathjs')\nconst tools = global.get(\"settings.limits.tools\", \"file\")\nconst findPeaks = chart => chart.reduce((agg, current, i) => {\n    const prev = chart[i - 1];\n    const next = chart[i + 1];\n    return current > prev + 0.05 && current >= next + 0.05 ? [...agg, current] : agg;\n}, []);\n\nconst strain = values.map(({ strain }) => (strain))\nconst position = values.map(({ position }) => (position))\n\nconst peaks = findPeaks(strain)\nconst start = strain.findIndex(f => f > strain[0] + 0.1)\nconst end = peaks.length === 2 ? strain.slice(peaks[0]?.ind, peaks[1]?.ind).findIndex((f, i, ar) => f < ar[i-1] && f <= ar[i+1]) : 0\nconst force = peaks.length === 2 ? peaks[0] : 0\nconst travel = math.abs(end - start)\n\nconst f_lims = tools.window.relative_multiply(data.force, data.force_limit)\nconst t_lims = tools.window.relative_offset(data.travel, data.travel_limit)\n\nmsg.payload = {\n    \"peaks\" : peaks,\n    \"ends\": [start, end],\n    \"force\": force,\n    \"travel\" : travel,\n    \"f_lims\" : f_lims,\n    \"t_lims\" : t_lims,\n    \"status_force\": tools.in_window(force, f_lims),\n    \"status_travel\": tools.in_window(travel, t_lims),\n}\n\nreturn msg;\n\n    */\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -8909,7 +8909,6 @@
         "wires": [
             [
                 "a549655cd4b8fa9d",
-                "3810c72c74757af6",
                 "52278dc01e9440cb"
             ]
         ]
@@ -10228,7 +10227,7 @@
         "type": "debug",
         "z": "85a0c31e48c798bf",
         "name": "debug 11",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10236,8 +10235,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
-        "y": 660,
+        "x": 2140,
+        "y": 1240,
         "wires": []
     },
     {
@@ -10707,7 +10706,8 @@
         "y": 1020,
         "wires": [
             [
-                "9ea54660171fce8c"
+                "9ea54660171fce8c",
+                "3810c72c74757af6"
             ]
         ]
     },
