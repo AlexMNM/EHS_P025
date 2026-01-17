@@ -5851,8 +5851,8 @@
         "raw": false,
         "className": "",
         "name": "input_error",
-        "x": 810,
-        "y": 60,
+        "x": 1310,
+        "y": 40,
         "wires": [
             []
         ]
@@ -7020,7 +7020,7 @@
         "y": 80,
         "wires": [
             [
-                "b9195f648eb6d99b"
+                "9219cb1ab5ee34fc"
             ]
         ]
     },
@@ -7318,10 +7318,12 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 930,
-        "y": 460,
+        "x": 790,
+        "y": 420,
         "wires": [
-            [],
+            [
+                "0d104c1ae4779704"
+            ],
             [
                 "285059415ba49c5d"
             ]
@@ -7355,8 +7357,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 980,
-        "y": 500,
+        "x": 960,
+        "y": 420,
         "wires": [
             [
                 "93927a51db297807"
@@ -7944,8 +7946,8 @@
         "links": [
             "afa681053145fae2"
         ],
-        "x": 1115,
-        "y": 500,
+        "x": 1095,
+        "y": 420,
         "wires": []
     },
     {
@@ -8444,6 +8446,68 @@
                 "6535ec5645ee3d86"
             ]
         ]
+    },
+    {
+        "id": "0d104c1ae4779704",
+        "type": "template",
+        "z": "0637f22188042045",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Input error: Product error!\nCheck PLC product selection.",
+        "output": "str",
+        "x": 920,
+        "y": 380,
+        "wires": [
+            [
+                "36be27abe7646662"
+            ]
+        ]
+    },
+    {
+        "id": "36be27abe7646662",
+        "type": "link out",
+        "z": "0637f22188042045",
+        "name": "outProdErr",
+        "mode": "link",
+        "links": [
+            "2c9f6f19ec5c61f5"
+        ],
+        "x": 1015,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2c9f6f19ec5c61f5",
+        "type": "link in",
+        "z": "0637f22188042045",
+        "name": "inErrPopup",
+        "links": [
+            "9219cb1ab5ee34fc",
+            "36be27abe7646662"
+        ],
+        "x": 1195,
+        "y": 40,
+        "wires": [
+            [
+                "b9195f648eb6d99b"
+            ]
+        ]
+    },
+    {
+        "id": "9219cb1ab5ee34fc",
+        "type": "link out",
+        "z": "0637f22188042045",
+        "name": "outProdErr",
+        "mode": "link",
+        "links": [
+            "2c9f6f19ec5c61f5"
+        ],
+        "x": 705,
+        "y": 80,
+        "wires": []
     },
     {
         "id": "783c9519c6b65dec",
