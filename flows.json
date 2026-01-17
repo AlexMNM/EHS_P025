@@ -258,6 +258,18 @@
         ]
     },
     {
+        "id": "6535ec5645ee3d86",
+        "type": "junction",
+        "z": "0637f22188042045",
+        "x": 1860,
+        "y": 460,
+        "wires": [
+            [
+                "0eac7f2727c502b3"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -4929,7 +4941,7 @@
         "name": "link out 4",
         "mode": "return",
         "links": [],
-        "x": 615,
+        "x": 695,
         "y": 440,
         "wires": []
     },
@@ -5213,24 +5225,6 @@
         "wires": []
     },
     {
-        "id": "6c93958a8d5b5d0b",
-        "type": "function",
-        "z": "f0b99c790d575624",
-        "name": "evaluate osc button",
-        "func": "const math = global.get(\"mathjs\")\nconst testplan = global.get(\"testplan\")\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\")\nconst factor = 2\n\nvar component\nswitch(msg.component){\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\nconst limits = testplan[component];\n\nconst results = [];\nconst current = {};\n\ncurrent.measurement = \"Max bounce\";\ncurrent.value = math.max(msg.payload[\"A_bounces\"]).toFixed(3);\ncurrent.result = within(current.value, limits.bounce);\nresults.push({...current});\n\nmsg.payload = [...results]\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 480,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "60f27802fdf278b3",
         "type": "function",
         "z": "f0b99c790d575624",
@@ -5344,7 +5338,7 @@
         "finalize": "",
         "libs": [],
         "x": 1230,
-        "y": 840,
+        "y": 760,
         "wires": [
             [
                 "7dcdf7800e903e91"
@@ -5385,7 +5379,7 @@
         "name": "inAddOption",
         "links": [],
         "x": 1095,
-        "y": 840,
+        "y": 760,
         "wires": [
             [
                 "2e375ada350af0ee"
@@ -5400,7 +5394,7 @@
         "mode": "return",
         "links": [],
         "x": 1365,
-        "y": 840,
+        "y": 760,
         "wires": []
     },
     {
@@ -5513,6 +5507,69 @@
         "wires": [
             [
                 "af02f99675da3f31"
+            ]
+        ]
+    },
+    {
+        "id": "df51a182d24ba8c5",
+        "type": "function",
+        "z": "f0b99c790d575624",
+        "name": "evaluate osc button",
+        "func": "const math = global.get(\"mathjs\")\n\nvar component\nswitch(msg.component){\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\nconst values = [];\nconst crt = {};\ncrt.component = component;\n\ncrt.measurement = \"bounce\"\ncrt.label = \"Max bounce\";\ncrt.value = math.max(msg.payload[\"A_bounces\"]).toFixed(3);\nvalues.push({...crt});\n\nmsg.payload = [...values]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 480,
+        "wires": [
+            [
+                "8cb84c62972c9f62"
+            ]
+        ]
+    },
+    {
+        "id": "8cb84c62972c9f62",
+        "type": "link call",
+        "z": "f0b99c790d575624",
+        "name": "",
+        "links": [
+            "63adbc2a9627ab24"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 610,
+        "y": 480,
+        "wires": [
+            [
+                "f761d2bcc2f74721"
+            ]
+        ]
+    },
+    {
+        "id": "f761d2bcc2f74721",
+        "type": "link out",
+        "z": "f0b99c790d575624",
+        "name": "ret",
+        "mode": "return",
+        "links": [],
+        "x": 695,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "bb9409d2a0b115aa",
+        "type": "link in",
+        "z": "f0b99c790d575624",
+        "name": "inEvalOscBut",
+        "links": [],
+        "x": 295,
+        "y": 480,
+        "wires": [
+            [
+                "df51a182d24ba8c5"
             ]
         ]
     },
@@ -6466,20 +6523,17 @@
         "y": 480,
         "wires": [
             [
-                "e3bb3361f759944e",
-                "8a221b81fbf66af6"
+                "8a221b81fbf66af6",
+                "c2169002f9f739b0"
             ],
             [
                 "4ff63434385e91c2"
             ],
             [
-                "24943e70a13d13c4",
-                "a5da7d7dd6cba1af",
                 "fb2163a63962c65a"
             ],
             [
                 "431ed7dbddda23c1",
-                "e3bb3361f759944e",
                 "fbe36f1e226dba9c",
                 "4ff63434385e91c2"
             ]
@@ -6612,50 +6666,6 @@
                 "d78bf3b6bf078a39",
                 "cc61ef53d87fc729"
             ]
-        ]
-    },
-    {
-        "id": "e3bb3361f759944e",
-        "type": "ui-table",
-        "z": "0637f22188042045",
-        "group": "89a4f69b951b98f3",
-        "name": "",
-        "label": "Oscilloscope",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "maxrows": "",
-        "passthru": false,
-        "autocols": false,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "A channel largest bounce",
-                "key": "bounce_A",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "bounce_status",
-                "keyType": "key",
-                "type": "tickcross",
-                "width": "",
-                "align": "start"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "replace",
-        "className": "",
-        "x": 1590,
-        "y": 260,
-        "wires": [
-            []
         ]
     },
     {
@@ -7640,24 +7650,6 @@
         ]
     },
     {
-        "id": "24943e70a13d13c4",
-        "type": "link call",
-        "z": "0637f22188042045",
-        "name": "",
-        "links": [
-            "c9b9a5158a951c7a"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1640,
-        "y": 580,
-        "wires": [
-            [
-                "a5da7d7dd6cba1af"
-            ]
-        ]
-    },
-    {
         "id": "bccca76e7ee582a9",
         "type": "function",
         "z": "0637f22188042045",
@@ -7675,66 +7667,6 @@
             [
                 "8d5085360fba77b8"
             ]
-        ]
-    },
-    {
-        "id": "a5da7d7dd6cba1af",
-        "type": "ui-table",
-        "z": "0637f22188042045",
-        "group": "89a4f69b951b98f3",
-        "name": "",
-        "label": "Force",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "maxrows": "",
-        "passthru": false,
-        "autocols": false,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "Actuation force",
-                "key": "",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Travel",
-                "key": "",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "replace",
-        "className": "",
-        "x": 1810,
-        "y": 580,
-        "wires": [
-            []
         ]
     },
     {
@@ -7941,8 +7873,8 @@
         "height": "4",
         "className": "",
         "interpolation": "smooth",
-        "x": 1690,
-        "y": 460,
+        "x": 1790,
+        "y": 580,
         "wires": [
             []
         ]
@@ -8404,6 +8336,92 @@
         "wires": [
             [
                 "6fa6c107ae8efe85"
+            ]
+        ]
+    },
+    {
+        "id": "0eac7f2727c502b3",
+        "type": "ui-table",
+        "z": "0637f22188042045",
+        "group": "89a4f69b951b98f3",
+        "name": "",
+        "label": "Results",
+        "order": 6,
+        "width": 4,
+        "height": "",
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Measurement",
+                "key": "label",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Value",
+                "key": "value",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Status",
+                "key": "result",
+                "keyType": "key",
+                "type": "tickcross",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Upper limit",
+                "key": "upper",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Lower limit",
+                "key": "lower",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "className": "",
+        "x": 2000,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c2169002f9f739b0",
+        "type": "link call",
+        "z": "0637f22188042045",
+        "name": "",
+        "links": [
+            "bb9409d2a0b115aa"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1700,
+        "y": 460,
+        "wires": [
+            [
+                "6535ec5645ee3d86"
             ]
         ]
     },
