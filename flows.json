@@ -673,7 +673,7 @@
         "page": "78bfe53267642fbf",
         "width": 4,
         "height": "4",
-        "order": 3,
+        "order": 4,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -687,7 +687,7 @@
         "page": "78bfe53267642fbf",
         "width": 4,
         "height": "4",
-        "order": 4,
+        "order": 5,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -701,7 +701,7 @@
         "page": "78bfe53267642fbf",
         "width": 4,
         "height": 1,
-        "order": 5,
+        "order": 6,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -828,6 +828,20 @@
         "height": 1,
         "order": 2,
         "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "38ddce4a31197555",
+        "type": "ui-group",
+        "name": "Result",
+        "page": "78bfe53267642fbf",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": false,
         "className": "",
         "visible": "true",
         "disabled": "false",
@@ -6124,7 +6138,7 @@
         "group": "9a2350a4f1394335",
         "name": "",
         "label": "Reset stats",
-        "order": 3,
+        "order": 2,
         "width": "1",
         "height": 1,
         "emulateClick": false,
@@ -6197,7 +6211,7 @@
         "group": "89a4f69b951b98f3",
         "name": "",
         "label": "Strain",
-        "order": 2,
+        "order": 1,
         "chartType": "line",
         "category": "",
         "categoryType": "none",
@@ -6259,7 +6273,7 @@
         "group": "89a4f69b951b98f3",
         "name": "osc",
         "label": "",
-        "order": 4,
+        "order": 2,
         "chartType": "line",
         "category": "",
         "categoryType": "none",
@@ -6496,7 +6510,7 @@
         "group": "9a2350a4f1394335",
         "name": "",
         "label": "Progress",
-        "order": 4,
+        "order": 3,
         "width": 3,
         "height": "1",
         "color": "",
@@ -6609,7 +6623,6 @@
             ],
             [
                 "e60529c29388a55d",
-                "1b793d7f33fbcf27",
                 "afb8edb64542587a",
                 "b0a451924c10c06d",
                 "8020914300043d42"
@@ -6665,72 +6678,10 @@
             ],
             [
                 "41b53a65de1ae8c8",
-                "c6d0e550fa3d17dd",
                 "00827fb8b783f10a",
                 "d78bf3b6bf078a39",
                 "cc61ef53d87fc729"
             ]
-        ]
-    },
-    {
-        "id": "1b793d7f33fbcf27",
-        "type": "ui-table",
-        "z": "0637f22188042045",
-        "d": true,
-        "group": "bf198eb6e69ac543",
-        "name": "",
-        "label": "Torque",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "maxrows": "",
-        "passthru": false,
-        "autocols": false,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "Number of detents",
-                "key": "detents",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "status_detents",
-                "keyType": "key",
-                "type": "tickcross",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Mean torque",
-                "key": "mean_torque",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "status_torque",
-                "keyType": "key",
-                "type": "tickcross",
-                "width": "",
-                "align": "start"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "replace",
-        "className": "",
-        "x": 1990,
-        "y": 1040,
-        "wires": [
-            []
         ]
     },
     {
@@ -6747,7 +6698,6 @@
         "y": 1000,
         "wires": [
             [
-                "1b793d7f33fbcf27",
                 "8020914300043d42"
             ]
         ]
@@ -6766,70 +6716,8 @@
         "y": 1480,
         "wires": [
             [
-                "c6d0e550fa3d17dd",
                 "cc61ef53d87fc729"
             ]
-        ]
-    },
-    {
-        "id": "c6d0e550fa3d17dd",
-        "type": "ui-table",
-        "z": "0637f22188042045",
-        "d": true,
-        "group": "3378c67758bc3e77",
-        "name": "",
-        "label": "Torque",
-        "order": 5,
-        "width": 0,
-        "height": 0,
-        "maxrows": "",
-        "passthru": false,
-        "autocols": false,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "Number of detents",
-                "key": "detents",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "status_detents",
-                "keyType": "key",
-                "type": "tickcross",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Mean torque",
-                "key": "mean_torque",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "status_torque",
-                "keyType": "key",
-                "type": "tickcross",
-                "width": "",
-                "align": "start"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "replace",
-        "className": "",
-        "x": 1990,
-        "y": 1600,
-        "wires": [
-            []
         ]
     },
     {
@@ -7401,7 +7289,7 @@
         "group": "bf198eb6e69ac543",
         "name": "",
         "label": "Ohmmeter",
-        "order": 4,
+        "order": 3,
         "chartType": "line",
         "category": "topic",
         "categoryType": "msg",
@@ -7620,11 +7508,11 @@
         "id": "96db3978031895b7",
         "type": "ui-button",
         "z": "0637f22188042045",
-        "group": "9a2350a4f1394335",
+        "group": "38ddce4a31197555",
         "name": "",
         "label": "Result",
-        "order": 2,
-        "width": "2",
+        "order": 1,
+        "width": "1",
         "height": "2",
         "emulateClick": false,
         "tooltip": "",
@@ -7771,7 +7659,7 @@
         "group": "89a4f69b951b98f3",
         "name": "",
         "label": "Ohmmeter",
-        "order": 5,
+        "order": 3,
         "chartType": "line",
         "category": "topic",
         "categoryType": "msg",
@@ -8142,7 +8030,7 @@
         "group": "bf198eb6e69ac543",
         "name": "",
         "label": "Results",
-        "order": 5,
+        "order": 4,
         "width": 4,
         "height": "",
         "maxrows": 0,
@@ -8293,7 +8181,7 @@
         "group": "89a4f69b951b98f3",
         "name": "",
         "label": "Results",
-        "order": 6,
+        "order": 4,
         "width": 4,
         "height": "",
         "maxrows": 0,
