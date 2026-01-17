@@ -8581,7 +8581,7 @@
                 "t": "set",
                 "p": "ui_update",
                 "pt": "msg",
-                "to": "{\"buttonColor\":\"gray\",\"label\":\"Testing\"}",
+                "to": "{\"buttonColor\":\"#a0a0a0\",\"label\":\"Testing...\"}",
                 "tot": "json"
             }
         ],
@@ -8597,6 +8597,33 @@
                 "96db3978031895b7",
                 "14a5dedac757eb9d"
             ]
+        ]
+    },
+    {
+        "id": "17da06c9e046c5ca",
+        "type": "inject",
+        "z": "0637f22188042045",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 700,
+        "y": 1080,
+        "wires": [
+            []
         ]
     },
     {
