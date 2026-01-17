@@ -657,7 +657,7 @@
         "type": "ui-group",
         "name": "Statistics",
         "page": "78bfe53267642fbf",
-        "width": 5,
+        "width": "6",
         "height": "1",
         "order": 2,
         "showTitle": false,
@@ -5951,7 +5951,6 @@
         "wires": [
             [
                 "efe279013f6c1ce5",
-                "3aa0b64653eda525",
                 "70caadcea072777c"
             ],
             [
@@ -7700,7 +7699,7 @@
         "name": "",
         "label": "Result",
         "order": 2,
-        "width": "1",
+        "width": "2",
         "height": "2",
         "emulateClick": false,
         "tooltip": "",
@@ -7723,7 +7722,7 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 890,
+        "x": 930,
         "y": 1160,
         "wires": [
             []
@@ -8615,7 +8614,8 @@
         "y": 1120,
         "wires": [
             [
-                "96db3978031895b7"
+                "96db3978031895b7",
+                "3aa0b64653eda525"
             ]
         ]
     },
