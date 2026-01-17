@@ -5514,7 +5514,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "evaluate osc button",
-        "func": "const math = global.get(\"mathjs\")\n\nvar component\nswitch(msg.component){\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\nconst values = [];\nconst crt = {};\ncrt.component = component;\n\ncrt.measurement = \"bounce\"\ncrt.label = \"Max bounce\";\ncrt.value = math.max(msg.payload[\"A_bounces\"]).toFixed(3);\nvalues.push({...crt});\n\nmsg.payload = [...values]\n\nreturn msg;",
+        "func": "const math = global.get(\"mathjs\")\n\nvar component\nswitch(msg.component){\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\nconst values = [];\nconst crt = {};\ncrt.component = component;\n\ncrt.measurement = \"bounce\"\ncrt.label = \"Max bounce\";\ncrt.value = math.max([...msg.payload[\"A_bounces\"], NaN]).toFixed(3);\nvalues.push({...crt});\n\nmsg.payload = [...values]\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -6091,8 +6091,8 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 630,
-        "y": 1280,
+        "x": 890,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -6109,8 +6109,8 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nif (context.get(\"fields\") === undefined){\n    context.set(\"fields\", {})\n}\n\nif (context.get(\"order\") === undefined) {\n    context.set(\"order\", \"default\")\n}",
         "finalize": "",
         "libs": [],
-        "x": 470,
-        "y": 1280,
+        "x": 730,
+        "y": 1180,
         "wires": [
             [
                 "5a12dcb34b6c43ce"
@@ -6148,8 +6148,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 230,
-        "y": 1320,
+        "x": 530,
+        "y": 1140,
         "wires": [
             [
                 "3aa0b64653eda525"
@@ -6561,23 +6561,6 @@
         ]
     },
     {
-        "id": "14a5dedac757eb9d",
-        "type": "debug",
-        "z": "0637f22188042045",
-        "name": "debug 10",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 1220,
-        "wires": []
-    },
-    {
         "id": "123365e1c8c710d0",
         "type": "switch",
         "z": "0637f22188042045",
@@ -6931,64 +6914,6 @@
         "wires": [
             [
                 "937d7b67602d88ba"
-            ]
-        ]
-    },
-    {
-        "id": "e2e47976b018ecad",
-        "type": "inject",
-        "z": "0637f22188042045",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "fail",
-        "payload": "",
-        "payloadType": "date",
-        "x": 230,
-        "y": 1240,
-        "wires": [
-            [
-                "3aa0b64653eda525"
-            ]
-        ]
-    },
-    {
-        "id": "24bd01339519fbbf",
-        "type": "inject",
-        "z": "0637f22188042045",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "pass",
-        "payload": "",
-        "payloadType": "date",
-        "x": 220,
-        "y": 1280,
-        "wires": [
-            [
-                "3aa0b64653eda525"
             ]
         ]
     },
@@ -7683,8 +7608,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 950,
-        "y": 960,
+        "x": 930,
+        "y": 880,
         "wires": [
             [
                 "8d5085360fba77b8"
@@ -7722,8 +7647,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 930,
-        "y": 1160,
+        "x": 690,
+        "y": 1220,
         "wires": [
             []
         ]
@@ -8562,8 +8487,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 470,
-        "y": 1160,
+        "x": 230,
+        "y": 1220,
         "wires": [
             [
                 "033358371fd9f7db"
@@ -8589,8 +8514,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 670,
-        "y": 1160,
+        "x": 390,
+        "y": 1220,
         "wires": [
             [
                 "96db3978031895b7"
@@ -8609,8 +8534,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 770,
-        "y": 1120,
+        "x": 530,
+        "y": 1180,
         "wires": [
             [
                 "96db3978031895b7",
@@ -8635,8 +8560,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 470,
-        "y": 1120,
+        "x": 230,
+        "y": 1180,
         "wires": [
             [
                 "fb2ed88808b50d9e"
@@ -8660,12 +8585,11 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 610,
-        "y": 1120,
+        "x": 370,
+        "y": 1180,
         "wires": [
             [
-                "45582da0e79a1e77",
-                "14a5dedac757eb9d"
+                "45582da0e79a1e77"
             ]
         ]
     },
