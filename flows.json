@@ -4916,7 +4916,8 @@
         "y": 440,
         "wires": [
             [
-                "7b0650e87ffd0265"
+                "7b0650e87ffd0265",
+                "c91a57369e8b58eb"
             ]
         ]
     },
@@ -5212,7 +5213,7 @@
         "type": "debug",
         "z": "f0b99c790d575624",
         "name": "debug 6",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5220,8 +5221,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
-        "y": 1040,
+        "x": 820,
+        "y": 380,
         "wires": []
     },
     {
@@ -5240,8 +5241,7 @@
         "y": 940,
         "wires": [
             [
-                "87192abd4f7858c7",
-                "c91a57369e8b58eb"
+                "87192abd4f7858c7"
             ]
         ]
     },
@@ -5255,8 +5255,7 @@
         "y": 940,
         "wires": [
             [
-                "60f27802fdf278b3",
-                "c91a57369e8b58eb"
+                "60f27802fdf278b3"
             ]
         ]
     },
