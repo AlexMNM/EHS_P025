@@ -545,7 +545,7 @@
     {
         "id": "78bfe53267642fbf",
         "type": "ui-page",
-        "name": "Home",
+        "name": "Main",
         "ui": "86cea779c465227a",
         "path": "/page1",
         "icon": "home",
@@ -751,7 +751,7 @@
         "name": "Marius",
         "ui": "86cea779c465227a",
         "path": "/page4",
-        "icon": "home",
+        "icon": "axe",
         "layout": "flex",
         "theme": "0d92c765bfad87e6",
         "breakpoints": [
