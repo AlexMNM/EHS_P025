@@ -4916,7 +4916,7 @@
         "y": 440,
         "wires": [
             [
-                "50c8987fb61c1c81"
+                "7b0650e87ffd0265"
             ]
         ]
     },
@@ -4924,7 +4924,7 @@
         "id": "c9b9a5158a951c7a",
         "type": "link in",
         "z": "f0b99c790d575624",
-        "name": "inFindActuationForce",
+        "name": "inEvalForce",
         "links": [],
         "x": 295,
         "y": 440,
@@ -5570,6 +5570,24 @@
         "wires": [
             [
                 "df51a182d24ba8c5"
+            ]
+        ]
+    },
+    {
+        "id": "7b0650e87ffd0265",
+        "type": "link call",
+        "z": "f0b99c790d575624",
+        "name": "",
+        "links": [
+            "63adbc2a9627ab24"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 610,
+        "y": 440,
+        "wires": [
+            [
+                "50c8987fb61c1c81"
             ]
         ]
     },
@@ -6531,7 +6549,8 @@
                 "f10baba8d1dc3b51"
             ],
             [
-                "fb2163a63962c65a"
+                "fb2163a63962c65a",
+                "db943a9a91ef3d10"
             ],
             [
                 "431ed7dbddda23c1",
@@ -7658,7 +7677,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "chart options -dataZoom",
-        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: {\n        type: 'inside'\n    }\n}\n\nObject.assign(chartOptions, add)\nmsg.ui_update = Object.assign(ui_update, chartOptions)\n\nreturn msg;",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: {\n        type: 'inside'\n    }\n}\n\nObject.assign(chartOptions, add)\nui_update.chartOptions = chartOptions;\nmsg.ui_update = Object.assign(ui_update, chartOptions)\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -8508,6 +8527,25 @@
         "x": 705,
         "y": 80,
         "wires": []
+    },
+    {
+        "id": "db943a9a91ef3d10",
+        "type": "link call",
+        "z": "0637f22188042045",
+        "name": "",
+        "links": [
+            "c9b9a5158a951c7a"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1690,
+        "y": 540,
+        "wires": [
+            [
+                "6535ec5645ee3d86",
+                "14a5dedac757eb9d"
+            ]
+        ]
     },
     {
         "id": "783c9519c6b65dec",
