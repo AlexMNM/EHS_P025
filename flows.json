@@ -10687,7 +10687,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "load to global",
-        "func": "switch (msg.topic) {\n    case \"enable\":\n        context.set(\"enable\", true);\n        break;\n    default:\n        if (context.get(\"enable\")) {\n            const stage_data = [];\n\n            Object.entries(msg.payload.stage_data).forEach(function ([k, v]) {\n                stage_data.push(v);\n            })\n            \n            global.set(\"stage_data\", stage_data);\n        }\n        break;\n}\n\nreturn;",
+        "func": "switch (msg.topic) {\n    case \"enable\":\n        context.set(\"enable\", true);\n        break;\n    default:\n        if (context.get(\"enable\")) {\n            const stage_data = [];\n\n            Object.entries(msg.payload.stage_data).forEach(function ([k, v]) {\n                stage_data.push(v);\n            })\n            \n            global.set(\"stage_data\", stage_data);\n            context.set(\"enable\", false)\n        }\n        break;\n}\n\nreturn;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
