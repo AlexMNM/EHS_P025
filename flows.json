@@ -5230,7 +5230,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "evaluate",
-        "func": "const math = global.get(\"mathjs\")\nconst testplan = global.get(\"testplan\")\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\")\n\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    m.lower = pretty(math.min(m.limits));\n    m.upper = pretty(math.max(m.limits));\n});\n\nreturn msg;\n\nfunction pretty(n) {\n    return Number.isInteger(n) ? n : n.toFixed(3);\n}",
+        "func": "const math = global.get(\"mathjs\");\nconst result = global.get(\"result\") ?? {evaluations: 0, passes: 0};\nconst testplan = global.get(\"testplan\");\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\");\n\nlet pass;\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    pass = m.result;\n    m.lower = pretty(math.min(m.limits));\n    m.upper = pretty(math.max(m.limits));\n});\n\nresult.evaluations += 1;\nresult.passes += pass ? 1 : 0;\n\nglobal.set(\"result\", result);\n\nreturn msg;\n\nfunction pretty(n) {\n    return Number.isInteger(n) ? n : n.toFixed(3);\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5780,7 +5780,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
+        "x": 1000,
         "y": 660,
         "wires": []
     },
@@ -5929,7 +5929,7 @@
         "action": "replace",
         "className": "",
         "x": 890,
-        "y": 580,
+        "y": 560,
         "wires": [
             []
         ]
@@ -5939,7 +5939,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "update_session",
-        "func": "const math = global.get('mathjs')\nconst strain_mem = context.get(\"strain\")\nconst ret = [{}, {}, {}]\nconst fields = context.get(\"fields\")\nconst { session = { product: { type: \"default\", order: \"default\", operator: \"default\", timestamp: \"default\" } } } =  { session : global.get(\"session\") }\nconst operator = global.get(\"operator\", \"file\")\nconst tools = global.get(\"settings.limits.tools\", \"file\")\n\nsession.product.operator = operator;\nif (msg.topic === \"order\") session.product.order = msg.payload;\nObject.assign(fields, (({ type, order, operator }) => ({ type, order, operator }))(session.product))\nfields.timestamp = (([d, t = \"0:0:0.0Z\"]) => d + \" \" + t.match(/[^.]+/))(session.product.timestamp.split(\"T\"))\n\ncontext.set(\"fields\", fields)\n\nret[0].payload = fields\nret[1] = {\n    payload: ((session.process?.stages.active / (session.process?.stages.count - 1)) * 100) || 0\n}\n\n\nif (msg.topic === \"data\") {\n    const path = msg.path.split(\".\");\n    const entry = global.get(path.slice(0, 2).join(\".\"));\n    const stage = global.get(`session.process.stages.stages[${path[1]}]`)\n\n    ret[2] = {\n        features: session.product.features,\n        component: stage.component,\n        field: msg.field,\n        measurement: stage.measurement,\n        payload: global.get(msg.path)\n    }\n\n    switch (msg.field) {\n        case \"strain\":\n            ret[2].series = [\"strain\", \"position\"];\n            if(strain_mem[stage.component]){\n                ret[2] = {};\n            }\n            strain_mem[stage.component] = true;\n            context.set(\"strain\", strain_mem);\n            break;\n        case \"ohm\":\n            ret[2].channel = stage.channel;\n            \n            /*switch (stage.component) {\n                case \"I\":\n                case \"O\":\n                    ret[2].series = [\"ohm_A\", \"ohm_B\"]\n                    ret[2].payload.forEach(function (el) {\n                        el[\"ohm_\" + stage.channel] = parseFloat(el.ohm).toFixed(2)\n                    });\n                    break;\n                case \"B\":\n                    ret[2].series = [\"ohm\"]\n            }*/ \n            \n            break;\n        case \"osc\":\n            const vals = ret[2].payload.values\n            ret[2].payload = vals;\n            ret[2].graph = vals[\"signal\"];\n            break;\n    }\n\n}\n\n\nif (msg.topic === \"productData\") {\n    \n    if(!msg.sim){\n        global.set(\"stage_data\", []);\n    }\n    \n    context.set(\"strain\", { \"B\": false, \"I\": false, \"O\": false });\n    ret[2] = {\n        component: \"all\",\n        field: \"all\",\n        topic: \"reset\",\n        payload: []\n    }\n}\n\nreturn ret;\n\n\n",
+        "func": "const math = global.get('mathjs')\nconst strain_mem = context.get(\"strain\")\nconst ret = [{}, {}, {}]\nconst fields = context.get(\"fields\")\nconst { session = { product: { type: \"default\", order: \"default\", operator: \"default\", timestamp: \"default\" } } } =  { session : global.get(\"session\") }\nconst operator = global.get(\"operator\", \"file\")\nconst tools = global.get(\"settings.limits.tools\", \"file\")\n\nsession.product.operator = operator;\nif (msg.topic === \"order\") session.product.order = msg.payload;\nObject.assign(fields, (({ type, order, operator }) => ({ type, order, operator }))(session.product))\nfields.timestamp = (([d, t = \"0:0:0.0Z\"]) => d + \" \" + t.match(/[^.]+/))(session.product.timestamp.split(\"T\"))\n\ncontext.set(\"fields\", fields)\n\nret[0].payload = fields\nret[1] = {\n    payload: ((session.process?.stages.active / (session.process?.stages.count - 1)) * 100) || 0\n}\n\n\nif (msg.topic === \"data\") {\n    const path = msg.path.split(\".\");\n    const entry = global.get(path.slice(0, 2).join(\".\"));\n    const stage = global.get(`session.process.stages.stages[${path[1]}]`)\n\n    ret[2] = {\n        features: session.product.features,\n        component: stage.component,\n        field: msg.field,\n        measurement: stage.measurement,\n        payload: global.get(msg.path)\n    }\n\n    switch (msg.field) {\n        case \"strain\":\n            ret[2].series = [\"strain\", \"position\"];\n            if(strain_mem[stage.component]){\n                ret[2] = {};\n            }\n            strain_mem[stage.component] = true;\n            context.set(\"strain\", strain_mem);\n            break;\n        case \"ohm\":\n            ret[2].channel = stage.channel;\n            \n            /*switch (stage.component) {\n                case \"I\":\n                case \"O\":\n                    ret[2].series = [\"ohm_A\", \"ohm_B\"]\n                    ret[2].payload.forEach(function (el) {\n                        el[\"ohm_\" + stage.channel] = parseFloat(el.ohm).toFixed(2)\n                    });\n                    break;\n                case \"B\":\n                    ret[2].series = [\"ohm\"]\n            }*/ \n            \n            break;\n        case \"osc\":\n            const vals = ret[2].payload.values\n            ret[2].payload = vals;\n            ret[2].graph = vals[\"signal\"];\n            break;\n    }\n\n}\n\n\nif (msg.topic === \"productData\") {\n    \n    if(!msg.sim){\n        global.set(\"stage_data\", []);\n    }\n    \n    context.set(\"strain\", { \"B\": false, \"I\": false, \"O\": false });\n    ret[2] = {\n        component: \"all\",\n        field: \"all\",\n        topic: \"reset\",\n        payload: []\n    }\n\n    global.set(\"result\", {evaluations: 0, passes: 0});\n}\n\nreturn ret;\n\n\n",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
@@ -5955,7 +5955,8 @@
                 "70caadcea072777c"
             ],
             [
-                "8766ed8d27633676"
+                "8766ed8d27633676",
+                "71b166778f546dd1"
             ],
             [
                 "a4cc879c4d28527a",
@@ -6502,7 +6503,7 @@
         "color": "",
         "className": "",
         "x": 900,
-        "y": 620,
+        "y": 600,
         "wires": []
     },
     {
@@ -7667,8 +7668,7 @@
         "y": 380,
         "wires": [
             [
-                "937d7b67602d88ba",
-                "a4cc879c4d28527a"
+                "937d7b67602d88ba"
             ]
         ]
     },
@@ -8563,7 +8563,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 470,
+        "x": 510,
         "y": 1160,
         "wires": [
             [
@@ -8600,30 +8600,48 @@
         ]
     },
     {
-        "id": "17da06c9e046c5ca",
-        "type": "inject",
+        "id": "45582da0e79a1e77",
+        "type": "function",
+        "z": "0637f22188042045",
+        "name": "final status",
+        "func": "const result = global.get(\"result\");\n\nif(result.evaluations === result.passes){\n    msg.topic = \"pass\";\n    msg.ui_update = {\n        buttonColor: \"green\",\n        label: \"Result: pass\"\n    }\n} else {\n    msg.topic = \"fail\";\n    msg.ui_update = {\n        buttonColor: \"red\",\n        label: \"Result: fail\"\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 1120,
+        "wires": [
+            [
+                "96db3978031895b7"
+            ]
+        ]
+    },
+    {
+        "id": "71b166778f546dd1",
+        "type": "switch",
         "z": "0637f22188042045",
         "name": "",
-        "props": [
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
             {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
+                "t": "gte",
+                "v": "100",
+                "vt": "num"
             }
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 700,
-        "y": 1080,
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 1120,
         "wires": [
-            []
+            [
+                "45582da0e79a1e77"
+            ]
         ]
     },
     {
