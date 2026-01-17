@@ -8723,7 +8723,8 @@
         "wires": [
             [
                 "a549655cd4b8fa9d",
-                "3810c72c74757af6"
+                "3810c72c74757af6",
+                "52278dc01e9440cb"
             ]
         ]
     },
@@ -10678,6 +10679,48 @@
         "wires": [
             [
                 "255f27afec09c997"
+            ]
+        ]
+    },
+    {
+        "id": "52278dc01e9440cb",
+        "type": "function",
+        "z": "85a0c31e48c798bf",
+        "name": "load to global",
+        "func": "switch (msg.topic) {\n    case \"enable\":\n        context.set(\"enable\", true);\n        break;\n    default:\n        if (context.get(\"enable\")) {\n            const stage_data = [];\n\n            Object.entries(msg.payload.stage_data).forEach(function ([k, v]) {\n                stage_data.push(v);\n            })\n            \n            global.set(\"stage_data\", stage_data);\n        }\n        break;\n}\n\nreturn;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 970,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "af24d71131cc15d3",
+        "type": "inject",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "enable",
+        "x": 690,
+        "y": 680,
+        "wires": [
+            [
+                "52278dc01e9440cb"
             ]
         ]
     },
