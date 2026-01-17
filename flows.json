@@ -8324,6 +8324,40 @@
         ]
     },
     {
+        "id": "ce29f9e1a0795538",
+        "type": "inject",
+        "z": "0637f22188042045",
+        "name": "inner strain",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "path",
+                "v": "stage_data.4.plc.values",
+                "vt": "str"
+            },
+            {
+                "p": "field",
+                "v": "strain",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "data",
+        "x": 240,
+        "y": 680,
+        "wires": [
+            [
+                "937d7b67602d88ba"
+            ]
+        ]
+    },
+    {
         "id": "783c9519c6b65dec",
         "type": "ui-button",
         "z": "0ba5db83a2227bb8",
