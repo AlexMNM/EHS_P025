@@ -8581,7 +8581,7 @@
                 "t": "set",
                 "p": "ui_update",
                 "pt": "msg",
-                "to": "{\"buttonColor\":\"gray\"}",
+                "to": "{\"buttonColor\":\"gray\",\"label\":\"Testing\"}",
                 "tot": "json"
             }
         ],
