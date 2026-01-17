@@ -5229,7 +5229,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "evaluate",
-        "func": "const math = global.get(\"mathjs\")\nconst testplan = global.get(\"testplan\")\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\")\n\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    m.lower = math.min(m.limits);\n    m.upper = math.max(m.limits);\n});\n\nreturn msg;\n",
+        "func": "const math = global.get(\"mathjs\")\nconst testplan = global.get(\"testplan\")\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\")\n\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    m.lower = math.min(m.limits).toFixed(3);\n    m.upper = math.max(m.limits).toFixed(3);\n});\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
