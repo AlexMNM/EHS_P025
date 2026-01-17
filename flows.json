@@ -8358,6 +8358,55 @@
         ]
     },
     {
+        "id": "6fa6c107ae8efe85",
+        "type": "function",
+        "z": "0637f22188042045",
+        "name": "simulate",
+        "func": "const data = global.get(\"stage_data\");\nconst dict = {\n    \"S\": {\n        path: \"osc.values\",\n        field: \"osc\",\n    } ,\n    \"H\": {\n        path: \"ohm\",\n        field: \"ohm\"\n    }\n}\n\nconst send = {\n    topic: \"data\"\n}\n\ndata.forEach(function (e, i) {\n    const type = e.measurement\n\n    send.path = `stage_data[${i}].plc.values`;\n    send.field = \"strain\";\n    node.send(send);\n\n    wait(1000);  \n\n    send.path = `stage_data[${i}].` + dict[e.plc.setup.measurement].path;\n    send.field = dict[e.plc.setup.measurement].field;\n    node.send(send);\n\n    wait(1000);  \n    \n});\n\nnode.done();\nreturn;\n\nfunction wait(milliseconds) {\n    var start = new Date().getTime();\n    for (var i = 0; i < 1e7; i++) {\n        if ((new Date().getTime() - start) > milliseconds) {\n            break;\n        }\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 800,
+        "wires": [
+            [
+                "a4cc879c4d28527a"
+            ]
+        ]
+    },
+    {
+        "id": "69b6dbe76684d3ac",
+        "type": "inject",
+        "z": "0637f22188042045",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 760,
+        "wires": [
+            [
+                "6fa6c107ae8efe85"
+            ]
+        ]
+    },
+    {
         "id": "783c9519c6b65dec",
         "type": "ui-button",
         "z": "0ba5db83a2227bb8",
