@@ -5604,7 +5604,7 @@
         "categoryType": "none",
         "xAxisLabel": "",
         "xAxisProperty": "",
-        "xAxisPropertyType": "timestamp",
+        "xAxisPropertyType": "property",
         "xAxisType": "linear",
         "xAxisFormat": "",
         "xAxisFormatType": "auto",
