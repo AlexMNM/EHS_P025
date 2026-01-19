@@ -237,10 +237,7 @@
         "x": 760,
         "y": 300,
         "wires": [
-            [
-                "efdb9a81b64a7d49",
-                "47babeaec6ba982e"
-            ]
+            []
         ]
     },
     {
@@ -8683,68 +8680,6 @@
         ]
     },
     {
-        "id": "efdb9a81b64a7d49",
-        "type": "ui-chart",
-        "z": "0ba5db83a2227bb8",
-        "group": "8c7f35716465254a",
-        "name": "",
-        "label": "",
-        "order": 1,
-        "chartType": "line",
-        "category": "topic",
-        "categoryType": "msg",
-        "xAxisLabel": "",
-        "xAxisProperty": "",
-        "xAxisPropertyType": "timestamp",
-        "xAxisType": "time",
-        "xAxisFormat": "",
-        "xAxisFormatType": "auto",
-        "xmin": "",
-        "xmax": "",
-        "yAxisLabel": "",
-        "yAxisProperty": "payload",
-        "yAxisPropertyType": "msg",
-        "ymin": "",
-        "ymax": "",
-        "bins": 10,
-        "action": "replace",
-        "stackSeries": false,
-        "pointShape": "circle",
-        "pointRadius": 4,
-        "showLegend": true,
-        "removeOlder": 1,
-        "removeOlderUnit": "3600",
-        "removeOlderPoints": "",
-        "colors": [
-            "#0095ff",
-            "#ff0000",
-            "#ff7f0e",
-            "#2ca02c",
-            "#a347e1",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "textColor": [
-            "#666666"
-        ],
-        "textColorDefault": true,
-        "gridColor": [
-            "#e5e5e5"
-        ],
-        "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
-        "className": "",
-        "interpolation": "linear",
-        "x": 1040,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "47babeaec6ba982e",
         "type": "debug",
         "z": "0ba5db83a2227bb8",
@@ -8757,8 +8692,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 360,
+        "x": 880,
+        "y": 420,
         "wires": []
     },
     {
@@ -8927,14 +8862,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 720,
+        "x": 660,
         "y": 540,
         "wires": [
             [
-                "4a04139635ab3faf"
+                "4a04139635ab3faf",
+                "47babeaec6ba982e"
             ],
             [
-                "1544c5e22844d7ee"
+                "1544c5e22844d7ee",
+                "47babeaec6ba982e"
             ]
         ]
     },
