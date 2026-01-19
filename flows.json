@@ -4827,7 +4827,8 @@
         "wires": [
             [
                 "cf8fffd08dc5f9bd",
-                "c91a57369e8b58eb"
+                "c91a57369e8b58eb",
+                "c855d8213b16343d"
             ]
         ]
     },
@@ -5587,6 +5588,96 @@
         "wires": [
             [
                 "50c8987fb61c1c81"
+            ]
+        ]
+    },
+    {
+        "id": "25c9a1bf3ddc8ebf",
+        "type": "ui-chart",
+        "z": "f0b99c790d575624",
+        "group": "8c7f35716465254a",
+        "name": "",
+        "label": "",
+        "order": 4,
+        "chartType": "line",
+        "category": "",
+        "categoryType": "none",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "linear",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "re",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "12",
+        "height": "5",
+        "className": "",
+        "interpolation": "linear",
+        "x": 760,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c855d8213b16343d",
+        "type": "change",
+        "z": "f0b99c790d575624",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "deb",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 760,
+        "wires": [
+            [
+                "25c9a1bf3ddc8ebf"
             ]
         ]
     },
@@ -9001,7 +9092,7 @@
         "group": "8c7f35716465254a",
         "name": "",
         "label": "",
-        "order": 4,
+        "order": 5,
         "chartType": "line",
         "category": "topic",
         "categoryType": "msg",
