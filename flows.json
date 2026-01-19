@@ -8718,8 +8718,8 @@
         "type": "function",
         "z": "0ba5db83a2227bb8",
         "name": "function 1",
-        "func": "const ret = [{}, {}];\n\nconst math = global.get(\"mathjs\");\nconst data = global.get(\"stage_data.2.plc.values\");\n\nret[0].payload = data.map(function(d) {\n    return {x: d.timeStamp, y: d.strain};\n});\n\nconst fft = math.fft(data.map((d) => d.strain));\n\nfft[0].re *= 2;\nfft[0].im *= 2\n \nconst ifft = math.ifft(fft);  /*fft.map((t) => t.re) */\n\nret[1].payload = ifft.map(function(d, i) {\n    return { y: d.re, x: ret[0].payload[i].x }\n})\n\nreturn ret;",
-        "outputs": 2,
+        "func": "const ret = [{}, {}, {}];\n\nconst math = global.get(\"mathjs\");\nconst data = global.get(\"stage_data.2.plc.values\");\n\nret[0].payload = data.map(function(d) {\n    return {x: d.timeStamp, y: d.strain};\n});\n\nconst fft = math.fft(data.map((d) => d.strain));\n\nfft[0].re *= 2;\nfft[0].im *= 2\n \nconst ifft = math.ifft(fft);  /*fft.map((t) => t.re) */\n\nret[1].payload = ifft.map(function(d, i) {\n    return { y: d.re, x: ret[0].payload[i].x }\n})\n\n\nret[2].payload = fft.map(function(d,i){\n    return { re: d.re, im: d.im, x: i}\n})\nret[2].topic = [\"re\", \"im\"];\n\nreturn ret;",
+        "outputs": 3,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
@@ -8735,6 +8735,9 @@
             [
                 "47babeaec6ba982e",
                 "c10dee6c0c89b16c"
+            ],
+            [
+                "d02e161b8645405f"
             ]
         ]
     },
@@ -8837,6 +8840,88 @@
         "wires": [
             [
                 "1544c5e22844d7ee"
+            ]
+        ]
+    },
+    {
+        "id": "a9999bc228ac6113",
+        "type": "ui-chart",
+        "z": "0ba5db83a2227bb8",
+        "group": "8c7f35716465254a",
+        "name": "",
+        "label": "",
+        "order": 3,
+        "chartType": "line",
+        "category": "",
+        "categoryType": "none",
+        "xAxisLabel": "",
+        "xAxisProperty": "x",
+        "xAxisPropertyType": "property",
+        "xAxisType": "linear",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "y",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "12",
+        "height": "5",
+        "className": "",
+        "interpolation": "linear",
+        "x": 900,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d02e161b8645405f",
+        "type": "function",
+        "z": "0ba5db83a2227bb8",
+        "name": "chart options -dataZoom",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: {\n        type: 'inside'\n    }\n}\n\nObject.assign(chartOptions, add)\nui_update.chartOptions = chartOptions;\nmsg.ui_update = Object.assign(ui_update, chartOptions)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 700,
+        "wires": [
+            [
+                "a9999bc228ac6113"
             ]
         ]
     },
