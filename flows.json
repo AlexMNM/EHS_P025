@@ -8718,7 +8718,7 @@
         "type": "function",
         "z": "0ba5db83a2227bb8",
         "name": "function 1",
-        "func": "const ret = [{}, {}, {}];\n\nconst math = global.get(\"mathjs\");\nconst data = global.get(\"stage_data.2.plc.values\");\n\nret[0].payload = data.map(function(d) {\n    return {x: d.timeStamp, y: d.strain};\n});\n\nconst fft = math.fft(data.map((d) => d.strain));\n\nfft[0].re *= 2;\nfft[0].im *= 2\n \nconst ifft = math.ifft(fft);  /*fft.map((t) => t.re) */\n\nret[1].payload = ifft.map(function(d, i) {\n    return { y: d.re, x: ret[0].payload[i].x }\n})\n\n\nret[2].payload = fft.map(function(d,i){\n    return { re: d.re, im: d.im, x: i}\n})\nret[2].topic = [\"re\", \"im\"];\n\nreturn ret;",
+        "func": "const ret = [{}, {}, {}];\n\nconst math = global.get(\"mathjs\");\nconst data = global.get(\"stage_data.2.plc.values\");\n\nret[0].payload = data.map(function(d) {\n    return {x: d.timeStamp, y: d.strain};\n});\n\nconst fft = math.fft(data.map((d) => d.strain));\n\nfft[200].re *= 0.1;\nfft[200].im *= 0.1;\n \nconst ifft = math.ifft(fft);  /*fft.map((t) => t.re) */\n\nret[1].payload = ifft.map(function(d, i) {\n    return { y: d.re, x: ret[0].payload[i].x }\n})\n\n\nret[2].payload = fft.map(function(d,i){\n    return { re: d.re, im: d.im, x: i}\n})\nret[2].topic = [\"re\", \"im\"];\n\nreturn ret;",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
