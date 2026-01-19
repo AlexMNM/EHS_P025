@@ -8588,10 +8588,10 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload.type",
+                "p": "payload",
                 "pt": "msg",
                 "to": "payload",
-                "tot": "msg",
+                "tot": "jsonata",
                 "dc": true
             }
         ],
@@ -8600,7 +8600,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 180,
+        "x": 160,
         "y": 80,
         "wires": [
             [
