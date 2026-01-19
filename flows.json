@@ -763,7 +763,7 @@
         "ui": "86cea779c465227a",
         "path": "/page4",
         "icon": "axe",
-        "layout": "flex",
+        "layout": "grid",
         "theme": "0d92c765bfad87e6",
         "breakpoints": [
             {
