@@ -4815,7 +4815,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "evaluate torque",
-        "func": "const math = global.get(\"mathjs\");\nconst features = global.get(\"session.features\");\nconst roi = {start: 0.18, end: 1.2};\n\nvar component\nswitch (msg.component) {\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\n\nconst strain = msg.payload.filter(({ timeStamp }) => (timeStamp > roi.start && timeStamp < roi.end)).map(({ strain }) => (strain))\nconst fft = math.fft(strain);\n\nfft.forEach(function (e, i) {\n    if (i > 1 && i < features[component].detents - 1) {\n        fft[i].re *= 0.01;\n        fft[i].im *= 0.01;\n    }\n});\n\nmsg.deb = math.ifft(fft).map((v, i) => ({y: v.re, x: i}));\n\nconst detents = findPeaks(strain);\n\nconst values = [];\nconst crt = {};\ncrt.component = component\n\ncrt.measurement = \"detents\"\ncrt.label = \"Detents\";\ncrt.value = detents.length;\nvalues.push({ ...crt });\n\ncrt.measurement = \"torque\"\ncrt.label = \"Mean torque\";\ncrt.value = math.mean(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.measurement = \"detent_torque\"\ncrt.label = \"Max torque\";\ncrt.value = math.max(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.label = \"Min torque\";\ncrt.value = math.min(detents).toFixed(3);\nvalues.push({ ...crt });\n\nmsg.payload = [...values]\n\nreturn msg;\n\n\n\n/**\n* @param {any[]} chart\n*/\nfunction findPeaks(chart) {\n    return chart.reduce((/** @type {array} */ agg, /** @type {number} */ current, /** @type {number} */ i) => {\n        const prev = chart[i - 1];\n        const next = chart[i + 1];\n        return current > prev && current >= next ? [...agg, current] : agg;\n    }, []);\n}\n\n\n\n",
+        "func": "const math = global.get(\"mathjs\");\nconst features = global.get(\"session.features\");\nconst roi = {start: 0.18, end: 1.2};\n\nvar component\nswitch (msg.component) {\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\n\nconst strain = msg.payload.filter(({ timeStamp }) => (timeStamp > roi.start && timeStamp < roi.end)).map(({ strain }) => (strain))\nconst fft = math.fft(strain);\n\nfft.forEach(function (e, i) {\n    if (i > 1 && i < features[component].detents - 1) {\n        fft[i].re *= 0.01;\n        fft[i].im *= 0.01;\n    }\n});\n\nmsg.deb = {\n    before: strain.map((v, i) => ({y: v, x: i})),\n    after: math.ifft(fft).map((v, i) => ({y: v.re, x: i})),\n}\n\nconst detents = findPeaks(strain);\n\nconst values = [];\nconst crt = {};\ncrt.component = component\n\ncrt.measurement = \"detents\"\ncrt.label = \"Detents\";\ncrt.value = detents.length;\nvalues.push({ ...crt });\n\ncrt.measurement = \"torque\"\ncrt.label = \"Mean torque\";\ncrt.value = math.mean(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.measurement = \"detent_torque\"\ncrt.label = \"Max torque\";\ncrt.value = math.max(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.label = \"Min torque\";\ncrt.value = math.min(detents).toFixed(3);\nvalues.push({ ...crt });\n\nmsg.payload = [...values]\n\nreturn msg;\n\n\n\n/**\n* @param {any[]} chart\n*/\nfunction findPeaks(chart) {\n    return chart.reduce((/** @type {array} */ agg, /** @type {number} */ current, /** @type {number} */ i) => {\n        const prev = chart[i - 1];\n        const next = chart[i + 1];\n        return current > prev && current >= next ? [...agg, current] : agg;\n    }, []);\n}\n\n\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4828,7 +4828,8 @@
             [
                 "cf8fffd08dc5f9bd",
                 "c91a57369e8b58eb",
-                "c855d8213b16343d"
+                "c855d8213b16343d",
+                "064603e62d13f169"
             ]
         ]
     },
@@ -5222,8 +5223,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
-        "y": 700,
+        "x": 840,
+        "y": 640,
         "wires": []
     },
     {
@@ -5592,68 +5593,6 @@
         ]
     },
     {
-        "id": "25c9a1bf3ddc8ebf",
-        "type": "ui-chart",
-        "z": "f0b99c790d575624",
-        "group": "8c7f35716465254a",
-        "name": "",
-        "label": "",
-        "order": 4,
-        "chartType": "line",
-        "category": "",
-        "categoryType": "none",
-        "xAxisLabel": "",
-        "xAxisProperty": "x",
-        "xAxisPropertyType": "property",
-        "xAxisType": "linear",
-        "xAxisFormat": "",
-        "xAxisFormatType": "auto",
-        "xmin": "",
-        "xmax": "",
-        "yAxisLabel": "",
-        "yAxisProperty": "y",
-        "yAxisPropertyType": "property",
-        "ymin": "",
-        "ymax": "",
-        "bins": 10,
-        "action": "replace",
-        "stackSeries": false,
-        "pointShape": "circle",
-        "pointRadius": 4,
-        "showLegend": true,
-        "removeOlder": 1,
-        "removeOlderUnit": "3600",
-        "removeOlderPoints": "",
-        "colors": [
-            "#0095ff",
-            "#ff0000",
-            "#ff7f0e",
-            "#2ca02c",
-            "#a347e1",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "textColor": [
-            "#666666"
-        ],
-        "textColorDefault": true,
-        "gridColor": [
-            "#e5e5e5"
-        ],
-        "gridColorDefault": true,
-        "width": "12",
-        "height": "5",
-        "className": "",
-        "interpolation": "linear",
-        "x": 760,
-        "y": 820,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c855d8213b16343d",
         "type": "change",
         "z": "f0b99c790d575624",
@@ -5663,7 +5602,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "deb",
+                "to": "deb.after",
                 "tot": "msg",
                 "dc": true
             }
@@ -5677,9 +5616,63 @@
         "y": 760,
         "wires": [
             [
-                "25c9a1bf3ddc8ebf"
+                "216bfa2ed72b59d9"
             ]
         ]
+    },
+    {
+        "id": "216bfa2ed72b59d9",
+        "type": "link out",
+        "z": "f0b99c790d575624",
+        "name": "link out 6",
+        "mode": "link",
+        "links": [
+            "de07cc0ae7619922"
+        ],
+        "x": 765,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "064603e62d13f169",
+        "type": "change",
+        "z": "f0b99c790d575624",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "deb.before",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 720,
+        "wires": [
+            [
+                "d10496534c9354c7"
+            ]
+        ]
+    },
+    {
+        "id": "d10496534c9354c7",
+        "type": "link out",
+        "z": "f0b99c790d575624",
+        "name": "link out 7",
+        "mode": "link",
+        "links": [
+            "575e033b69355e5a"
+        ],
+        "x": 775,
+        "y": 720,
+        "wires": []
     },
     {
         "id": "f4f2fb073ad2baf1",
@@ -9197,6 +9190,38 @@
         "wires": [
             [
                 "7fcefdf3c5186bb0"
+            ]
+        ]
+    },
+    {
+        "id": "575e033b69355e5a",
+        "type": "link in",
+        "z": "0ba5db83a2227bb8",
+        "name": "link in 2",
+        "links": [
+            "d10496534c9354c7"
+        ],
+        "x": 755,
+        "y": 400,
+        "wires": [
+            [
+                "4a04139635ab3faf"
+            ]
+        ]
+    },
+    {
+        "id": "de07cc0ae7619922",
+        "type": "link in",
+        "z": "0ba5db83a2227bb8",
+        "name": "link in 3",
+        "links": [
+            "216bfa2ed72b59d9"
+        ],
+        "x": 745,
+        "y": 520,
+        "wires": [
+            [
+                "1544c5e22844d7ee"
             ]
         ]
     },
