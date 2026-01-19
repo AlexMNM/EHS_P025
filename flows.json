@@ -8664,8 +8664,8 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": "0",
-        "height": "0",
+        "width": "12",
+        "height": "5",
         "className": "",
         "interpolation": "linear",
         "x": 900,
@@ -8790,8 +8790,8 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": "0",
-        "height": "0",
+        "width": "12",
+        "height": "5",
         "className": "",
         "interpolation": "linear",
         "x": 900,
