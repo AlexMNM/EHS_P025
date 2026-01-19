@@ -231,16 +231,6 @@
         ]
     },
     {
-        "id": "54b11fbf6e713725",
-        "type": "junction",
-        "z": "0ba5db83a2227bb8",
-        "x": 760,
-        "y": 300,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "4a622033fd22118c",
         "type": "junction",
         "z": "c4157bddbbb8817a",
@@ -807,9 +797,9 @@
         "type": "ui-group",
         "name": "Out",
         "page": "1f120d7b63a85b3d",
-        "width": 6,
+        "width": "12",
         "height": 1,
-        "order": 1,
+        "order": 2,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -823,7 +813,7 @@
         "page": "1f120d7b63a85b3d",
         "width": 6,
         "height": 1,
-        "order": 2,
+        "order": 1,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -8606,80 +8596,6 @@
         ]
     },
     {
-        "id": "783c9519c6b65dec",
-        "type": "ui-button",
-        "z": "0ba5db83a2227bb8",
-        "group": "3ebbad412a47acd4",
-        "name": "",
-        "label": "Set Marius",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "[]",
-        "payloadType": "json",
-        "topic": "marius",
-        "topicType": "str",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 450,
-        "y": 340,
-        "wires": [
-            [
-                "54b11fbf6e713725"
-            ]
-        ]
-    },
-    {
-        "id": "cf73c78a5a05307c",
-        "type": "ui-slider",
-        "z": "0ba5db83a2227bb8",
-        "group": "3ebbad412a47acd4",
-        "name": "",
-        "label": "slider",
-        "tooltip": "",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "outs": "all",
-        "topic": "slider",
-        "topicType": "str",
-        "thumbLabel": "true",
-        "showTicks": "always",
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "className": "",
-        "iconPrepend": "",
-        "iconAppend": "",
-        "color": "",
-        "colorTrack": "",
-        "colorThumb": "",
-        "showTextField": false,
-        "x": 470,
-        "y": 300,
-        "wires": [
-            [
-                "54b11fbf6e713725"
-            ]
-        ]
-    },
-    {
         "id": "47babeaec6ba982e",
         "type": "debug",
         "z": "0ba5db83a2227bb8",
@@ -8697,66 +8613,13 @@
         "wires": []
     },
     {
-        "id": "4ce5e0839e82cbd7",
-        "type": "ui-slider",
-        "z": "0ba5db83a2227bb8",
-        "group": "3ebbad412a47acd4",
-        "name": "",
-        "label": "slider",
-        "tooltip": "",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "outs": "all",
-        "topic": "sloyder",
-        "topicType": "str",
-        "thumbLabel": "true",
-        "showTicks": "always",
-        "min": 0,
-        "max": 10,
-        "step": 1,
-        "className": "",
-        "iconPrepend": "",
-        "iconAppend": "",
-        "color": "",
-        "colorTrack": "",
-        "colorThumb": "",
-        "showTextField": false,
-        "x": 470,
-        "y": 180,
-        "wires": [
-            [
-                "df497699bed2f375"
-            ]
-        ]
-    },
-    {
-        "id": "df497699bed2f375",
-        "type": "link call",
-        "z": "0ba5db83a2227bb8",
-        "name": "",
-        "links": [
-            "1b4353799567be35"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 660,
-        "y": 240,
-        "wires": [
-            [
-                "54b11fbf6e713725"
-            ]
-        ]
-    },
-    {
         "id": "4a04139635ab3faf",
         "type": "ui-chart",
         "z": "0ba5db83a2227bb8",
         "group": "8c7f35716465254a",
         "name": "",
         "label": "",
-        "order": 2,
+        "order": 1,
         "chartType": "line",
         "category": "",
         "categoryType": "none",
@@ -8818,7 +8681,7 @@
         "group": "3ebbad412a47acd4",
         "name": "",
         "label": "Calculate",
-        "order": 4,
+        "order": 1,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -8882,7 +8745,7 @@
         "group": "8c7f35716465254a",
         "name": "",
         "label": "",
-        "order": 3,
+        "order": 2,
         "chartType": "line",
         "category": "",
         "categoryType": "none",
