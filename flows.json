@@ -5793,7 +5793,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".big_text {\n    font-size: large;\n}\n\n\n",
+        "format": ".big_text {\n    font-size: x-large;\n}\n\n\n",
         "storeOutMessages": true,
         "passthru": false,
         "resendOnRefresh": true,
