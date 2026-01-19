@@ -5244,7 +5244,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "evaluate",
-        "func": "const math = global.get(\"mathjs\");\nconst result = global.get(\"result\") ?? {evaluations: 0, passes: 0};\nconst testplan = global.get(\"testplan\");\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\");\n\nlet pass;\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    pass = m.result;\n    m.lower = pretty(math.min(m.limits));\n    m.upper = pretty(math.max(m.limits));\n});\n\nresult.evaluations += 1;\nresult.passes += pass ? 1 : 0;\n\nglobal.set(\"result\", result);\n\nreturn msg;\n\nfunction pretty(n) {\n    return Number.isInteger(n) ? n : n.toFixed(3);\n}",
+        "func": "const math = global.get(\"mathjs\");\nconst result = global.get(\"result\") ?? {evaluations: 0, passes: 0};\nconst testplan = global.get(\"testplan\");\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\");\n\nlet pass = true;\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    pass &&= m.result;\n    m.lower = pretty(math.min(m.limits));\n    m.upper = pretty(math.max(m.limits));\n});\n\nresult.evaluations += 1;\nresult.passes += pass ? 1 : 0;\n\nglobal.set(\"result\", result);\n\nreturn msg;\n\nfunction pretty(n) {\n    return Number.isInteger(n) ? n : n.toFixed(3);\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
