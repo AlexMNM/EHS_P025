@@ -8722,7 +8722,7 @@
         "outputs": 4,
         "timeout": 0,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.set(\"coef\", 0);\ncontext.set(\"ind\", 1);\n",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.set(\"coef\", 0);\ncontext.set(\"ind\", 0);\n",
         "finalize": "",
         "libs": [],
         "x": 500,
