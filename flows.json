@@ -8439,7 +8439,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "final status",
-        "func": "const result = global.get(\"result\");\n\nif(result.evaluations === result.passes){\n    msg.topic = \"pass\";\n    msg.ui_update = {\n        buttonColor: \"green\",\n        label: \"PASS\"\n    }\n} else {\n    msg.topic = \"fail\";\n    msg.ui_update = {\n        buttonColor: \"red\",\n        label: \"FAIL\"\n    }\n}\n\nreturn msg;",
+        "func": "const result = global.get(\"result\");\n\nif(result.evaluations === result.passes){\n    msg.topic = \"pass\";\n    msg.ui_update = {\n        buttonColor: \"green\",\n        label: \"PASS\",\n        \"class\": \"big_text\"\n    }\n} else {\n    msg.topic = \"fail\";\n    msg.ui_update = {\n        buttonColor: \"red\",\n        label: \"FAIL\",\n        \"class\": \"big_text\"\n    }\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
