@@ -5137,7 +5137,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "check product",
-        "func": "const product = global.get(\"current.product\");\nconst extract = global.get(\"settings.data.prod_extract\", \"file\");\n\nmsg.result = extract(msg.payload.type, product)\n\nreturn msg;",
+        "func": "const product = global.get(\"current.product\");\nconst extract = global.get(\"settings.data.prod_extract\", \"file\");\n\nmsg.result = extract(msg.payload, product)\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5851,7 +5851,7 @@
         "y": 120,
         "wires": [
             [
-                "eb24925af8cfb7a4"
+                "014a23b36f2b2e80"
             ]
         ]
     },
@@ -5989,8 +5989,8 @@
         "wires": [
             [
                 "efe279013f6c1ce5",
-                "70caadcea072777c",
-                "d984f1c52bbb7a42"
+                "d984f1c52bbb7a42",
+                "eb24925af8cfb7a4"
             ],
             [
                 "8766ed8d27633676",
@@ -7203,7 +7203,7 @@
                 "t": "set",
                 "p": "session.product.type",
                 "pt": "global",
-                "to": "payload.type",
+                "to": "payload",
                 "tot": "msg",
                 "dc": true
             }
@@ -8590,8 +8590,8 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "payload",
-                "tot": "jsonata",
+                "to": "payload.type",
+                "tot": "msg",
                 "dc": true
             }
         ],
@@ -8600,11 +8600,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 160,
-        "y": 80,
+        "x": 760,
+        "y": 500,
         "wires": [
             [
-                "014a23b36f2b2e80"
+                "70caadcea072777c"
             ]
         ]
     },
