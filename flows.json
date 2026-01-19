@@ -8608,8 +8608,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
-        "y": 420,
+        "x": 740,
+        "y": 240,
         "wires": []
     },
     {
@@ -8664,8 +8664,8 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
+        "width": "0",
+        "height": "0",
         "className": "",
         "interpolation": "linear",
         "x": 900,
@@ -8705,7 +8705,7 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 460,
+        "x": 300,
         "y": 540,
         "wires": [
             [
@@ -8725,16 +8725,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
+        "x": 500,
         "y": 540,
         "wires": [
             [
-                "4a04139635ab3faf",
-                "47babeaec6ba982e"
+                "47babeaec6ba982e",
+                "efcb46c5edea9ad6"
             ],
             [
-                "1544c5e22844d7ee",
-                "47babeaec6ba982e"
+                "47babeaec6ba982e",
+                "c10dee6c0c89b16c"
             ]
         ]
     },
@@ -8790,14 +8790,54 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
+        "width": "0",
+        "height": "0",
         "className": "",
         "interpolation": "linear",
-        "x": 920,
-        "y": 560,
+        "x": 900,
+        "y": 640,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "efcb46c5edea9ad6",
+        "type": "function",
+        "z": "0ba5db83a2227bb8",
+        "name": "chart options -dataZoom",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: {\n        type: 'inside'\n    }\n}\n\nObject.assign(chartOptions, add)\nui_update.chartOptions = chartOptions;\nmsg.ui_update = Object.assign(ui_update, chartOptions)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 460,
+        "wires": [
+            [
+                "4a04139635ab3faf"
+            ]
+        ]
+    },
+    {
+        "id": "c10dee6c0c89b16c",
+        "type": "function",
+        "z": "0ba5db83a2227bb8",
+        "name": "chart options -dataZoom",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: {\n        type: 'inside'\n    }\n}\n\nObject.assign(chartOptions, add)\nui_update.chartOptions = chartOptions;\nmsg.ui_update = Object.assign(ui_update, chartOptions)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 600,
+        "wires": [
+            [
+                "1544c5e22844d7ee"
+            ]
         ]
     },
     {
