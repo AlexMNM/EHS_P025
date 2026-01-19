@@ -5769,7 +5769,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "td[data-column-key=\"remove\"] button.v-btn {\n    background-color: rgba(255, 0, 0, 0.551) !important;\n}\n",
+        "format": "td[data-column-key=\"remove\"] button.v-btn {\n    background-color: rgba(255, 0, 0, 0.551) !important;\n}\n\n\n",
         "storeOutMessages": true,
         "passthru": false,
         "resendOnRefresh": true,
@@ -5777,6 +5777,30 @@
         "className": "",
         "x": 410,
         "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72dc3b96a2db6694",
+        "type": "ui-template",
+        "z": "a6c85f6538755b0c",
+        "group": "",
+        "page": "",
+        "ui": "86cea779c465227a",
+        "name": "large text",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".big_text {\n    font-size: large;\n}\n\n\n",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 360,
+        "y": 620,
         "wires": [
             []
         ]
@@ -7518,7 +7542,7 @@
         "tooltip": "",
         "color": "",
         "bgcolor": "",
-        "className": "",
+        "className": "big_text",
         "icon": "",
         "iconPosition": "left",
         "payload": "",
@@ -8415,7 +8439,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "final status",
-        "func": "const result = global.get(\"result\");\n\nif(result.evaluations === result.passes){\n    msg.topic = \"pass\";\n    msg.ui_update = {\n        buttonColor: \"green\",\n        label: \"Result: pass\"\n    }\n} else {\n    msg.topic = \"fail\";\n    msg.ui_update = {\n        buttonColor: \"red\",\n        label: \"Result: fail\"\n    }\n}\n\nreturn msg;",
+        "func": "const result = global.get(\"result\");\n\nif(result.evaluations === result.passes){\n    msg.topic = \"pass\";\n    msg.ui_update = {\n        buttonColor: \"green\",\n        label: \"PASS\"\n    }\n} else {\n    msg.topic = \"fail\";\n    msg.ui_update = {\n        buttonColor: \"red\",\n        label: \"FAIL\"\n    }\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -8462,7 +8486,7 @@
         "z": "0637f22188042045",
         "name": "",
         "pauseType": "delay",
-        "timeout": "0.2",
+        "timeout": "3",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -8473,7 +8497,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 370,
+        "x": 360,
         "y": 1180,
         "wires": [
             [
