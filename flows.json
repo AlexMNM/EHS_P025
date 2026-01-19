@@ -453,7 +453,7 @@
                 "S7_Datatype": "B",
                 "S7_Offset": "14",
                 "S7_BitOffset": "0",
-                "S7_Quantity": "7200",
+                "S7_Quantity": "6000",
                 "S7_Name": "resultBuffer"
             },
             {
@@ -1047,7 +1047,7 @@
         "type": "s7comm read",
         "z": "a7c7ec5294135863",
         "connection": "3cb7f915b2dc54d4",
-        "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"3\",\"S7_Datatype\":\"B\",\"S7_Offset\":\"14\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"7200\",\"S7_Name\":\"resultBuffer\"}",
+        "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"3\",\"S7_Datatype\":\"B\",\"S7_Offset\":\"14\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"6000\",\"S7_Name\":\"resultBuffer\"}",
         "s7Name": "resultBuffer",
         "topic": "resultBuffer",
         "name": "",
@@ -1090,7 +1090,7 @@
         "type": "function",
         "z": "a7c7ec5294135863",
         "name": "compose_payload",
-        "func": "const chunk_size = 24\nswitch (msg.topic) {\n    case \"count\":\n        context.set(\"count\", msg.payload.value[0])\n        return\n    case \"resultBuffer\":\n        const count = context.get(\"count\");\n        const data = new Uint8Array(msg.payload.value.slice(0, count*chunk_size))\n        const chunks = chunk(data, chunk_size)\n        const results = chunks.map((e) => ({\n            timeStamp: new DataView(e.buffer).getFloat32(0, false),\n            position: new DataView(e.buffer).getFloat32(4, false),\n            /*ohm : String.fromCharCode.apply(null,data.slice(10, 10 + data[9])).match(/[+-]?([0-9]*[.])?[0-9]+/g)?.map(Number)[0] || -1,*/\n            strain: new DataView(e.buffer).getFloat32(20, false)\n        }))\n        msg.payload = results;\n        msg.topic = \"stageResults\";\n        break;\n}\n\nreturn msg;\n\n\nfunction chunk(arr, chunkSize) {\n    return Array.from({ length: Math.ceil(arr.byteLength / chunkSize) }, (_, i) =>\n        arr.slice(i * chunkSize, i * chunkSize + chunkSize)\n    );\n}\n\nfunction float32BigE(buf) {\n    const ret = [];\n    let index = 0;\n    for (; index < buf.byteLength; index += 4) {\n        ret.push(new DataView(buf).getFloat32(index, false));\n    }\n    return ret;\n}\n",
+        "func": "const chunk_size = 12\nswitch (msg.topic) {\n    case \"count\":\n        context.set(\"count\", msg.payload.value[0])\n        return\n    case \"resultBuffer\":\n        const count = context.get(\"count\");\n        const data = new Uint8Array(msg.payload.value.slice(0, count*chunk_size))\n        const chunks = chunk(data, chunk_size)\n        const results = chunks.map((e) => ({\n            timeStamp: new DataView(e.buffer).getFloat32(0, false),\n            position: new DataView(e.buffer).getFloat32(4, false),\n            /*ohm : String.fromCharCode.apply(null,data.slice(10, 10 + data[9])).match(/[+-]?([0-9]*[.])?[0-9]+/g)?.map(Number)[0] || -1,*/\n            strain: new DataView(e.buffer).getFloat32(8, false)\n        }))\n        msg.payload = results;\n        msg.topic = \"stageResults\";\n        break;\n}\n\nreturn msg;\n\n\nfunction chunk(arr, chunkSize) {\n    return Array.from({ length: Math.ceil(arr.byteLength / chunkSize) }, (_, i) =>\n        arr.slice(i * chunkSize, i * chunkSize + chunkSize)\n    );\n}\n\nfunction float32BigE(buf) {\n    const ret = [];\n    let index = 0;\n    for (; index < buf.byteLength; index += 4) {\n        ret.push(new DataView(buf).getFloat32(index, false));\n    }\n    return ret;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
