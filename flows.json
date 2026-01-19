@@ -8678,6 +8678,72 @@
         ]
     },
     {
+        "id": "bf71a13c77401cb1",
+        "type": "inject",
+        "z": "0637f22188042045",
+        "name": "inner strain",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "path",
+                "v": "stage_data.3.plc.values",
+                "vt": "str"
+            },
+            {
+                "p": "field",
+                "v": "strain",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "data",
+        "x": 240,
+        "y": 700,
+        "wires": [
+            [
+                "937d7b67602d88ba"
+            ]
+        ]
+    },
+    {
+        "id": "40612f66b4d46d89",
+        "type": "inject",
+        "z": "0637f22188042045",
+        "name": "inner strain",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "path",
+                "v": "stage_data.4.plc.values",
+                "vt": "str"
+            },
+            {
+                "p": "field",
+                "v": "strain",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "data",
+        "x": 240,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "47babeaec6ba982e",
         "type": "debug",
         "z": "0ba5db83a2227bb8",
