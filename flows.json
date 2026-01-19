@@ -8718,8 +8718,8 @@
         "type": "function",
         "z": "0ba5db83a2227bb8",
         "name": "function 1",
-        "func": "const ret = [{}, {}, {}];\n\nconst math = global.get(\"mathjs\");\nconst data = global.get(\"stage_data.2.plc.values\");\n\nswitch (msg.topic) {\n    case \"coef\":\n        context.set(\"coef\", msg.payload);\n        break;\n    case \"ind\":\n        context.set(\"ind\", msg.payload);\n        break;\n    default:\n        ret[0].payload = data.map(function (d) {\n            return { x: d.timeStamp, y: d.strain };\n        });\n\n        const fft = math.fft(data.map((d) => d.strain));\n\n        ret[2].payload = fft.map(function (d, i) {\n            return { re: d.re, im: d.im, x: i }\n        })\n        ret[2].topic = [\"re\", \"im\"];\n\n        const ind = context.get(\"ind\");\n        const coef = context.get(\"coef\");\n        fft[ind].re *= coef;\n        fft[ind].im *= coef;\n\n        if(ind === 0 && coef === 0) {\n            fft.forEach(function(e,i) {\n                if(i > 2 && i < 400) {\n                    fft[i].re *= 0.01;\n                    fft[i].im *= 0.01;\n                }\n            });\n        };\n\n\n        const ifft = math.ifft(fft);  /*fft.map((t) => t.re) */\n\n        ret[1].payload = ifft.map(function (d, i) {\n            return { y: d.re, x: ret[0].payload[i].x }\n        })\n\n}\n\nreturn ret;",
-        "outputs": 3,
+        "func": "const ret = [{}, {}, {}, {}];\n\nconst math = global.get(\"mathjs\");\nconst data = global.get(\"stage_data.2.plc.values\");\n\nswitch (msg.topic) {\n    case \"coef\":\n        context.set(\"coef\", msg.payload);\n        break;\n    case \"ind\":\n        context.set(\"ind\", msg.payload);\n        break;\n    default:\n        ret[0].payload = data.map(function (d) {\n            return { x: d.timeStamp, y: d.strain };\n        });\n\n        const fft = math.fft(data.map((d) => d.strain));\n\n        ret[2].payload = fft.map(function (d, i) {\n            return { re: d.re, im: d.im, x: i }\n        })\n        ret[2].topic = [\"re\", \"im\"];\n\n        const ind = context.get(\"ind\");\n        const coef = context.get(\"coef\");\n        fft[ind].re *= coef;\n        fft[ind].im *= coef;\n\n        if(ind === 0 && coef === 0) {\n            fft.forEach(function(e,i) {\n                if(i > 2 && i < 400) {\n                    fft[i].re *= 0.01;\n                    fft[i].im *= 0.01;\n                }\n            });\n        };\n\n\n        const ifft = math.ifft(fft);  /*fft.map((t) => t.re) */\n\n        ret[1].payload = ifft.map(function (d, i) {\n            return { y: d.re, x: ret[0].payload[i].x }\n        })\n\n        ret[3].payload = fft.map(function (d, i) {\n            return { re: d.re, im: d.im, x: i }\n        })\n        ret[3].topic = [\"re\", \"im\"];\n\n}\n\nreturn ret;",
+        "outputs": 4,
         "timeout": 0,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.set(\"coef\", 0);\ncontext.set(\"ind\", 1);\n",
@@ -8739,6 +8739,9 @@
             [
                 "d02e161b8645405f",
                 "47babeaec6ba982e"
+            ],
+            [
+                "a7e623616efbddba"
             ]
         ]
     },
@@ -8989,6 +8992,88 @@
         "wires": [
             [
                 "7fcefdf3c5186bb0"
+            ]
+        ]
+    },
+    {
+        "id": "f1d20a520d279c03",
+        "type": "ui-chart",
+        "z": "0ba5db83a2227bb8",
+        "group": "8c7f35716465254a",
+        "name": "",
+        "label": "",
+        "order": 4,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "x",
+        "xAxisPropertyType": "property",
+        "xAxisType": "linear",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "y",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "12",
+        "height": "5",
+        "className": "",
+        "interpolation": "linear",
+        "x": 900,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a7e623616efbddba",
+        "type": "function",
+        "z": "0ba5db83a2227bb8",
+        "name": "chart options -dataZoom",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: {\n        type: 'inside'\n    }\n}\n\nObject.assign(chartOptions, add)\nui_update.chartOptions = chartOptions;\nmsg.ui_update = Object.assign(ui_update, chartOptions)\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 780,
+        "wires": [
+            [
+                "f1d20a520d279c03"
             ]
         ]
     },
