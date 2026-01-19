@@ -5223,8 +5223,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 640,
+        "x": 800,
+        "y": 660,
         "wires": []
     },
     {
