@@ -4815,7 +4815,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "evaluate torque",
-        "func": "const math = global.get(\"mathjs\")\nconst roi = {start: 0.18, end: 1.2}\n\nvar component\nswitch (msg.component) {\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\n\nconst strain = msg.payload.filter(({ timeStamp }) => (timeStamp > roi.start && timeStamp < roi.end)).map(({ strain }) => (strain))\nconst detents = findPeaks(strain);\n\nconst values = [];\nconst crt = {};\ncrt.component = component\n\ncrt.measurement = \"detents\"\ncrt.label = \"Detents\";\ncrt.value = detents.length;\nvalues.push({ ...crt });\n\ncrt.measurement = \"torque\"\ncrt.label = \"Mean torque\";\ncrt.value = math.mean(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.measurement = \"detent_torque\"\ncrt.label = \"Max torque\";\ncrt.value = math.max(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.label = \"Min torque\";\ncrt.value = math.min(detents).toFixed(3);\nvalues.push({ ...crt });\n\nmsg.payload = [...values]\n\nreturn msg;\n\n\n\n/**\n* @param {any[]} chart\n*/\nfunction findPeaks(chart) {\n    return chart.reduce((/** @type {array} */ agg, /** @type {number} */ current, /** @type {number} */ i) => {\n        const prev = chart[i - 1];\n        const next = chart[i + 1];\n        return current > prev && current >= next ? [...agg, current] : agg;\n    }, []);\n}\n\n\n\n",
+        "func": "const math = global.get(\"mathjs\");\nconst features = global.get(\"session.features\");\nconst roi = {start: 0.18, end: 1.2};\n\nvar component\nswitch (msg.component) {\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\n\nlet strain = msg.payload.filter(({ timeStamp }) => (timeStamp > roi.start && timeStamp < roi.end)).map(({ strain }) => (strain))\nconst fft = math.fft(strain);\n\nfft.forEach(function (e, i) {\n    if (i > 1 && i < features[component].detents - 1) {\n        fft[i].re *= 0.01;\n        fft[i].im *= 0.01;\n    }\n});\n\nstrain = math.ifft(fft);\n\nconst detents = findPeaks(strain);\n\nconst values = [];\nconst crt = {};\ncrt.component = component\n\ncrt.measurement = \"detents\"\ncrt.label = \"Detents\";\ncrt.value = detents.length;\nvalues.push({ ...crt });\n\ncrt.measurement = \"torque\"\ncrt.label = \"Mean torque\";\ncrt.value = math.mean(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.measurement = \"detent_torque\"\ncrt.label = \"Max torque\";\ncrt.value = math.max(detents).toFixed(3);\nvalues.push({ ...crt });\n\ncrt.label = \"Min torque\";\ncrt.value = math.min(detents).toFixed(3);\nvalues.push({ ...crt });\n\nmsg.payload = [...values]\n\nreturn msg;\n\n\n\n/**\n* @param {any[]} chart\n*/\nfunction findPeaks(chart) {\n    return chart.reduce((/** @type {array} */ agg, /** @type {number} */ current, /** @type {number} */ i) => {\n        const prev = chart[i - 1];\n        const next = chart[i + 1];\n        return current > prev && current >= next ? [...agg, current] : agg;\n    }, []);\n}\n\n\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4826,7 +4826,8 @@
         "y": 640,
         "wires": [
             [
-                "cf8fffd08dc5f9bd"
+                "cf8fffd08dc5f9bd",
+                "c91a57369e8b58eb"
             ]
         ]
     },
@@ -4916,8 +4917,7 @@
         "y": 440,
         "wires": [
             [
-                "7b0650e87ffd0265",
-                "c91a57369e8b58eb"
+                "7b0650e87ffd0265"
             ]
         ]
     },
@@ -4931,8 +4931,7 @@
         "y": 440,
         "wires": [
             [
-                "1c01fb5e95c68584",
-                "c91a57369e8b58eb"
+                "1c01fb5e95c68584"
             ]
         ]
     },
@@ -5222,8 +5221,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 380,
+        "x": 600,
+        "y": 700,
         "wires": []
     },
     {
