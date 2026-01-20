@@ -335,7 +335,7 @@
             "groupOutline": "#cccccc"
         },
         "sizes": {
-            "density": "comfortable",
+            "density": "compact",
             "pagePadding": "12px",
             "groupGap": "12px",
             "groupBorderRadius": "4px",
