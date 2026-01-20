@@ -514,42 +514,6 @@
                 "S7_BitOffset": "0",
                 "S7_Quantity": "1",
                 "S7_Name": "procActStage"
-            },
-            {
-                "S7_Type": "DB",
-                "S7_DBnum": "15",
-                "S7_Datatype": "B",
-                "S7_Offset": "0",
-                "S7_BitOffset": "0",
-                "S7_Quantity": "6600",
-                "S7_Name": "ohmData_0"
-            },
-            {
-                "S7_Type": "DB",
-                "S7_DBnum": "15",
-                "S7_Datatype": "B",
-                "S7_Offset": "6600",
-                "S7_BitOffset": "0",
-                "S7_Quantity": "6600",
-                "S7_Name": "ohmData_1"
-            },
-            {
-                "S7_Type": "DB",
-                "S7_DBnum": "15",
-                "S7_Datatype": "uint16",
-                "S7_Offset": "13200",
-                "S7_BitOffset": "0",
-                "S7_Quantity": "1",
-                "S7_Name": "ohmCount"
-            },
-            {
-                "S7_Type": "DB",
-                "S7_DBnum": "15",
-                "S7_Datatype": "DI",
-                "S7_Offset": "13202",
-                "S7_BitOffset": "0",
-                "S7_Quantity": "1",
-                "S7_Name": "ohmStage"
             }
         ]
     },
@@ -1734,161 +1698,6 @@
         ]
     },
     {
-        "id": "fafaf048b7ad9483",
-        "type": "s7comm read",
-        "z": "a7c7ec5294135863",
-        "connection": "3cb7f915b2dc54d4",
-        "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"15\",\"S7_Datatype\":\"DI\",\"S7_Offset\":\"13202\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"1\",\"S7_Name\":\"ohmStage\"}",
-        "s7Name": "ohmStage",
-        "topic": "stage",
-        "name": "",
-        "signalSetted": false,
-        "none": "true",
-        "repeat": "",
-        "once": false,
-        "x": 350,
-        "y": 1480,
-        "wires": [
-            [
-                "30424adcd5cd3a94"
-            ]
-        ]
-    },
-    {
-        "id": "d3d65a0a1041c0ef",
-        "type": "s7comm read",
-        "z": "a7c7ec5294135863",
-        "connection": "3cb7f915b2dc54d4",
-        "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"15\",\"S7_Datatype\":\"uint16\",\"S7_Offset\":\"13200\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"1\",\"S7_Name\":\"ohmCount\"}",
-        "s7Name": "ohmCount",
-        "topic": "count",
-        "name": "",
-        "signalSetted": false,
-        "none": "true",
-        "repeat": "",
-        "once": false,
-        "x": 350,
-        "y": 1520,
-        "wires": [
-            [
-                "30424adcd5cd3a94",
-                "f5c8a19a8ca02d91"
-            ]
-        ]
-    },
-    {
-        "id": "f5c8a19a8ca02d91",
-        "type": "s7comm read",
-        "z": "a7c7ec5294135863",
-        "connection": "3cb7f915b2dc54d4",
-        "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"15\",\"S7_Datatype\":\"B\",\"S7_Offset\":\"0\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"6600\",\"S7_Name\":\"ohmData_0\"}",
-        "s7Name": "ohmData_0",
-        "topic": "data_0",
-        "name": "data 0",
-        "signalSetted": false,
-        "none": "true",
-        "repeat": "",
-        "once": false,
-        "x": 350,
-        "y": 1560,
-        "wires": [
-            [
-                "30424adcd5cd3a94",
-                "7dabc1f50b1cc91b"
-            ]
-        ]
-    },
-    {
-        "id": "30424adcd5cd3a94",
-        "type": "function",
-        "z": "a7c7ec5294135863",
-        "name": "compose_payload",
-        "func": "switch (msg.topic) {\n    default:\n        break\n    case \"stage\":\n        context.set(\"stage\", msg.payload.value[0])\n        break\n    case \"count\":\n        context.set(\"count\", msg.payload.value[0])\n        break\n    case \"data_0\":\n        context.set(\"data_0\", msg.payload.value)\n        break\n    case \"data_1\": {\n        const cnt = context.get(\"count\")\n        const data = new Uint8Array(context.get(\"data_0\").concat(msg.payload.value))\n        const lines = chunk(data, 66).slice(0,cnt).map((v) => { return String.fromCharCode(...v.slice(2, 2 + v[1])).trim()  })\n\n        msg.payload = lines\n        msg.stage = context.get(\"stage\")\n        msg.topic = \"ohmmeterData\"\n        return msg\n    }\n}\n\nreturn\n\n\nfunction chunk(arr, chunkSize) {\n    return Array.from({ length: Math.ceil(arr.length / chunkSize) }, (_, i) =>\n        arr.slice(i * chunkSize, i * chunkSize + chunkSize)\n    );\n}\n\n\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 590,
-        "y": 1520,
-        "wires": [
-            [
-                "d4aa2d206d5fdf83"
-            ]
-        ]
-    },
-    {
-        "id": "4a7915c4254053f8",
-        "type": "link in",
-        "z": "a7c7ec5294135863",
-        "d": true,
-        "name": "inOhmData",
-        "links": [
-            "ffb3be6558e2f16d"
-        ],
-        "x": 245,
-        "y": 1520,
-        "wires": [
-            [
-                "d3d65a0a1041c0ef"
-            ]
-        ]
-    },
-    {
-        "id": "3ad932dcc7d70e79",
-        "type": "link out",
-        "z": "a7c7ec5294135863",
-        "name": "outOhmAck",
-        "mode": "link",
-        "links": [
-            "2cea2d573347c0a3"
-        ],
-        "x": 1155,
-        "y": 1520,
-        "wires": []
-    },
-    {
-        "id": "eded3cd0d41981ae",
-        "type": "inject",
-        "z": "a7c7ec5294135863",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 140,
-        "y": 1460,
-        "wires": [
-            [
-                "fafaf048b7ad9483",
-                "d3d65a0a1041c0ef"
-            ]
-        ]
-    },
-    {
-        "id": "1395b3dea3c0f393",
-        "type": "comment",
-        "z": "a7c7ec5294135863",
-        "name": "Ohmmeter data",
-        "info": "",
-        "x": 320,
-        "y": 1440,
-        "wires": []
-    },
-    {
         "id": "0979857144d46bf9",
         "type": "comment",
         "z": "a7c7ec5294135863",
@@ -1917,91 +1726,6 @@
         "x": 330,
         "y": 780,
         "wires": []
-    },
-    {
-        "id": "aa2c588a863a4056",
-        "type": "csv",
-        "z": "a7c7ec5294135863",
-        "name": "",
-        "spec": "rfc",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "none",
-        "multi": "mult",
-        "ret": "\\r\\n",
-        "temp": "date,time,dt,status,value",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 870,
-        "y": 1520,
-        "wires": [
-            [
-                "4ab11d69c5f5a642"
-            ]
-        ]
-    },
-    {
-        "id": "4ab11d69c5f5a642",
-        "type": "function",
-        "z": "a7c7ec5294135863",
-        "name": "extract_ohms",
-        "func": "msg.payload.reduce((acc, v) => {acc += (v.dt + 1) / 1000; v.timeStamp = acc; return acc},0.049)\nmsg.payload.forEach(function(e) {\n    [e.ohm, e.unit] = e.value.match(/([+-]?([0-9]*[.])?[0-9]+)|(\\w+)/g);\n    e.ohm = clamp(Number(e.ohm) * (e.unit === \"mOhm\" ? 1E-3 : 1),-1,100);\n});\n\nreturn msg;\n\nfunction clamp(val, min, max) {\n    return val > max ? max : val < min ? min : val;\n}",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1020,
-        "y": 1520,
-        "wires": [
-            [
-                "3ad932dcc7d70e79"
-            ]
-        ]
-    },
-    {
-        "id": "d4aa2d206d5fdf83",
-        "type": "split",
-        "z": "a7c7ec5294135863",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 750,
-        "y": 1520,
-        "wires": [
-            [
-                "aa2c588a863a4056"
-            ]
-        ]
-    },
-    {
-        "id": "7dabc1f50b1cc91b",
-        "type": "s7comm read",
-        "z": "a7c7ec5294135863",
-        "connection": "3cb7f915b2dc54d4",
-        "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"15\",\"S7_Datatype\":\"B\",\"S7_Offset\":\"6600\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"6600\",\"S7_Name\":\"ohmData_1\"}",
-        "s7Name": "ohmData_1",
-        "topic": "data_1",
-        "name": "data 1",
-        "signalSetted": false,
-        "none": "true",
-        "repeat": "",
-        "once": false,
-        "x": 350,
-        "y": 1600,
-        "wires": [
-            [
-                "30424adcd5cd3a94"
-            ]
-        ]
     },
     {
         "id": "ffb3be6558e2f16d",
@@ -2045,23 +1769,6 @@
         "x": 575,
         "y": 560,
         "wires": []
-    },
-    {
-        "id": "0fce602cf14e4c1d",
-        "type": "link in",
-        "z": "a7c7ec5294135863",
-        "d": true,
-        "name": "inOhmStage",
-        "links": [
-            "d530debf90794e70"
-        ],
-        "x": 245,
-        "y": 1480,
-        "wires": [
-            [
-                "fafaf048b7ad9483"
-            ]
-        ]
     },
     {
         "id": "950164b780fa14d3",
@@ -2120,8 +1827,8 @@
         "z": "a7c7ec5294135863",
         "name": "inSetOrder",
         "links": [],
-        "x": 295,
-        "y": 1720,
+        "x": 255,
+        "y": 1560,
         "wires": [
             [
                 "aec5286ae04bc13c"
@@ -2138,8 +1845,8 @@
         "topic": "set_order",
         "name": "",
         "signalSetted": false,
-        "x": 680,
-        "y": 1720,
+        "x": 640,
+        "y": 1560,
         "wires": [
             [
                 "aec5286ae04bc13c"
@@ -2158,8 +1865,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 1720,
+        "x": 390,
+        "y": 1560,
         "wires": [
             [
                 "297cd64b2ced6fde"
@@ -2193,8 +1900,8 @@
         "name": "retSetOrder",
         "mode": "return",
         "links": [],
-        "x": 555,
-        "y": 1700,
+        "x": 515,
+        "y": 1540,
         "wires": []
     },
     {
@@ -2203,8 +1910,8 @@
         "z": "a7c7ec5294135863",
         "name": "inSetProduct",
         "links": [],
-        "x": 295,
-        "y": 1860,
+        "x": 255,
+        "y": 1700,
         "wires": [
             [
                 "7caa4f63ceed4814"
@@ -2221,8 +1928,8 @@
         "topic": "set_product",
         "name": "",
         "signalSetted": false,
-        "x": 670,
-        "y": 1860,
+        "x": 630,
+        "y": 1700,
         "wires": [
             [
                 "7caa4f63ceed4814"
@@ -2241,8 +1948,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 1860,
+        "x": 390,
+        "y": 1700,
         "wires": [
             [
                 "bd8a8b474ab9f6fa"
@@ -2259,8 +1966,8 @@
         "name": "ret",
         "mode": "return",
         "links": [],
-        "x": 555,
-        "y": 1840,
+        "x": 515,
+        "y": 1680,
         "wires": []
     },
     {
@@ -5044,7 +4751,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "set testplan",
-        "func": "const features = global.get(\"session.features\")\nconst settings = global.get(\"settings\", \"file\")\nconst window = settings.limits.tools.window\n\nconst testplan = {}\n\nfor (const [feature_name, feature] of Object.entries(features).filter(([n, v]) => v.type !== \"info\")) {\n    const template = settings.data.feature_types[feature.type]\n    const enabler = template.find((e) => e?.enabler === true)\n    if (feature.value[enabler?.key] !== 0 || enabler === undefined) {\n        testplan[feature_name] = {}\n        for (const [key, value] of Object.entries(feature.value)) {\n            const model = template.find((t) => t.key === key)\n            if (model.scope === \"nominal\") {\n                const lim = model.limit_type === \"absolute\" ? 0 : feature.value[key + \"_limit\"]\n                testplan[feature_name][key] = window[model.limit_type](value, lim)\n            }\n        }\n    }\n}\n\nglobal.set(\"testplan\", testplan);",
+        "func": "const features = global.get(\"session.features\")\nconst settings = global.get(\"settings\", \"file\")\nconst window = settings.limits.tools.window\n\nconst testplan = {};\nconst results = {};\n\nfor (const [feature_name, feature] of Object.entries(features).filter(([n, v]) => v.type !== \"info\")) {\n    const template = settings.data.feature_types[feature.type]\n    const enabler = template.find((e) => e?.enabler === true)\n    if (feature.value[enabler?.key] !== 0 || enabler === undefined) {\n        testplan[feature_name] = {}\n        for (const [key, value] of Object.entries(feature.value)) {\n            const model = template.find((t) => t.key === key)\n            if (model.scope === \"nominal\") {\n                const lim = model.limit_type === \"absolute\" ? 0 : feature.value[key + \"_limit\"]\n                testplan[feature_name][key] = window[model.limit_type](value, lim)\n                switch (feature.type) {\n                    case \"button\":\n                        results[feature_name] = {\n                            strain: 0,\n                            osc: 0,\n                            ohm: 0\n                        }\n                        break;\n                    case \"encoder\":\n                        results[feature_name] = {\n                            strain: 0,\n                            osc: 0,\n                            ohm_A: 0,\n                            ohm_B: 0\n                        }\n                        break;\n\n                }\n            }\n        }\n    }\n}\n\nresults.evaluate = getStatus;\n\nglobal.set(\"testplan\", testplan);\nglobal.set(\"results\", results);\n\nfunction getStatus(ob) {\n    const flat = flattenObject(ob);\n    var ret = 1;\n    for (var [k, v] of Object.entries(flat)) {\n        ret *= v;\n    }\n    return ret;\n}\n\nfunction flattenObject(ob) {\n    var toReturn = {};\n\n    for (var i in ob) {\n        if (!ob.hasOwnProperty(i)) continue;\n\n        if ((typeof ob[i]) == 'object' && ob[i] !== null) {\n            var flatObject = flattenObject(ob[i]);\n            for (var x in flatObject) {\n                if (!flatObject.hasOwnProperty(x)) continue;\n\n                toReturn[i + '.' + x] = flatObject[x];\n            }\n        } else {\n            toReturn[i] = ob[i];\n        }\n    }\n    return toReturn;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5213,7 +4920,7 @@
         "type": "debug",
         "z": "f0b99c790d575624",
         "name": "debug 6",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5796,7 +5503,7 @@
         "type": "debug",
         "z": "0637f22188042045",
         "name": "debug 7",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8553,7 +8260,7 @@
         "type": "debug",
         "z": "0637f22188042045",
         "name": "debug 10",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
