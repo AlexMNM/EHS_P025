@@ -617,9 +617,9 @@
         "type": "ui-group",
         "name": "Inner encoder",
         "page": "78bfe53267642fbf",
-        "width": 9,
+        "width": 10,
         "height": "4",
-        "order": 3,
+        "order": 4,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -633,7 +633,7 @@
         "page": "78bfe53267642fbf",
         "width": 9,
         "height": "4",
-        "order": 4,
+        "order": 5,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -720,9 +720,9 @@
         "type": "ui-group",
         "name": "Group 11",
         "page": "78bfe53267642fbf",
-        "width": 6,
+        "width": 2,
         "height": 1,
-        "order": 5,
+        "order": 3,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -13589,5 +13589,15 @@
         "x": 2000,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "bdbaf0bb6cb155a6",
+        "type": "ui-spacer",
+        "group": "317d8b366573828d",
+        "name": "spacer",
+        "order": 1,
+        "width": 1,
+        "height": 1,
+        "className": ""
     }
 ]
