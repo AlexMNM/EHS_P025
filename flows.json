@@ -4533,8 +4533,7 @@
         "y": 640,
         "wires": [
             [
-                "cf8fffd08dc5f9bd",
-                "c91a57369e8b58eb"
+                "cf8fffd08dc5f9bd"
             ]
         ]
     },
@@ -4920,7 +4919,7 @@
         "type": "debug",
         "z": "f0b99c790d575624",
         "name": "debug 6",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4928,8 +4927,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 660,
+        "x": 1160,
+        "y": 940,
         "wires": []
     },
     {
@@ -5294,6 +5293,55 @@
         "wires": [
             [
                 "50c8987fb61c1c81"
+            ]
+        ]
+    },
+    {
+        "id": "e261f5a5674be88f",
+        "type": "function",
+        "z": "f0b99c790d575624",
+        "name": "function 2",
+        "func": "const { results, evaluate } = global.get(\"results\");\n\nconst partial = Object.entries(results).map(([k, v]) => ({ [k] : evaluate(v)}))\n\nmsg.payload = {\n    total: evaluate(results),\n    ...partial\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 900,
+        "wires": [
+            [
+                "c91a57369e8b58eb"
+            ]
+        ]
+    },
+    {
+        "id": "2d780469c7049f0b",
+        "type": "inject",
+        "z": "f0b99c790d575624",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 820,
+        "y": 900,
+        "wires": [
+            [
+                "e261f5a5674be88f"
             ]
         ]
     },
