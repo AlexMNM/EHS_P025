@@ -5973,7 +5973,7 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": 2,
+        "width": 3,
         "height": 3,
         "className": "",
         "interpolation": "smooth",
@@ -7900,7 +7900,7 @@
         "name": "Results",
         "label": "",
         "order": 1,
-        "width": 7,
+        "width": 3,
         "height": "",
         "maxrows": 0,
         "passthru": false,
