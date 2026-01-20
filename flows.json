@@ -8243,7 +8243,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "start"
+                "align": "center"
             },
             {
                 "title": "Status",
