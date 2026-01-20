@@ -895,8 +895,8 @@
         "z": "a7c7ec5294135863",
         "name": "inStarted",
         "links": [
-            "46a3c3149898b41f",
-            "0ad8baea941ce172"
+            "0ad8baea941ce172",
+            "ad5a45dc6ce146cb"
         ],
         "x": 915,
         "y": 220,
@@ -1438,9 +1438,9 @@
         "name": "outNewEntry",
         "mode": "link",
         "links": [
-            "02b930634876cbec",
             "4c1963f1e5c6c86e",
-            "c581333be03e682b"
+            "c581333be03e682b",
+            "02b930634876cbec"
         ],
         "x": 575,
         "y": 420,
@@ -3178,7 +3178,7 @@
         "z": "8e125f4bb2233c4b",
         "name": "",
         "pauseType": "delay",
-        "timeout": "1.6",
+        "timeout": "1.4",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -3189,8 +3189,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 690,
-        "y": 540,
+        "x": 750,
+        "y": 520,
         "wires": [
             [
                 "58e607e25cf09126"
@@ -3278,7 +3278,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 530,
+        "x": 550,
         "y": 520,
         "wires": [
             [
@@ -3292,7 +3292,9 @@
         "type": "link in",
         "z": "8e125f4bb2233c4b",
         "name": "inKeysightInit",
-        "links": [],
+        "links": [
+            "46a3c3149898b41f"
+        ],
         "x": 545,
         "y": 680,
         "wires": [
@@ -3308,9 +3310,9 @@
         "z": "8e125f4bb2233c4b",
         "name": "inKeysightTrigger",
         "links": [
-            "46a3c3149898b41f"
+            "239c0b42d85ae74b"
         ],
-        "x": 445,
+        "x": 465,
         "y": 520,
         "wires": [
             [
@@ -3409,8 +3411,8 @@
         "links": [
             "72b6232cb60ad0bb"
         ],
-        "x": 865,
-        "y": 540,
+        "x": 855,
+        "y": 520,
         "wires": []
     },
     {
@@ -3585,9 +3587,10 @@
         "id": "ad5a45dc6ce146cb",
         "type": "link out",
         "z": "8e125f4bb2233c4b",
-        "name": "outCmdKeysight",
+        "name": "outTriggered",
         "mode": "link",
         "links": [
+            "6739d8b2b161e960",
             "837f688704689569"
         ],
         "x": 685,
@@ -3738,6 +3741,19 @@
         ]
     },
     {
+        "id": "239c0b42d85ae74b",
+        "type": "link out",
+        "z": "8e125f4bb2233c4b",
+        "name": "outInitted",
+        "mode": "link",
+        "links": [
+            "9b92d07c68abaa58"
+        ],
+        "x": 855,
+        "y": 760,
+        "wires": []
+    },
+    {
         "id": "741fe872fe116bac",
         "type": "inject",
         "z": "8e125f4bb2233c4b",
@@ -3758,26 +3774,13 @@
         "topic": "",
         "payload": "*TRG",
         "payloadType": "str",
-        "x": 530,
-        "y": 440,
+        "x": 230,
+        "y": 300,
         "wires": [
             [
-                "ad5a45dc6ce146cb"
+                "2f158accf0bf7681"
             ]
         ]
-    },
-    {
-        "id": "239c0b42d85ae74b",
-        "type": "link out",
-        "z": "8e125f4bb2233c4b",
-        "name": "outInitted",
-        "mode": "link",
-        "links": [
-            "387643061049eef1"
-        ],
-        "x": 855,
-        "y": 760,
-        "wires": []
     },
     {
         "id": "745dac0558d14053",
@@ -4370,42 +4373,16 @@
         "wires": []
     },
     {
-        "id": "382754232d5b53fe",
-        "type": "switch",
-        "z": "c4157bddbbb8817a",
-        "name": "",
-        "property": "actStage.measurement",
-        "propertyType": "flow",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "H",
-                "vt": "str"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 1,
-        "x": 1010,
-        "y": 100,
-        "wires": [
-            [
-                "46a3c3149898b41f"
-            ]
-        ]
-    },
-    {
         "id": "46a3c3149898b41f",
         "type": "link out",
         "z": "c4157bddbbb8817a",
-        "name": "link out 2",
+        "name": "outStartKeysight",
         "mode": "link",
         "links": [
-            "6739d8b2b161e960",
-            "9b92d07c68abaa58"
+            "defa32b61e14e01a"
         ],
-        "x": 1115,
-        "y": 100,
+        "x": 955,
+        "y": 220,
         "wires": []
     },
     {
@@ -4424,22 +4401,6 @@
         "x": 1000,
         "y": 340,
         "wires": []
-    },
-    {
-        "id": "387643061049eef1",
-        "type": "link in",
-        "z": "c4157bddbbb8817a",
-        "name": "inTriggerOhm",
-        "links": [
-            "239c0b42d85ae74b"
-        ],
-        "x": 905,
-        "y": 100,
-        "wires": [
-            [
-                "382754232d5b53fe"
-            ]
-        ]
     },
     {
         "id": "6e79d81c4875e5d8",
@@ -4461,7 +4422,8 @@
                 "bf64a343e213f288"
             ],
             [
-                "d1c1bd708d56dc4a"
+                "d1c1bd708d56dc4a",
+                "46a3c3149898b41f"
             ],
             [
                 "6ad68e8d6e55f950"
