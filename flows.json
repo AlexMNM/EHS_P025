@@ -1276,21 +1276,11 @@
                 "t": "cont",
                 "v": "EndStage",
                 "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "GetOhm",
-                "vt": "str"
-            },
-            {
-                "t": "cont",
-                "v": "GetOStage",
-                "vt": "str"
             }
         ],
         "checkall": "true",
         "repair": false,
-        "outputs": 6,
+        "outputs": 4,
         "x": 470,
         "y": 440,
         "wires": [
@@ -1305,12 +1295,6 @@
             ],
             [
                 "564dbb5500efbb4b"
-            ],
-            [
-                "ffb3be6558e2f16d"
-            ],
-            [
-                "d530debf90794e70"
             ]
         ]
     },
@@ -1459,7 +1443,7 @@
             "c581333be03e682b"
         ],
         "x": 575,
-        "y": 400,
+        "y": 420,
         "wires": []
     },
     {
@@ -1472,7 +1456,7 @@
             "5d84924b741dd305"
         ],
         "x": 575,
-        "y": 480,
+        "y": 500,
         "wires": []
     },
     {
@@ -1482,11 +1466,10 @@
         "name": "outStartStage",
         "mode": "link",
         "links": [
-            "98102428a5c55a49",
-            "defa32b61e14e01a"
+            "98102428a5c55a49"
         ],
         "x": 575,
-        "y": 440,
+        "y": 460,
         "wires": []
     },
     {
@@ -1728,19 +1711,6 @@
         "wires": []
     },
     {
-        "id": "ffb3be6558e2f16d",
-        "type": "link out",
-        "z": "a7c7ec5294135863",
-        "name": "outGetOhm",
-        "mode": "link",
-        "links": [
-            "4a7915c4254053f8"
-        ],
-        "x": 575,
-        "y": 520,
-        "wires": []
-    },
-    {
         "id": "4c147073df63d385",
         "type": "debug",
         "z": "a7c7ec5294135863",
@@ -1753,21 +1723,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1240,
-        "y": 320,
-        "wires": []
-    },
-    {
-        "id": "d530debf90794e70",
-        "type": "link out",
-        "z": "a7c7ec5294135863",
-        "name": "outGetOhmStage",
-        "mode": "link",
-        "links": [
-            "0fce602cf14e4c1d"
-        ],
-        "x": 575,
-        "y": 560,
+        "x": 900,
+        "y": 180,
         "wires": []
     },
     {
@@ -1780,7 +1737,7 @@
             "03e7101a0147b8c0"
         ],
         "x": 575,
-        "y": 360,
+        "y": 380,
         "wires": []
     },
     {
@@ -3306,9 +3263,7 @@
         "type": "link in",
         "z": "8e125f4bb2233c4b",
         "name": "inKeysightInit",
-        "links": [
-            "4cf4e1b1835209e1"
-        ],
+        "links": [],
         "x": 545,
         "y": 680,
         "wires": [
@@ -3803,7 +3758,7 @@
         "links": [
             "50591a9bfab375b0"
         ],
-        "x": 205,
+        "x": 255,
         "y": 660,
         "wires": [
             [
@@ -3819,8 +3774,8 @@
         "property": "payload",
         "action": "str",
         "pretty": true,
-        "x": 1150,
-        "y": 420,
+        "x": 1230,
+        "y": 280,
         "wires": [
             [
                 "364fe0205ba99901"
@@ -3857,8 +3812,8 @@
         "links": [
             "5aa597c1af9984f8"
         ],
-        "x": 1245,
-        "y": 420,
+        "x": 1325,
+        "y": 280,
         "wires": []
     },
     {
@@ -3869,8 +3824,8 @@
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 510,
-        "y": 660,
+        "x": 370,
+        "y": 700,
         "wires": [
             [
                 "473f610c8720497b"
@@ -3898,7 +3853,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 340,
+        "x": 400,
         "y": 660,
         "wires": [
             [
@@ -4042,11 +3997,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 730,
-        "y": 360,
+        "x": 690,
+        "y": 340,
         "wires": [
             [
-                "6e26f7ce11cd04a4"
+                "6e79d81c4875e5d8"
             ]
         ]
     },
@@ -4079,8 +4034,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1000,
-        "y": 420,
+        "x": 1080,
+        "y": 280,
         "wires": [
             [
                 "53611f05496fa6df"
@@ -4108,7 +4063,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 3",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4175,7 +4130,7 @@
         "type": "function",
         "z": "c4157bddbbb8817a",
         "name": "update_data_set_osc",
-        "func": "const {ObjectId} = global.get(\"mongodb\");\n\nconst aqStage = flow.get(\"aqStage\")\n\nconst _data = {\n            setup: msg.data[2],\n            values: msg.data[3]\n}\n\n\nmsg.operation = 'updateOne'\n\nmsg.payload = [{'_id': new ObjectId(flow.get('currentId', 'file'))}, {'$set': { [`stage_data.${[aqStage]}.osc`] : {..._data} }}]\nmsg.field = \"osc\"\n\nreturn msg;",
+        "func": "const {ObjectId} = global.get(\"mongodb\");\n\n\nconst active = flow.get(\"active_measurements\");\n\nconst aqStage = flow.get(\"aqStage\")\n\nconst _data = {\n            setup: msg.data[2],\n            values: msg.data[3]\n}\n\n\nmsg.operation = 'updateOne'\n\nmsg.payload = [{'_id': new ObjectId(flow.get('currentId', 'file'))}, {'$set': { [`stage_data.${[aqStage]}.osc`] : {..._data} }}]\nmsg.field = \"osc\"\n\nactive.osc = false;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4253,7 +4208,7 @@
         "type": "function",
         "z": "c4157bddbbb8817a",
         "name": "update_data_set_ohm",
-        "func": "const {ObjectId} = global.get(\"mongodb\");\n\nconst activeStage = flow.get(\"stageIndex\");\n\nconst _data = msg.payload\n\nmsg.operation = 'updateOne'\n\nmsg.payload = [{'_id': new ObjectId(flow.get('currentId', 'file'))}, {'$set': { [`stage_data.${[activeStage]}.ohm`] : _data }}]\nmsg.field = \"ohm\"\n\nreturn msg;",
+        "func": "const {ObjectId} = global.get(\"mongodb\");\n\nconst active = flow.get(\"active_measurements\");\n\nconst activeStage = flow.get(\"stageIndex\");\n\nconst _data = msg.payload\n\nmsg.operation = 'updateOne'\n\nmsg.payload = [{'_id': new ObjectId(flow.get('currentId', 'file'))}, {'$set': { [`stage_data.${[activeStage]}.ohm`] : _data }}]\nmsg.field = \"ohm\"\n\nactive.ohm = false;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4274,7 +4229,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 1",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4311,8 +4266,8 @@
         "links": [
             "950164b780fa14d3"
         ],
-        "x": 885,
-        "y": 380,
+        "x": 945,
+        "y": 220,
         "wires": [
             [
                 "d17c41d7b5177332"
@@ -4346,8 +4301,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 380,
+        "x": 1060,
+        "y": 220,
         "wires": [
             [
                 "6e26f7ce11cd04a4"
@@ -4405,8 +4360,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 990,
-        "y": 280,
+        "x": 1010,
+        "y": 100,
         "wires": [
             [
                 "46a3c3149898b41f"
@@ -4423,8 +4378,8 @@
             "6739d8b2b161e960",
             "9b92d07c68abaa58"
         ],
-        "x": 1095,
-        "y": 280,
+        "x": 1115,
+        "y": 100,
         "wires": []
     },
     {
@@ -4452,12 +4407,37 @@
         "links": [
             "239c0b42d85ae74b"
         ],
-        "x": 885,
-        "y": 280,
+        "x": 905,
+        "y": 100,
         "wires": [
             [
                 "382754232d5b53fe"
             ]
+        ]
+    },
+    {
+        "id": "6e79d81c4875e5d8",
+        "type": "function",
+        "z": "c4157bddbbb8817a",
+        "name": "manage aquisitions",
+        "func": "const stage = flow.get(\"actStage\");\nconst stageIndex = flow.get(\"stageIndex\");\nconst active = flow.get(\"active_measurements\");\n\nlet wait;\nlet ohm;\nlet osc;\n\nif (msg.topic === \"active\") {\n    switch (stage.measurement) {\n        case \"H\":\n            if (active.ohm) {\n                wait = msg;\n            } else {\n                active.ohm = true;\n                ohm = msg;\n            }\n            break;\n        case \"S\":\n            if (active.osc) {\n                wait = msg;\n            } else {\n                active.osc = true;\n                osc = msg;\n            }\n            break;\n    }\n\n    flow.set(\"active_measurement\", active);\n\n    return [wait, ohm, osc];\n}\n\n\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set(\"active_measurements\", {ohm: false, osc: false});",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 360,
+        "wires": [
+            [],
+            [],
+            []
+        ],
+        "outputLabels": [
+            "wait",
+            "ohm",
+            "osc"
         ]
     },
     {
