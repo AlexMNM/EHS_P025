@@ -1715,7 +1715,7 @@
         "type": "debug",
         "z": "a7c7ec5294135863",
         "name": "debug 4",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3806,8 +3806,8 @@
         "property": "payload",
         "action": "str",
         "pretty": true,
-        "x": 1630,
-        "y": 340,
+        "x": 1430,
+        "y": 280,
         "wires": [
             [
                 "364fe0205ba99901"
@@ -3844,8 +3844,8 @@
         "links": [
             "5aa597c1af9984f8"
         ],
-        "x": 1725,
-        "y": 340,
+        "x": 1515,
+        "y": 280,
         "wires": []
     },
     {
@@ -4066,8 +4066,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1480,
-        "y": 340,
+        "x": 1280,
+        "y": 280,
         "wires": [
             [
                 "53611f05496fa6df"
@@ -4330,8 +4330,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1300,
-        "y": 340,
+        "x": 1080,
+        "y": 280,
         "wires": [
             [
                 "6e26f7ce11cd04a4"
@@ -4426,7 +4426,8 @@
                 "46a3c3149898b41f"
             ],
             [
-                "6ad68e8d6e55f950"
+                "6ad68e8d6e55f950",
+                "d17c41d7b5177332"
             ]
         ],
         "outputLabels": [
