@@ -8276,7 +8276,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "status",
-        "func": "switch (msg.payload.total) {\n    case 0:\n        msg.topic = \"testing\";\n        msg.ui_update = {\n            buttonColor: \"#a0a0a0\",\n            label: \"Testing...\",\n        }\n        break;\n    case 1:\n        msg.topic = \"pass\";\n        msg.ui_update = {\n            buttonColor: \"green\",\n            label: \"PASS\",\n        }\n        break;\n    default:\n        msg.topic = \"fail\";\n        msg.ui_update = {\n            buttonColor: \"red\",\n            label: \"FAIL\",\n        }\n        break;\n}\n\nreturn msg;\n",
+        "func": "switch (msg.payload.total) {\n    case 0:\n        msg.topic = \"testing\";\n        msg.ui_update = {\n            buttonColor: \"#a0a0a0\",\n            label: \"Testing...\",\n        }\n        break;\n    case 1:\n        msg.topic = \"pass\";\n        msg.ui_update = {\n            buttonColor: \"green\",\n            label: \"PASS\",\n        }\n        break;\n    default:\n        msg.topic = \"fail\";\n        msg.ui_update = {\n            buttonColor: \"red\",\n            label: \"FAIL\",\n        }\n        break;\n}\n\nmsg.payload = msg.payload.total;\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
