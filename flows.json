@@ -5511,7 +5511,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".v-table td {\n    height: 8px !important;\n    padding: 0px, 2px !important;\n}",
+        "format": ".v-table td {\n    height: 8px !important;\n    padding: 0 1px !important;\n}",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
