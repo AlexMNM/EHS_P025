@@ -187,7 +187,10 @@
             "1c0bdfa30262cea9",
             "632d196f1b0465cb",
             "f99e252f0a818113",
-            "4f8bb3c473c5249f"
+            "4f8bb3c473c5249f",
+            "5134f1f6cc610093",
+            "38b96e88e8284aa2",
+            "01ca71914a9e1a02"
         ],
         "x": 144,
         "y": 159,
@@ -5327,7 +5330,7 @@
         "links": [
             "90dc1519d61ce087",
             "150473f2c686409d",
-            "e361215bc8c832ec"
+            "5134f1f6cc610093"
         ],
         "x": 485,
         "y": 180,
@@ -5338,7 +5341,7 @@
         "type": "debug",
         "z": "a6c85f6538755b0c",
         "name": "debug 12",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10651,7 +10654,6 @@
         "g": "3eb3d696e34bc6e2",
         "name": "inUpdateOptions",
         "links": [
-            "26df795f70aac6ed",
             "874b939d0b06ddf6"
         ],
         "x": 185,
@@ -12240,6 +12242,75 @@
         "wires": [
             [
                 "5a000baa5781089c"
+            ]
+        ]
+    },
+    {
+        "id": "01ca71914a9e1a02",
+        "type": "switch",
+        "z": "aecf9ba551ec4a57",
+        "g": "3eb3d696e34bc6e2",
+        "name": "",
+        "property": "name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Settings",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "8cde3623a591ad28"
+            ]
+        ]
+    },
+    {
+        "id": "38b96e88e8284aa2",
+        "type": "switch",
+        "z": "aecf9ba551ec4a57",
+        "g": "3eb3d696e34bc6e2",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "change",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 220,
+        "wires": [
+            [
+                "01ca71914a9e1a02"
+            ]
+        ]
+    },
+    {
+        "id": "5134f1f6cc610093",
+        "type": "link in",
+        "z": "aecf9ba551ec4a57",
+        "g": "3eb3d696e34bc6e2",
+        "name": "inUpdateOptions",
+        "links": [
+            "26df795f70aac6ed"
+        ],
+        "x": 185,
+        "y": 220,
+        "wires": [
+            [
+                "38b96e88e8284aa2"
             ]
         ]
     },
