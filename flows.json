@@ -3424,7 +3424,7 @@
         "links": [
             "72b6232cb60ad0bb"
         ],
-        "x": 795,
+        "x": 865,
         "y": 540,
         "wires": []
     },
@@ -3749,6 +3749,35 @@
         "wires": [
             [
                 "2f158accf0bf7681"
+            ]
+        ]
+    },
+    {
+        "id": "741fe872fe116bac",
+        "type": "inject",
+        "z": "8e125f4bb2233c4b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "*TRG",
+        "payloadType": "str",
+        "x": 530,
+        "y": 440,
+        "wires": [
+            [
+                "ad5a45dc6ce146cb"
             ]
         ]
     },
