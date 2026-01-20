@@ -7801,6 +7801,7 @@
         "id": "247148b3adf6b567",
         "type": "ui-table",
         "z": "0637f22188042045",
+        "d": true,
         "group": "9139d5dcd670ad98",
         "name": "Results",
         "label": "",
