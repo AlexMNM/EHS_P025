@@ -605,7 +605,7 @@
         "type": "ui-group",
         "name": "Inner encoder",
         "page": "78bfe53267642fbf",
-        "width": "10",
+        "width": 8,
         "height": "1",
         "order": 5,
         "showTitle": true,
@@ -6124,7 +6124,7 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": 7,
+        "width": 4,
         "height": 4,
         "className": "",
         "interpolation": "smooth",
@@ -6745,7 +6745,7 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": 7,
+        "width": 4,
         "height": 4,
         "className": "",
         "interpolation": "smooth",
