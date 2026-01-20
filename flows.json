@@ -629,7 +629,7 @@
         "type": "ui-group",
         "name": "Inner encoder",
         "page": "78bfe53267642fbf",
-        "width": 8,
+        "width": "6",
         "height": "1",
         "order": 5,
         "showTitle": true,
