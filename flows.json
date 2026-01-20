@@ -4927,8 +4927,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1160,
-        "y": 940,
+        "x": 1080,
+        "y": 920,
         "wires": []
     },
     {
@@ -4961,7 +4961,8 @@
         "y": 940,
         "wires": [
             [
-                "60f27802fdf278b3"
+                "60f27802fdf278b3",
+                "c91a57369e8b58eb"
             ]
         ]
     },
@@ -5308,8 +5309,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 900,
+        "x": 960,
+        "y": 940,
         "wires": [
             [
                 "c91a57369e8b58eb"
@@ -5337,8 +5338,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 820,
-        "y": 900,
+        "x": 800,
+        "y": 940,
         "wires": [
             [
                 "e261f5a5674be88f"
