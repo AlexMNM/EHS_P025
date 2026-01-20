@@ -4946,7 +4946,8 @@
         "y": 940,
         "wires": [
             [
-                "87192abd4f7858c7"
+                "87192abd4f7858c7",
+                "e261f5a5674be88f"
             ]
         ]
     },
@@ -4971,8 +4972,8 @@
         "name": "ret",
         "mode": "return",
         "links": [],
-        "x": 555,
-        "y": 960,
+        "x": 565,
+        "y": 940,
         "wires": []
     },
     {
@@ -5300,7 +5301,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "results status",
-        "func": "const { evaluate, ...results  } = global.get(\"results\");\n\nconst partial = Object.fromEntries(Object.entries(results).map(([k, v]) => ([k, evaluate(v)])));\n\nmsg.payload = {\n    total: evaluate(results),\n    ...partial\n}\n\nreturn msg;",
+        "func": "const { evaluate, ...results } = global.get(\"results\");\n\nconst partial = Object.fromEntries(Object.entries(results).map(([k, v]) => ([k, evaluate(v)])));\n\nmsg = {\n    payload: {\n        total: evaluate(results),\n        ...partial\n    }\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5308,11 +5309,11 @@
         "finalize": "",
         "libs": [],
         "x": 430,
-        "y": 980,
+        "y": 1000,
         "wires": [
             [
                 "c91a57369e8b58eb",
-                "87192abd4f7858c7"
+                "717a5c1f605a6344"
             ]
         ]
     },
@@ -5337,8 +5338,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 340,
-        "y": 1060,
+        "x": 440,
+        "y": 1080,
         "wires": [
             [
                 "e261f5a5674be88f"
@@ -5346,18 +5347,17 @@
         ]
     },
     {
-        "id": "f8546e4d2b014986",
-        "type": "link in",
+        "id": "717a5c1f605a6344",
+        "type": "link out",
         "z": "f0b99c790d575624",
-        "name": "inGetStatus",
-        "links": [],
-        "x": 305,
-        "y": 980,
-        "wires": [
-            [
-                "e261f5a5674be88f"
-            ]
-        ]
+        "name": "outStatus",
+        "mode": "link",
+        "links": [
+            "01bf1c589f7470eb"
+        ],
+        "x": 565,
+        "y": 1020,
+        "wires": []
     },
     {
         "id": "f4f2fb073ad2baf1",
@@ -5753,8 +5753,7 @@
             ],
             [
                 "667dfded88646090",
-                "94317c601856da8b",
-                "3ae91dde5008a545"
+                "94317c601856da8b"
             ]
         ]
     },
@@ -8363,24 +8362,6 @@
         ]
     },
     {
-        "id": "15b7188576a7fe2e",
-        "type": "link call",
-        "z": "0637f22188042045",
-        "name": "",
-        "links": [
-            "f8546e4d2b014986"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 550,
-        "y": 1020,
-        "wires": [
-            [
-                "d40ba3dbb2a5ad9c"
-            ]
-        ]
-    },
-    {
         "id": "d40ba3dbb2a5ad9c",
         "type": "function",
         "z": "0637f22188042045",
@@ -8401,22 +8382,18 @@
         ]
     },
     {
-        "id": "3ae91dde5008a545",
-        "type": "function",
+        "id": "01bf1c589f7470eb",
+        "type": "link in",
         "z": "0637f22188042045",
-        "name": "new msg",
-        "func": "\nreturn {};",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
+        "name": "link in 4",
+        "links": [
+            "717a5c1f605a6344"
+        ],
+        "x": 585,
         "y": 1020,
         "wires": [
             [
-                "15b7188576a7fe2e"
+                "d40ba3dbb2a5ad9c"
             ]
         ]
     },
