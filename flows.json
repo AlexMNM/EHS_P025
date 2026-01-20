@@ -255,7 +255,7 @@
         "y": 900,
         "wires": [
             [
-                "89584b43e5d97b59"
+                "3d15f9511d4849cf"
             ]
         ]
     },
@@ -267,7 +267,7 @@
         "y": 940,
         "wires": [
             [
-                "1054ac7a8fdccc85"
+                "4d0b472ebf8bb00b"
             ]
         ]
     },
@@ -8163,7 +8163,7 @@
         "mobileBreakpointType": "defaults",
         "action": "append",
         "className": "",
-        "x": 2320,
+        "x": 2420,
         "y": 940,
         "wires": [
             []
@@ -8231,7 +8231,7 @@
         "mobileBreakpointType": "defaults",
         "action": "append",
         "className": "",
-        "x": 2320,
+        "x": 2420,
         "y": 900,
         "wires": [
             []
@@ -8303,6 +8303,60 @@
         "y": 1440,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "3d15f9511d4849cf",
+        "type": "change",
+        "z": "0637f22188042045",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "class",
+                "pt": "msg",
+                "to": "row-height-50",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2260,
+        "y": 900,
+        "wires": [
+            [
+                "89584b43e5d97b59"
+            ]
+        ]
+    },
+    {
+        "id": "4d0b472ebf8bb00b",
+        "type": "change",
+        "z": "0637f22188042045",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "class",
+                "pt": "msg",
+                "to": "row-height-50",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2260,
+        "y": 940,
+        "wires": [
+            [
+                "1054ac7a8fdccc85"
+            ]
         ]
     },
     {
