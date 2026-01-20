@@ -683,7 +683,7 @@
         "type": "ui-group",
         "name": "Setup",
         "page": "78bfe53267642fbf",
-        "width": 4,
+        "width": "3",
         "height": 1,
         "order": 1,
         "showTitle": false,
