@@ -2131,7 +2131,7 @@
         "type": "debug",
         "z": "8e125f4bb2233c4b",
         "name": "debug 15",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3918,8 +3918,7 @@
         "y": 500,
         "wires": [
             [
-                "0921376389a5713e",
-                "03e2ac170e048ae8"
+                "0921376389a5713e"
             ]
         ]
     },
@@ -4927,8 +4926,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1080,
-        "y": 920,
+        "x": 920,
+        "y": 900,
         "wires": []
     },
     {
@@ -4936,7 +4935,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "evaluate",
-        "func": "const math = global.get(\"mathjs\");\nconst result = global.get(\"result\") ?? {evaluations: 0, passes: 0};\nconst testplan = global.get(\"testplan\");\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\");\n\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    m.lower = pretty(math.min(m.limits));\n    m.upper = pretty(math.max(m.limits));\n\n    result.evaluations += 1;\n    result.passes += m.result ? 1 : 0;\n\n});\n\nglobal.set(\"result\", result);\n\nreturn msg;\n\nfunction pretty(n) {\n    return Number.isInteger(n) ? n : n.toFixed(3);\n}",
+        "func": "const math = global.get(\"mathjs\");\nconst result = global.get(\"result\") ?? {evaluations: 0, passes: 0};\nconst {evaluate, ...results} = global.get(\"results\");\nconst testplan = global.get(\"testplan\");\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\");\n\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    m.lower = pretty(math.min(m.limits));\n    m.upper = pretty(math.max(m.limits));\n\n    result.evaluations += 1;\n    result.passes += m.result ? 1 : 0;\n\n});\n\nglobal.set(\"result\", result);\n\nreturn msg;\n\nfunction pretty(n) {\n    return Number.isInteger(n) ? n : n.toFixed(3);\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5817,11 +5816,12 @@
             "e0ad06c96ad243c0",
             "337ebe561ce901c5"
         ],
-        "x": 465,
+        "x": 445,
         "y": 660,
         "wires": [
             [
-                "937d7b67602d88ba"
+                "937d7b67602d88ba",
+                "d984f1c52bbb7a42"
             ]
         ]
     },
@@ -8309,7 +8309,7 @@
         "type": "debug",
         "z": "0637f22188042045",
         "name": "debug 10",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
