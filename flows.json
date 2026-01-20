@@ -557,7 +557,7 @@
         "ui": "86cea779c465227a",
         "path": "/page1",
         "icon": "home",
-        "layout": "grid",
+        "layout": "flex",
         "theme": "db3c0ff5429c4380",
         "breakpoints": [
             {
