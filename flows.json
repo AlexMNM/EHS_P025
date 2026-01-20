@@ -617,7 +617,7 @@
         "type": "ui-group",
         "name": "Inner encoder",
         "page": "78bfe53267642fbf",
-        "width": 14,
+        "width": 9,
         "height": "4",
         "order": 3,
         "showTitle": true,
@@ -631,7 +631,7 @@
         "type": "ui-group",
         "name": "Outer encoder",
         "page": "78bfe53267642fbf",
-        "width": 14,
+        "width": 9,
         "height": "4",
         "order": 4,
         "showTitle": true,
@@ -645,7 +645,7 @@
         "type": "ui-group",
         "name": "Button",
         "page": "78bfe53267642fbf",
-        "width": 14,
+        "width": 10,
         "height": 1,
         "order": 2,
         "showTitle": true,
@@ -659,7 +659,7 @@
         "type": "ui-group",
         "name": "Setup",
         "page": "78bfe53267642fbf",
-        "width": 5,
+        "width": 2,
         "height": 1,
         "order": 1,
         "showTitle": false,
@@ -714,16 +714,6 @@
             "widgetGap": "12px",
             "density": "default"
         }
-    },
-    {
-        "id": "bdba3e14b56eff43",
-        "type": "ui-spacer",
-        "group": "6f6a6db0185ac9a4",
-        "name": "spacer",
-        "order": 9,
-        "width": 1,
-        "height": 16,
-        "className": ""
     },
     {
         "id": "f7676b47d7dc782a",
