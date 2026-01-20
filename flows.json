@@ -8235,8 +8235,8 @@
                 "align": "start"
             },
             {
-                "title": "color",
-                "key": "Result",
+                "title": "Status",
+                "key": "color",
                 "keyType": "key",
                 "type": "color",
                 "width": "",
