@@ -4972,7 +4972,7 @@
         "mode": "return",
         "links": [],
         "x": 555,
-        "y": 940,
+        "y": 960,
         "wires": []
     },
     {
@@ -5307,11 +5307,12 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 940,
+        "x": 430,
+        "y": 980,
         "wires": [
             [
-                "c91a57369e8b58eb"
+                "c91a57369e8b58eb",
+                "87192abd4f7858c7"
             ]
         ]
     },
@@ -5336,8 +5337,22 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 760,
-        "y": 940,
+        "x": 340,
+        "y": 1060,
+        "wires": [
+            [
+                "e261f5a5674be88f"
+            ]
+        ]
+    },
+    {
+        "id": "f8546e4d2b014986",
+        "type": "link in",
+        "z": "f0b99c790d575624",
+        "name": "inGetStatus",
+        "links": [],
+        "x": 305,
+        "y": 980,
         "wires": [
             [
                 "e261f5a5674be88f"
@@ -5550,7 +5565,7 @@
         "type": "debug",
         "z": "0637f22188042045",
         "name": "debug 7",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5558,8 +5573,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 980,
+        "x": 660,
+        "y": 1020,
         "wires": []
     },
     {
@@ -5738,6 +5753,7 @@
             ],
             [
                 "667dfded88646090",
+                "15b7188576a7fe2e",
                 "94317c601856da8b"
             ]
         ]
@@ -5868,8 +5884,8 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 890,
-        "y": 1180,
+        "x": 1130,
+        "y": 1280,
         "wires": [
             []
         ]
@@ -5886,8 +5902,8 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nif (context.get(\"fields\") === undefined){\n    context.set(\"fields\", {})\n}\n\nif (context.get(\"order\") === undefined) {\n    context.set(\"order\", \"default\")\n}",
         "finalize": "",
         "libs": [],
-        "x": 730,
-        "y": 1180,
+        "x": 970,
+        "y": 1280,
         "wires": [
             [
                 "5a12dcb34b6c43ce"
@@ -5925,8 +5941,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 530,
-        "y": 1140,
+        "x": 770,
+        "y": 1240,
         "wires": [
             [
                 "3aa0b64653eda525"
@@ -7299,8 +7315,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 690,
-        "y": 1220,
+        "x": 930,
+        "y": 1320,
         "wires": [
             []
         ]
@@ -8139,8 +8155,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 230,
-        "y": 1220,
+        "x": 470,
+        "y": 1320,
         "wires": [
             [
                 "033358371fd9f7db"
@@ -8166,8 +8182,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 390,
-        "y": 1220,
+        "x": 630,
+        "y": 1320,
         "wires": [
             [
                 "96db3978031895b7"
@@ -8186,8 +8202,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 1180,
+        "x": 770,
+        "y": 1280,
         "wires": [
             [
                 "96db3978031895b7",
@@ -8212,8 +8228,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 230,
-        "y": 1180,
+        "x": 470,
+        "y": 1280,
         "wires": [
             [
                 "fb2ed88808b50d9e"
@@ -8226,7 +8242,7 @@
         "z": "0637f22188042045",
         "name": "",
         "pauseType": "delay",
-        "timeout": "3",
+        "timeout": "6",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -8237,12 +8253,11 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 360,
-        "y": 1180,
+        "x": 600,
+        "y": 1280,
         "wires": [
             [
-                "45582da0e79a1e77",
-                "a4cc879c4d28527a"
+                "45582da0e79a1e77"
             ]
         ]
     },
@@ -8267,8 +8282,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 340,
-        "y": 1120,
+        "x": 580,
+        "y": 1220,
         "wires": [
             [
                 "45582da0e79a1e77"
@@ -8294,8 +8309,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 610,
-        "y": 1060,
+        "x": 810,
+        "y": 1140,
         "wires": [
             [
                 "45582da0e79a1e77"
@@ -8344,6 +8359,44 @@
         "wires": [
             [
                 "70caadcea072777c"
+            ]
+        ]
+    },
+    {
+        "id": "15b7188576a7fe2e",
+        "type": "link call",
+        "z": "0637f22188042045",
+        "name": "",
+        "links": [
+            "f8546e4d2b014986"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 390,
+        "y": 1020,
+        "wires": [
+            [
+                "d40ba3dbb2a5ad9c"
+            ]
+        ]
+    },
+    {
+        "id": "d40ba3dbb2a5ad9c",
+        "type": "function",
+        "z": "0637f22188042045",
+        "name": "status",
+        "func": "switch (msg.payload.total) {\n    case 0:\n        msg.topic = \"testing\";\n        msg.ui_update = {\n            buttonColor: \"#a0a0a0\",\n            label: \"Testing...\",\n        }\n        break;\n    case 1:\n        msg.topic = \"pass\";\n        msg.ui_update = {\n            buttonColor: \"green\",\n            label: \"PASS\",\n        }\n        break;\n    default:\n        msg.topic = \"fail\";\n        msg.ui_update = {\n            buttonColor: \"red\",\n            label: \"FAIL\",\n        }\n        break;\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 1020,
+        "wires": [
+            [
+                "a4cc879c4d28527a"
             ]
         ]
     },
