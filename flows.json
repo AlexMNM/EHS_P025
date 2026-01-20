@@ -734,6 +734,26 @@
         "groupType": "default"
     },
     {
+        "id": "bdc4ccc199bfd00e",
+        "type": "ui-spacer",
+        "group": "6f6a6db0185ac9a4",
+        "name": "spacer",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "bdc4de5fd4ee9026",
+        "type": "ui-spacer",
+        "group": "6f6a6db0185ac9a4",
+        "name": "spacer",
+        "order": 8,
+        "width": 2,
+        "height": 1,
+        "className": ""
+    },
+    {
         "id": "f7676b47d7dc782a",
         "type": "tcp in",
         "z": "a7c7ec5294135863",
@@ -5491,7 +5511,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".v-table td {\n    height: 8px !important;\n    padding: 0px, 1px !important;\n}",
+        "format": ".v-table td {\n    height: 8px !important;\n    padding: 0px, 2px !important;\n}",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -7383,7 +7403,7 @@
         "group": "89a4f69b951b98f3",
         "name": "Ohmmeter",
         "label": "",
-        "order": 5,
+        "order": 4,
         "chartType": "line",
         "category": "topic",
         "categoryType": "msg",
@@ -13722,25 +13742,5 @@
         "x": 2000,
         "y": 480,
         "wires": []
-    },
-    {
-        "id": "bdc4ccc199bfd00e",
-        "type": "ui-spacer",
-        "group": "6f6a6db0185ac9a4",
-        "name": "spacer",
-        "order": 5,
-        "width": 3,
-        "height": 1,
-        "className": ""
-    },
-    {
-        "id": "bdc4de5fd4ee9026",
-        "type": "ui-spacer",
-        "group": "6f6a6db0185ac9a4",
-        "name": "spacer",
-        "order": 8,
-        "width": 2,
-        "height": 1,
-        "className": ""
     }
 ]
