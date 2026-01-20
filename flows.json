@@ -2873,9 +2873,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "fetch",
-        "payload": "R? 100",
+        "payload": "R?",
         "payloadType": "str",
-        "x": 210,
+        "x": 200,
         "y": 420,
         "wires": [
             [
