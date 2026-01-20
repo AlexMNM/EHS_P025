@@ -335,11 +335,11 @@
             "groupOutline": "#cccccc"
         },
         "sizes": {
-            "density": "compact",
-            "pagePadding": "12px",
-            "groupGap": "12px",
+            "density": "comfortable",
+            "pagePadding": "8px",
+            "groupGap": "8px",
             "groupBorderRadius": "4px",
-            "widgetGap": "12px"
+            "widgetGap": "8px"
         }
     },
     {
