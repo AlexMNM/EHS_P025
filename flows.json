@@ -533,7 +533,7 @@
         "ui": "86cea779c465227a",
         "path": "/page1",
         "icon": "home",
-        "layout": "flex",
+        "layout": "grid",
         "theme": "db3c0ff5429c4380",
         "breakpoints": [
             {
@@ -714,6 +714,16 @@
             "widgetGap": "12px",
             "density": "default"
         }
+    },
+    {
+        "id": "bdba3e14b56eff43",
+        "type": "ui-spacer",
+        "group": "6f6a6db0185ac9a4",
+        "name": "spacer",
+        "order": 9,
+        "width": 1,
+        "height": 16,
+        "className": ""
     },
     {
         "id": "f7676b47d7dc782a",
@@ -13575,15 +13585,5 @@
         "x": 2000,
         "y": 480,
         "wires": []
-    },
-    {
-        "id": "bdba3e14b56eff43",
-        "type": "ui-spacer",
-        "group": "6f6a6db0185ac9a4",
-        "name": "spacer",
-        "order": 9,
-        "width": 1,
-        "height": 16,
-        "className": ""
     }
 ]
