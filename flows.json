@@ -3030,13 +3030,13 @@
         "id": "060c872521cea92a",
         "type": "change",
         "z": "8e125f4bb2233c4b",
-        "name": "R? 100",
+        "name": "R? 1000",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "R? 200",
+                "to": "R? 1000",
                 "tot": "str"
             },
             {
@@ -4066,7 +4066,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 3",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4240,8 +4240,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1300,
-        "y": 540,
+        "x": 1320,
+        "y": 680,
         "wires": []
     },
     {
@@ -4415,7 +4415,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 17",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
