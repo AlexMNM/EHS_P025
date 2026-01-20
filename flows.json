@@ -4290,20 +4290,6 @@
         ]
     },
     {
-        "id": "03e7101a0147b8c0",
-        "type": "link in",
-        "z": "c4157bddbbb8817a",
-        "name": "inStartAq",
-        "links": [
-            "950164b780fa14d3"
-        ],
-        "x": 1045,
-        "y": 340,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "d17c41d7b5177332",
         "type": "change",
         "z": "c4157bddbbb8817a",
@@ -4386,23 +4372,6 @@
         "wires": []
     },
     {
-        "id": "8dfb4ae8a82e4903",
-        "type": "debug",
-        "z": "c4157bddbbb8817a",
-        "name": "debug 17",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 340,
-        "wires": []
-    },
-    {
         "id": "6e79d81c4875e5d8",
         "type": "function",
         "z": "c4157bddbbb8817a",
@@ -4418,15 +4387,12 @@
         "y": 260,
         "wires": [
             [
-                "8dfb4ae8a82e4903",
                 "bf64a343e213f288"
             ],
             [
-                "d1c1bd708d56dc4a",
                 "46a3c3149898b41f"
             ],
             [
-                "6ad68e8d6e55f950",
                 "d17c41d7b5177332"
             ]
         ],
@@ -4435,40 +4401,6 @@
             "ohm",
             "osc"
         ]
-    },
-    {
-        "id": "d1c1bd708d56dc4a",
-        "type": "debug",
-        "z": "c4157bddbbb8817a",
-        "name": "debug 18",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 380,
-        "wires": []
-    },
-    {
-        "id": "6ad68e8d6e55f950",
-        "type": "debug",
-        "z": "c4157bddbbb8817a",
-        "name": "debug 19",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 420,
-        "wires": []
     },
     {
         "id": "bf64a343e213f288",
@@ -5013,8 +4945,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 920,
-        "y": 900,
+        "x": 940,
+        "y": 860,
         "wires": []
     },
     {
@@ -5022,7 +4954,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "evaluate",
-        "func": "const math = global.get(\"mathjs\");\nconst result = global.get(\"result\") ?? {evaluations: 0, passes: 0};\nconst {evaluate, ...results} = global.get(\"results\");\nconst testplan = global.get(\"testplan\");\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\");\n\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    m.lower = pretty(math.min(m.limits));\n    m.upper = pretty(math.max(m.limits));\n\n    result.evaluations += 1;\n    result.passes += m.result ? 1 : 0;\n\n});\n\nglobal.set(\"result\", result);\n\nreturn msg;\n\nfunction pretty(n) {\n    return Number.isInteger(n) ? n : n.toFixed(3);\n}",
+        "func": "const math = global.get(\"mathjs\");\nconst result = global.get(\"result\") ?? {evaluations: 0, passes: 0};\nconst {evaluate, ...results} = global.get(\"results\");\nconst testplan = global.get(\"testplan\");\nconst { in_window: within } = global.get(\"settings.limits.tools\", \"file\");\n\nconst field = msg.field\nconst a = 1\n\nmsg.payload.forEach(function(m){\n    m.limits = m.limits ?? testplan[m.component][m.measurement];\n    m.result = within(m.value, m.limits);\n    m.lower = pretty(math.min(m.limits));\n    m.upper = pretty(math.max(m.limits));\n\n    result.evaluations += 1;\n    result.passes += m.result ? 1 : 0;\n\n});\n\nglobal.set(\"result\", result);\n\nreturn msg;\n\nfunction pretty(n) {\n    return Number.isInteger(n) ? n : n.toFixed(3);\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5395,7 +5327,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 960,
+        "x": 920,
         "y": 940,
         "wires": [
             [
@@ -5424,7 +5356,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 800,
+        "x": 760,
         "y": 940,
         "wires": [
             [
@@ -5825,8 +5757,7 @@
             ],
             [
                 "667dfded88646090",
-                "94317c601856da8b",
-                "d984f1c52bbb7a42"
+                "94317c601856da8b"
             ]
         ]
     },
@@ -7002,8 +6933,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 790,
-        "y": 420,
+        "x": 770,
+        "y": 400,
         "wires": [
             [
                 "0d104c1ae4779704"
@@ -7045,7 +6976,8 @@
         "y": 420,
         "wires": [
             [
-                "93927a51db297807"
+                "93927a51db297807",
+                "d984f1c52bbb7a42"
             ]
         ]
     },
@@ -7594,8 +7526,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 760,
-        "y": 460,
+        "x": 740,
+        "y": 440,
         "wires": [
             [
                 "683dc6e49ca1f856"
@@ -8403,8 +8335,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 680,
+        "x": 1100,
+        "y": 520,
         "wires": []
     },
     {
@@ -8427,8 +8359,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 760,
-        "y": 500,
+        "x": 740,
+        "y": 480,
         "wires": [
             [
                 "70caadcea072777c"
@@ -10494,7 +10426,7 @@
         "type": "debug",
         "z": "85a0c31e48c798bf",
         "name": "debug 11",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
