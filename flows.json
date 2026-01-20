@@ -2085,7 +2085,9 @@
         "x": 610,
         "y": 1860,
         "wires": [
-            []
+            [
+                "1fbc8d25ba64ed12"
+            ]
         ]
     },
     {
@@ -2130,12 +2132,26 @@
         "topic": "fail",
         "payload": "2",
         "payloadType": "num",
-        "x": 150,
-        "y": 1920,
+        "x": 250,
+        "y": 1780,
         "wires": [
             [
                 "1fbc8d25ba64ed12"
             ]
+        ]
+    },
+    {
+        "id": "cd6316b3ef208832",
+        "type": "link in",
+        "z": "a7c7ec5294135863",
+        "name": "inSetPlcStatus",
+        "links": [
+            "facba2f86dd97646"
+        ],
+        "x": 265,
+        "y": 1860,
+        "wires": [
+            []
         ]
     },
     {
@@ -8300,7 +8316,9 @@
         "z": "0637f22188042045",
         "name": "outStatus",
         "mode": "link",
-        "links": [],
+        "links": [
+            "cd6316b3ef208832"
+        ],
         "x": 835,
         "y": 1120,
         "wires": []
