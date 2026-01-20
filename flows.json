@@ -514,6 +514,15 @@
                 "S7_BitOffset": "0",
                 "S7_Quantity": "1",
                 "S7_Name": "procActStage"
+            },
+            {
+                "S7_Type": "M",
+                "S7_DBnum": "0",
+                "S7_Datatype": "B",
+                "S7_Offset": "13",
+                "S7_BitOffset": "0",
+                "S7_Quantity": "1",
+                "S7_Name": "partStatus"
             }
         ]
     },
@@ -2060,6 +2069,72 @@
         "wires": [
             [
                 "212a440de77be06b"
+            ]
+        ]
+    },
+    {
+        "id": "08e634d475f9a760",
+        "type": "s7comm write",
+        "z": "a7c7ec5294135863",
+        "connection": "3cb7f915b2dc54d4",
+        "payload": "{\"S7_Type\":\"M\",\"S7_DBnum\":\"0\",\"S7_Datatype\":\"B\",\"S7_Offset\":\"13\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"1\",\"S7_Name\":\"partStatus\"}",
+        "s7Name": "partStatus",
+        "topic": "set_status",
+        "name": "",
+        "signalSetted": false,
+        "x": 610,
+        "y": 1860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1fbc8d25ba64ed12",
+        "type": "function",
+        "z": "a7c7ec5294135863",
+        "name": "compose_payload",
+        "func": "switch(msg.topic) {\n    case \"set_status\":\n        return [context.get(\"msg_ret\"),null];\n    case \"pass\":\n    case \"fail\":\n    case \"testing\":\n        context.set(\"msg_ret\", msg);\n        const value = [msg.payload];\n        return [null, { payload: { \"value\": value }}];\n}\n\nreturn;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1860,
+        "wires": [
+            [],
+            [
+                "08e634d475f9a760"
+            ]
+        ]
+    },
+    {
+        "id": "a60a3f629a91e631",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "fail",
+        "payload": "2",
+        "payloadType": "num",
+        "x": 150,
+        "y": 1920,
+        "wires": [
+            [
+                "1fbc8d25ba64ed12"
             ]
         ]
     },
