@@ -214,7 +214,7 @@
         "y": 920,
         "wires": [
             [
-                "247148b3adf6b567"
+                "1054ac7a8fdccc85"
             ]
         ]
     },
@@ -7798,75 +7798,6 @@
         ]
     },
     {
-        "id": "247148b3adf6b567",
-        "type": "ui-table",
-        "z": "0637f22188042045",
-        "d": true,
-        "group": "9139d5dcd670ad98",
-        "name": "Results",
-        "label": "",
-        "order": 1,
-        "width": 3,
-        "height": 39666896532552250,
-        "maxrows": 0,
-        "passthru": false,
-        "autocols": false,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "Measurement",
-                "key": "label",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "result",
-                "keyType": "key",
-                "type": "tickcross",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Lower limit",
-                "key": "lower",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Value",
-                "key": "value",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Upper limit",
-                "key": "upper",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "append",
-        "className": "",
-        "x": 2360,
-        "y": 920,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "ce29f9e1a0795538",
         "type": "inject",
         "z": "0637f22188042045",
@@ -8229,6 +8160,74 @@
         "x": 835,
         "y": 1120,
         "wires": []
+    },
+    {
+        "id": "1054ac7a8fdccc85",
+        "type": "ui-table",
+        "z": "0637f22188042045",
+        "group": "9139d5dcd670ad98",
+        "name": "Results",
+        "label": "",
+        "order": 1,
+        "width": 3,
+        "height": "",
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Measurement",
+                "key": "label",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Status",
+                "key": "result",
+                "keyType": "key",
+                "type": "tickcross",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Lower limit",
+                "key": "lower",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Value",
+                "key": "value",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Upper limit",
+                "key": "upper",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "append",
+        "className": "",
+        "x": 2360,
+        "y": 920,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "93ee2f1602a0ed6c",
