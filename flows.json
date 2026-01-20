@@ -533,7 +533,7 @@
         "ui": "86cea779c465227a",
         "path": "/page1",
         "icon": "home",
-        "layout": "grid",
+        "layout": "flex",
         "theme": "db3c0ff5429c4380",
         "breakpoints": [
             {
@@ -6063,7 +6063,7 @@
         "group": "bf198eb6e69ac543",
         "name": "torq",
         "label": "",
-        "order": 3,
+        "order": 2,
         "chartType": "line",
         "category": "",
         "categoryType": "none",
@@ -6685,7 +6685,7 @@
         "group": "bf198eb6e69ac543",
         "name": "osc",
         "label": "",
-        "order": 4,
+        "order": 3,
         "chartType": "line",
         "category": "[\"a\", \"b\"]",
         "categoryType": "json",
