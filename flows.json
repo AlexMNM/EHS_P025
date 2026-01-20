@@ -4423,8 +4423,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1160,
-        "y": 360,
+        "x": 1140,
+        "y": 340,
         "wires": []
     },
     {
@@ -4462,10 +4462,10 @@
                 "8dfb4ae8a82e4903"
             ],
             [
-                "8dfb4ae8a82e4903"
+                "d1c1bd708d56dc4a"
             ],
             [
-                "8dfb4ae8a82e4903"
+                "6ad68e8d6e55f950"
             ]
         ],
         "outputLabels": [
@@ -4473,6 +4473,40 @@
             "ohm",
             "osc"
         ]
+    },
+    {
+        "id": "d1c1bd708d56dc4a",
+        "type": "debug",
+        "z": "c4157bddbbb8817a",
+        "name": "debug 18",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "6ad68e8d6e55f950",
+        "type": "debug",
+        "z": "c4157bddbbb8817a",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 420,
+        "wires": []
     },
     {
         "id": "ebde08458e44bf71",
