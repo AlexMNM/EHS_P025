@@ -5983,8 +5983,8 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": "0",
-        "height": "0",
+        "width": 7,
+        "height": null,
         "className": "",
         "interpolation": "smooth",
         "x": 1770,
