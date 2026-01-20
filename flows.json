@@ -5301,7 +5301,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "function 2",
-        "func": "const { evaluate, ...results  } = global.get(\"results\");\n\nconst partial = Object.entries(results).map(([k, v]) => ({ [k] : evaluate(v)}))\n\nmsg.payload = {\n    total: evaluate(results),\n    ...partial\n}\n\nreturn msg;",
+        "func": "const { evaluate, ...results  } = global.get(\"results\");\n\nconst partial = Object.entries(results).map(([k, v]) => ({ [k] : evaluate(v)})).values()\n\nmsg.payload = {\n    total: evaluate(results),\n    ...partial\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
