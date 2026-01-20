@@ -5451,7 +5451,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "td[data-column-key=\"remove\"] button.v-btn {\n    background-color: rgba(255, 0, 0, 0.551) !important;\n}\n\n.nrdb-ui-widget.nrdb-ui-table\n{\n    grid-row-end: span null !important;\n    grid-template-rows: repeat(0, var(--widget-row-height)) !important;\n}\n\n.v-data-table.row-height-50 td\n{\n  height: 8px !important;\n  padding: 0px, 1px !important;\n}\n",
+        "format": "td[data-column-key=\"remove\"] button.v-btn {\n    background-color: rgba(255, 0, 0, 0.551) !important;\n}\n\n.nrdb-ui-widget.nrdb-ui-table\n{\n    grid-row-end: span null !important;\n    grid-template-rows: repeat(0, var(--widget-row-height)) !important;\n}\n\n.v-table.row-height-50 td\n{\n  height: 8px !important;\n  padding: 0px, 1px !important;\n}\n",
         "storeOutMessages": true,
         "passthru": false,
         "resendOnRefresh": true,
