@@ -720,16 +720,6 @@
         }
     },
     {
-        "id": "bdc4ccc199bfd00e",
-        "type": "ui-spacer",
-        "group": "6f6a6db0185ac9a4",
-        "name": "spacer",
-        "order": 3,
-        "width": 3,
-        "height": 2,
-        "className": ""
-    },
-    {
         "id": "bdc4de5fd4ee9026",
         "type": "ui-spacer",
         "group": "6f6a6db0185ac9a4",
@@ -754,7 +744,7 @@
         "type": "ui-spacer",
         "group": "6f6a6db0185ac9a4",
         "name": "spacer",
-        "order": 12,
+        "order": 11,
         "width": 1,
         "height": 2,
         "className": ""
@@ -5893,7 +5883,7 @@
         "group": "6f6a6db0185ac9a4",
         "name": "",
         "label": "Reset stats",
-        "order": 11,
+        "order": 10,
         "width": "1",
         "height": 1,
         "emulateClick": false,
@@ -8223,7 +8213,7 @@
         "group": "6f6a6db0185ac9a4",
         "name": "",
         "label": "Partial status",
-        "order": 10,
+        "order": 3,
         "width": 2,
         "height": "",
         "maxrows": 0,
