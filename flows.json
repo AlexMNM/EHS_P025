@@ -6170,7 +6170,7 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": null,
+        "width": 7,
         "height": null,
         "className": "",
         "interpolation": "smooth",
@@ -6792,7 +6792,7 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": null,
+        "width": 7,
         "height": null,
         "className": "",
         "interpolation": "smooth",
