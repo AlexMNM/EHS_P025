@@ -248,26 +248,14 @@
         ]
     },
     {
-        "id": "918c903d046f105d",
-        "type": "junction",
-        "z": "0637f22188042045",
-        "x": 2160,
-        "y": 900,
-        "wires": [
-            [
-                "3d15f9511d4849cf"
-            ]
-        ]
-    },
-    {
         "id": "cd8d3f58a50e5db1",
         "type": "junction",
         "z": "0637f22188042045",
         "x": 2160,
-        "y": 940,
+        "y": 920,
         "wires": [
             [
-                "4d0b472ebf8bb00b"
+                "89584b43e5d97b59"
             ]
         ]
     },
@@ -6065,7 +6053,7 @@
         "group": "bf198eb6e69ac543",
         "name": "torq",
         "label": "",
-        "order": 3,
+        "order": 2,
         "chartType": "line",
         "category": "",
         "categoryType": "none",
@@ -6355,7 +6343,6 @@
                 "e60529c29388a55d",
                 "afb8edb64542587a",
                 "b0a451924c10c06d",
-                "918c903d046f105d",
                 "cd8d3f58a50e5db1"
             ]
         ]
@@ -6689,7 +6676,7 @@
         "group": "bf198eb6e69ac543",
         "name": "osc",
         "label": "",
-        "order": 4,
+        "order": 3,
         "chartType": "line",
         "category": "[\"a\", \"b\"]",
         "categoryType": "json",
@@ -7023,7 +7010,7 @@
         "group": "bf198eb6e69ac543",
         "name": "Ohmmeter",
         "label": "",
-        "order": 5,
+        "order": 4,
         "chartType": "line",
         "category": "topic",
         "categoryType": "msg",
@@ -7617,7 +7604,7 @@
         "y": 920,
         "wires": [
             [
-                "918c903d046f105d"
+                "cd8d3f58a50e5db1"
             ]
         ]
     },
@@ -8124,83 +8111,15 @@
         "wires": []
     },
     {
-        "id": "1054ac7a8fdccc85",
-        "type": "ui-table",
-        "z": "0637f22188042045",
-        "group": "bf198eb6e69ac543",
-        "name": "Results",
-        "label": "",
-        "order": 1,
-        "width": 3,
-        "height": "",
-        "maxrows": 0,
-        "passthru": false,
-        "autocols": false,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "Measurement",
-                "key": "label",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "result",
-                "keyType": "key",
-                "type": "tickcross",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Lower limit",
-                "key": "lower",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Value",
-                "key": "value",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Upper limit",
-                "key": "upper",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "append",
-        "className": "",
-        "x": 2420,
-        "y": 940,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "89584b43e5d97b59",
         "type": "ui-table",
         "z": "0637f22188042045",
         "group": "bf198eb6e69ac543",
         "name": "Results",
         "label": "",
-        "order": 2,
-        "width": 3,
-        "height": "",
+        "order": 1,
+        "width": "0",
+        "height": "0",
         "maxrows": 0,
         "passthru": false,
         "autocols": false,
@@ -8253,8 +8172,8 @@
         "mobileBreakpointType": "defaults",
         "action": "append",
         "className": "",
-        "x": 2420,
-        "y": 900,
+        "x": 2280,
+        "y": 920,
         "wires": [
             []
         ]
@@ -8325,60 +8244,6 @@
         "y": 1440,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "3d15f9511d4849cf",
-        "type": "change",
-        "z": "0637f22188042045",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "class",
-                "pt": "msg",
-                "to": "row-height-50",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2260,
-        "y": 900,
-        "wires": [
-            [
-                "89584b43e5d97b59"
-            ]
-        ]
-    },
-    {
-        "id": "4d0b472ebf8bb00b",
-        "type": "change",
-        "z": "0637f22188042045",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "class",
-                "pt": "msg",
-                "to": "row-height-50",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 2260,
-        "y": 940,
-        "wires": [
-            [
-                "1054ac7a8fdccc85"
-            ]
         ]
     },
     {
