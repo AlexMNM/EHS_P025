@@ -4926,8 +4926,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
-        "y": 860,
+        "x": 1120,
+        "y": 940,
         "wires": []
     },
     {
@@ -4960,8 +4960,7 @@
         "y": 940,
         "wires": [
             [
-                "60f27802fdf278b3",
-                "c91a57369e8b58eb"
+                "60f27802fdf278b3"
             ]
         ]
     },
@@ -5300,7 +5299,7 @@
         "id": "e261f5a5674be88f",
         "type": "function",
         "z": "f0b99c790d575624",
-        "name": "function 2",
+        "name": "results status",
         "func": "const { evaluate, ...results  } = global.get(\"results\");\n\nconst partial = Object.fromEntries(Object.entries(results).map(([k, v]) => ([k, evaluate(v)])));\n\nmsg.payload = {\n    total: evaluate(results),\n    ...partial\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -5308,7 +5307,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
+        "x": 930,
         "y": 940,
         "wires": [
             [
