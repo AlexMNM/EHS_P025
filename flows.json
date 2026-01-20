@@ -669,7 +669,7 @@
         "type": "ui-group",
         "name": "Button",
         "page": "78bfe53267642fbf",
-        "width": 4,
+        "width": "3",
         "height": 1,
         "order": 2,
         "showTitle": true,
