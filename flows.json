@@ -4424,7 +4424,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 1160,
-        "y": 380,
+        "y": 360,
         "wires": []
     },
     {
@@ -4448,7 +4448,7 @@
         "type": "function",
         "z": "c4157bddbbb8817a",
         "name": "manage aquisitions",
-        "func": "const stage = flow.get(\"actStage\");\nconst stageIndex = flow.get(\"stageIndex\");\nconst active = flow.get(\"active_measurements\");\n\nlet wait;\nlet ohm;\nlet osc;\n\nif (msg.topic === \"active\") {\n    switch (stage.measurement) {\n        case \"H\":\n            if (active.ohm) {\n                wait = msg;\n            } else {\n                active.ohm = true;\n                ohm = msg;\n            }\n            break;\n        case \"S\":\n            if (active.osc) {\n                wait = msg;\n            } else {\n                active.osc = true;\n                osc = msg;\n            }\n            break;\n    }\n\n    flow.set(\"active_measurement\", active);\n\n    return [wait, ohm, osc];\n}\n\n\n",
+        "func": "const stage = flow.get(\"actStage\");\nconst stageIndex = flow.get(\"stageIndex\");\nconst active = flow.get(\"active_measurements\");\n\nlet wait;\nlet ohm;\nlet osc;\n\nif (msg.topic === \"active\") {\n    switch (stage.measurement) {\n        case \"H\":\n            if (active.ohm) {\n                wait = msg;\n            } else {\n                active.ohm = true;\n                ohm = msg;\n            }\n            break;\n        case \"S\":\n            if (active.osc) {\n                wait = msg;\n            } else {\n                active.osc = true;\n                osc = msg;\n            }\n            break;\n    }\n\n    flow.set(\"active_measurements\", active);\n\n    return [wait, ohm, osc];\n}\n\n\n",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
