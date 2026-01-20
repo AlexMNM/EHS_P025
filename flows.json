@@ -2924,8 +2924,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 1130,
-        "y": 100,
+        "x": 1150,
+        "y": 160,
         "wires": [
             [
                 "40fc1add38bf0fa4"
@@ -3030,13 +3030,13 @@
         "id": "060c872521cea92a",
         "type": "change",
         "z": "8e125f4bb2233c4b",
-        "name": "R? 1000",
+        "name": "R?",
         "rules": [
             {
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "R? 1000",
+                "to": "R?",
                 "tot": "str"
             },
             {
@@ -3052,7 +3052,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
+        "x": 450,
         "y": 180,
         "wires": [
             [
@@ -3342,8 +3342,8 @@
         "links": [
             "2cea2d573347c0a3"
         ],
-        "x": 1245,
-        "y": 100,
+        "x": 1265,
+        "y": 160,
         "wires": []
     },
     {
@@ -4420,7 +4420,7 @@
         "z": "c4157bddbbb8817a",
         "name": "",
         "pauseType": "delay",
-        "timeout": "1",
+        "timeout": "0.1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -4431,7 +4431,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1140,
+        "x": 1150,
         "y": 320,
         "wires": [
             [
