@@ -754,7 +754,7 @@
         "type": "ui-spacer",
         "group": "6f6a6db0185ac9a4",
         "name": "spacer",
-        "order": 11,
+        "order": 12,
         "width": 1,
         "height": 2,
         "className": ""
@@ -5552,8 +5552,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 1280,
+        "x": 720,
+        "y": 1300,
         "wires": []
     },
     {
@@ -5893,7 +5893,7 @@
         "group": "6f6a6db0185ac9a4",
         "name": "",
         "label": "Reset stats",
-        "order": 10,
+        "order": 11,
         "width": "1",
         "height": 1,
         "emulateClick": false,
@@ -8062,7 +8062,8 @@
         "wires": [
             [
                 "d40ba3dbb2a5ad9c",
-                "a4cc879c4d28527a"
+                "a4cc879c4d28527a",
+                "43b575ff1a844002"
             ]
         ]
     },
@@ -8211,6 +8212,33 @@
         "className": "",
         "x": 2260,
         "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43b575ff1a844002",
+        "type": "ui-table",
+        "z": "0637f22188042045",
+        "group": "6f6a6db0185ac9a4",
+        "name": "",
+        "label": "Partial status",
+        "order": 10,
+        "width": 2,
+        "height": "",
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "",
+        "mobileBreakpointType": "none",
+        "action": "replace",
+        "className": "",
+        "x": 730,
+        "y": 1180,
         "wires": [
             []
         ]
