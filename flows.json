@@ -329,13 +329,13 @@
         "name": "Default Theme",
         "colors": {
             "surface": "#ffffff",
-            "primary": "#0094CE",
+            "primary": "#0094ce",
             "bgPage": "#eeeeee",
             "groupBg": "#ffffff",
             "groupOutline": "#cccccc"
         },
         "sizes": {
-            "density": "default",
+            "density": "comfortable",
             "pagePadding": "12px",
             "groupGap": "12px",
             "groupBorderRadius": "4px",
