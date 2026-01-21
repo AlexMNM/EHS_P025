@@ -4282,7 +4282,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1080,
+        "x": 1100,
         "y": 320,
         "wires": [
             [
@@ -4418,7 +4418,7 @@
         "z": "c4157bddbbb8817a",
         "name": "",
         "pauseType": "delay",
-        "timeout": "2",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
