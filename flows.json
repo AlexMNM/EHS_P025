@@ -5843,7 +5843,7 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "Statistics:",
+                "title": "Statistics",
                 "key": "label",
                 "keyType": "key",
                 "type": "text",
@@ -5856,7 +5856,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "center"
+                "align": "start"
             },
             {
                 "title": "Percent",
@@ -5864,7 +5864,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "center"
+                "align": "start"
             }
         ],
         "mobileBreakpoint": "",
@@ -8260,7 +8260,7 @@
                 "keyType": "key",
                 "type": "color",
                 "width": "",
-                "align": "center"
+                "align": "start"
             }
         ],
         "mobileBreakpoint": "",
