@@ -5498,7 +5498,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".process-data .v-table td {\n    height: 8px !important;\n    padding: 0 1px !important;\n}\n\n.process-data .v-table th {\n    padding: 0 1px !important;\n}",
+        "format": ".v-table td {\n    height: 8px !important;\n    padding: 0 1px !important;\n}\n\n.v-table th {\n    padding: 0 1px !important;\n}",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
