@@ -5826,8 +5826,8 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "update_statistics",
-        "func": "const math = global.get(\"mathjs\");\nconst fields = context.get(\"fields\");\nconst history = global.get(\"history\") ?? [];\nvar { total = 0, pass = 0, fail = 0 } = global.get(\"statistics\") || {};\nconst { product: { order } } = global.get(\"session\");\nvar block = context.get(\"block\");\n\n\nconst _order = context.get(\"order\");\nif (order !== _order || msg.topic === \"reset_stats\") {\n    total = 0;\n    pass = 0;\n    fail = 0;\n}\ncontext.set(\"order\", order)\n\n\n\nswitch (msg.topic) {\n    case \"pass\":\n        pass += 1 - block;\n    case \"fail\":\n        total += 1 - block;\n        fail = total - pass;\n        if (!block) {\n            history.push(...Array(20 - history.length).fill(\"#a0a0a0\"))\n            history.shift();\n            history.push(msg.ui_update.buttonColor);\n        }\n        block = true;\n        break;\n    case \"testing\":\n        block = false;\n}\n\ncontext.set(\"block\", block);\nObject.assign(fields, { total, pass, fail })\ncontext.set(\"fields\", fields)\nglobal.set(\"statistics\", fields)\nglobal.set(\"history\", history)\n\n\nmsg.payload = [\n    {\n        label: \"Pass\",\n        count: fields.pass,\n        percent: ((fields.pass / fields.total) * 100).toFixed(1) + \"%\"\n\n    },\n    {\n        label: \"Fail\",\n        count: fields.fail,\n        percent: ((fields.fail / fields.total) * 100).toFixed(1) + \"%\"\n\n    },\n    {\n        label: \"Total\",\n        count: fields.total,\n        percent: \"\"\n\n    }\n]\n\nreturn msg;",
-        "outputs": 1,
+        "func": "const math = global.get(\"mathjs\");\nconst fields = context.get(\"fields\");\nconst history = global.get(\"history\") ?? [];\nvar { total = 0, pass = 0, fail = 0 } = global.get(\"statistics\") || {};\nconst { product: { order } } = global.get(\"session\");\nvar block = context.get(\"block\");\n\n\nconst _order = context.get(\"order\");\nif (order !== _order || msg.topic === \"reset_stats\") {\n    total = 0;\n    pass = 0;\n    fail = 0;\n}\ncontext.set(\"order\", order)\n\n\n\nswitch (msg.topic) {\n    case \"pass\":\n        pass += 1 - block;\n    case \"fail\":\n        total += 1 - block;\n        fail = total - pass;\n        if (!block) {\n            history.push(...Array(20 - history.length).fill(\"#a0a0a0\"))\n            history.shift();\n            history.push(msg.ui_update.buttonColor);\n        }\n        block = true;\n        break;\n    case \"testing\":\n        block = false;\n}\n\ncontext.set(\"block\", block);\nObject.assign(fields, { total, pass, fail })\ncontext.set(\"fields\", fields)\nglobal.set(\"statistics\", fields)\nglobal.set(\"history\", history)\n\n\nmsg.payload = [\n    {\n        label: \"Pass\",\n        count: fields.pass,\n        percent: ((fields.pass / fields.total) * 100).toFixed(1) + \"%\"\n\n    },\n    {\n        label: \"Fail\",\n        count: fields.fail,\n        percent: ((fields.fail / fields.total) * 100).toFixed(1) + \"%\"\n\n    },\n    {\n        label: \"Total\",\n        count: fields.total,\n        percent: \"\"\n\n    }\n]\n\nreturn [msg, {payload: history}];",
+        "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nif (context.get(\"fields\") === undefined){\n    context.set(\"fields\", {trend: []})\n}\n\nif (context.get(\"order\") === undefined) {\n    context.set(\"order\", \"default\")\n}\n\ncontext.set(\"block\", false)",
@@ -5838,6 +5838,9 @@
         "wires": [
             [
                 "5a12dcb34b6c43ce"
+            ],
+            [
+                "f78193a00e1ac470"
             ]
         ]
     },
@@ -8234,6 +8237,42 @@
             [
                 "efe279013f6c1ce5"
             ]
+        ]
+    },
+    {
+        "id": "f78193a00e1ac470",
+        "type": "ui-table",
+        "z": "0637f22188042045",
+        "group": "6f6a6db0185ac9a4",
+        "name": "",
+        "label": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 1070,
+        "y": 1100,
+        "wires": [
+            []
         ]
     },
     {
