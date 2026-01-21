@@ -8260,7 +8260,7 @@
                 "title": "",
                 "key": "",
                 "keyType": "key",
-                "type": "text",
+                "type": "color",
                 "width": "",
                 "align": "start"
             }
