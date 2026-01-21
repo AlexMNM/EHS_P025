@@ -4382,31 +4382,6 @@
         "wires": []
     },
     {
-        "id": "0f1ae97c7364f066",
-        "type": "delay",
-        "z": "c4157bddbbb8817a",
-        "name": "",
-        "pauseType": "delay",
-        "timeout": "0.4",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 1570,
-        "y": 300,
-        "wires": [
-            [
-                "364fe0205ba99901"
-            ]
-        ]
-    },
-    {
         "id": "56bccf5a90a8f640",
         "type": "switch",
         "z": "c4157bddbbb8817a",
@@ -4433,7 +4408,7 @@
                 "364fe0205ba99901"
             ],
             [
-                "0f1ae97c7364f066"
+                "364fe0205ba99901"
             ]
         ]
     },
