@@ -826,8 +826,8 @@
         "links": [
             "745dac0558d14053"
         ],
-        "x": 1465,
-        "y": 600,
+        "x": 1145,
+        "y": 660,
         "wires": []
     },
     {
@@ -3856,6 +3856,13 @@
                 "fromt": "str",
                 "to": "null",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "active_measurements.osc",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
             }
         ],
         "action": "",
@@ -3863,7 +3870,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 400,
+        "x": 380,
         "y": 660,
         "wires": [
             [
