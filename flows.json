@@ -5176,7 +5176,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "evaluate osc button",
-        "func": "const math = global.get(\"mathjs\")\n\nvar component\nswitch(msg.component){\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\nmsg.topic = \"osc\";\nmsg.component = component;\n\nconst bnc = msg.payload[\"A_bounces\"][2] ?? -1;\n\nconst values = [];\nconst crt = {};\ncrt.component = component;\n\ncrt.measurement = \"bounce\"\ncrt.label = \"Max bounce\";\ncrt.value = bnc.toFixed(3);\nvalues.push({...crt});\n\nmsg.payload = [...values]\n\nreturn msg;",
+        "func": "const math = global.get(\"mathjs\")\n\nvar component\nswitch(msg.component){\n    case \"button\":\n    case \"inner\":\n    case \"outer\":\n        component = msg.component;\n        break;\n    case \"B\":\n        component = \"button\";\n        break;\n    case \"I\":\n        component = \"inner\";\n        break;\n    case \"O\":\n        component = \"outer\";\n        break;\n}\n\nmsg.topic = \"osc\";\nmsg.component = component;\n\nconst bnc = msg.payload[\"A_bounces\"][2] ?? -1;\n\nconst values = [];\nconst crt = {};\ncrt.component = component;\n\ncrt.measurement = \"bounce\"\ncrt.label = \"Bounce\";\ncrt.value = bnc.toFixed(3);\nvalues.push({...crt});\n\nmsg.payload = [...values]\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
