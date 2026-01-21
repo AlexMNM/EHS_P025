@@ -1912,8 +1912,8 @@
         "links": [
             "b202a0b79dc00822"
         ],
-        "x": 875,
-        "y": 280,
+        "x": 1175,
+        "y": 840,
         "wires": [
             []
         ]
@@ -2048,7 +2048,7 @@
         "z": "a7c7ec5294135863",
         "name": "",
         "pauseType": "delay",
-        "timeout": "1",
+        "timeout": "0.5",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -2059,7 +2059,7 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 780,
+        "x": 790,
         "y": 660,
         "wires": [
             [
@@ -4351,8 +4351,8 @@
         "links": [
             "defa32b61e14e01a"
         ],
-        "x": 955,
-        "y": 220,
+        "x": 1015,
+        "y": 240,
         "wires": []
     },
     {
@@ -4371,7 +4371,8 @@
         "y": 260,
         "wires": [
             [
-                "bf64a343e213f288"
+                "bf64a343e213f288",
+                "42c8d39d9ce84555"
             ],
             [
                 "46a3c3149898b41f"
@@ -4392,7 +4393,7 @@
         "z": "c4157bddbbb8817a",
         "name": "",
         "pauseType": "delay",
-        "timeout": "0.5",
+        "timeout": "1",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
@@ -4403,8 +4404,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 770,
-        "y": 220,
+        "x": 760,
+        "y": 180,
         "wires": [
             [
                 "6e79d81c4875e5d8"
@@ -4412,33 +4413,21 @@
         ]
     },
     {
-        "id": "5e2f9fb59f4ed7cb",
-        "type": "inject",
+        "id": "42c8d39d9ce84555",
+        "type": "debug",
         "z": "c4157bddbbb8817a",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 980,
-        "y": 140,
-        "wires": [
-            [
-                "d17c41d7b5177332"
-            ]
-        ]
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 120,
+        "wires": []
     },
     {
         "id": "ebde08458e44bf71",
