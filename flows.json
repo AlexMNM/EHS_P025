@@ -5337,7 +5337,7 @@
         "type": "debug",
         "z": "a6c85f6538755b0c",
         "name": "debug 12",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5515,7 +5515,7 @@
         "type": "debug",
         "z": "0637f22188042045",
         "name": "debug 7",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7999,11 +7999,11 @@
             [
                 "3aa0b64653eda525",
                 "96db3978031895b7",
-                "facba2f86dd97646"
+                "facba2f86dd97646",
+                "a4cc879c4d28527a"
             ],
             [
-                "43b575ff1a844002",
-                "a4cc879c4d28527a"
+                "43b575ff1a844002"
             ]
         ]
     },
@@ -8019,8 +8019,7 @@
         "y": 1020,
         "wires": [
             [
-                "d40ba3dbb2a5ad9c",
-                "a4cc879c4d28527a"
+                "d40ba3dbb2a5ad9c"
             ]
         ]
     },
@@ -8211,8 +8210,8 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 830,
-        "y": 1220,
+        "x": 890,
+        "y": 1160,
         "wires": [
             []
         ]
