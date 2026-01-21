@@ -4412,6 +4412,35 @@
         ]
     },
     {
+        "id": "5e2f9fb59f4ed7cb",
+        "type": "inject",
+        "z": "c4157bddbbb8817a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 980,
+        "y": 140,
+        "wires": [
+            [
+                "d17c41d7b5177332"
+            ]
+        ]
+    },
+    {
         "id": "ebde08458e44bf71",
         "type": "mongodb4",
         "z": "0e117d41da2683ed",
