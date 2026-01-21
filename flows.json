@@ -8251,7 +8251,7 @@
         "height": 0,
         "maxrows": 0,
         "passthru": false,
-        "autocols": false,
+        "autocols": true,
         "showSearch": true,
         "deselect": true,
         "selectionType": "none",
