@@ -5690,7 +5690,7 @@
         "z": "0637f22188042045",
         "group": "6f6a6db0185ac9a4",
         "name": "",
-        "label": "",
+        "label": "Setup",
         "order": 5,
         "width": 4,
         "height": "",
@@ -5702,32 +5702,16 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "Article",
-                "key": "type",
+                "title": "",
+                "key": "label",
                 "keyType": "key",
                 "type": "text",
                 "width": "",
                 "align": "start"
             },
             {
-                "title": "Order",
-                "key": "order",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Time stamp",
-                "key": "timestamp",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Operator",
-                "key": "operator",
+                "title": "",
+                "key": "value",
                 "keyType": "key",
                 "type": "text",
                 "width": "",
@@ -5738,8 +5722,8 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 890,
-        "y": 560,
+        "x": 990,
+        "y": 640,
         "wires": [
             []
         ]
@@ -5760,9 +5744,9 @@
         "y": 580,
         "wires": [
             [
-                "efe279013f6c1ce5",
                 "eb24925af8cfb7a4",
-                "d984f1c52bbb7a42"
+                "d984f1c52bbb7a42",
+                "02a93dd95d1a0e49"
             ],
             [
                 "8766ed8d27633676"
@@ -6308,8 +6292,8 @@
         "height": "1",
         "color": "",
         "className": "",
-        "x": 900,
-        "y": 600,
+        "x": 880,
+        "y": 680,
         "wires": []
     },
     {
@@ -8298,6 +8282,26 @@
         "y": 1220,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "02a93dd95d1a0e49",
+        "type": "function",
+        "z": "0637f22188042045",
+        "name": "parse",
+        "func": "const setup = msg.payload;\n\nmsg.payload = [\n    {\n        label:\"Product\",\n        value: setup.type\n    },\n    {\n        label: \"Order\",\n        value: setup.order\n    },\n    {\n        label: \"Timestamp\",\n        value: setup.timestamp\n    },\n    {\n        label: \"Operator\",\n        value: setup.operator\n    },\n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 640,
+        "wires": [
+            [
+                "efe279013f6c1ce5"
+            ]
         ]
     },
     {
