@@ -5878,7 +5878,7 @@
                 "align": "start"
             },
             {
-                "title": "",
+                "title": "Count",
                 "key": "count",
                 "keyType": "key",
                 "type": "text",
@@ -5886,10 +5886,10 @@
                 "align": "start"
             },
             {
-                "title": "",
+                "title": "Percent",
                 "key": "percent",
                 "keyType": "key",
-                "type": "text",
+                "type": "progress",
                 "width": "",
                 "align": "start"
             }
