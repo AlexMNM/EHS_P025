@@ -5524,7 +5524,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 720,
-        "y": 1300,
+        "y": 1380,
         "wires": []
     },
     {
@@ -5816,7 +5816,7 @@
         "action": "replace",
         "className": "",
         "x": 1080,
-        "y": 1020,
+        "y": 1100,
         "wires": [
             []
         ]
@@ -5834,7 +5834,7 @@
         "finalize": "",
         "libs": [],
         "x": 910,
-        "y": 1020,
+        "y": 1100,
         "wires": [
             [
                 "5a12dcb34b6c43ce"
@@ -5876,7 +5876,7 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 890,
-        "y": 980,
+        "y": 1060,
         "wires": [
             [
                 "3aa0b64653eda525"
@@ -7215,7 +7215,7 @@
         "y": 880,
         "wires": [
             [
-                "8d5085360fba77b8"
+                "9d7402ce6a788bea"
             ]
         ]
     },
@@ -7251,7 +7251,7 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 870,
-        "y": 1060,
+        "y": 1140,
         "wires": [
             []
         ]
@@ -7997,7 +7997,7 @@
         "finalize": "",
         "libs": [],
         "x": 690,
-        "y": 1020,
+        "y": 1100,
         "wires": [
             [
                 "3aa0b64653eda525",
@@ -8019,7 +8019,7 @@
             "717a5c1f605a6344"
         ],
         "x": 585,
-        "y": 1020,
+        "y": 1100,
         "wires": [
             [
                 "d40ba3dbb2a5ad9c"
@@ -8036,7 +8036,7 @@
             "cd6316b3ef208832"
         ],
         "x": 835,
-        "y": 1120,
+        "y": 1200,
         "wires": []
     },
     {
@@ -8214,7 +8214,7 @@
         "action": "replace",
         "className": "",
         "x": 890,
-        "y": 1160,
+        "y": 1240,
         "wires": [
             []
         ]
@@ -8270,7 +8270,7 @@
         "action": "replace",
         "className": "",
         "x": 1070,
-        "y": 1100,
+        "y": 1180,
         "wires": [
             []
         ]
@@ -8297,6 +8297,26 @@
         "wires": [
             [
                 "89584b43e5d97b59"
+            ]
+        ]
+    },
+    {
+        "id": "9d7402ce6a788bea",
+        "type": "function",
+        "z": "0637f22188042045",
+        "name": "ui_update class process-data",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst add = {\n    \"class\": \"process-data\"\n}\n\nObject.assign(ui_update, add);\nmsg.ui_update = ui_update;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 920,
+        "wires": [
+            [
+                "8d5085360fba77b8"
             ]
         ]
     },
