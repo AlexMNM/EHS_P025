@@ -1720,7 +1720,7 @@
         "encoding": "none",
         "allProps": false,
         "x": 1020,
-        "y": 620,
+        "y": 660,
         "wires": [
             [
                 "50591a9bfab375b0",
@@ -2039,6 +2039,35 @@
         "wires": [
             [
                 "1fbc8d25ba64ed12"
+            ]
+        ]
+    },
+    {
+        "id": "9b042240e2ccdef6",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 600,
+        "y": 720,
+        "wires": [
+            [
+                "e664c3d33c87e427"
             ]
         ]
     },
