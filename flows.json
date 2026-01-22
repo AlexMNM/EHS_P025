@@ -8452,13 +8452,13 @@
         ],
         "linkType": "static",
         "timeout": "10",
-        "x": 640,
-        "y": 460,
+        "x": 500,
+        "y": 500,
         "wires": [
             [
                 "87b37c9dbbfa572a",
-                "c255229e7db1d672",
-                "14509f6701be1fc6"
+                "14509f6701be1fc6",
+                "0625785206e6cf58"
             ]
         ]
     },
@@ -9756,8 +9756,8 @@
         "links": [
             "26df795f70aac6ed"
         ],
-        "x": 145,
-        "y": 440,
+        "x": 185,
+        "y": 460,
         "wires": [
             [
                 "912c6069fc5242a6"
@@ -9781,8 +9781,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 110,
-        "y": 520,
+        "x": 150,
+        "y": 540,
         "wires": [
             [
                 "87b37c9dbbfa572a",
@@ -9808,8 +9808,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 110,
-        "y": 480,
+        "x": 150,
+        "y": 500,
         "wires": [
             [
                 "fca49527d7503362"
@@ -10536,78 +10536,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 550,
-        "y": 760,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f2b63119f2f83246",
-        "type": "link call",
-        "z": "85a0c31e48c798bf",
-        "name": "call_database",
-        "links": [
-            "09d2343f773e9140"
-        ],
-        "linkType": "static",
-        "timeout": "10",
-        "x": 340,
-        "y": 800,
+        "x": 690,
+        "y": 640,
         "wires": [
             [
-                "0625785206e6cf58",
                 "d348adc4ac6a0016"
-            ]
-        ]
-    },
-    {
-        "id": "eddbe9dc1ab3bf52",
-        "type": "inject",
-        "z": "85a0c31e48c798bf",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "operation",
-                "v": "find",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "[{\"order\":\"00556365\"},{\"_id\":1,\"type\":1,\"order\":1,\"timestamp\":1,\"operator\":1}]",
-        "payloadType": "json",
-        "x": 130,
-        "y": 800,
-        "wires": [
-            [
-                "32b42f2fea31aa60"
-            ]
-        ]
-    },
-    {
-        "id": "32b42f2fea31aa60",
-        "type": "function",
-        "z": "85a0c31e48c798bf",
-        "name": "find",
-        "func": "const { ObjectId } = global.get(\"mongodb\");\n\nconst operation = 'find'\nconst querry = {\n    '_id': new ObjectId('6971a9007cc283b394d03756')\n}\nconst options = {\n    projection: {\n        operator: 1,\n        type: 1,\n        order: 1,\n        timestamp: 1\n    },\n}\nconst payload = [querry, options]\n\n\nreturn { operation: operation, payload: payload };",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 170,
-        "y": 860,
-        "wires": [
-            [
-                "f2b63119f2f83246"
             ]
         ]
     },
@@ -10624,8 +10557,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 360,
-        "y": 860,
+        "x": 760,
+        "y": 740,
         "wires": []
     },
     {
