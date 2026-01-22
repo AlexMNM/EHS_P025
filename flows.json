@@ -4434,7 +4434,7 @@
         "type": "debug",
         "z": "0e117d41da2683ed",
         "name": "debug 13",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4451,7 +4451,7 @@
         "type": "debug",
         "z": "0e117d41da2683ed",
         "name": "debug 8",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8396,7 +8396,7 @@
         "passthru": false,
         "dropdownOptions": [],
         "x": 350,
-        "y": 460,
+        "y": 440,
         "wires": [
             [
                 "87ccc1ce19e89219"
@@ -8453,12 +8453,13 @@
         "linkType": "static",
         "timeout": "10",
         "x": 500,
-        "y": 500,
+        "y": 480,
         "wires": [
             [
                 "87b37c9dbbfa572a",
                 "14509f6701be1fc6",
-                "0625785206e6cf58"
+                "0625785206e6cf58",
+                "c255229e7db1d672"
             ]
         ]
     },
@@ -8475,7 +8476,7 @@
         "finalize": "",
         "libs": [],
         "x": 470,
-        "y": 460,
+        "y": 440,
         "wires": [
             [
                 "c8641b6d0e0d5594"
@@ -8528,12 +8529,11 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 840,
+        "x": 700,
         "y": 440,
         "wires": [
             [
-                "a549655cd4b8fa9d",
-                "52278dc01e9440cb"
+                "d348adc4ac6a0016"
             ]
         ]
     },
@@ -10557,9 +10557,27 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
-        "y": 740,
+        "x": 860,
+        "y": 600,
         "wires": []
+    },
+    {
+        "id": "065a7bff88b5e873",
+        "type": "function",
+        "z": "85a0c31e48c798bf",
+        "name": "find",
+        "func": "const query = { }\n\naddIfDefined(msg.payload.from, \"timestamp\", \"$gt\")\naddIfDefined(msg.payload.to, \"timestamp\", \"$lt\")\naddIfDefined(msg.payload.type, \"type\")\naddIfDefined(msg.payload.order, \"order\")\n\nconst options = {\n    projection: {\n        operator: 1,\n        type: 1,\n        order: 1,\n        timestamp: 1\n    },\n}\n\nmsg.operation = \"find\"\n\n\n\nmsg.payload = [query, options]\n\nreturn msg;\n\nfunction addIfDefined(value, attr, op = \"\", q = query) {\n    if (value !== \"\") {\n        if (op !== \"\") {\n            Object.assign(q, {[attr] : { [op] : value }})       \n        } else \n        q[attr] = value\n    }\n    return \n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 680,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "8435f37c02a9e26b",
