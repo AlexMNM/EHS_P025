@@ -10584,7 +10584,7 @@
         "payload": "[{\"order\":\"00556365\"},{\"_id\":1,\"type\":1,\"order\":1,\"timestamp\":1,\"operator\":1}]",
         "payloadType": "json",
         "x": 130,
-        "y": 820,
+        "y": 800,
         "wires": [
             [
                 "32b42f2fea31aa60"
@@ -10596,7 +10596,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "find",
-        "func": "const {ObjectId} = global.get(\"mongodb\");\n\nconst operation = 'find'\nconst payload = [{ '_id': new ObjectId('6971a9007cc283b394d03756') }]\n\n\nreturn {operation: operation, payload: payload};",
+        "func": "const {ObjectId} = global.get(\"mongodb\");\n\nconst operation = 'find'\nconst payload = [{ '_id': new ObjectId('6971a9007cc283b394d03756') }, {'operator' : 1}]\n\n\nreturn {operation: operation, payload: payload};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
