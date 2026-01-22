@@ -353,7 +353,7 @@
                 "cols": "12"
             }
         ],
-        "order": 4,
+        "order": 2,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -561,7 +561,7 @@
                 "cols": "12"
             }
         ],
-        "order": 3,
+        "order": 1,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -597,7 +597,7 @@
                 "cols": "12"
             }
         ],
-        "order": 5,
+        "order": 3,
         "className": "",
         "visible": true,
         "disabled": false
@@ -770,7 +770,7 @@
                 "cols": "12"
             }
         ],
-        "order": 2,
+        "order": 4,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -798,7 +798,7 @@
         "icon": "table",
         "layout": "notebook",
         "theme": "0d92c765bfad87e6",
-        "order": 1,
+        "order": 5,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -1748,7 +1748,9 @@
         "z": "a7c7ec5294135863",
         "name": "outStartAq",
         "mode": "link",
-        "links": [],
+        "links": [
+            "495731280a6d9814"
+        ],
         "x": 575,
         "y": 380,
         "wires": []
@@ -4458,6 +4460,22 @@
         "x": 1080,
         "y": 120,
         "wires": []
+    },
+    {
+        "id": "495731280a6d9814",
+        "type": "link in",
+        "z": "c4157bddbbb8817a",
+        "name": "link in 2",
+        "links": [
+            "950164b780fa14d3"
+        ],
+        "x": 965,
+        "y": 360,
+        "wires": [
+            [
+                "d17c41d7b5177332"
+            ]
+        ]
     },
     {
         "id": "ebde08458e44bf71",
@@ -14103,7 +14121,7 @@
         "page": "",
         "ui": "",
         "name": "Temp List",
-        "order": 6,
+        "order": 7,
         "width": "0",
         "height": "0",
         "head": "",
@@ -14198,7 +14216,7 @@
         "page": "",
         "ui": "",
         "name": "Header configuration",
-        "order": 2,
+        "order": 3,
         "width": "0",
         "height": "0",
         "head": "",
@@ -14251,7 +14269,7 @@
         "page": "",
         "ui": "",
         "name": "File Explorer",
-        "order": 4,
+        "order": 5,
         "width": "0",
         "height": "0",
         "head": "",
@@ -14433,7 +14451,7 @@
         "z": "587dcf03696555d0",
         "group": "fb2e77ec2c2a5dd1",
         "name": "Text - Intro",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "content": "# Working with tables\n\nDashboard 2.0 (DB2) offers two different options to display tables, one is the `ui-table` component which can display any object array as a table, and has some customizibility on column headers.\nBut the real power is building tables using [Vuetify](https://vuetifyjs.com/en/components/data-tables/introduction/#components) `v-data-table` and the various Vuetify components to build reach and responsible tables.",
@@ -14450,7 +14468,7 @@
         "z": "587dcf03696555d0",
         "group": "fb2e77ec2c2a5dd1",
         "name": "Text - Header and Items",
-        "order": 3,
+        "order": 4,
         "width": 0,
         "height": 0,
         "content": "# Customizing Header and Items\n\n## Linking items to the table\n\nIn the `v-data-table` tag, `:items=\"msg.payload\"` describes that the items to be displayed in the table are stored in `msg.payload` of the incoming message.\n\n## Search\n\nIt is possible to add a simple client side filter to the table values that filters on any column values in the table.\nFirst, it needs a search field `v-text-field` before (or after) the table:\n```\n    <v-text-field v-model=\"search\" label=\"Search\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n        hide-details></v-text-field>\n```\nAnd also needs to be linked to the table using the `v-model:search=\"search\"` attribute:\n```\n    <v-data-table v-model:search=\"search\" :items=\"msg.payload\">\n```\n\n## Column headers\n\nBy default the column headers are same as the field names with capital first letter. But it can be overriden to any text if needed:\n```\n        <template v-slot:header.ev>\n          <div class=\"text-center\">EV Owner</div>\n        </template>\n        <template v-slot:header.rating>\n          <div class=\"text-center\">Customer Satisfaction</div>\n        </template>\n```\nIt needs a `template` tag with `v-slot` attribute, which says `header:xxx` where xxx is the field name. And within that the text can be defined. In the example above \"Customer Satisfaction\" in centre justified, otherwise it is left justified.\n\n## Convert value to linked\n\nIn the Email column an mailto: hyperlink is formatted, instead of the full email printed on the screen.\n```\n      <template v-slot:item.email=\"{ item }\">\n        <!-- turn the email column to an Email hyperlink -->\n        <a :href=\"'mailto:' + item.email\">Email</a>\n      </template>\n```\nSimilar to the header changes, this also needs a `template` tag with `v-slot` attribute, which now says `item:xxx` where xxx is the field name.\nThe value of `href` is calculated therefore it is shown as `:href` indicating that the value is not a text but an expression.\n\n## Convert value to Chip\n\nAge is displayed as a chip, basically the value is cirled and shown with a background color. `{{ item.age }}` prints the age value and the work \" years\" is printed after it.\n```\n      <template v-slot:item.age=\"{ item }\">\n        <v-chip :color=\"getChipColor(item)\">\n          {{ item.age }} years\n        </v-chip>\n      </template>\n```\nThe `color` attribute is determined my a function, so again it is referenced as `:color`. Function is defined in the methods section.\n\n## Convert value to icon\n\nThe \"yes\" and \"no\" value of the `ev` field is displayed as a green or red car icon. Both the color and the icon name is determined by a function.\n```\n      <template v-slot:item.ev=\"{ item }\">\n        <!-- Convert the EV values to colored icons -->\n        <div class=\"text-center\"><v-icon :color=\"evColor(item)\" :icon=\"evIcon(item)\"></v-icon></div>\n      </template>\n```\n\n## Convert value to rating\n\nA value from 1 to 5 can also be displayed as star rating. The rating being displated is passed in the `:model-value` attribute, and it takes the value from `item.rating`.\n```\n      <template v-slot:item.rating=\"{ item }\">\n        <!-- Display the rating number as star rating -->\n        <v-rating length=\"5\" size=\"32\" :model-value=\"item.rating\" active-color=\"primary\" readonly></v-rating>\n      </template>\n```\n\n## Convert to Linear progress\n\nThe `complete` field contains a value from 1 to 100 and that is shown as a progress. The progress value is passed in `:model-value` and the color is determined by a function.\n```\n      <template v-slot:item.complete=\"{ item }\">\n        <!-- Display the progress as a linear progress -->\n        <v-progress-linear :color=\"getProgressColor(item)\" :model-value=\"item.complete\" height=\"12\"></v-progress-linear>\n      </template>\n```\n\n## Script section\n\n### data section\n\nIn the data section only the `search` variable is defined which stores the search value entered in the input field and pass it over to the table to filter the results.\n```\n    data () {\n      return {\n        search: ''\n      }\n    },\n```\n\n### methods section\n\nThe methods section contains all the functions that are used by the chip, icon, progress components and determine color or icon for the component. The object for each record is stored in the `item` variable. I pass the entire `item` object to these functions, and they can reference to each field of it by `item.age`, `item.ev`, etc. And return either the color name, or icon name, etc.\n",
@@ -14467,7 +14485,7 @@
         "z": "587dcf03696555d0",
         "group": "fb2e77ec2c2a5dd1",
         "name": "Text - Selection and Response",
-        "order": 5,
+        "order": 6,
         "width": 0,
         "height": 0,
         "content": "# Selection, Response and Headers\n\n## Controlling Selection\n\nThe above example shows how to handle selection of records in the table. Some additional attribures are added to the `v-data-table`:\n- `show-select` turns on the checkboxes at the beginning or each row\n- `select-strategy=\"all\"` specifies that multiple items are selectable. This could be `single` as well\n- `item-selectable=\"selectable\"` sets that items are selectable at all\n- `return-object` controls that whenever the selection changes the selected item(s) are outputted on the output port of the template node\n- `v-model=\"selected\"` specify where to store the selected items.\n\nInitialized the value or `selected`:\n```\n    data () {\n      return {\n        selected: [],\n        search: ''\n      }\n    },\n```\nAnd also added a watch function to send the content out when the selection changes:\n```\n    watch: {\n        selected: function () {\n          this.send({topic:'selected', payload: this.selected});\n        }\n    },\n```\n\n## Headers\n\nIn this example the input data has a lot of fields that are not to be displayed on in the table. Therefore in `v-data-table` and additional attribute is added: `:headers=\"msg.headers\"`. This sets that the headers to be used are stored in `msg.headers` of the incoming message.\nAnd that is set by the change node before this template node. It contains an array with items like this:\n```\n    {\n        \"title\": \"Name\",\n        \"value\": \"fname\",\n        \"sortable\": true\n    },\n```\nWhere `title` is the column headers visible on the screen, `value` is the field name is the structure, and `sortable` controls if the column header can be clicked on for sorting. I turned off sorting by the icon.\n\n\n\n<template>\n    <!-- Provide an input text box to search the content -->\n    <v-text-field v-model=\"search\" label=\"Search\" prepend-inner-icon=\"mdi-magnify\" single-line variant=\"outlined\"\n        hide-details></v-text-field>\n    <v-data-table \n      v-model:search=\"search\" \n      :items=\"msg?.payload\" \n      :headers=\"msg?.headers\"\n      v-model=\"selected\"\n      item-selectable=\"selectable\"\n      select-strategy=\"all\"\n      show-select    \n      return-object\n    >\n\n      <template v-slot:item.icon=\"{ item }\">\n        <v-icon :icon=\"item.icon\"></v-icon>\n      </template>\n\n    </v-data-table>\n</template>\n\n<script>\n    export default {\n    data () {\n      return {\n        selected: [],\n        search: ''\n      }\n    },\n    watch: {\n        selected: function () {\n          this.send({topic:'selected', payload: this.selected});\n        }\n    },\n    methods: {\n        // add a function to determine the color of the progress bar given the row's item\n\n    }\n  }\n</script>",
@@ -14484,7 +14502,7 @@
         "z": "587dcf03696555d0",
         "group": "fb2e77ec2c2a5dd1",
         "name": "Text - Temp List",
-        "order": 7,
+        "order": 8,
         "width": 0,
         "height": 0,
         "content": "# Temperature list\n\nThe above table shows how the table can be used to display a list of value. Here a function code is updating some temperature readings randomly just to show that a continouse incoming payload refreshes the table contents.\nAlso the search bar is turned off for this example.\n\n## Adding buttons\n\nA plus and a minus button is added to the \"Target Temperature\" column to allow changing the value for each row:\n```\n        <template v-slot:item.target=\"{ item }\">\n            <v-btn class=\"ma-2\" variant=\"text\" icon=\"mdi-plus\" color=\"red-lighten-2\" @click=\"send({topic: 'plus', payload: item})\">\n            </v-btn>\n            <v-btn class=\"ma-2\" variant=\"text\" icon=\"mdi-minus\" color=\"blue-lighten-2\"\n              @click=\"send({topic: 'minus', payload: item})\"></v-btn>\n            {{ item.target }}°C\n        </template>\n```\nWhen either the plus or the minus button is pressed it will send the entire item in the payload and the topic will be either \"plus\" or \"minus\". Since there is an `id` field in the record, it will be easy to identify in which row the button is pressed.\n\n## Linear progress\n\nThe Current Temperature is shown as a \"Linear Progress\" similar as in the first example:\n```\n        <template v-slot:item.current=\"{ item }\">\n            <!-- Render a Linear Progress Bar for the \"current\" column -->\n            <v-progress-linear v-model=\"item.current\" min=\"15\" max=\"25\" height=\"25\" :color=\"getColor(item)\">\n                <template v-slot:default=\"{ value }\">\n                    <strong>{{ item.current }}°C</strong>\n                </template>\n            </v-progress-linear>\n        </template>\n```\nBut here the actual value is printed on top of the progress with the `<strong>{{ item.current }}°C</strong>` line. Also the color of the progress bar is determined by a function: `:color=\"getColor(item)\"`.\n\nAnd this function is defined in the script section in methods:\n```\n    methods: {\n        // add a function to determine the color of the progress bar given the row's item\n      getColor: function (item) {\n        if (item.current > item.target) {\n          return 'red'\n        } else {\n          return 'green'\n        }\n      }\n    }\n```\n",
@@ -14502,7 +14520,7 @@
         "group": "fb2e77ec2c2a5dd1",
         "name": "",
         "label": "text",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "topic": "topic",
