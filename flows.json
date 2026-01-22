@@ -214,7 +214,7 @@
         "id": "4a622033fd22118c",
         "type": "junction",
         "z": "c4157bddbbb8817a",
-        "x": 1000,
+        "x": 980,
         "y": 600,
         "wires": [
             [
@@ -256,6 +256,18 @@
         "wires": [
             [
                 "10c39d8e0c20d602"
+            ]
+        ]
+    },
+    {
+        "id": "58ea3458b94de2a5",
+        "type": "junction",
+        "z": "c4157bddbbb8817a",
+        "x": 980,
+        "y": 520,
+        "wires": [
+            [
+                "43ee3d72e8e6ab80"
             ]
         ]
     },
@@ -3960,8 +3972,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 780,
-        "y": 480,
+        "x": 820,
+        "y": 440,
         "wires": [
             [
                 "43ee3d72e8e6ab80"
@@ -4043,8 +4055,8 @@
         "links": [
             "4667f931d82fbdd7"
         ],
-        "x": 635,
-        "y": 480,
+        "x": 645,
+        "y": 440,
         "wires": [
             [
                 "a58fc1681de37f39"
@@ -4117,7 +4129,7 @@
             "b202a0b79dc00822"
         ],
         "x": 635,
-        "y": 540,
+        "y": 600,
         "wires": [
             [
                 "a9926d13056a53ff"
@@ -4137,7 +4149,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 540,
+        "y": 600,
         "wires": [
             [
                 "4a622033fd22118c"
@@ -4165,8 +4177,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 500,
-        "y": 460,
+        "x": 480,
+        "y": 560,
         "wires": [
             [
                 "a9926d13056a53ff"
@@ -4186,7 +4198,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 660,
+        "y": 680,
         "wires": [
             [
                 "4a622033fd22118c"
@@ -4264,7 +4276,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "4a622033fd22118c"
@@ -4297,7 +4309,7 @@
             "40fc1add38bf0fa4"
         ],
         "x": 635,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "e1d4efc4d5efde43"
@@ -4474,6 +4486,74 @@
         "wires": [
             [
                 "d17c41d7b5177332"
+            ]
+        ]
+    },
+    {
+        "id": "82b95504256d30bb",
+        "type": "function",
+        "z": "c4157bddbbb8817a",
+        "name": "update_data_set_testplan",
+        "func": "const {ObjectId} = global.get(\"mongodb\");\nconst testplan = global.get(\"testplan\");\n\nmsg.operation = 'updateOne'\n\nmsg.payload = [{ '_id': new ObjectId(flow.get('currentId', 'file')) }, { '$set': { 'testplan': { ...testplan }}}]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 500,
+        "wires": [
+            [
+                "58ea3458b94de2a5"
+            ]
+        ]
+    },
+    {
+        "id": "2a9b303e0bccd07b",
+        "type": "function",
+        "z": "c4157bddbbb8817a",
+        "name": "update_data_set_results",
+        "func": "const {ObjectId} = global.get(\"mongodb\");\nconst {evaluate, ...results} = global.get(\"results\");\n\nmsg.operation = 'updateOne'\n\nmsg.payload = [{ '_id': new ObjectId(flow.get('currentId', 'file')) }, { '$set': { 'results': { results }}}]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 540,
+        "wires": [
+            [
+                "58ea3458b94de2a5"
+            ]
+        ]
+    },
+    {
+        "id": "f220d1bca69e7f36",
+        "type": "link in",
+        "z": "c4157bddbbb8817a",
+        "name": "inRecTestplan",
+        "links": [],
+        "x": 645,
+        "y": 500,
+        "wires": [
+            [
+                "82b95504256d30bb"
+            ]
+        ]
+    },
+    {
+        "id": "2c8d07893b633d64",
+        "type": "link in",
+        "z": "c4157bddbbb8817a",
+        "name": "inRecResults",
+        "links": [],
+        "x": 645,
+        "y": 540,
+        "wires": [
+            [
+                "2a9b303e0bccd07b"
             ]
         ]
     },
@@ -6526,7 +6606,8 @@
         "y": 1000,
         "wires": [
             [
-                "cd8d3f58a50e5db1"
+                "cd8d3f58a50e5db1",
+                "2c387ccc3904a4e6"
             ]
         ]
     },
@@ -8476,6 +8557,47 @@
         "y": 1460,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "8f60d74c53f2f3f6",
+        "type": "file",
+        "z": "0637f22188042045",
+        "name": "",
+        "filename": "/appcache/test_torque.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 2470,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c387ccc3904a4e6",
+        "type": "csv",
+        "z": "0637f22188042045",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 2270,
+        "y": 1000,
+        "wires": [
+            [
+                "8f60d74c53f2f3f6"
+            ]
         ]
     },
     {
