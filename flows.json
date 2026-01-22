@@ -8440,7 +8440,8 @@
             [
                 "87b37c9dbbfa572a",
                 "c255229e7db1d672",
-                "14509f6701be1fc6"
+                "14509f6701be1fc6",
+                "0625785206e6cf58"
             ]
         ]
     },
@@ -8510,7 +8511,7 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 860,
+        "x": 840,
         "y": 460,
         "wires": [
             [
@@ -10468,8 +10469,8 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nnode.status({ fill: \"yellow\", shape: \"ring\", text: \"disabled\" });\n",
         "finalize": "",
         "libs": [],
-        "x": 970,
-        "y": 740,
+        "x": 1090,
+        "y": 620,
         "wires": [
             []
         ]
@@ -10490,12 +10491,38 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "enable",
-        "x": 690,
-        "y": 680,
+        "x": 1090,
+        "y": 660,
         "wires": [
             [
                 "52278dc01e9440cb"
             ]
+        ]
+    },
+    {
+        "id": "0625785206e6cf58",
+        "type": "change",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "selection",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 660,
+        "wires": [
+            []
         ]
     },
     {
