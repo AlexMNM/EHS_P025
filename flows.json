@@ -56,14 +56,6 @@
         "env": []
     },
     {
-        "id": "0ba5db83a2227bb8",
-        "type": "tab",
-        "label": "UI-Marius",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "85a0c31e48c798bf",
         "type": "tab",
         "label": "Ui-Database",
@@ -5534,7 +5526,7 @@
         "type": "debug",
         "z": "0637f22188042045",
         "name": "debug 7",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5542,8 +5534,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 1380,
+        "x": 1020,
+        "y": 1420,
         "wires": []
     },
     {
@@ -5859,7 +5851,8 @@
                 "5a12dcb34b6c43ce"
             ],
             [
-                "f78193a00e1ac470"
+                "f78193a00e1ac470",
+                "3dc61f81dca6089f"
             ]
         ]
     },
@@ -8021,8 +8014,7 @@
             [
                 "3aa0b64653eda525",
                 "96db3978031895b7",
-                "facba2f86dd97646",
-                "a4cc879c4d28527a"
+                "facba2f86dd97646"
             ],
             [
                 "43b575ff1a844002"
@@ -8336,6 +8328,25 @@
         "wires": [
             [
                 "8d5085360fba77b8"
+            ]
+        ]
+    },
+    {
+        "id": "3dc61f81dca6089f",
+        "type": "template",
+        "z": "0637f22188042045",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div class=\"v-table__wrapper\">\n    <table><!---->\n        <thead><tr><th class=\"v-data-table__td v-data-table-column--align-start v-data-table__th--sortable v-data-table__th\" colspan=\"1\" rowspan=\"1\" tabindex=\"0\"><div class=\"v-data-table-header__content\"><span></span><i class=\"mdi-arrow-up mdi v-icon notranslate v-theme--nrdb v-icon--size-default v-data-table-header__sort-icon\" aria-hidden=\"true\"></i><!----></div></th></tr><!---->\n        </thead><!---->\n        <tbody><!---->\n            <tr class=\"\"><!---->\n                {{#payload}}\n                <td data-column-key=\"color\"><!---->\n                    <div class=\"nrdb-table-cell-align\" style=\"justify-content: start;\">\n                        <i class=\"nrdb-ui-table-cell-color-spot\" style=\"background-color: {{.color}};\">\n                        </i>\n                    </div>\n                </td>\n                {{/payload}}\n            </tr><!----><!---->\n        </tbody><!----><!---->\n    </table>\n</div>",
+        "output": "str",
+        "x": 880,
+        "y": 1420,
+        "wires": [
+            [
+                "a4cc879c4d28527a"
             ]
         ]
     },
