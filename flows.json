@@ -10553,10 +10553,11 @@
         "linkType": "static",
         "timeout": "10",
         "x": 340,
-        "y": 760,
+        "y": 800,
         "wires": [
             [
-                "0625785206e6cf58"
+                "0625785206e6cf58",
+                "d348adc4ac6a0016"
             ]
         ]
     },
@@ -10582,7 +10583,7 @@
         "topic": "",
         "payload": "[{\"order\":\"00556365\"},{\"_id\":1,\"type\":1,\"order\":1,\"timestamp\":1,\"operator\":1}]",
         "payloadType": "json",
-        "x": 150,
+        "x": 130,
         "y": 820,
         "wires": [
             [
@@ -10606,7 +10607,7 @@
         "y": 860,
         "wires": [
             [
-                "d348adc4ac6a0016"
+                "f2b63119f2f83246"
             ]
         ]
     },
@@ -10623,8 +10624,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 300,
-        "y": 920,
+        "x": 360,
+        "y": 860,
         "wires": []
     },
     {
