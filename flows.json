@@ -8413,7 +8413,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n\n    {{ msg.payload }}\n\n</template>",
+        "format": "<template>\n\n    { msg.payload }\n\n</template>",
         "storeOutMessages": true,
         "passthru": false,
         "resendOnRefresh": true,
