@@ -7301,7 +7301,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "chart options -dataZoom",
-        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: [{}] \n    \n}\n\nObject.assign(chartOptions, add)\nui_update.chartOptions = chartOptions;\nmsg.ui_update = ui_update;\n\nreturn msg;\n\n\n/*dataZoom: {\n        type: 'inside'\n    } \n    \n    \ntoolbox: {\n        show: true,\n        feature: {\n            dataZoom: {\n                yAxisIndex: \"none\"\n            },\n            saveAsImage: {}\n        }\n    }\n    */",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst chartOptions = ui_update.chartOptions ?? {}\nconst add = {\n    dataZoom: [\n        {\n            type: 'inside'\n        },\n        {\n            type: 'slider',\n            show: true\n        }\n        ] \n    \n}\n\nObject.assign(chartOptions, add)\nui_update.chartOptions = chartOptions;\nmsg.ui_update = ui_update;\n\nreturn msg;\n\n\n/*dataZoom: {\n        type: 'inside'\n    } \n    \n    \ntoolbox: {\n        show: true,\n        feature: {\n            dataZoom: {\n                yAxisIndex: \"none\"\n            },\n            saveAsImage: {}\n        }\n    }\n    */",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
