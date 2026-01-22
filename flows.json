@@ -8467,7 +8467,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "find",
-        "func": "const query = { }\n\naddIfDefined(msg.payload.from, \"timestamp\", \"$gt\")\naddIfDefined(msg.payload.to, \"timestamp\", \"$lt\")\naddIfDefined(msg.payload.type, \"type\")\naddIfDefined(msg.payload.order, \"order\")\n\nmsg.operation = \"find\"\n\nmsg.payload = [query]\n\nreturn msg;\n\nfunction addIfDefined(value, attr, op = \"\", q = query) {\n    if (value !== \"\") {\n        if (op !== \"\") {\n            Object.assign(q, {[attr] : { [op] : value }})       \n        } else \n        q[attr] = value\n    }\n    return \n}",
+        "func": "const query = { }\n\naddIfDefined(msg.payload.from, \"timestamp\", \"$gt\")\naddIfDefined(msg.payload.to, \"timestamp\", \"$lt\")\naddIfDefined(msg.payload.type, \"type\")\naddIfDefined(msg.payload.order, \"order\")\n\nconst options = {\n    projection: {\n        operator: 1,\n        type: 1,\n        order: 1,\n        timestamp: 1\n    },\n}\n\nmsg.operation = \"find\"\n\n\n\nmsg.payload = [query, options]\n\nreturn msg;\n\nfunction addIfDefined(value, attr, op = \"\", q = query) {\n    if (value !== \"\") {\n        if (op !== \"\") {\n            Object.assign(q, {[attr] : { [op] : value }})       \n        } else \n        q[attr] = value\n    }\n    return \n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
