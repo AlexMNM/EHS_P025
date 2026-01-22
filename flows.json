@@ -5637,8 +5637,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1160,
-        "y": 1420,
+        "x": 960,
+        "y": 1360,
         "wires": []
     },
     {
@@ -5929,7 +5929,7 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 1080,
+        "x": 1100,
         "y": 1100,
         "wires": [
             []
@@ -8136,7 +8136,8 @@
         "y": 1100,
         "wires": [
             [
-                "d40ba3dbb2a5ad9c"
+                "d40ba3dbb2a5ad9c",
+                "a4cc879c4d28527a"
             ]
         ]
     },
