@@ -4370,7 +4370,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 6",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
