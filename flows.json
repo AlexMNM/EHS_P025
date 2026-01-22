@@ -279,8 +279,20 @@
         "y": 560,
         "wires": [
             [
-                "937d7b67602d88ba",
-                "d984f1c52bbb7a42"
+                "937d7b67602d88ba"
+            ]
+        ]
+    },
+    {
+        "id": "2a63bdad653909e6",
+        "type": "junction",
+        "z": "0637f22188042045",
+        "x": 760,
+        "y": 540,
+        "wires": [
+            [
+                "02a93dd95d1a0e49",
+                "eb24925af8cfb7a4"
             ]
         ]
     },
@@ -5862,8 +5874,8 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 1010,
-        "y": 580,
+        "x": 970,
+        "y": 540,
         "wires": [
             []
         ]
@@ -5873,7 +5885,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "update_session",
-        "func": "const math = global.get('mathjs')\nconst strain_mem = context.get(\"strain\")\nconst ret = [{}, {}, {}]\nconst fields = context.get(\"fields\")\nconst { session = { product: { type: \"default\", order: \"default\", operator: \"default\", timestamp: \"default\" } } } = { session: global.get(\"session\") }\nconst operator = global.get(\"operator\", \"file\")\nconst tools = global.get(\"settings.limits.tools\", \"file\")\n\nsession.product.operator = operator;\nif (msg.topic === \"order\") session.product.order = msg.payload;\nObject.assign(fields, (({ type, order, operator }) => ({ type, order, operator }))(session.product));\nfields.timestamp = (([d, t = \"0:0:0.0Z\"]) => d + \" \" + t.match(/[^.]+/))(session.product.timestamp.split(\"T\"));\n\n\ncontext.set(\"fields\", fields)\n\n\nret[0].payload = fields\n\nret[1] = {\n    payload: ((session.process?.stages.active / (session.process?.stages.count - 1)) * 100) || 0\n}\n\n\nswitch (msg.topic) {\n    case \"data\":\n        ret[0] = null;\n        const path = msg.path.split(\".\");\n        const entry = global.get(path.slice(0, 2).join(\".\"));\n        const stage = global.get(`session.process.stages.stages[${path[1]}]`)\n        ret[2] = {\n            features: session.product.features,\n            component: stage.component,\n            field: msg.field,\n            measurement: stage.measurement,\n            payload: global.get(msg.path)\n        }\n        switch (msg.field) {\n            case \"strain\":\n                ret[2].series = [\"strain\", \"position\"];\n                //strain_mem[stage.component]\n                if ((stage.count === 2) || strain_mem[stage.component]) {\n                    ret[2] = {};\n                } else {\n                    strain_mem[stage.component] = true;\n                }\n                context.set(\"strain\", strain_mem);\n                break;\n            case \"ohm\":\n                ret[2].channel = stage.channel;\n                break;\n            case \"osc\":\n                const vals = ret[2].payload.values\n                ret[2].payload = vals;\n                ret[2].graph = vals[\"signal\"];\n                break;\n        }\n        break;\n    case \"productData\":\n        if (!msg.sim) {\n            global.set(\"stage_data\", []);\n        }\n\n        context.set(\"strain\", { \"B\": false, \"I\": false, \"O\": false });\n        ret[2] = {\n            component: \"all\",\n            field: \"all\",\n            topic: \"reset\",\n            payload: []\n        }\n\n        global.set(\"result\", { evaluations: 0, passes: 0 });\n        break;\n}\n\nreturn ret;\n\n\n",
+        "func": "const math = global.get('mathjs')\nconst strain_mem = context.get(\"strain\")\nconst ret = [{}, {}, {}]\nconst fields = context.get(\"fields\")\nconst { session = { product: { type: \"default\", order: \"default\", operator: \"default\", timestamp: \"default\" } } } = { session: global.get(\"session\") }\nconst operator = global.get(\"operator\", \"file\")\nconst tools = global.get(\"settings.limits.tools\", \"file\")\n\nsession.product.operator = operator;\nif (msg.topic === \"order\") session.product.order = msg.payload;\nObject.assign(fields, (({ type, order, operator }) => ({ type, order, operator }))(session.product));\nfields.timestamp = (([d, t = \"0:0:0.0Z\"]) => d + \" \" + t.match(/[^.]+/))(session.product.timestamp.split(\"T\"));\n\n\ncontext.set(\"fields\", fields)\n\n\nret[0].payload = fields;\nret[0].topic = msg.topic;\n\nret[1] = {\n    payload: ((session.process?.stages.active / (session.process?.stages.count - 1)) * 100) || 0\n}\n\n\nswitch (msg.topic) {\n    case \"data\":\n        ret[0] = null;\n        const path = msg.path.split(\".\");\n        const entry = global.get(path.slice(0, 2).join(\".\"));\n        const stage = global.get(`session.process.stages.stages[${path[1]}]`)\n        ret[2] = {\n            features: session.product.features,\n            component: stage.component,\n            field: msg.field,\n            measurement: stage.measurement,\n            payload: global.get(msg.path)\n        }\n        switch (msg.field) {\n            case \"strain\":\n                ret[2].series = [\"strain\", \"position\"];\n                //strain_mem[stage.component]\n                if ((stage.count === 2) || strain_mem[stage.component]) {\n                    ret[2] = {};\n                } else {\n                    strain_mem[stage.component] = true;\n                }\n                context.set(\"strain\", strain_mem);\n                break;\n            case \"ohm\":\n                ret[2].channel = stage.channel;\n                break;\n            case \"osc\":\n                const vals = ret[2].payload.values\n                ret[2].payload = vals;\n                ret[2].graph = vals[\"signal\"];\n                break;\n        }\n        break;\n    case \"productData\":\n        if (!msg.sim) {\n            global.set(\"stage_data\", []);\n        }\n\n        context.set(\"strain\", { \"B\": false, \"I\": false, \"O\": false });\n        ret[2] = {\n            component: \"all\",\n            field: \"all\",\n            topic: \"reset\",\n            payload: []\n        }\n\n        global.set(\"result\", { evaluations: 0, passes: 0 });\n        break;\n}\n\nreturn ret;\n\n\n",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
@@ -5884,8 +5896,8 @@
         "y": 560,
         "wires": [
             [
-                "eb24925af8cfb7a4",
-                "02a93dd95d1a0e49"
+                "d984f1c52bbb7a42",
+                "2a63bdad653909e6"
             ],
             [
                 "8766ed8d27633676"
@@ -6032,7 +6044,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "update_statistics",
-        "func": "const math = global.get(\"mathjs\");\nconst fields = context.get(\"fields\");\nconst history = global.get(\"history\") ?? [];\nvar { total = 0, pass = 0, fail = 0 } = global.get(\"statistics\") || {};\nconst {  order , timestamp } = global.get(\"session.product\");\nvar block = context.get(\"block\");\n\n\nconst _order = context.get(\"order\");\nif (order !== _order || msg.topic === \"reset_stats\") {\n    total = 0;\n    pass = 0;\n    fail = 0;\n}\ncontext.set(\"order\", order)\n\n\nswitch (msg.topic) {\n    case \"pass\":\n        pass += 1 - block;\n    case \"fail\":\n        total += 1 - block;\n        fail = total - pass;\n        if (!block) {\n            history.push(...Array(20 - history.length).fill({color: \"#a0a0a0\"}))\n            history.shift();\n            history.push({color: msg.ui_update.buttonColor});\n        }\n        block = true;\n        break;\n    case \"testing\":\n        block = false;\n}\n\ncontext.set(\"block\", block);\nObject.assign(fields, { total, pass, fail })\ncontext.set(\"fields\", fields)\nglobal.set(\"statistics\", fields)\nglobal.set(\"history\", history)\n\n\nmsg.payload = [\n    {\n        label: \"Pass\",\n        count: fields.pass,\n        percent: ((fields.pass / fields.total) * 100).toFixed(1) + \"%\"\n\n    },\n    {\n        label: \"Fail\",\n        count: fields.fail,\n        percent: ((fields.fail / fields.total) * 100).toFixed(1) + \"%\"\n\n    },\n    {\n        label: \"Total\",\n        count: fields.total,\n        percent: \"\"\n\n    }\n]\n\nreturn [msg, {payload: history}];",
+        "func": "const math = global.get(\"mathjs\");\nconst fields = context.get(\"fields\");\nconst history = global.get(\"history\") ?? [];\nvar { total = 0, pass = 0, fail = 0 } = global.get(\"statistics\") || {};\nconst {  order , timestamp } = global.get(\"session.product\");\nvar block = context.get(\"block\");\n\n\nconst _order = context.get(\"order\");\nif (order !== _order || msg.topic === \"reset_stats\") {\n    total = 0;\n    pass = 0;\n    fail = 0;\n}\ncontext.set(\"order\", order)\n\n\nswitch (msg.topic) {\n    case \"pass\":\n        pass += 1 - block;\n    case \"fail\":\n        total += 1 - block;\n        fail = total - pass;\n        if (!block) {\n            history.push(...Array(20 - history.length).fill({color: \"#a0a0a0\"}))\n            history.shift();\n            history.push({color: msg.ui_update.buttonColor});\n        }\n        block = true;\n        break;\n    case \"testing\":\n        block = false;\n}\n\ncontext.set(\"block\", block);\nObject.assign(fields, { total, pass, fail })\ncontext.set(\"fields\", fields)\nglobal.set(\"statistics\", fields)\nglobal.set(\"history\", history)\n\n\nmsg.payload = [\n    {\n        label: \"Duration\",\n        count: ((Date.now() - Date.parse(global.get(\"session.product.timestamp\"))) / 1000).toFixed(2),\n        percent: \"\"\n    },\n    {\n        label: \"Pass\",\n        count: fields.pass,\n        percent: ((fields.pass / fields.total) * 100).toFixed(1) + \"%\"\n\n    },\n    {\n        label: \"Fail\",\n        count: fields.fail,\n        percent: ((fields.fail / fields.total) * 100).toFixed(1) + \"%\"\n\n    },\n    {\n        label: \"Total\",\n        count: fields.total,\n        percent: \"\"\n\n    }\n]\n\nreturn [msg, {payload: history}];",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -6434,8 +6446,8 @@
         "height": "1",
         "color": "",
         "className": "",
-        "x": 880,
-        "y": 680,
+        "x": 860,
+        "y": 580,
         "wires": []
     },
     {
@@ -7053,7 +7065,7 @@
         "id": "683dc6e49ca1f856",
         "type": "switch",
         "z": "0637f22188042045",
-        "name": "",
+        "name": "invalid or good",
         "property": "result",
         "propertyType": "msg",
         "rules": [
@@ -7069,8 +7081,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 770,
-        "y": 400,
+        "x": 880,
+        "y": 420,
         "wires": [
             [
                 "0d104c1ae4779704"
@@ -7108,7 +7120,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
+        "x": 1040,
         "y": 420,
         "wires": [
             [
@@ -7658,8 +7670,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 740,
-        "y": 440,
+        "x": 880,
+        "y": 460,
         "wires": [
             [
                 "683dc6e49ca1f856"
@@ -7693,7 +7705,7 @@
         "links": [
             "afa681053145fae2"
         ],
-        "x": 1095,
+        "x": 1175,
         "y": 420,
         "wires": []
     },
@@ -8061,7 +8073,7 @@
         "syntax": "mustache",
         "template": "Input error: Product error!\nCheck PLC product selection.",
         "output": "str",
-        "x": 920,
+        "x": 1000,
         "y": 380,
         "wires": [
             [
@@ -8078,7 +8090,7 @@
         "links": [
             "2c9f6f19ec5c61f5"
         ],
-        "x": 1015,
+        "x": 1095,
         "y": 380,
         "wires": []
     },
@@ -8144,7 +8156,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 580,
-        "y": 620,
+        "y": 600,
         "wires": []
     },
     {
@@ -8167,8 +8179,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
-        "y": 480,
+        "x": 880,
+        "y": 500,
         "wires": [
             [
                 "70caadcea072777c"
@@ -8414,7 +8426,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "parse",
-        "func": "const setup = msg.payload;\n\nmsg.payload = [\n    {\n        label:\"Product\",\n        value: setup.type\n    },\n    {\n        label: \"Order\",\n        value: setup.order\n    },\n    {\n        label: \"Timestamp\",\n        value: setup.timestamp\n    },\n    {\n        label: \"Operator\",\n        value: setup.operator\n    },\n    {\n        label: \"Duration\",\n        value: ((Date.now() - Date.parse(global.get(\"session.product.timestamp\"))) / 1000).toFixed(2)\n    }\n]\n\nreturn msg;",
+        "func": "const setup = msg.payload;\n\nmsg.payload = [\n    {\n        label:\"Product\",\n        value: setup.type\n    },\n    {\n        label: \"Order\",\n        value: setup.order\n    },\n    {\n        label: \"Timestamp\",\n        value: setup.timestamp\n    },\n    {\n        label: \"Operator\",\n        value: setup.operator\n    }\n]\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -8422,7 +8434,7 @@
         "finalize": "",
         "libs": [],
         "x": 850,
-        "y": 580,
+        "y": 540,
         "wires": [
             [
                 "efe279013f6c1ce5"
