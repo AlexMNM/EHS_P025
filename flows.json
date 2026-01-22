@@ -272,6 +272,19 @@
         ]
     },
     {
+        "id": "8711599e5c0cf07c",
+        "type": "junction",
+        "z": "0637f22188042045",
+        "x": 480,
+        "y": 560,
+        "wires": [
+            [
+                "937d7b67602d88ba",
+                "d984f1c52bbb7a42"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -5860,19 +5873,18 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "update_session",
-        "func": "const math = global.get('mathjs')\nconst strain_mem = context.get(\"strain\")\nconst ret = [{}, {}, {}]\nconst fields = context.get(\"fields\")\nconst { session = { product: { type: \"default\", order: \"default\", operator: \"default\", timestamp: \"default\" } } } = { session: global.get(\"session\") }\nconst operator = global.get(\"operator\", \"file\")\nconst tools = global.get(\"settings.limits.tools\", \"file\")\n\nsession.product.operator = operator;\nif (msg.topic === \"order\") session.product.order = msg.payload;\nObject.assign(fields, (({ type, order, operator }) => ({ type, order, operator }))(session.product));\nfields.timestamp = (([d, t = \"0:0:0.0Z\"]) => d + \" \" + t.match(/[^.]+/))(session.product.timestamp.split(\"T\"));\n\n\ncontext.set(\"fields\", fields)\n\n\nret[0].payload = fields\nret[1] = {\n    payload: ((session.process?.stages.active / (session.process?.stages.count - 1)) * 100) || 0\n}\n\n\nif ((msg.topic === \"data\")) {\n    ret[0] = null;\n\n    const path = msg.path.split(\".\");\n    const entry = global.get(path.slice(0, 2).join(\".\"));\n    const stage = global.get(`session.process.stages.stages[${path[1]}]`)\n\n    ret[2] = {\n        features: session.product.features,\n        component: stage.component,\n        field: msg.field,\n        measurement: stage.measurement,\n        payload: global.get(msg.path)\n    }\n\n    switch (msg.field) {\n        case \"strain\":\n            ret[2].series = [\"strain\", \"position\"];\n            //strain_mem[stage.component]\n            if ((stage.count === 2) || strain_mem[stage.component]) {\n                ret[2] = {};\n            } else {\n                strain_mem[stage.component] = true;\n            }\n            \n            \n            context.set(\"strain\", strain_mem);\n            break;\n        case \"ohm\":\n            ret[2].channel = stage.channel;\n            break;\n        case \"osc\":\n            const vals = ret[2].payload.values\n            ret[2].payload = vals;\n            ret[2].graph = vals[\"signal\"];\n            break;\n    }\n\n}\n\n\nif (msg.topic === \"productData\") {\n\n\n    if (!msg.sim) {\n        global.set(\"stage_data\", []);\n    }\n\n    context.set(\"strain\", { \"B\": false, \"I\": false, \"O\": false });\n    ret[2] = {\n        component: \"all\",\n        field: \"all\",\n        topic: \"reset\",\n        payload: []\n    }\n\n    global.set(\"result\", { evaluations: 0, passes: 0 });\n}\n\nreturn ret;\n\n\n",
+        "func": "const math = global.get('mathjs')\nconst strain_mem = context.get(\"strain\")\nconst ret = [{}, {}, {}]\nconst fields = context.get(\"fields\")\nconst { session = { product: { type: \"default\", order: \"default\", operator: \"default\", timestamp: \"default\" } } } = { session: global.get(\"session\") }\nconst operator = global.get(\"operator\", \"file\")\nconst tools = global.get(\"settings.limits.tools\", \"file\")\n\nsession.product.operator = operator;\nif (msg.topic === \"order\") session.product.order = msg.payload;\nObject.assign(fields, (({ type, order, operator }) => ({ type, order, operator }))(session.product));\nfields.timestamp = (([d, t = \"0:0:0.0Z\"]) => d + \" \" + t.match(/[^.]+/))(session.product.timestamp.split(\"T\"));\n\n\ncontext.set(\"fields\", fields)\n\n\nret[0].payload = fields\n\nret[1] = {\n    payload: ((session.process?.stages.active / (session.process?.stages.count - 1)) * 100) || 0\n}\n\n\nswitch (msg.topic) {\n    case \"data\":\n        ret[0] = null;\n        const path = msg.path.split(\".\");\n        const entry = global.get(path.slice(0, 2).join(\".\"));\n        const stage = global.get(`session.process.stages.stages[${path[1]}]`)\n        ret[2] = {\n            features: session.product.features,\n            component: stage.component,\n            field: msg.field,\n            measurement: stage.measurement,\n            payload: global.get(msg.path)\n        }\n        switch (msg.field) {\n            case \"strain\":\n                ret[2].series = [\"strain\", \"position\"];\n                //strain_mem[stage.component]\n                if ((stage.count === 2) || strain_mem[stage.component]) {\n                    ret[2] = {};\n                } else {\n                    strain_mem[stage.component] = true;\n                }\n                context.set(\"strain\", strain_mem);\n                break;\n            case \"ohm\":\n                ret[2].channel = stage.channel;\n                break;\n            case \"osc\":\n                const vals = ret[2].payload.values\n                ret[2].payload = vals;\n                ret[2].graph = vals[\"signal\"];\n                break;\n        }\n        break;\n    case \"productData\":\n        if (!msg.sim) {\n            global.set(\"stage_data\", []);\n        }\n\n        context.set(\"strain\", { \"B\": false, \"I\": false, \"O\": false });\n        ret[2] = {\n            component: \"all\",\n            field: \"all\",\n            topic: \"reset\",\n            payload: []\n        }\n\n        global.set(\"result\", { evaluations: 0, passes: 0 });\n        break;\n}\n\nreturn ret;\n\n\n",
         "outputs": 3,
         "timeout": 0,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nif (context.get(\"fields\") === undefined){\n    context.set(\"fields\", {})\n}\n\ncontext.set(\"strain\", {\"B\":false, \"I\":false, \"O\":false});",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 580,
+        "x": 600,
+        "y": 560,
         "wires": [
             [
                 "eb24925af8cfb7a4",
-                "d984f1c52bbb7a42",
                 "02a93dd95d1a0e49"
             ],
             [
@@ -5940,7 +5952,7 @@
         "y": 320,
         "wires": [
             [
-                "937d7b67602d88ba"
+                "8711599e5c0cf07c"
             ]
         ]
     },
@@ -5955,11 +5967,11 @@
             "58926eb4cedd25af",
             "e0ad06c96ad243c0"
         ],
-        "x": 445,
-        "y": 660,
+        "x": 405,
+        "y": 560,
         "wires": [
             [
-                "937d7b67602d88ba"
+                "8711599e5c0cf07c"
             ]
         ]
     },
@@ -6108,9 +6120,7 @@
         "x": 240,
         "y": 420,
         "wires": [
-            [
-                "937d7b67602d88ba"
-            ]
+            []
         ]
     },
     {
@@ -6710,7 +6720,7 @@
         "y": 280,
         "wires": [
             [
-                "937d7b67602d88ba"
+                "8711599e5c0cf07c"
             ]
         ]
     },
@@ -7186,9 +7196,7 @@
         "x": 240,
         "y": 460,
         "wires": [
-            [
-                "937d7b67602d88ba"
-            ]
+            []
         ]
     },
     {
@@ -7355,9 +7363,7 @@
         "x": 240,
         "y": 500,
         "wires": [
-            [
-                "937d7b67602d88ba"
-            ]
+            []
         ]
     },
     {
@@ -7389,9 +7395,7 @@
         "x": 250,
         "y": 380,
         "wires": [
-            [
-                "937d7b67602d88ba"
-            ]
+            []
         ]
     },
     {
@@ -7740,9 +7744,7 @@
         "x": 250,
         "y": 540,
         "wires": [
-            [
-                "937d7b67602d88ba"
-            ]
+            []
         ]
     },
     {
@@ -7774,9 +7776,7 @@
         "x": 250,
         "y": 580,
         "wires": [
-            [
-                "937d7b67602d88ba"
-            ]
+            []
         ]
     },
     {
@@ -7826,9 +7826,7 @@
         "x": 240,
         "y": 620,
         "wires": [
-            [
-                "937d7b67602d88ba"
-            ]
+            []
         ]
     },
     {
@@ -7896,9 +7894,7 @@
         "x": 240,
         "y": 660,
         "wires": [
-            [
-                "937d7b67602d88ba"
-            ]
+            []
         ]
     },
     {
@@ -7917,7 +7913,7 @@
         "y": 800,
         "wires": [
             [
-                "937d7b67602d88ba"
+                "8711599e5c0cf07c"
             ]
         ]
     },
@@ -8147,8 +8143,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
-        "y": 520,
+        "x": 580,
+        "y": 620,
         "wires": []
     },
     {
