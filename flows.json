@@ -4434,7 +4434,7 @@
         "type": "debug",
         "z": "0e117d41da2683ed",
         "name": "debug 13",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4451,7 +4451,7 @@
         "type": "debug",
         "z": "0e117d41da2683ed",
         "name": "debug 8",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5534,7 +5534,7 @@
         "type": "debug",
         "z": "0637f22188042045",
         "name": "debug 7",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -8458,8 +8458,7 @@
             [
                 "87b37c9dbbfa572a",
                 "c255229e7db1d672",
-                "14509f6701be1fc6",
-                "0625785206e6cf58"
+                "14509f6701be1fc6"
             ]
         ]
     },
@@ -8530,7 +8529,7 @@
         "action": "replace",
         "className": "",
         "x": 840,
-        "y": 460,
+        "y": 440,
         "wires": [
             [
                 "a549655cd4b8fa9d",
@@ -10487,8 +10486,8 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nnode.status({ fill: \"yellow\", shape: \"ring\", text: \"disabled\" });\n",
         "finalize": "",
         "libs": [],
-        "x": 1090,
-        "y": 620,
+        "x": 1110,
+        "y": 760,
         "wires": [
             []
         ]
@@ -10509,8 +10508,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "enable",
-        "x": 1090,
-        "y": 660,
+        "x": 1110,
+        "y": 800,
         "wires": [
             [
                 "52278dc01e9440cb"
@@ -10537,10 +10536,53 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 660,
+        "x": 550,
+        "y": 760,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "f2b63119f2f83246",
+        "type": "link call",
+        "z": "85a0c31e48c798bf",
+        "name": "call_database",
+        "links": [
+            "09d2343f773e9140"
+        ],
+        "linkType": "static",
+        "timeout": "10",
+        "x": 340,
+        "y": 760,
+        "wires": [
+            [
+                "0625785206e6cf58"
+            ]
+        ]
+    },
+    {
+        "id": "eddbe9dc1ab3bf52",
+        "type": "inject",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[{\"order\":\"00556365\"},{\"_id\":1,\"type\":1,\"order\":1,\"timestamp\":1,\"operator\":1}]",
+        "payloadType": "json",
+        "x": 230,
+        "y": 700,
+        "wires": [
+            [
+                "f2b63119f2f83246"
+            ]
         ]
     },
     {
