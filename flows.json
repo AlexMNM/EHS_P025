@@ -1702,7 +1702,7 @@
         "type": "debug",
         "z": "a7c7ec5294135863",
         "name": "debug 2",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -3757,7 +3757,8 @@
         "y": 280,
         "wires": [
             [
-                "364fe0205ba99901"
+                "364fe0205ba99901",
+                "42c8d39d9ce84555"
             ]
         ]
     },
@@ -4303,7 +4304,7 @@
             "defa32b61e14e01a"
         ],
         "x": 1015,
-        "y": 220,
+        "y": 240,
         "wires": []
     },
     {
@@ -4369,7 +4370,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 6",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4377,7 +4378,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
+        "x": 1080,
         "y": 120,
         "wires": []
     },
@@ -8244,7 +8245,7 @@
         "type": "ui-table",
         "z": "0637f22188042045",
         "group": "6f6a6db0185ac9a4",
-        "name": "",
+        "name": "History",
         "label": "",
         "order": 0,
         "width": 0,
@@ -8269,7 +8270,7 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 1070,
+        "x": 1080,
         "y": 1180,
         "wires": [
             []
