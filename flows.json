@@ -6013,7 +6013,7 @@
                 "align": "start"
             },
             {
-                "title": "Count",
+                "title": "",
                 "key": "count",
                 "keyType": "key",
                 "type": "text",
@@ -6021,7 +6021,7 @@
                 "align": "start"
             },
             {
-                "title": "Percent",
+                "title": "",
                 "key": "percent",
                 "keyType": "key",
                 "type": "text",
