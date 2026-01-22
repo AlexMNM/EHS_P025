@@ -10566,7 +10566,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "find",
-        "func": "const query = msg.payload\n\nconst options = {}\n\nmsg.operation = \"find\"\n\n\nmsg.payload = [query, options]\n\nreturn msg;\n",
+        "func": "const {ObjectId} = global.get(\"mongodb\");\n\nconst query = {\"_id\" : new ObjectId(msg.payload[\"_id\"])}\nconst options = {}\n\nmsg.operation = \"find\"\n\n\nmsg.payload = [query, options]\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
