@@ -8459,7 +8459,8 @@
                 "87b37c9dbbfa572a",
                 "14509f6701be1fc6",
                 "0625785206e6cf58",
-                "c255229e7db1d672"
+                "c255229e7db1d672",
+                "d348adc4ac6a0016"
             ]
         ]
     },
@@ -8533,7 +8534,8 @@
         "y": 440,
         "wires": [
             [
-                "d348adc4ac6a0016"
+                "d348adc4ac6a0016",
+                "065a7bff88b5e873"
             ]
         ]
     },
@@ -10536,12 +10538,10 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 640,
+        "x": 490,
+        "y": 580,
         "wires": [
-            [
-                "d348adc4ac6a0016"
-            ]
+            []
         ]
     },
     {
@@ -10557,8 +10557,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 600,
+        "x": 940,
+        "y": 620,
         "wires": []
     },
     {
@@ -10566,17 +10566,37 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "find",
-        "func": "const query = { }\n\naddIfDefined(msg.payload.from, \"timestamp\", \"$gt\")\naddIfDefined(msg.payload.to, \"timestamp\", \"$lt\")\naddIfDefined(msg.payload.type, \"type\")\naddIfDefined(msg.payload.order, \"order\")\n\nconst options = {\n    projection: {\n        operator: 1,\n        type: 1,\n        order: 1,\n        timestamp: 1\n    },\n}\n\nmsg.operation = \"find\"\n\n\n\nmsg.payload = [query, options]\n\nreturn msg;\n\nfunction addIfDefined(value, attr, op = \"\", q = query) {\n    if (value !== \"\") {\n        if (op !== \"\") {\n            Object.assign(q, {[attr] : { [op] : value }})       \n        } else \n        q[attr] = value\n    }\n    return \n}",
+        "func": "const query = msg.payload\n\nconst options = {}\n\nmsg.operation = \"find\"\n\n\nmsg.payload = [query, options]\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
+        "x": 710,
+        "y": 640,
+        "wires": [
+            [
+                "b73addef29fa3eff"
+            ]
+        ]
+    },
+    {
+        "id": "b73addef29fa3eff",
+        "type": "link call",
+        "z": "85a0c31e48c798bf",
+        "name": "call_database",
+        "links": [
+            "09d2343f773e9140"
+        ],
+        "linkType": "static",
+        "timeout": "10",
+        "x": 740,
         "y": 680,
         "wires": [
-            []
+            [
+                "d348adc4ac6a0016"
+            ]
         ]
     },
     {
