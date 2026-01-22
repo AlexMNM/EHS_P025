@@ -8452,15 +8452,14 @@
         ],
         "linkType": "static",
         "timeout": "10",
-        "x": 500,
+        "x": 480,
         "y": 480,
         "wires": [
             [
                 "87b37c9dbbfa572a",
                 "14509f6701be1fc6",
                 "0625785206e6cf58",
-                "c255229e7db1d672",
-                "d348adc4ac6a0016"
+                "c255229e7db1d672"
             ]
         ]
     },
@@ -8530,11 +8529,10 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 700,
+        "x": 660,
         "y": 440,
         "wires": [
             [
-                "d348adc4ac6a0016",
                 "065a7bff88b5e873"
             ]
         ]
@@ -8694,7 +8692,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1180,
+        "x": 1200,
         "y": 440,
         "wires": [
             [
@@ -8727,7 +8725,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 3,
-        "x": 1010,
+        "x": 1030,
         "y": 460,
         "wires": [
             [
@@ -8773,7 +8771,7 @@
         ],
         "topic": "topic",
         "topicType": "msg",
-        "x": 1410,
+        "x": 1450,
         "y": 460,
         "wires": [
             [
@@ -9038,7 +9036,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1170,
+        "x": 1190,
         "y": 520,
         "wires": [
             [
@@ -9057,7 +9055,7 @@
             "8f253266627cbfa4",
             "c35c9c2d338283df"
         ],
-        "x": 1305,
+        "x": 1325,
         "y": 520,
         "wires": []
     },
@@ -9494,7 +9492,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1180,
+        "x": 1200,
         "y": 560,
         "wires": [
             [
@@ -9548,7 +9546,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1180,
+        "x": 1200,
         "y": 480,
         "wires": [
             [
@@ -9827,7 +9825,7 @@
         "links": [
             "347928b681ea11cd"
         ],
-        "x": 1305,
+        "x": 1325,
         "y": 560,
         "wires": []
     },
@@ -10538,8 +10536,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 490,
-        "y": 580,
+        "x": 450,
+        "y": 680,
         "wires": [
             []
         ]
@@ -10557,7 +10555,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
+        "x": 1040,
         "y": 620,
         "wires": []
     },
@@ -10573,12 +10571,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 640,
+        "x": 810,
+        "y": 440,
         "wires": [
             [
-                "b73addef29fa3eff",
-                "d348adc4ac6a0016"
+                "b73addef29fa3eff"
             ]
         ]
     },
@@ -10592,11 +10589,39 @@
         ],
         "linkType": "static",
         "timeout": "10",
-        "x": 740,
-        "y": 680,
+        "x": 820,
+        "y": 480,
         "wires": [
             [
-                "d348adc4ac6a0016"
+                "fc2d15aecca0cd0d"
+            ]
+        ]
+    },
+    {
+        "id": "fc2d15aecca0cd0d",
+        "type": "change",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 520,
+        "wires": [
+            [
+                "a549655cd4b8fa9d"
             ]
         ]
     },
