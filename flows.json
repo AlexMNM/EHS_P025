@@ -8788,7 +8788,7 @@
         "z": "0637f22188042045",
         "name": "",
         "pauseType": "delay",
-        "timeout": "2",
+        "timeout": "3",
         "timeoutUnits": "seconds",
         "rate": "1",
         "nbRateUnits": "1",
