@@ -4664,7 +4664,9 @@
         "type": "link in",
         "z": "c4157bddbbb8817a",
         "name": "inRecTestplan",
-        "links": [],
+        "links": [
+            "1781f6c6962eae25"
+        ],
         "x": 645,
         "y": 500,
         "wires": [
@@ -5082,7 +5084,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "set testplan",
-        "func": "const features = global.get(\"session.features\")\nconst settings = global.get(\"settings\", \"file\")\nconst window = settings.limits.tools.window\n\nconst testplan = {};\nconst results = {};\n\nfor (const [feature_name, feature] of Object.entries(features).filter(([n, v]) => v.type !== \"info\")) {\n    const template = settings.data.feature_types[feature.type]\n    const enabler = template.find((e) => e?.enabler === true)\n    if (feature.value[enabler?.key] !== 0 || enabler === undefined) {\n        testplan[feature_name] = {}\n        for (const [key, value] of Object.entries(feature.value)) {\n            const model = template.find((t) => t.key === key)\n            if (model.scope === \"nominal\") {\n                const lim = model.limit_type === \"absolute\" ? 0 : feature.value[key + \"_limit\"]\n                testplan[feature_name][key] = window[model.limit_type](value, lim)\n                switch (feature.type) {\n                    case \"button\":\n                        results[feature_name] = {\n                            strain: 0,\n                            osc: 0,\n                            ohm: 0\n                        }\n                        break;\n                    case \"encoder\":\n                        results[feature_name] = {\n                            strain: 0,\n                            osc: 0,\n                            ohm_A: 0,\n                            ohm_B: 0\n                        }\n                        break;\n\n                }\n            }\n        }\n    }\n}\n\nresults.evaluate = getStatus;\n\nglobal.set(\"testplan\", testplan);\nglobal.set(\"results\", results);\n\nfunction getStatus(ob) {\n    const flat = flattenObject(ob);\n    var ret = 1;\n    for (var [k, v] of Object.entries(flat)) {\n        ret *= v;\n    }\n    return ret;\n}\n\nfunction flattenObject(ob) {\n    var toReturn = {};\n\n    for (var i in ob) {\n        if (!ob.hasOwnProperty(i)) continue;\n\n        if ((typeof ob[i]) == 'object' && ob[i] !== null) {\n            var flatObject = flattenObject(ob[i]);\n            for (var x in flatObject) {\n                if (!flatObject.hasOwnProperty(x)) continue;\n\n                toReturn[i + '.' + x] = flatObject[x];\n            }\n        } else {\n            toReturn[i] = ob[i];\n        }\n    }\n    return toReturn;\n}",
+        "func": "const features = global.get(\"session.features\")\nconst settings = global.get(\"settings\", \"file\")\nconst window = settings.limits.tools.window\n\nconst testplan = {};\nconst results = {};\n\nfor (const [feature_name, feature] of Object.entries(features).filter(([n, v]) => v.type !== \"info\")) {\n    const template = settings.data.feature_types[feature.type]\n    const enabler = template.find((e) => e?.enabler === true)\n    if (feature.value[enabler?.key] !== 0 || enabler === undefined) {\n        testplan[feature_name] = {}\n        for (const [key, value] of Object.entries(feature.value)) {\n            const model = template.find((t) => t.key === key)\n            if (model.scope === \"nominal\") {\n                const lim = model.limit_type === \"absolute\" ? 0 : feature.value[key + \"_limit\"]\n                testplan[feature_name][key] = window[model.limit_type](value, lim)\n                switch (feature.type) {\n                    case \"button\":\n                        results[feature_name] = {\n                            strain: 0,\n                            osc: 0,\n                            ohm: 0\n                        }\n                        break;\n                    case \"encoder\":\n                        results[feature_name] = {\n                            strain: 0,\n                            osc: 0,\n                            ohm_A: 0,\n                            ohm_B: 0\n                        }\n                        break;\n\n                }\n            }\n        }\n    }\n}\n\nresults.evaluate = getStatus;\n\nglobal.set(\"testplan\", testplan);\nglobal.set(\"results\", results);\n\nfunction getStatus(ob) {\n    const flat = flattenObject(ob);\n    var ret = 1;\n    for (var [k, v] of Object.entries(flat)) {\n        ret *= v;\n    }\n    return ret;\n}\n\nfunction flattenObject(ob) {\n    var toReturn = {};\n\n    for (var i in ob) {\n        if (!ob.hasOwnProperty(i)) continue;\n\n        if ((typeof ob[i]) == 'object' && ob[i] !== null) {\n            var flatObject = flattenObject(ob[i]);\n            for (var x in flatObject) {\n                if (!flatObject.hasOwnProperty(x)) continue;\n\n                toReturn[i + '.' + x] = flatObject[x];\n            }\n        } else {\n            toReturn[i] = ob[i];\n        }\n    }\n    return toReturn;\n}\n\nreturn {path: 'testplan', payload: testplan}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5092,7 +5094,9 @@
         "x": 430,
         "y": 840,
         "wires": [
-            []
+            [
+                "1781f6c6962eae25"
+            ]
         ]
     },
     {
@@ -5338,7 +5342,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 590,
+        "x": 610,
         "y": 340,
         "wires": [
             [
@@ -5643,6 +5647,19 @@
         ],
         "x": 565,
         "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "1781f6c6962eae25",
+        "type": "link out",
+        "z": "f0b99c790d575624",
+        "name": "outTestplan",
+        "mode": "link",
+        "links": [
+            "f220d1bca69e7f36"
+        ],
+        "x": 565,
+        "y": 840,
         "wires": []
     },
     {
@@ -7261,7 +7278,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1040,
+        "x": 1080,
         "y": 420,
         "wires": [
             [
@@ -7846,7 +7863,7 @@
         "links": [
             "afa681053145fae2"
         ],
-        "x": 1175,
+        "x": 1215,
         "y": 420,
         "wires": []
     },
@@ -8163,7 +8180,7 @@
         "mobileBreakpointType": "defaults",
         "action": "append",
         "className": "",
-        "x": 2160,
+        "x": 2440,
         "y": 420,
         "wires": [
             []
