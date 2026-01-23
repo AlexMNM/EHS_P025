@@ -4524,7 +4524,7 @@
         "links": [
             "defa32b61e14e01a"
         ],
-        "x": 1015,
+        "x": 1195,
         "y": 240,
         "wires": []
     },
@@ -4548,7 +4548,7 @@
                 "42c8d39d9ce84555"
             ],
             [
-                "46a3c3149898b41f"
+                "dbc7e5b51d2c44ab"
             ],
             [
                 "42c8d39d9ce84555",
@@ -4722,6 +4722,34 @@
         "wires": [
             [
                 "52a9ab709fc6575d"
+            ]
+        ]
+    },
+    {
+        "id": "dbc7e5b51d2c44ab",
+        "type": "change",
+        "z": "c4157bddbbb8817a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "stage",
+                "pt": "msg",
+                "to": "actStage",
+                "tot": "flow",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1080,
+        "y": 240,
+        "wires": [
+            [
+                "46a3c3149898b41f"
             ]
         ]
     },
