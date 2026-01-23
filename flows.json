@@ -2191,7 +2191,9 @@
         "type": "link in",
         "z": "a7c7ec5294135863",
         "name": "inGetCt",
-        "links": [],
+        "links": [
+            "5e16fee83fde1ac6"
+        ],
         "x": 245,
         "y": 1460,
         "wires": [
@@ -8773,7 +8775,9 @@
         "z": "0637f22188042045",
         "name": "outUpdateStatus",
         "mode": "link",
-        "links": [],
+        "links": [
+            "7ab66c341b1c8fe9"
+        ],
         "x": 1075,
         "y": 1160,
         "wires": []
