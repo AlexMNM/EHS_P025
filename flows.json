@@ -9246,7 +9246,8 @@
         "y": 460,
         "wires": [
             [
-                "585297eb4357824b"
+                "585297eb4357824b",
+                "d348adc4ac6a0016"
             ]
         ]
     },
@@ -9307,8 +9308,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 4,
-        "x": 1590,
-        "y": 460,
+        "x": 1550,
+        "y": 380,
         "wires": [
             [
                 "a7643881722cd6bd"
@@ -11026,8 +11027,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
-        "y": 620,
+        "x": 1660,
+        "y": 640,
         "wires": []
     },
     {
