@@ -2285,7 +2285,7 @@
         "type": "debug",
         "z": "8e125f4bb2233c4b",
         "name": "debug 15",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4620,26 +4620,6 @@
         ]
     },
     {
-        "id": "82b95504256d30bb",
-        "type": "function",
-        "z": "c4157bddbbb8817a",
-        "name": "update_data_set_testplan",
-        "func": "const {ObjectId} = global.get(\"mongodb\");\nconst testplan = global.get(\"testplan\");\n\nmsg.operation = 'updateOne'\n\nmsg.payload = [{ '_id': new ObjectId(flow.get('currentId', 'file')) }, { '$set': { 'testplan': { ...testplan }}}]\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 790,
-        "y": 500,
-        "wires": [
-            [
-                "58ea3458b94de2a5"
-            ]
-        ]
-    },
-    {
         "id": "2a9b303e0bccd07b",
         "type": "function",
         "z": "c4157bddbbb8817a",
@@ -4652,26 +4632,10 @@
         "finalize": "",
         "libs": [],
         "x": 790,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "58ea3458b94de2a5"
-            ]
-        ]
-    },
-    {
-        "id": "f220d1bca69e7f36",
-        "type": "link in",
-        "z": "c4157bddbbb8817a",
-        "name": "inRecTestplan",
-        "links": [
-            "1781f6c6962eae25"
-        ],
-        "x": 645,
-        "y": 500,
-        "wires": [
-            [
-                "82b95504256d30bb"
             ]
         ]
     },
@@ -4682,7 +4646,7 @@
         "name": "inRecResults",
         "links": [],
         "x": 645,
-        "y": 540,
+        "y": 520,
         "wires": [
             [
                 "2a9b303e0bccd07b"
@@ -4715,7 +4679,8 @@
         "z": "c4157bddbbb8817a",
         "name": "inUpdateAny",
         "links": [
-            "5e9a48c35cbb3f52"
+            "5e9a48c35cbb3f52",
+            "1781f6c6962eae25"
         ],
         "x": 645,
         "y": 580,
@@ -5123,7 +5088,8 @@
         "y": 840,
         "wires": [
             [
-                "1781f6c6962eae25"
+                "1781f6c6962eae25",
+                "ff07fddc8efe8adf"
             ]
         ]
     },
@@ -5684,10 +5650,26 @@
         "name": "outTestplan",
         "mode": "link",
         "links": [
-            "f220d1bca69e7f36"
+            "40beb22a673b04a1"
         ],
         "x": 565,
         "y": 840,
+        "wires": []
+    },
+    {
+        "id": "ff07fddc8efe8adf",
+        "type": "debug",
+        "z": "f0b99c790d575624",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 740,
         "wires": []
     },
     {
