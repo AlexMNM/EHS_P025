@@ -2199,7 +2199,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
-        "y": 1460,
+        "y": 1440,
         "wires": []
     },
     {
@@ -2232,9 +2232,23 @@
         "y": 1460,
         "wires": [
             [
-                "4e04f1e377e35875"
+                "4e04f1e377e35875",
+                "5e9a48c35cbb3f52"
             ]
         ]
+    },
+    {
+        "id": "5e9a48c35cbb3f52",
+        "type": "link out",
+        "z": "a7c7ec5294135863",
+        "name": "outCt",
+        "mode": "link",
+        "links": [
+            "40beb22a673b04a1"
+        ],
+        "x": 675,
+        "y": 1460,
+        "wires": []
     },
     {
         "id": "6ad9f8fe51b00404",
@@ -4716,7 +4730,9 @@
         "type": "link in",
         "z": "c4157bddbbb8817a",
         "name": "inUpdateAny",
-        "links": [],
+        "links": [
+            "5e9a48c35cbb3f52"
+        ],
         "x": 645,
         "y": 580,
         "wires": [
