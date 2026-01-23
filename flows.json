@@ -2963,7 +2963,7 @@
         "type": "function",
         "z": "8e125f4bb2233c4b",
         "name": "split",
-        "func": "switch (msg.topic) {\n    case \"init\":\n        context.set(\"data\", []);\n        break;\n    case \"fetch\":\n        const data = context.get(\"data\");\n        const str = msg.payload.replace(/#[0-9]*/,\"\")\n        data.push(...str.split(\",\"))\n        msg.values = data\n        break;\n    case \"chart\":\n        msg.payload = context.get(\"data\").map((v, i) => ({\"ohm\" : v, \"timeStamp\": i*0.001}));\n    default:\n        \n}\n\nreturn msg;",
+        "func": "switch (msg.topic) {\n    case \"init\":\n        context.set(\"data\", []);\n        break;\n    case \"fetch\":\n        const data = context.get(\"data\");\n        const str = msg.payload.replace(/#[0-9]*/,\"\")\n        data.push(...str.split(\",\"))\n        msg.values = data\n        break;\n    case \"chart\":\n        msg.payload = context.get(\"data\").map((v, i) => ({\"ohm\" : v, \"timeStamp\": i*0.00147}));\n    default:\n        \n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
