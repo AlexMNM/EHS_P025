@@ -2221,7 +2221,7 @@
         "type": "function",
         "z": "a7c7ec5294135863",
         "name": "payload",
-        "func": "if(msg.payload.error === 0) {\n    msg.payload = msg.payload.value[0] / 1000\n    return msg;\n} else {\n    return;\n}\n\n",
+        "func": "if(msg.payload.error === 0) {\n    msg.payload = msg.payload.value[0] / 1000\n    msg.path = 'info.cycle_time'\n    return msg;\n} else {\n    return;\n}\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3963,7 +3963,7 @@
             "50591a9bfab375b0"
         ],
         "x": 255,
-        "y": 660,
+        "y": 840,
         "wires": [
             [
                 "969366744754724e"
@@ -4000,7 +4000,7 @@
         "finalize": "",
         "libs": [],
         "x": 530,
-        "y": 700,
+        "y": 880,
         "wires": [
             [
                 "7871ad14a913e153"
@@ -4030,7 +4030,7 @@
         "action": "obj",
         "pretty": false,
         "x": 370,
-        "y": 700,
+        "y": 880,
         "wires": [
             [
                 "473f610c8720497b"
@@ -4066,7 +4066,7 @@
         "to": "",
         "reg": false,
         "x": 380,
-        "y": 660,
+        "y": 840,
         "wires": [
             [
                 "869b2be746ba232b"
@@ -4263,7 +4263,7 @@
             "b202a0b79dc00822"
         ],
         "x": 635,
-        "y": 600,
+        "y": 780,
         "wires": [
             [
                 "a9926d13056a53ff"
@@ -4283,7 +4283,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 600,
+        "y": 780,
         "wires": [
             [
                 "4a622033fd22118c"
@@ -4312,7 +4312,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 480,
-        "y": 560,
+        "y": 740,
         "wires": [
             [
                 "a9926d13056a53ff"
@@ -4332,7 +4332,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 680,
+        "y": 860,
         "wires": [
             [
                 "4a622033fd22118c"
@@ -4410,7 +4410,7 @@
         "finalize": "",
         "libs": [],
         "x": 780,
-        "y": 640,
+        "y": 820,
         "wires": [
             [
                 "4a622033fd22118c"
@@ -4443,7 +4443,7 @@
             "40fc1add38bf0fa4"
         ],
         "x": 635,
-        "y": 640,
+        "y": 820,
         "wires": [
             [
                 "e1d4efc4d5efde43"
@@ -4688,6 +4688,40 @@
         "wires": [
             [
                 "2a9b303e0bccd07b"
+            ]
+        ]
+    },
+    {
+        "id": "52a9ab709fc6575d",
+        "type": "function",
+        "z": "c4157bddbbb8817a",
+        "name": "update data any",
+        "func": "const {ObjectId} = global.get(\"mongodb\");\nconst path = msg.path;\nconst value = msg.payload;\n\nmsg.operation = 'updateOne'\n\nmsg.payload = [{ '_id': new ObjectId(flow.get('currentId', 'file')) }, { '$set': { [path]: value}}];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 580,
+        "wires": [
+            [
+                "58ea3458b94de2a5"
+            ]
+        ]
+    },
+    {
+        "id": "40beb22a673b04a1",
+        "type": "link in",
+        "z": "c4157bddbbb8817a",
+        "name": "inUpdateAny",
+        "links": [],
+        "x": 645,
+        "y": 580,
+        "wires": [
+            [
+                "52a9ab709fc6575d"
             ]
         ]
     },
