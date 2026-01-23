@@ -564,6 +564,15 @@
                 "S7_BitOffset": "0",
                 "S7_Quantity": "1",
                 "S7_Name": "partStatus"
+            },
+            {
+                "S7_Type": "DB",
+                "S7_DBnum": "10",
+                "S7_Datatype": "DI",
+                "S7_Offset": "12",
+                "S7_BitOffset": "0",
+                "S7_Quantity": "1",
+                "S7_Name": "cycleTime"
             }
         ]
     },
@@ -1837,7 +1846,7 @@
         "name": "inSetOrder",
         "links": [],
         "x": 255,
-        "y": 1560,
+        "y": 1620,
         "wires": [
             [
                 "aec5286ae04bc13c"
@@ -1855,7 +1864,7 @@
         "name": "",
         "signalSetted": false,
         "x": 640,
-        "y": 1560,
+        "y": 1620,
         "wires": [
             [
                 "aec5286ae04bc13c"
@@ -1875,7 +1884,7 @@
         "finalize": "",
         "libs": [],
         "x": 390,
-        "y": 1560,
+        "y": 1620,
         "wires": [
             [
                 "297cd64b2ced6fde"
@@ -1893,7 +1902,7 @@
         "mode": "return",
         "links": [],
         "x": 515,
-        "y": 1540,
+        "y": 1600,
         "wires": []
     },
     {
@@ -2082,8 +2091,8 @@
         "topic": "set_status",
         "name": "",
         "signalSetted": false,
-        "x": 610,
-        "y": 1860,
+        "x": 630,
+        "y": 1780,
         "wires": [
             [
                 "1fbc8d25ba64ed12"
@@ -2103,7 +2112,7 @@
         "finalize": "",
         "libs": [],
         "x": 390,
-        "y": 1860,
+        "y": 1780,
         "wires": [
             [],
             [
@@ -2120,12 +2129,78 @@
             "facba2f86dd97646"
         ],
         "x": 245,
-        "y": 1860,
+        "y": 1780,
         "wires": [
             [
                 "1fbc8d25ba64ed12"
             ]
         ]
+    },
+    {
+        "id": "de9fcc9d9aef1788",
+        "type": "s7comm read",
+        "z": "a7c7ec5294135863",
+        "connection": "3cb7f915b2dc54d4",
+        "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"10\",\"S7_Datatype\":\"DI\",\"S7_Offset\":\"12\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"1\",\"S7_Name\":\"cycleTime\"}",
+        "s7Name": "cycleTime",
+        "topic": "cycleTime",
+        "name": "",
+        "signalSetted": false,
+        "none": "true",
+        "repeat": "",
+        "once": false,
+        "x": 360,
+        "y": 1460,
+        "wires": [
+            [
+                "4e04f1e377e35875"
+            ]
+        ]
+    },
+    {
+        "id": "cfb83d682fb22aeb",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 1460,
+        "wires": [
+            [
+                "de9fcc9d9aef1788"
+            ]
+        ]
+    },
+    {
+        "id": "4e04f1e377e35875",
+        "type": "debug",
+        "z": "a7c7ec5294135863",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1460,
+        "wires": []
     },
     {
         "id": "6ad9f8fe51b00404",
