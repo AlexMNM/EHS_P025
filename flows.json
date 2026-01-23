@@ -2143,17 +2143,17 @@
         "connection": "3cb7f915b2dc54d4",
         "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"10\",\"S7_Datatype\":\"DI\",\"S7_Offset\":\"8\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"1\",\"S7_Name\":\"cycleTime\"}",
         "s7Name": "cycleTime",
-        "topic": "cycleTime",
+        "topic": "cycle_time",
         "name": "",
         "signalSetted": false,
         "none": "true",
         "repeat": "",
         "once": false,
-        "x": 360,
+        "x": 370,
         "y": 1460,
         "wires": [
             [
-                "4e04f1e377e35875"
+                "bb7f7fd811b1cba5"
             ]
         ]
     },
@@ -2178,7 +2178,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
+        "x": 140,
         "y": 1460,
         "wires": [
             [
@@ -2198,9 +2198,43 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
+        "x": 780,
         "y": 1460,
         "wires": []
+    },
+    {
+        "id": "7ab66c341b1c8fe9",
+        "type": "link in",
+        "z": "a7c7ec5294135863",
+        "name": "inGetCt",
+        "links": [],
+        "x": 245,
+        "y": 1460,
+        "wires": [
+            [
+                "de9fcc9d9aef1788"
+            ]
+        ]
+    },
+    {
+        "id": "bb7f7fd811b1cba5",
+        "type": "function",
+        "z": "a7c7ec5294135863",
+        "name": "payload",
+        "func": "if(msg.payload.error === 0) {\n    msg.payload = msg.payload.value[0] / 1000\n    return msg;\n} else {\n    return;\n}\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 1460,
+        "wires": [
+            [
+                "4e04f1e377e35875"
+            ]
+        ]
     },
     {
         "id": "6ad9f8fe51b00404",
