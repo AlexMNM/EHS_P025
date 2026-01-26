@@ -4418,7 +4418,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4623,7 +4623,7 @@
         "type": "function",
         "z": "c4157bddbbb8817a",
         "name": "update_data_set_results",
-        "func": "const {ObjectId} = global.get(\"mongodb\");\nconst {evaluate, ...results} = global.get(\"results\");\n\nconst data = {\n    ['results.final'] : results\n}\n\nmsg.payload.forEach(function(res) {\n    data[`results.data.${res.component}.${res.label.replaceAll(\" \", \"_\").toLowerCase()}`] = res;\n});\n\nmsg.operation = 'updateOne'\n\nmsg.payload = [{ '_id': new ObjectId(flow.get('currentId', 'file')) }, { '$set': { ...data }}]\n\nreturn msg;",
+        "func": "const {ObjectId} = global.get(\"mongodb\");\nconst {evaluate, ...results} = global.get(\"results\");\n\nconst data = {\n    ['results.final'] : results\n}\n\nmsg.payload.forEach(function(res) {\n    data[`results.data.${res.component}.${res.label.replaceAll(\" \", \"_\").toLowerCase()}`] = res;\n});\n\nconst operation = 'updateOne'\n\nconst payload = [{ '_id': new ObjectId(flow.get('currentId', 'file')) }, { '$set': { ...data }}]\n\nreturn {\n    operation: operation,\n    payload: payload,\n    topic: \"results\"\n};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4634,7 +4634,7 @@
         "y": 520,
         "wires": [
             [
-                "03e2ac170e048ae8"
+                "58ea3458b94de2a5"
             ]
         ]
     },
