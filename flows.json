@@ -4418,7 +4418,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 1",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4497,8 +4497,7 @@
         "y": 600,
         "wires": [
             [
-                "e0ad06c96ad243c0",
-                "03e2ac170e048ae8"
+                "e0ad06c96ad243c0"
             ]
         ]
     },
@@ -4635,7 +4634,7 @@
         "y": 520,
         "wires": [
             [
-                "58ea3458b94de2a5"
+                "03e2ac170e048ae8"
             ]
         ]
     },
@@ -4644,7 +4643,9 @@
         "type": "link in",
         "z": "c4157bddbbb8817a",
         "name": "inRecResults",
-        "links": [],
+        "links": [
+            "ab51ad437d60ed84"
+        ],
         "x": 645,
         "y": 520,
         "wires": [
@@ -5698,7 +5699,9 @@
         "z": "f0b99c790d575624",
         "name": "outEval",
         "mode": "link",
-        "links": [],
+        "links": [
+            "2c8d07893b633d64"
+        ],
         "x": 565,
         "y": 900,
         "wires": []
