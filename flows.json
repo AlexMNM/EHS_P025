@@ -5662,7 +5662,7 @@
         "type": "debug",
         "z": "f0b99c790d575624",
         "name": "debug 14",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7590,7 +7590,7 @@
             },
             {
                 "p": "path",
-                "v": "stage_data.0.plc.values",
+                "v": "stage_data.1.plc.values",
                 "vt": "str"
             },
             {
@@ -7607,7 +7607,9 @@
         "x": 250,
         "y": 380,
         "wires": [
-            []
+            [
+                "8711599e5c0cf07c"
+            ]
         ]
     },
     {
