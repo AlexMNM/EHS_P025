@@ -4612,7 +4612,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 6",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4746,7 +4746,7 @@
         "type": "debug",
         "z": "c4157bddbbb8817a",
         "name": "debug 17",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7616,7 +7616,9 @@
         "x": 240,
         "y": 500,
         "wires": [
-            []
+            [
+                "8711599e5c0cf07c"
+            ]
         ]
     },
     {
