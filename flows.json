@@ -4900,7 +4900,8 @@
         "y": 640,
         "wires": [
             [
-                "cf8fffd08dc5f9bd"
+                "cf8fffd08dc5f9bd",
+                "ff07fddc8efe8adf"
             ]
         ]
     },
@@ -4990,8 +4991,7 @@
         "y": 440,
         "wires": [
             [
-                "7b0650e87ffd0265",
-                "ff07fddc8efe8adf"
+                "7b0650e87ffd0265"
             ]
         ]
     },
@@ -5712,7 +5712,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 840,
-        "y": 380,
+        "y": 600,
         "wires": []
     },
     {
