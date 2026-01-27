@@ -825,6 +825,7 @@
     {
         "id": "0155d20efeeefd06",
         "type": "ui-group",
+        "d": true,
         "name": "Group Name",
         "page": "c01c2fd267be9ece",
         "width": 6,
@@ -876,6 +877,7 @@
     {
         "id": "fb2e77ec2c2a5dd1",
         "type": "ui-group",
+        "d": true,
         "name": "Table examples",
         "page": "c466b7e4bb472f99",
         "width": "6",
@@ -884,7 +886,8 @@
         "showTitle": false,
         "className": "",
         "visible": "true",
-        "disabled": "false"
+        "disabled": "false",
+        "groupType": "default"
     },
     {
         "id": "f7676b47d7dc782a",
