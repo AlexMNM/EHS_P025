@@ -4762,6 +4762,57 @@
         "wires": []
     },
     {
+        "id": "578b8ac125ba8f3a",
+        "type": "inject",
+        "z": "c4157bddbbb8817a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3",
+        "payloadType": "num",
+        "x": 410,
+        "y": 1120,
+        "wires": [
+            [
+                "ac0a395743a62f08"
+            ]
+        ]
+    },
+    {
+        "id": "ac0a395743a62f08",
+        "type": "change",
+        "z": "c4157bddbbb8817a",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "stageIndex",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "ebde08458e44bf71",
         "type": "mongodb4",
         "z": "0e117d41da2683ed",
