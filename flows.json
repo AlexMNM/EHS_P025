@@ -8139,7 +8139,7 @@
             },
             {
                 "p": "path",
-                "v": "stage_data.2.plc.values",
+                "v": "stage_data.7.plc.values",
                 "vt": "str"
             },
             {
@@ -8156,7 +8156,9 @@
         "x": 240,
         "y": 660,
         "wires": [
-            []
+            [
+                "8711599e5c0cf07c"
+            ]
         ]
     },
     {
