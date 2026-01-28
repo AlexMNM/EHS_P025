@@ -4813,6 +4813,31 @@
         ]
     },
     {
+        "id": "faeddd40fb52ec8d",
+        "type": "inject",
+        "z": "c4157bddbbb8817a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "7",
+        "payloadType": "num",
+        "x": 410,
+        "y": 1160,
+        "wires": [
+            [
+                "ac0a395743a62f08"
+            ]
+        ]
+    },
+    {
         "id": "ebde08458e44bf71",
         "type": "mongodb4",
         "z": "0e117d41da2683ed",
