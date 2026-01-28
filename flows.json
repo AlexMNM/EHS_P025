@@ -2033,8 +2033,8 @@
         "links": [
             "b202a0b79dc00822"
         ],
-        "x": 1175,
-        "y": 840,
+        "x": 1135,
+        "y": 880,
         "wires": [
             []
         ]
@@ -7602,7 +7602,7 @@
             },
             {
                 "p": "path",
-                "v": "stage_data.5.plc.values",
+                "v": "stage_data.7.plc.values",
                 "vt": "str"
             },
             {
