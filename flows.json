@@ -4223,7 +4223,7 @@
         "type": "function",
         "z": "c4157bddbbb8817a",
         "name": "update_flow_data",
-        "func": "const stageIndex = global.get(\"session.process.stages.active\");\nconst stage = global.get(`session.process.stages.stages[${stageIndex}]`);\nconst product = global.get(\"session.product\");\n\nflow.set(\"actStage\", stage);\nflow.set(\"stageIndex\", stageIndex)\nflow.set(\"product\", product);\n\nreturn msg;",
+        "func": "const stageIndex = global.get(\"session.process.stages.active\");\nconst stage = global.get(`session.process.stages.stages[${stageIndex}]`);\nconst product = global.get(\"session.product\");\n\nflow.set(\"actStage\", stage);\nglobal.set(\"current.stage\", stage)\nflow.set(\"stageIndex\", stageIndex)\nflow.set(\"product\", product);\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
