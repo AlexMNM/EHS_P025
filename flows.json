@@ -4332,7 +4332,7 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 480,
+        "x": 540,
         "y": 740,
         "wires": [
             [
@@ -8190,7 +8190,7 @@
             },
             {
                 "p": "path",
-                "v": "stage_data.7.plc.values",
+                "v": "stage_data.3.plc.values",
                 "vt": "str"
             },
             {
