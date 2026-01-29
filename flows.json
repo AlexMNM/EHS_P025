@@ -10182,7 +10182,8 @@
         "y": 880,
         "wires": [
             [
-                "cc399444a3495527"
+                "cc399444a3495527",
+                "6914c0c0575f8a4b"
             ]
         ]
     },
@@ -10629,8 +10630,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 900,
-        "y": 780,
+        "x": 1700,
+        "y": 760,
         "wires": []
     },
     {
@@ -10695,7 +10696,6 @@
         "y": 520,
         "wires": [
             [
-                "d348adc4ac6a0016",
                 "4662a75cd903356a"
             ]
         ]
@@ -10763,7 +10763,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "get stage setup",
-        "func": "const setup = flow.get(\"data.setup\");\nconst {component, measurement, channel} = global.get(\"settings.data.dictionary\", \"file\");\n\nconst components = {\n    \"O\": 'outer',\n    \"I\": 'inner',\n    \"B\": 'push'\n}\n\nconst measurements = \n\nmsg.payload = [\n   \n]\n\nreturn msg;",
+        "func": "const setup = flow.get(\"data.setup\");\nconst dict = global.get(\"settings.data.dictionary\", \"file\");\n\nconst table = [];\n\nObject.entries(setup).forEach(([k, v]) => {table.push({label: k, value: dict['k'][v] ?? v})});\n\nreturn {payload: table};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -10773,7 +10773,9 @@
         "x": 1420,
         "y": 840,
         "wires": [
-            []
+            [
+                "d348adc4ac6a0016"
+            ]
         ]
     },
     {
