@@ -392,7 +392,7 @@
         ],
         "order": 2,
         "className": "",
-        "visible": "true",
+        "visible": true,
         "disabled": "false"
     },
     {
@@ -10843,7 +10843,8 @@
         "y": 1000,
         "wires": [
             [
-                "ecba115984f1aa50"
+                "ecba115984f1aa50",
+                "37a7f15b42e4d3ad"
             ]
         ]
     },
