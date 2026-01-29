@@ -9528,20 +9528,20 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "Stage",
+                "title": "",
                 "key": "col0",
                 "keyType": "key",
                 "type": "text",
-                "width": "1",
-                "align": "start"
+                "width": "",
+                "align": "end"
             },
             {
-                "title": "configuration",
+                "title": "",
                 "key": "col1",
                 "keyType": "key",
                 "type": "text",
-                "width": "1",
-                "align": "start"
+                "width": "",
+                "align": "end"
             },
             {
                 "title": "",
@@ -9549,7 +9549,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "start"
+                "align": "end"
             },
             {
                 "title": "",
@@ -9557,7 +9557,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "start"
+                "align": "end"
             },
             {
                 "title": "",
@@ -9565,7 +9565,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "start"
+                "align": "end"
             },
             {
                 "title": "",
@@ -9573,7 +9573,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "start"
+                "align": "end"
             }
         ],
         "mobileBreakpoint": "",
