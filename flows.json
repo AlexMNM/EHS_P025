@@ -4993,7 +4993,8 @@
         "y": 640,
         "wires": [
             [
-                "30bf3e2256761f16"
+                "30bf3e2256761f16",
+                "a28bb7266b6580f9"
             ]
         ]
     },
@@ -5858,7 +5859,7 @@
         "z": "f0b99c790d575624",
         "group": "0155d20efeeefd06",
         "name": "",
-        "label": "chart",
+        "label": "filtered",
         "order": 1,
         "chartType": "line",
         "category": "topic",
@@ -5910,6 +5911,68 @@
         "interpolation": "linear",
         "x": 810,
         "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a28bb7266b6580f9",
+        "type": "ui-chart",
+        "z": "f0b99c790d575624",
+        "group": "0155d20efeeefd06",
+        "name": "",
+        "label": "unfiltered",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "timeStamp",
+        "xAxisPropertyType": "property",
+        "xAxisType": "linear",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "strain",
+        "yAxisPropertyType": "property",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "replace",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 400,
+        "y": 700,
         "wires": [
             []
         ]
