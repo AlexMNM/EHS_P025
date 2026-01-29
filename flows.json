@@ -321,6 +321,56 @@
         ]
     },
     {
+        "id": "7cd6e1f6c33f42e9",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 1540,
+        "y": 280,
+        "wires": [
+            [
+                "780a456ee4060e20",
+                "2e121867f2e81a8a",
+                "366e494e5d681494"
+            ]
+        ]
+    },
+    {
+        "id": "780a456ee4060e20",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 1600,
+        "y": 340,
+        "wires": [
+            [
+                "20542ba1e7f761a4"
+            ]
+        ]
+    },
+    {
+        "id": "2e121867f2e81a8a",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 1600,
+        "y": 380,
+        "wires": [
+            [
+                "a3709060f12e9c21"
+            ]
+        ]
+    },
+    {
+        "id": "366e494e5d681494",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 1600,
+        "y": 420,
+        "wires": [
+            [
+                "0322ae87d8e3dd37"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -9526,7 +9576,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 1330,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "585297eb4357824b",
@@ -9628,14 +9678,6 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "Component",
-                "key": "component",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
                 "title": "Measurement",
                 "key": "measurement",
                 "keyType": "key",
@@ -9680,7 +9722,7 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 1670,
+        "x": 1710,
         "y": 340,
         "wires": [
             []
@@ -9849,7 +9891,7 @@
         "topic": "selectView",
         "topicType": "str",
         "x": 1340,
-        "y": 560,
+        "y": 600,
         "wires": [
             [
                 "e1f1c9ed849d7837"
@@ -9876,7 +9918,7 @@
         "to": "",
         "reg": false,
         "x": 1140,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "ab25bbdd5fe82ffb",
@@ -9911,7 +9953,7 @@
         "to": "",
         "reg": false,
         "x": 1100,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "f144de5ed2e31ac4"
@@ -9993,7 +10035,7 @@
             "17aefc05b1be602f"
         ],
         "x": 1015,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "14509f6701be1fc6",
@@ -10014,7 +10056,7 @@
         "finalize": "",
         "libs": [],
         "x": 1750,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "8151311b1f3eb043",
@@ -10081,16 +10123,15 @@
         "id": "c35c9c2d338283df",
         "type": "link in",
         "z": "85a0c31e48c798bf",
-        "name": "inValues",
+        "name": "inResetValues",
         "links": [
-            "10bab48e7c420909",
-            "a289ad899d997083"
+            "10bab48e7c420909"
         ],
-        "x": 1585,
-        "y": 340,
+        "x": 1545,
+        "y": 220,
         "wires": [
             [
-                "20542ba1e7f761a4"
+                "7cd6e1f6c33f42e9"
             ]
         ]
     },
@@ -10176,7 +10217,7 @@
         "finalize": "",
         "libs": [],
         "x": 1360,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "51442a907f816608"
@@ -10193,7 +10234,7 @@
             "a8ccf417fe6d5dac"
         ],
         "x": 1635,
-        "y": 600,
+        "y": 640,
         "wires": []
     },
     {
@@ -10224,7 +10265,7 @@
             "a8ccf417fe6d5dac"
         ],
         "x": 1875,
-        "y": 440,
+        "y": 480,
         "wires": []
     },
     {
@@ -10337,7 +10378,7 @@
         "repair": false,
         "outputs": 2,
         "x": 1750,
-        "y": 480,
+        "y": 520,
         "wires": [
             [
                 "6a38fee3849bb4d4"
@@ -10357,7 +10398,7 @@
             "7d26955ff8ee9e16"
         ],
         "x": 1875,
-        "y": 480,
+        "y": 520,
         "wires": []
     },
     {
@@ -10370,7 +10411,7 @@
             "0a1fba668950be30"
         ],
         "x": 1875,
-        "y": 520,
+        "y": 560,
         "wires": []
     },
     {
@@ -10422,7 +10463,7 @@
         "to": "",
         "reg": false,
         "x": 1530,
-        "y": 600,
+        "y": 640,
         "wires": [
             [
                 "6db37fcb97b81b6e"
@@ -10578,7 +10619,7 @@
         "finalize": "",
         "libs": [],
         "x": 1550,
-        "y": 440,
+        "y": 480,
         "wires": [
             [
                 "3d5490e19f71c9f1"
@@ -10796,7 +10837,7 @@
             "347928b681ea11cd"
         ],
         "x": 1385,
-        "y": 480,
+        "y": 520,
         "wires": []
     },
     {
@@ -10808,7 +10849,7 @@
             "10bab48e7c420909"
         ],
         "x": 1275,
-        "y": 400,
+        "y": 440,
         "wires": [
             [
                 "f144de5ed2e31ac4"
@@ -10852,7 +10893,7 @@
         "wires": [
             [
                 "f8d736e68bd97453",
-                "20542ba1e7f761a4"
+                "7cd6e1f6c33f42e9"
             ]
         ]
     },
@@ -10924,7 +10965,7 @@
         "topic": "selectView",
         "topicType": "str",
         "x": 1340,
-        "y": 640,
+        "y": 680,
         "wires": [
             [
                 "c6229ebe98d37507"
@@ -10951,7 +10992,7 @@
         "to": "",
         "reg": false,
         "x": 1140,
-        "y": 640,
+        "y": 680,
         "wires": [
             [
                 "a84ed122459ba306"
@@ -10979,7 +11020,7 @@
         "to": "",
         "reg": false,
         "x": 1520,
-        "y": 640,
+        "y": 680,
         "wires": [
             [
                 "6db37fcb97b81b6e"
@@ -11081,8 +11122,8 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "get results",
-        "func": "const {data, final} = flow.get(\"entry.results\");\n\nconst lines = [];\n\nObject.values(data).forEach((c) => {Object.values(c).forEach((m) => {lines.push({...m})})});\n\nreturn {payload: lines};",
-        "outputs": 1,
+        "func": "const {data, final} = flow.get(\"entry.results\");\n\nconst ret = Object.values(data).map((c) => ({payload: getValues(c)}));\n\nreturn ret;\n\nfunction getValues(c) {\n    return Object.values(c).map((m) => ({ ...m }))\n}",
+        "outputs": 3,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
@@ -11094,7 +11135,9 @@
             [
                 "a289ad899d997083",
                 "d348adc4ac6a0016"
-            ]
+            ],
+            [],
+            []
         ]
     },
     {
@@ -11103,12 +11146,188 @@
         "z": "85a0c31e48c798bf",
         "name": "outResults",
         "mode": "link",
-        "links": [
-            "c35c9c2d338283df"
-        ],
-        "x": 1265,
+        "links": [],
+        "x": 1275,
         "y": 1100,
         "wires": []
+    },
+    {
+        "id": "a3709060f12e9c21",
+        "type": "ui-table",
+        "z": "85a0c31e48c798bf",
+        "group": "08a4c47b7bced26d",
+        "name": "values",
+        "label": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Measurement",
+                "key": "measurement",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Status",
+                "key": "result",
+                "keyType": "key",
+                "type": "tickcross",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Lower",
+                "key": "lower",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Value",
+                "key": "value",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Upper",
+                "key": "upper",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "",
+        "mobileBreakpointType": "none",
+        "action": "replace",
+        "className": "",
+        "x": 1710,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0322ae87d8e3dd37",
+        "type": "ui-table",
+        "z": "85a0c31e48c798bf",
+        "group": "08a4c47b7bced26d",
+        "name": "values",
+        "label": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": false,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Measurement",
+                "key": "measurement",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Status",
+                "key": "result",
+                "keyType": "key",
+                "type": "tickcross",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Lower",
+                "key": "lower",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Value",
+                "key": "value",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Upper",
+                "key": "upper",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "",
+        "mobileBreakpointType": "none",
+        "action": "replace",
+        "className": "",
+        "x": 1710,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59cd384d0face872",
+        "type": "link in",
+        "z": "85a0c31e48c798bf",
+        "name": "link in 3",
+        "links": [],
+        "x": 1545,
+        "y": 340,
+        "wires": [
+            [
+                "780a456ee4060e20"
+            ]
+        ]
+    },
+    {
+        "id": "ddae270bf24cb44c",
+        "type": "link in",
+        "z": "85a0c31e48c798bf",
+        "name": "link in 5",
+        "links": [],
+        "x": 1545,
+        "y": 380,
+        "wires": [
+            [
+                "2e121867f2e81a8a"
+            ]
+        ]
+    },
+    {
+        "id": "a7a9a7e4cc3064a3",
+        "type": "link in",
+        "z": "85a0c31e48c798bf",
+        "name": "link in 6",
+        "links": [],
+        "x": 1545,
+        "y": 420,
+        "wires": [
+            [
+                "366e494e5d681494"
+            ]
+        ]
     },
     {
         "id": "8435f37c02a9e26b",
