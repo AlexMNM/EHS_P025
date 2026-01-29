@@ -4260,7 +4260,7 @@
         "type": "function",
         "z": "c4157bddbbb8817a",
         "name": "start_aquisition",
-        "func": "const stage = flow.get(\"actStage\");\nconst product = flow.get(\"product\");\nconst [a,b,[c,d,[recPulses]]] = json_or_null(msg.received) || [null, null, [null, null, [null]]]\nconst pulses = stage?.component === \"B\" ? stage?.count : stage?.component === \"I\" ? product.features.innerShaft.resolution : product.features.outerShaft.resolution;\nconst time = stage?.component === \"B\" ? 0.8 : /*(stage?.displacement / stage?.velocity * 60) ??*/ (1 + (1/pulses) * 2); \nconst pretrigger = stage?.component === \"B\" ? 0.01 : 0.01 //((1 / pulses) * (1/4));\n\nif (stage.measurement === \"S\" || msg.payload === \"StartAq\") {\n    flow.set(\"aqStage\", flow.get(\"stageIndex\"))\n\n    msg.payload = [\"\", \"StartAq\", time, pretrigger]\n    msg.component = stage.component;\n    return msg;\n} \n\nreturn\n\nfunction json_or_null(json_string)\n{\n    let json_object = null;\n    \n    try\n    {\n        json_object = JSON.parse(json_string);\n    }\n    \n    catch (e)\n    {\n        return null;\n    }\n    \n    return json_object;\n}\n\n",
+        "func": "const stage = flow.get(\"actStage\");\nconst product = flow.get(\"product\");\nconst [a,b,[c,d,[recPulses]]] = json_or_null(msg.received) || [null, null, [null, null, [null]]]\nconst pulses = stage?.component === \"B\" ? stage?.count : stage?.component === \"I\" ? product.features.innerShaft.resolution : product.features.outerShaft.resolution;\nconst time = stage?.component === \"B\" ? 0.8 : /*(stage?.displacement / stage?.velocity * 60) ??*/ (60 / stage.velocity + (1/pulses) * 2); \nconst pretrigger = stage?.component === \"B\" ? 0.01 : 0.01 //((1 / pulses) * (1/4));\n\nif (stage.measurement === \"S\" || msg.payload === \"StartAq\") {\n    flow.set(\"aqStage\", flow.get(\"stageIndex\"))\n\n    msg.payload = [\"\", \"StartAq\", time, pretrigger]\n    msg.component = stage.component;\n    return msg;\n} \n\nreturn\n\nfunction json_or_null(json_string)\n{\n    let json_object = null;\n    \n    try\n    {\n        json_object = JSON.parse(json_string);\n    }\n    \n    catch (e)\n    {\n        return null;\n    }\n    \n    return json_object;\n}\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4980,7 +4980,8 @@
         "wires": [
             [
                 "cf8fffd08dc5f9bd",
-                "ff07fddc8efe8adf"
+                "ff07fddc8efe8adf",
+                "27efb598df1cfccb"
             ]
         ]
     },
@@ -5823,6 +5824,96 @@
         "x": 565,
         "y": 900,
         "wires": []
+    },
+    {
+        "id": "27efb598df1cfccb",
+        "type": "change",
+        "z": "f0b99c790d575624",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "deb.filtr",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 720,
+        "wires": [
+            [
+                "bcb1f5a1118b58d4"
+            ]
+        ]
+    },
+    {
+        "id": "bcb1f5a1118b58d4",
+        "type": "ui-chart",
+        "z": "f0b99c790d575624",
+        "group": "0155d20efeeefd06",
+        "name": "",
+        "label": "chart",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "linear",
+        "x": 810,
+        "y": 720,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "f4f2fb073ad2baf1",
