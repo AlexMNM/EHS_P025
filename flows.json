@@ -9622,11 +9622,60 @@
         "height": 0,
         "maxrows": 0,
         "passthru": false,
-        "autocols": true,
+        "autocols": false,
         "showSearch": false,
         "deselect": true,
         "selectionType": "none",
-        "columns": [],
+        "columns": [
+            {
+                "title": "Component",
+                "key": "component",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Measurement",
+                "key": "measurement",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Status",
+                "key": "result",
+                "keyType": "key",
+                "type": "tickcross",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Lower",
+                "key": "lower",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Value",
+                "key": "value",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Upper",
+                "key": "upper",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
         "mobileBreakpoint": "",
         "mobileBreakpointType": "none",
         "action": "replace",
@@ -10034,7 +10083,8 @@
         "z": "85a0c31e48c798bf",
         "name": "inValues",
         "links": [
-            "10bab48e7c420909"
+            "10bab48e7c420909",
+            "a289ad899d997083"
         ],
         "x": 1585,
         "y": 340,
@@ -11053,7 +11103,9 @@
         "z": "85a0c31e48c798bf",
         "name": "outResults",
         "mode": "link",
-        "links": [],
+        "links": [
+            "c35c9c2d338283df"
+        ],
         "x": 1265,
         "y": 1100,
         "wires": []
