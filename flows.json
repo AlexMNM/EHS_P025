@@ -9529,7 +9529,7 @@
         "columns": [
             {
                 "title": "Stage configuration",
-                "key": "label",
+                "key": "col0",
                 "keyType": "key",
                 "type": "text",
                 "width": "1",
@@ -9537,10 +9537,42 @@
             },
             {
                 "title": "",
-                "key": "value",
+                "key": "col1",
                 "keyType": "key",
                 "type": "text",
                 "width": "1",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "col2",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "col3",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "col4",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "col5",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
                 "align": "start"
             }
         ],
@@ -9654,7 +9686,7 @@
         "type": "ui-chart",
         "z": "85a0c31e48c798bf",
         "group": "5f03761aafa114cc",
-        "name": "",
+        "name": "strain",
         "label": "",
         "order": 5,
         "chartType": "line",
@@ -9705,7 +9737,7 @@
         "height": "5",
         "className": "",
         "interpolation": "smooth",
-        "x": 2260,
+        "x": 2230,
         "y": 960,
         "wires": [
             []
@@ -10713,7 +10745,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "get stage setup",
-        "func": "const setup = flow.get(\"data.setup\");\nconst dict = global.get(\"settings.data.dictionary\", \"file\");\n\nconst table = [];\n\nObject.entries(setup).forEach(([k, v]) => { if (((c) => (c !== 'B' && k !== 'count') || (c === 'B' && k !== 'channel'))(setup.component))  table.push({label: k, value: (dict[k] !== undefined ? dict[k][v] : v?.toFixed(2))})});\n\nreturn {payload: table};",
+        "func": "const setup = flow.get(\"data.setup\");\nconst dict = global.get(\"settings.data.dictionary\", \"file\");\n\nconst table = [{},{}];\n\nObject.entries(setup).forEach(([k, v], i) => { table[0][`col${i}`] = k; table[1][`col${i}`] = (dict[k] !== undefined ? dict[k][v] : v?.toFixed(2)) });\n\nreturn {payload: table};\n\n/*\n([k, v]) => { if (((c) => (c !== 'B' && k !== 'count') || (c === 'B' && k !== 'channel'))(setup.component))  table.push({label: k, value: (dict[k] !== undefined ? dict[k][v] : v?.toFixed(2))})}\n */",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
