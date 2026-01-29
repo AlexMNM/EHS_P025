@@ -11421,13 +11421,13 @@
         "type": "file",
         "z": "85a0c31e48c798bf",
         "name": "",
-        "filename": "/appcache/reports/export.csv",
+        "filename": "/appcache/node/static/export.csv",
         "filenameType": "str",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 660,
+        "x": 680,
         "y": 1080,
         "wires": [
             []
@@ -11440,7 +11440,7 @@
         "name": "",
         "property": "payload[0]",
         "action": "",
-        "pretty": true,
+        "pretty": false,
         "x": 590,
         "y": 1140,
         "wires": [
@@ -11454,13 +11454,13 @@
         "type": "file",
         "z": "85a0c31e48c798bf",
         "name": "",
-        "filename": "/appcache/reports/export.json",
+        "filename": "/appcache/node/static/export.json",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 670,
+        "x": 680,
         "y": 1180,
         "wires": [
             []
