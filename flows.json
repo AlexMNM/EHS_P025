@@ -9962,7 +9962,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "set flow data",
-        "func": "flow.set(\"data\", {});\n\nconst data = flow.get(\"data\");\n\ndata.plc = msg.payload.plc.values;\n((x) => x = x?.toFixed(2))(data.plc[0].timeStamp);\ndata.setup = msg.payload.plc.setup;\ndata.ohm = msg.payload?.ohm;\ndata.osc = msg.payload?.osc;\n\nswitch(undefined){\n    case data.ohm:\n        msg.extra = \"osc\";\n        break;\n    case data.osc:\n        msg.extra = \"ohm\";\n        break;\n\n}\n\nreturn msg;",
+        "func": "flow.set(\"data\", {});\n\nconst data = flow.get(\"data\");\n\n((x) => x = x?.toFixed(2))(msg.payload.plc.values[0].timeStamp);\ndata.plc = msg.payload.plc.values;\ndata.setup = msg.payload.plc.setup;\ndata.ohm = msg.payload?.ohm;\ndata.osc = msg.payload?.osc;\n\nswitch(undefined){\n    case data.ohm:\n        msg.extra = \"osc\";\n        break;\n    case data.osc:\n        msg.extra = \"ohm\";\n        break;\n\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
