@@ -9518,7 +9518,7 @@
         "name": "stage setup",
         "label": "",
         "order": 2,
-        "width": 2,
+        "width": 4,
         "height": 0,
         "maxrows": 0,
         "passthru": false,
