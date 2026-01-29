@@ -10807,7 +10807,9 @@
         "z": "85a0c31e48c798bf",
         "name": "outSearchForm",
         "mode": "link",
-        "links": [],
+        "links": [
+            "1c762db2332209e2"
+        ],
         "x": 1385,
         "y": 300,
         "wires": []
@@ -10817,8 +10819,10 @@
         "type": "link in",
         "z": "85a0c31e48c798bf",
         "name": "inFindSelection",
-        "links": [],
-        "x": 185,
+        "links": [
+            "5e95da190b6ad8e9"
+        ],
+        "x": 215,
         "y": 440,
         "wires": [
             [
