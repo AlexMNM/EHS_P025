@@ -9241,8 +9241,6 @@
         "y": 440,
         "wires": [
             [
-                "87b37c9dbbfa572a",
-                "14509f6701be1fc6",
                 "0625785206e6cf58",
                 "c255229e7db1d672"
             ]
@@ -9452,79 +9450,6 @@
         ]
     },
     {
-        "id": "6acc34f68fe7d1e1",
-        "type": "change",
-        "z": "85a0c31e48c798bf",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "ui_update.options",
-                "pt": "msg",
-                "to": "$map(\t   msg.payload.stage_results,\t   function($x) {{\"value\":$x.*,\"label\":$keys($x)}} \t)\t",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "enabled",
-                "pt": "msg",
-                "to": "true",
-                "tot": "bool"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1200,
-        "y": 440,
-        "wires": [
-            [
-                "f144de5ed2e31ac4"
-            ]
-        ]
-    },
-    {
-        "id": "a549655cd4b8fa9d",
-        "type": "switch",
-        "z": "85a0c31e48c798bf",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "hask",
-                "v": "stage_results",
-                "vt": "str"
-            },
-            {
-                "t": "hask",
-                "v": "stage_data",
-                "vt": "str"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 3,
-        "x": 1030,
-        "y": 460,
-        "wires": [
-            [
-                "6acc34f68fe7d1e1"
-            ],
-            [
-                "4662a75cd903356a"
-            ],
-            [
-                "87b37c9dbbfa572a"
-            ]
-        ]
-    },
-    {
         "id": "f144de5ed2e31ac4",
         "type": "ui-button-group",
         "z": "85a0c31e48c798bf",
@@ -9556,11 +9481,12 @@
         ],
         "topic": "topic",
         "topicType": "msg",
-        "x": 1490,
-        "y": 460,
+        "x": 1330,
+        "y": 440,
         "wires": [
             [
-                "585297eb4357824b"
+                "585297eb4357824b",
+                "17aefc05b1be602f"
             ]
         ]
     },
@@ -9585,8 +9511,8 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 2440,
-        "y": 520,
+        "x": 1690,
+        "y": 300,
         "wires": [
             []
         ]
@@ -9612,8 +9538,8 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 2420,
-        "y": 560,
+        "x": 1670,
+        "y": 340,
         "wires": [
             []
         ]
@@ -9622,7 +9548,7 @@
         "id": "87b37c9dbbfa572a",
         "type": "change",
         "z": "85a0c31e48c798bf",
-        "name": "reset_tables",
+        "name": "reset and disable",
         "rules": [
             {
                 "t": "set",
@@ -9644,12 +9570,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1190,
+        "x": 470,
         "y": 520,
         "wires": [
             [
-                "10bab48e7c420909",
-                "f144de5ed2e31ac4"
+                "10bab48e7c420909"
             ]
         ]
     },
@@ -9661,9 +9586,10 @@
         "mode": "link",
         "links": [
             "8f253266627cbfa4",
-            "c35c9c2d338283df"
+            "c35c9c2d338283df",
+            "eb349fe7e872e4ca"
         ],
-        "x": 1325,
+        "x": 595,
         "y": 520,
         "wires": []
     },
@@ -9676,8 +9602,8 @@
             "10bab48e7c420909",
             "21a8c894e9bc4a6a"
         ],
-        "x": 2295,
-        "y": 520,
+        "x": 1585,
+        "y": 300,
         "wires": [
             [
                 "f8d736e68bd97453"
@@ -9740,8 +9666,8 @@
         "height": "5",
         "className": "",
         "interpolation": "smooth",
-        "x": 2620,
-        "y": 940,
+        "x": 2280,
+        "y": 920,
         "wires": [
             []
         ]
@@ -9778,8 +9704,8 @@
         ],
         "topic": "selectView",
         "topicType": "str",
-        "x": 1320,
-        "y": 800,
+        "x": 1340,
+        "y": 560,
         "wires": [
             [
                 "e1f1c9ed849d7837"
@@ -9842,8 +9768,8 @@
         "height": "5",
         "className": "",
         "interpolation": "smooth",
-        "x": 2410,
-        "y": 980,
+        "x": 2070,
+        "y": 960,
         "wires": [
             []
         ]
@@ -9867,11 +9793,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1200,
-        "y": 560,
+        "x": 1140,
+        "y": 600,
         "wires": [
             [
-                "17aefc05b1be602f"
+                "ab25bbdd5fe82ffb",
+                "e1f1c9ed849d7837"
             ]
         ]
     },
@@ -9879,7 +9806,7 @@
         "id": "4662a75cd903356a",
         "type": "change",
         "z": "85a0c31e48c798bf",
-        "name": "",
+        "name": "update selection and enable",
         "rules": [
             {
                 "t": "set",
@@ -9901,8 +9828,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1200,
-        "y": 480,
+        "x": 1100,
+        "y": 440,
         "wires": [
             [
                 "f144de5ed2e31ac4"
@@ -9946,9 +9873,7 @@
         "y": 240,
         "wires": [
             [
-                "87b37c9dbbfa572a",
-                "a41d6d9c4686dbfe",
-                "14509f6701be1fc6"
+                "a41d6d9c4686dbfe"
             ]
         ]
     },
@@ -9978,19 +9903,6 @@
         ]
     },
     {
-        "id": "17aefc05b1be602f",
-        "type": "link out",
-        "z": "85a0c31e48c798bf",
-        "name": "outResetView",
-        "mode": "link",
-        "links": [
-            "347928b681ea11cd"
-        ],
-        "x": 1325,
-        "y": 560,
-        "wires": []
-    },
-    {
         "id": "347928b681ea11cd",
         "type": "link in",
         "z": "85a0c31e48c798bf",
@@ -9998,12 +9910,11 @@
         "links": [
             "17aefc05b1be602f"
         ],
-        "x": 1195,
-        "y": 820,
+        "x": 1015,
+        "y": 600,
         "wires": [
             [
-                "ab25bbdd5fe82ffb",
-                "e1f1c9ed849d7837"
+                "14509f6701be1fc6"
             ]
         ]
     },
@@ -10019,8 +9930,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1730,
-        "y": 500,
+        "x": 1750,
+        "y": 440,
         "wires": [
             [
                 "8151311b1f3eb043",
@@ -10047,8 +9958,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1760,
-        "y": 900,
+        "x": 1420,
+        "y": 880,
         "wires": [
             [
                 "21a8c894e9bc4a6a"
@@ -10089,8 +10000,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1750,
-        "y": 940,
+        "x": 1410,
+        "y": 920,
         "wires": [
             [
                 "fd0bf8a85cece4fb"
@@ -10106,8 +10017,8 @@
         "links": [
             "8f253266627cbfa4"
         ],
-        "x": 1875,
-        "y": 900,
+        "x": 1535,
+        "y": 880,
         "wires": []
     },
     {
@@ -10118,8 +10029,8 @@
         "links": [
             "10bab48e7c420909"
         ],
-        "x": 2295,
-        "y": 560,
+        "x": 1585,
+        "y": 340,
         "wires": [
             [
                 "20542ba1e7f761a4"
@@ -10153,8 +10064,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1750,
-        "y": 980,
+        "x": 1410,
+        "y": 960,
         "wires": [
             [
                 "c9303123b2647487"
@@ -10187,8 +10098,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1750,
-        "y": 1020,
+        "x": 1410,
+        "y": 1000,
         "wires": [
             [
                 "fcb1be472a444a7f"
@@ -10207,8 +10118,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1500,
-        "y": 820,
+        "x": 1360,
+        "y": 600,
         "wires": [
             [
                 "51442a907f816608"
@@ -10224,8 +10135,8 @@
         "links": [
             "a8ccf417fe6d5dac"
         ],
-        "x": 1775,
-        "y": 820,
+        "x": 1635,
+        "y": 600,
         "wires": []
     },
     {
@@ -10237,8 +10148,8 @@
             "6db37fcb97b81b6e",
             "8151311b1f3eb043"
         ],
-        "x": 1645,
-        "y": 940,
+        "x": 1305,
+        "y": 920,
         "wires": [
             [
                 "d1f36aee0fcb8ae3"
@@ -10255,8 +10166,8 @@
             "84632c8af1a51905",
             "a8ccf417fe6d5dac"
         ],
-        "x": 1845,
-        "y": 500,
+        "x": 1875,
+        "y": 440,
         "wires": []
     },
     {
@@ -10267,8 +10178,8 @@
         "links": [
             "8151311b1f3eb043"
         ],
-        "x": 1645,
-        "y": 900,
+        "x": 1305,
+        "y": 880,
         "wires": [
             [
                 "cc399444a3495527"
@@ -10283,8 +10194,8 @@
         "links": [
             "6a38fee3849bb4d4"
         ],
-        "x": 1645,
-        "y": 980,
+        "x": 1305,
+        "y": 960,
         "wires": [
             [
                 "fcb9b62b0baf64c2"
@@ -10299,8 +10210,8 @@
         "links": [
             "4f97e3bba69af8ac"
         ],
-        "x": 1645,
-        "y": 1020,
+        "x": 1305,
+        "y": 1000,
         "wires": [
             [
                 "e5fdda48a21f356c"
@@ -10316,8 +10227,8 @@
         "links": [
             "58e7aa859c9243b2"
         ],
-        "x": 1875,
-        "y": 940,
+        "x": 1535,
+        "y": 920,
         "wires": []
     },
     {
@@ -10329,8 +10240,8 @@
         "links": [
             "295b0e9412db2e89"
         ],
-        "x": 2035,
-        "y": 980,
+        "x": 1695,
+        "y": 960,
         "wires": []
     },
     {
@@ -10342,8 +10253,8 @@
         "links": [
             "295b0e9412db2e89"
         ],
-        "x": 2035,
-        "y": 1020,
+        "x": 1695,
+        "y": 1000,
         "wires": []
     },
     {
@@ -10368,8 +10279,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1790,
-        "y": 540,
+        "x": 1750,
+        "y": 480,
         "wires": [
             [
                 "6a38fee3849bb4d4"
@@ -10388,8 +10299,8 @@
         "links": [
             "7d26955ff8ee9e16"
         ],
-        "x": 1915,
-        "y": 520,
+        "x": 1875,
+        "y": 480,
         "wires": []
     },
     {
@@ -10401,8 +10312,8 @@
         "links": [
             "0a1fba668950be30"
         ],
-        "x": 1915,
-        "y": 560,
+        "x": 1875,
+        "y": 520,
         "wires": []
     },
     {
@@ -10417,8 +10328,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2420,
-        "y": 940,
+        "x": 2080,
+        "y": 920,
         "wires": [
             [
                 "37a7f15b42e4d3ad"
@@ -10453,8 +10364,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1670,
-        "y": 820,
+        "x": 1530,
+        "y": 600,
         "wires": [
             [
                 "6db37fcb97b81b6e"
@@ -10470,8 +10381,8 @@
             "255f27afec09c997",
             "b0dba75b5deecb07"
         ],
-        "x": 2115,
-        "y": 1020,
+        "x": 1775,
+        "y": 1000,
         "wires": [
             [
                 "9ea54660171fce8c"
@@ -10486,8 +10397,8 @@
         "links": [
             "fd0bf8a85cece4fb"
         ],
-        "x": 2115,
-        "y": 980,
+        "x": 1775,
+        "y": 960,
         "wires": [
             [
                 "b972eb10d0ed2cd5"
@@ -10550,8 +10461,8 @@
         "height": "6",
         "className": "",
         "interpolation": "smooth",
-        "x": 2230,
-        "y": 1020,
+        "x": 1890,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -10568,8 +10479,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2240,
-        "y": 980,
+        "x": 1900,
+        "y": 960,
         "wires": [
             [
                 "5059d830a059caad",
@@ -10589,8 +10500,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1900,
-        "y": 1020,
+        "x": 1560,
+        "y": 1000,
         "wires": [
             [
                 "b0dba75b5deecb07"
@@ -10609,8 +10520,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1690,
-        "y": 460,
+        "x": 1550,
+        "y": 440,
         "wires": [
             [
                 "3d5490e19f71c9f1"
@@ -10627,8 +10538,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1910,
-        "y": 980,
+        "x": 1570,
+        "y": 960,
         "wires": [
             [
                 "255f27afec09c997"
@@ -10647,8 +10558,8 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nnode.status({ fill: \"yellow\", shape: \"ring\", text: \"disabled\" });\n",
         "finalize": "",
         "libs": [],
-        "x": 930,
-        "y": 800,
+        "x": 590,
+        "y": 700,
         "wires": [
             []
         ]
@@ -10669,8 +10580,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "enable",
-        "x": 770,
-        "y": 800,
+        "x": 430,
+        "y": 700,
         "wires": [
             [
                 "52278dc01e9440cb"
@@ -10697,10 +10608,12 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 570,
-        "y": 520,
+        "x": 470,
+        "y": 480,
         "wires": [
-            []
+            [
+                "87b37c9dbbfa572a"
+            ]
         ]
     },
     {
@@ -10708,7 +10621,7 @@
         "type": "debug",
         "z": "85a0c31e48c798bf",
         "name": "debug 11",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10716,8 +10629,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1020,
-        "y": 640,
+        "x": 900,
+        "y": 780,
         "wires": []
     },
     {
@@ -10762,7 +10675,7 @@
         "id": "fc2d15aecca0cd0d",
         "type": "change",
         "z": "85a0c31e48c798bf",
-        "name": "",
+        "name": "get first result",
         "rules": [
             {
                 "t": "set",
@@ -10782,8 +10695,8 @@
         "y": 520,
         "wires": [
             [
-                "a549655cd4b8fa9d",
-                "d348adc4ac6a0016"
+                "d348adc4ac6a0016",
+                "4662a75cd903356a"
             ]
         ]
     },
@@ -10814,6 +10727,53 @@
             [
                 "87ccc1ce19e89219"
             ]
+        ]
+    },
+    {
+        "id": "17aefc05b1be602f",
+        "type": "link out",
+        "z": "85a0c31e48c798bf",
+        "name": "outResetView",
+        "mode": "link",
+        "links": [
+            "347928b681ea11cd"
+        ],
+        "x": 1385,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "eb349fe7e872e4ca",
+        "type": "link in",
+        "z": "85a0c31e48c798bf",
+        "name": "inStages",
+        "links": [
+            "10bab48e7c420909"
+        ],
+        "x": 1275,
+        "y": 400,
+        "wires": [
+            [
+                "f144de5ed2e31ac4"
+            ]
+        ]
+    },
+    {
+        "id": "6914c0c0575f8a4b",
+        "type": "function",
+        "z": "85a0c31e48c798bf",
+        "name": "get stage setup",
+        "func": "const setup = flow.get(\"data.setup\");\nconst {component, measurement, channel} = global.get(\"settings.data.dictionary\", \"file\");\n\nconst components = {\n    \"O\": 'outer',\n    \"I\": 'inner',\n    \"B\": 'push'\n}\n\nconst measurements = \n\nmsg.payload = [\n   \n]\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1420,
+        "y": 840,
+        "wires": [
+            []
         ]
     },
     {
@@ -12230,7 +12190,7 @@
         "z": "aecf9ba551ec4a57",
         "g": "32c9d68b1d798fbc",
         "name": "set_settings_data",
-        "func": "const math = global.get(\"mathjs\");\n\nmsg.path = \"settings.data\"\nmsg.store = \"file\"\n\nmsg.payload = {\n    feature_types : {\n        info : [\n            {\n                key: \"info\",\n                label: \"Information\",\n                type : \"text\",\n                def: \"info\"\n            }\n        ],\n        button : [\n            {\n                enabler: true,\n                scope: \"nominal\",\n                key: \"force\",\n                label: \"Force\",\n                unit: \"N\",\n                type: \"number\",\n                limit_type: \"relative_multiply\",\n                def: 0,\n            },\n            {\n                scope: \"nominal\",\n                key: \"travel\",\n                label: \"Travel\",\n                unit: \"mm\",\n                type: \"number\",\n                limit_type: \"relative_offset\",\n                def: 0\n            },\n            {\n                scope: \"process\",\n                key: \"z\",\n                label: \"Z coordinate\",\n                type: \"number\",\n                def: 0\n            },\n            {\n                scope: \"process\",\n                key: \"displacement\",\n                label: \"Press distance\",\n                type: \"number\",\n                def: 0\n            },\n            {\n                scope: \"process\",\n                key: \"velocity\",\n                label: \"Press velocity\",\n                unit: \"mm/s\",\n                type: \"number\",\n                def: 12\n            },\n            {\n                scope: \"process\",\n                key: \"count\",\n                label: \"Press count\",\n                type: \"number\",\n                def: 1\n            },\n            {\n                scope: \"nominal\",\n                key: \"resistance\",\n                label: \"Electrical resistance\",\n                unit: \"Ohm\",\n                type: \"number\",\n                def: 10,\n                limit_type: \"absolute\",\n            },\n            {\n                scope: \"nominal\",\n                key: \"bounce\",\n                label: \"Contact bounce\",\n                unit: \"ms\",\n                type: \"number\",\n                def: 2,\n                limit_type: \"absolute\",\n            },\n            {\n                scope: \"limit\",\n                key: \"force_limit\",\n                label: \"Force limit (+*/-*)\",\n                type: \"number\",\n                def: 0.3\n            },\n            {\n                scope: \"limit\",\n                key: \"travel_limit\",\n                label: \"Travel limit (+/-)\",\n                type: \"number\",\n                def: 0.2\n            },\n            {\n                scope: \"limit\",\n                key: \"resistance_limit\",\n                label: \"Resistance limit (upper)\",\n                type: \"number\",\n                def: 10\n            },\n            {\n                scope: \"limit\",\n                key: \"bounce_limit\",\n                label: \"Bounce limit (upper[ms])\",\n                type: \"number\",\n                def: 2\n            },\n        ],\n        encoder : [\n            {\n                scope: \"nominal\",\n                key: \"detents\",\n                label: \"Detents\",\n                type: \"number\",\n                def: 0,\n                limit_type: \"strict\"\n            },\n            {\n                enabler: true,\n                scope: \"nominal\",\n                key: \"pulses\",\n                label: \"Resolution\",\n                type: \"number\",\n                def: 8,\n                limit_type: \"strict\"\n            },\n            {\n                scope: \"nominal\",\n                key: \"duty\",\n                label: \"Duty cycle [%]\",\n                type: \"number\",\n                def: 50,\n                limit_type: \"relative_offset\"\n            },\n            {\n                scope: \"nominal\",\n                key: \"torque\",\n                label: \"Torque\",\n                type: \"number\",\n                def: 0,\n                limit_type: \"relative_multiply\"\n            },\n            {\n                scope: \"nominal\",\n                key: \"detent_torque\",\n                label: \"Detent torque\",\n                type: \"number\",\n                def: 0,\n                limit_type: \"relative_multiply\"\n            },\n            {\n                scope: \"process\",\n                key: \"z\",\n                label: \"Z coordinate\",\n                type: \"number\",\n                def: 0\n            },\n            {\n                scope: \"process\",\n                key: \"displacement\",\n                label: \"Rotations\",\n                type: \"number\",\n                def: 1.2\n            },\n            {\n                scope: \"process\",\n                key: \"velocity\",\n                label: \"Rotation velocity\",\n                unit: \"rpm\",\n                type: \"number\",\n                def: 60\n            },\n            {\n                enabler: true,\n                scope: \"nominal\",\n                key: \"resistance\",\n                label: \"Electrical resistance\",\n                unit: \"Ohm\",\n                type: \"number\",\n                def: 10,\n                limit_type: \"absolute\",\n            },\n            {\n                scope: \"nominal\",\n                key: \"bounce\",\n                label: \"Contact bounce\",\n                unit: \"ms\",\n                type: \"number\",\n                def: 2,\n                limit_type: \"absolute\",\n            },\n            {\n                scope: \"nominal\",\n                key: \"phase\",\n                label: \"Phase shift\",\n                unit: \"deg\",\n                type: \"number\",\n                def: 90,\n                limit_type: \"relative_offset\",\n            },\n            {\n                scope: \"limit\",\n                key: \"torque_limit\",\n                label: \"Torque limit (+*/-*)\",\n                type: \"number\",\n                def: 0.3\n            },\n            {\n                scope: \"limit\",\n                key: \"detent_torque_limit\",\n                label: \"Detent torque limit (+*/-*)\",\n                type: \"number\",\n                def: 0.5\n            },\n            {\n                scope: \"limit\",\n                key: \"phase_limit\",\n                label: \"Phase shift limit (+/-)\",\n                type: \"number\",\n                def: 70\n            },\n            {\n                scope: \"limit\",\n                key: \"duty_limit\",\n                label: \"Duty cycle limit (+/-)\",\n                type: \"number\",\n                def: 20\n            },\n            \n        ],\n    },\n\n    prod_extract(name, prod) {\n        const f = prod.features;\n        const v = (o) => `(${Object.keys(o.values).join(\"|\")})`;\n        const e = (o, k) => ((({name, values: { [k]: value }, ...r }) => ({ value, ...r }))(o));\n        const exp = new RegExp(f.reduce((acc, x, i) => acc.replace(`[f${i}]`, v(x)), prod.template));\n        const [match, ...k] = exp.exec(name) ?? [false];\n        return match ? f.reduce(function (acc, x, i) {\n            acc[x.name] = e(x, k[i]);\n            return acc;\n        }, {}) : \"invalid\";\n    },\n    \n}\n\n\nreturn msg;\n",
+        "func": "const math = global.get(\"mathjs\");\n\nmsg.path = \"settings.data\"\nmsg.store = \"file\"\n\nmsg.payload = {\n    feature_types : {\n        info : [\n            {\n                key: \"info\",\n                label: \"Information\",\n                type : \"text\",\n                def: \"info\"\n            }\n        ],\n        button : [\n            {\n                enabler: true,\n                scope: \"nominal\",\n                key: \"force\",\n                label: \"Force\",\n                unit: \"N\",\n                type: \"number\",\n                limit_type: \"relative_multiply\",\n                def: 0,\n            },\n            {\n                scope: \"nominal\",\n                key: \"travel\",\n                label: \"Travel\",\n                unit: \"mm\",\n                type: \"number\",\n                limit_type: \"relative_offset\",\n                def: 0\n            },\n            {\n                scope: \"process\",\n                key: \"z\",\n                label: \"Z coordinate\",\n                type: \"number\",\n                def: 0\n            },\n            {\n                scope: \"process\",\n                key: \"displacement\",\n                label: \"Press distance\",\n                type: \"number\",\n                def: 0\n            },\n            {\n                scope: \"process\",\n                key: \"velocity\",\n                label: \"Press velocity\",\n                unit: \"mm/s\",\n                type: \"number\",\n                def: 12\n            },\n            {\n                scope: \"process\",\n                key: \"count\",\n                label: \"Press count\",\n                type: \"number\",\n                def: 1\n            },\n            {\n                scope: \"nominal\",\n                key: \"resistance\",\n                label: \"Electrical resistance\",\n                unit: \"Ohm\",\n                type: \"number\",\n                def: 10,\n                limit_type: \"absolute\",\n            },\n            {\n                scope: \"nominal\",\n                key: \"bounce\",\n                label: \"Contact bounce\",\n                unit: \"ms\",\n                type: \"number\",\n                def: 2,\n                limit_type: \"absolute\",\n            },\n            {\n                scope: \"limit\",\n                key: \"force_limit\",\n                label: \"Force limit (+*/-*)\",\n                type: \"number\",\n                def: 0.3\n            },\n            {\n                scope: \"limit\",\n                key: \"travel_limit\",\n                label: \"Travel limit (+/-)\",\n                type: \"number\",\n                def: 0.2\n            },\n            {\n                scope: \"limit\",\n                key: \"resistance_limit\",\n                label: \"Resistance limit (upper)\",\n                type: \"number\",\n                def: 10\n            },\n            {\n                scope: \"limit\",\n                key: \"bounce_limit\",\n                label: \"Bounce limit (upper[ms])\",\n                type: \"number\",\n                def: 2\n            },\n        ],\n        encoder : [\n            {\n                scope: \"nominal\",\n                key: \"detents\",\n                label: \"Detents\",\n                type: \"number\",\n                def: 0,\n                limit_type: \"strict\"\n            },\n            {\n                enabler: true,\n                scope: \"nominal\",\n                key: \"pulses\",\n                label: \"Resolution\",\n                type: \"number\",\n                def: 8,\n                limit_type: \"strict\"\n            },\n            {\n                scope: \"nominal\",\n                key: \"duty\",\n                label: \"Duty cycle [%]\",\n                type: \"number\",\n                def: 50,\n                limit_type: \"relative_offset\"\n            },\n            {\n                scope: \"nominal\",\n                key: \"torque\",\n                label: \"Torque\",\n                type: \"number\",\n                def: 0,\n                limit_type: \"relative_multiply\"\n            },\n            {\n                scope: \"nominal\",\n                key: \"detent_torque\",\n                label: \"Detent torque\",\n                type: \"number\",\n                def: 0,\n                limit_type: \"relative_multiply\"\n            },\n            {\n                scope: \"process\",\n                key: \"z\",\n                label: \"Z coordinate\",\n                type: \"number\",\n                def: 0\n            },\n            {\n                scope: \"process\",\n                key: \"displacement\",\n                label: \"Rotations\",\n                type: \"number\",\n                def: 1.2\n            },\n            {\n                scope: \"process\",\n                key: \"velocity\",\n                label: \"Rotation velocity\",\n                unit: \"rpm\",\n                type: \"number\",\n                def: 60\n            },\n            {\n                enabler: true,\n                scope: \"nominal\",\n                key: \"resistance\",\n                label: \"Electrical resistance\",\n                unit: \"Ohm\",\n                type: \"number\",\n                def: 10,\n                limit_type: \"absolute\",\n            },\n            {\n                scope: \"nominal\",\n                key: \"bounce\",\n                label: \"Contact bounce\",\n                unit: \"ms\",\n                type: \"number\",\n                def: 2,\n                limit_type: \"absolute\",\n            },\n            {\n                scope: \"nominal\",\n                key: \"phase\",\n                label: \"Phase shift\",\n                unit: \"deg\",\n                type: \"number\",\n                def: 90,\n                limit_type: \"relative_offset\",\n            },\n            {\n                scope: \"limit\",\n                key: \"torque_limit\",\n                label: \"Torque limit (+*/-*)\",\n                type: \"number\",\n                def: 0.3\n            },\n            {\n                scope: \"limit\",\n                key: \"detent_torque_limit\",\n                label: \"Detent torque limit (+*/-*)\",\n                type: \"number\",\n                def: 0.5\n            },\n            {\n                scope: \"limit\",\n                key: \"phase_limit\",\n                label: \"Phase shift limit (+/-)\",\n                type: \"number\",\n                def: 70\n            },\n            {\n                scope: \"limit\",\n                key: \"duty_limit\",\n                label: \"Duty cycle limit (+/-)\",\n                type: \"number\",\n                def: 20\n            },\n            \n        ],\n    },\n\n    prod_extract(name, prod) {\n        const f = prod.features;\n        const v = (o) => `(${Object.keys(o.values).join(\"|\")})`;\n        const e = (o, k) => ((({name, values: { [k]: value }, ...r }) => ({ value, ...r }))(o));\n        const exp = new RegExp(f.reduce((acc, x, i) => acc.replace(`[f${i}]`, v(x)), prod.template));\n        const [match, ...k] = exp.exec(name) ?? [false];\n        return match ? f.reduce(function (acc, x, i) {\n            acc[x.name] = e(x, k[i]);\n            return acc;\n        }, {}) : \"invalid\";\n    },\n\n    dictionary: {\n        component: {\n            \"O\" : 'outer',\n            \"I\" : 'inner',\n            \"B\" : 'push',\n        },\n        measurement: {\n            'S' : 'oscilloscope',\n            \"H\" : 'ohmmeter',\n        },\n        channel: {\n            \"A\": \"A\",\n            \"B\": \"B\",\n            \"N\": \"N/A\"\n        }\n    }\n    \n}\n\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
