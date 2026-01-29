@@ -5867,7 +5867,7 @@
         "xAxisLabel": "",
         "xAxisProperty": "",
         "xAxisPropertyType": "timestamp",
-        "xAxisType": "time",
+        "xAxisType": "linear",
         "xAxisFormat": "",
         "xAxisFormatType": "auto",
         "xmin": "",
