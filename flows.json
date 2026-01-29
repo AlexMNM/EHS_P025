@@ -9625,8 +9625,8 @@
             "8f253266627cbfa4",
             "c35c9c2d338283df",
             "eb349fe7e872e4ca",
-            "58e7aa859c9243b2",
-            "295b0e9412db2e89"
+            "295b0e9412db2e89",
+            "20f1ac6aebff9ae1"
         ],
         "x": 895,
         "y": 580,
@@ -10408,8 +10408,7 @@
         "z": "85a0c31e48c798bf",
         "name": "inStrainChart",
         "links": [
-            "fd0bf8a85cece4fb",
-            "10bab48e7c420909"
+            "fd0bf8a85cece4fb"
         ],
         "x": 1775,
         "y": 960,
@@ -10829,6 +10828,22 @@
         "wires": [
             [
                 "e5976613f379b4e4"
+            ]
+        ]
+    },
+    {
+        "id": "20f1ac6aebff9ae1",
+        "type": "link in",
+        "z": "85a0c31e48c798bf",
+        "name": "inStrainChart",
+        "links": [
+            "10bab48e7c420909"
+        ],
+        "x": 2135,
+        "y": 1000,
+        "wires": [
+            [
+                "ecba115984f1aa50"
             ]
         ]
     },
