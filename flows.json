@@ -11486,12 +11486,30 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 1040,
+        "x": 600,
+        "y": 1020,
         "wires": [
             [
                 "8a85dcb76cb4163c"
             ]
+        ]
+    },
+    {
+        "id": "3dad963931899fbe",
+        "type": "function",
+        "z": "85a0c31e48c798bf",
+        "name": "format csv",
+        "func": "const header = Object.keys(msg.payload[0].results[0]);\n\nconst rows = [...header, ...msg.payload[0].results];\n\nreturn {payload: rows};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 940,
+        "wires": [
+            []
         ]
     },
     {
