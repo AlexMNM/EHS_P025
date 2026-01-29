@@ -10763,7 +10763,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "get stage setup",
-        "func": "const setup = flow.get(\"data.setup\");\nconst dict = global.get(\"settings.data.dictionary\", \"file\");\n\nconst table = [];\n\nObject.entries(setup).forEach(([k, v]) => {if(setup.component !== 'B' && k !== 'count') table.push({label: k, value: (dict[k] !== undefined ? dict[k][v] : v)})});\n\nreturn {payload: table, deb: {dict}};",
+        "func": "const setup = flow.get(\"data.setup\");\nconst dict = global.get(\"settings.data.dictionary\", \"file\");\n\nconst table = [];\n\nObject.entries(setup).forEach(([k, v]) => { if (((c) => (c !== 'B' && k !== 'count') || c === 'B')(setup.component))  table.push({label: k, value: (dict[k] !== undefined ? dict[k][v] : v)})});\n\nreturn {payload: table, deb: {dict}};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
