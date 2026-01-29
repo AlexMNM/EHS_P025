@@ -788,7 +788,6 @@
     {
         "id": "c01c2fd267be9ece",
         "type": "ui-page",
-        "d": true,
         "name": "Test",
         "ui": "86cea779c465227a",
         "path": "/page4",
