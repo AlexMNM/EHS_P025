@@ -10718,8 +10718,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 660,
-        "y": 920,
+        "x": 760,
+        "y": 820,
         "wires": []
     },
     {
@@ -11372,7 +11372,7 @@
         "y": 940,
         "wires": [
             [
-                "d348adc4ac6a0016"
+                "cce6453a6d4807e2"
             ]
         ]
     },
@@ -11398,6 +11398,24 @@
         "wires": [
             [
                 "2ac87897e50c7458"
+            ]
+        ]
+    },
+    {
+        "id": "cce6453a6d4807e2",
+        "type": "link call",
+        "z": "85a0c31e48c798bf",
+        "name": "call_database",
+        "links": [
+            "09d2343f773e9140"
+        ],
+        "linkType": "static",
+        "timeout": "10",
+        "x": 620,
+        "y": 940,
+        "wires": [
+            [
+                "d348adc4ac6a0016"
             ]
         ]
     },
