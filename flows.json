@@ -9518,7 +9518,7 @@
         "name": "stage setup",
         "label": "Stage configuration",
         "order": 2,
-        "width": 3,
+        "width": 2,
         "height": 0,
         "maxrows": 0,
         "passthru": false,
@@ -9656,7 +9656,7 @@
         "group": "5f03761aafa114cc",
         "name": "",
         "label": "collated, normalized",
-        "order": 5,
+        "order": 6,
         "chartType": "line",
         "category": "series",
         "categoryType": "msg",
@@ -9717,7 +9717,7 @@
         "z": "85a0c31e48c798bf",
         "name": "",
         "group": "5f03761aafa114cc",
-        "order": 3,
+        "order": 4,
         "width": 2,
         "height": 1,
         "label": "View type",
@@ -9758,7 +9758,7 @@
         "group": "5f03761aafa114cc",
         "name": "",
         "label": "abs. values",
-        "order": 4,
+        "order": 5,
         "chartType": "line",
         "category": "series",
         "categoryType": "msg",
@@ -10425,7 +10425,7 @@
         "group": "5f03761aafa114cc",
         "name": "Extra",
         "label": "",
-        "order": 6,
+        "order": 7,
         "chartType": "line",
         "category": "series",
         "categoryType": "msg",
@@ -14627,5 +14627,15 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "c0a8eb060cd8d6bb",
+        "type": "ui-spacer",
+        "group": "5f03761aafa114cc",
+        "name": "spacer",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "className": ""
     }
 ]
