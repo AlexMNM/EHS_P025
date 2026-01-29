@@ -6850,8 +6850,8 @@
         "height": 4,
         "className": "",
         "interpolation": "smooth",
-        "x": 1970,
-        "y": 1640,
+        "x": 2430,
+        "y": 1500,
         "wires": [
             []
         ]
@@ -7077,14 +7077,13 @@
                 "849047333c306cdf"
             ],
             [
-                "10158d57ee57b061",
-                "07fb0f9c0e03e4c1"
+                "10158d57ee57b061"
             ],
             [
-                "41b53a65de1ae8c8",
                 "00827fb8b783f10a",
                 "d78bf3b6bf078a39",
-                "9916d0fc24ad37cb"
+                "9916d0fc24ad37cb",
+                "41b53a65de1ae8c8"
             ]
         ]
     },
@@ -7120,7 +7119,8 @@
         "y": 1480,
         "wires": [
             [
-                "9916d0fc24ad37cb"
+                "9916d0fc24ad37cb",
+                "5b8b23e2e1825d0d"
             ]
         ]
     },
@@ -7811,8 +7811,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1830,
-        "y": 1640,
+        "x": 2210,
+        "y": 1500,
         "wires": [
             [
                 "41b53a65de1ae8c8"
@@ -9075,6 +9075,34 @@
         "y": 560,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "5b8b23e2e1825d0d",
+        "type": "change",
+        "z": "0637f22188042045",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "deb.graph",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2020,
+        "y": 1500,
+        "wires": [
+            [
+                "07fb0f9c0e03e4c1"
+            ]
         ]
     },
     {
