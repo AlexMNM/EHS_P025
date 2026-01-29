@@ -1633,8 +1633,7 @@
         "name": "outDataAck",
         "mode": "link",
         "links": [
-            "bb8ee15e0a80636c",
-            "5e0e7b6c807841c7"
+            "bb8ee15e0a80636c"
         ],
         "x": 1095,
         "y": 840,
@@ -9809,7 +9808,7 @@
         "height": "5",
         "className": "",
         "interpolation": "smooth",
-        "x": 2070,
+        "x": 2250,
         "y": 960,
         "wires": [
             []
@@ -9964,7 +9963,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "set flow data",
-        "func": "flow.set(\"data\", {});\n\nconst data = flow.get(\"data\")\n\ndata.plc = msg.payload.plc.values\ndata.setup = msg.payload.plc.setup\ndata.ohm = msg.payload?.ohm\ndata.osc = msg.payload?.osc\n\nswitch(undefined){\n    case data.ohm:\n        msg.extra = \"osc\";\n        break;\n    case data.osc:\n        msg.extra = \"ohm\";\n        break;\n\n}\n\nreturn msg;",
+        "func": "flow.set(\"data\", {});\n\nconst data = flow.get(\"data\");\n\ndata.plc = msg.payload.plc.values;\n((x) => x = x?.toFixed(2))(data.plc[0].timeStamp);\ndata.setup = msg.payload.plc.setup;\ndata.ohm = msg.payload?.ohm;\ndata.osc = msg.payload?.osc;\n\nswitch(undefined){\n    case data.ohm:\n        msg.extra = \"osc\";\n        break;\n    case data.osc:\n        msg.extra = \"ohm\";\n        break;\n\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -9978,31 +9977,6 @@
                 "8151311b1f3eb043",
                 "3e98591e425d8f56"
             ]
-        ]
-    },
-    {
-        "id": "cc399444a3495527",
-        "type": "change",
-        "z": "85a0c31e48c798bf",
-        "name": "get stage setup",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "data.setup",
-                "tot": "flow"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1420,
-        "y": 880,
-        "wires": [
-            []
         ]
     },
     {
@@ -10221,7 +10195,6 @@
         "y": 880,
         "wires": [
             [
-                "cc399444a3495527",
                 "6914c0c0575f8a4b"
             ]
         ]
@@ -10810,7 +10783,7 @@
         "finalize": "",
         "libs": [],
         "x": 1420,
-        "y": 840,
+        "y": 880,
         "wires": [
             [
                 "d348adc4ac6a0016",
