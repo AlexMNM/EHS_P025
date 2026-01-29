@@ -890,6 +890,16 @@
         "groupType": "default"
     },
     {
+        "id": "c0a8eb060cd8d6bb",
+        "type": "ui-spacer",
+        "group": "5f03761aafa114cc",
+        "name": "spacer",
+        "order": 3,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
         "id": "f7676b47d7dc782a",
         "type": "tcp in",
         "z": "a7c7ec5294135863",
@@ -9516,7 +9526,7 @@
         "z": "85a0c31e48c798bf",
         "group": "5f03761aafa114cc",
         "name": "stage setup",
-        "label": "Stage configuration",
+        "label": "",
         "order": 2,
         "width": 2,
         "height": 0,
@@ -9528,7 +9538,7 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "",
+                "title": "Stage configuration",
                 "key": "label",
                 "keyType": "key",
                 "type": "text",
@@ -14627,15 +14637,5 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "c0a8eb060cd8d6bb",
-        "type": "ui-spacer",
-        "group": "5f03761aafa114cc",
-        "name": "spacer",
-        "order": 3,
-        "width": 1,
-        "height": 1,
-        "className": ""
     }
 ]
