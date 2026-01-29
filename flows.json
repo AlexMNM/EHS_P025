@@ -2026,20 +2026,6 @@
         ]
     },
     {
-        "id": "5e0e7b6c807841c7",
-        "type": "link in",
-        "z": "a7c7ec5294135863",
-        "name": "inStarted",
-        "links": [
-            "b202a0b79dc00822"
-        ],
-        "x": 1135,
-        "y": 880,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "0ad8baea941ce172",
         "type": "link out",
         "z": "a7c7ec5294135863",
