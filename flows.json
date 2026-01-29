@@ -391,7 +391,8 @@
         "y": 1040,
         "wires": [
             [
-                "3dad963931899fbe"
+                "3dad963931899fbe",
+                "791d830d64d13ba5"
             ]
         ]
     },
@@ -11454,13 +11455,13 @@
         "type": "file",
         "z": "85a0c31e48c798bf",
         "name": "",
-        "filename": "/appcache/node/static/export.json",
+        "filename": "/appcache/node/static/export.txt",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
-        "encoding": "none",
-        "x": 680,
+        "encoding": "utf8",
+        "x": 670,
         "y": 1180,
         "wires": [
             []
