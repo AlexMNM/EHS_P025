@@ -11031,7 +11031,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "get results",
-        "func": "const {data, final} = flow.get(\"entry.results\");\n\nconst lines = [];\n\nObject.values(data).forEach((c) => {Object.values(c).forEach((m) => {lines.push({...m})})});\n\nreturn ret;",
+        "func": "const {data, final} = flow.get(\"entry.results\");\n\nconst lines = [];\n\nObject.values(data).forEach((c) => {Object.values(c).forEach((m) => {lines.push({...m})})});\n\nreturn {payload: lines};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
