@@ -384,6 +384,19 @@
         ]
     },
     {
+        "id": "d7e95f225cba0949",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 440,
+        "y": 1040,
+        "wires": [
+            [
+                "791d830d64d13ba5",
+                "d5b27d6a75e32966"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -9130,47 +9143,6 @@
         ]
     },
     {
-        "id": "8f60d74c53f2f3f6",
-        "type": "file",
-        "z": "0637f22188042045",
-        "name": "",
-        "filename": "/appcache/reports/test_torque.csv",
-        "filenameType": "str",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 2700,
-        "y": 1000,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2c387ccc3904a4e6",
-        "type": "csv",
-        "z": "0637f22188042045",
-        "name": "",
-        "spec": "rfc",
-        "sep": ",",
-        "hdrin": "",
-        "hdrout": "none",
-        "multi": "one",
-        "ret": "\\r\\n",
-        "temp": "",
-        "skip": "0",
-        "strings": true,
-        "include_empty_strings": "",
-        "include_null_values": "",
-        "x": 2490,
-        "y": 1000,
-        "wires": [
-            [
-                "8f60d74c53f2f3f6"
-            ]
-        ]
-    },
-    {
         "id": "3d144c873a729c0d",
         "type": "function",
         "z": "0637f22188042045",
@@ -10718,7 +10690,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 760,
+        "x": 840,
         "y": 820,
         "wires": []
     },
@@ -11368,8 +11340,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 410,
-        "y": 940,
+        "x": 390,
+        "y": 880,
         "wires": [
             [
                 "cce6453a6d4807e2"
@@ -11394,7 +11366,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 230,
-        "y": 940,
+        "y": 880,
         "wires": [
             [
                 "2ac87897e50c7458"
@@ -11411,11 +11383,114 @@
         ],
         "linkType": "static",
         "timeout": "10",
-        "x": 620,
-        "y": 940,
+        "x": 580,
+        "y": 880,
         "wires": [
             [
-                "d348adc4ac6a0016"
+                "d348adc4ac6a0016",
+                "d7e95f225cba0949"
+            ]
+        ]
+    },
+    {
+        "id": "8a85dcb76cb4163c",
+        "type": "csv",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 750,
+        "y": 1040,
+        "wires": [
+            [
+                "8f60d74c53f2f3f6"
+            ]
+        ]
+    },
+    {
+        "id": "8f60d74c53f2f3f6",
+        "type": "file",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "filename": "/appcache/reports/export.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 660,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "791d830d64d13ba5",
+        "type": "json",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "property": "payload[0]",
+        "action": "",
+        "pretty": true,
+        "x": 590,
+        "y": 1140,
+        "wires": [
+            [
+                "cb8459f3b48de033"
+            ]
+        ]
+    },
+    {
+        "id": "cb8459f3b48de033",
+        "type": "file",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "filename": "/appcache/reports/export.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 670,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d5b27d6a75e32966",
+        "type": "change",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0].results",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 1040,
+        "wires": [
+            [
+                "8a85dcb76cb4163c"
             ]
         ]
     },
