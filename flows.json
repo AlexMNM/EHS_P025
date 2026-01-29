@@ -895,7 +895,7 @@
         "group": "5f03761aafa114cc",
         "name": "spacer",
         "order": 3,
-        "width": 1,
+        "width": 2,
         "height": 1,
         "className": ""
     },
@@ -9728,7 +9728,7 @@
         "name": "View type",
         "group": "5f03761aafa114cc",
         "order": 4,
-        "width": 2,
+        "width": 1,
         "height": 1,
         "label": "",
         "className": "",
