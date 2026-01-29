@@ -371,6 +371,19 @@
         ]
     },
     {
+        "id": "c32cd654257ec93b",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 920,
+        "y": 520,
+        "wires": [
+            [
+                "4662a75cd903356a",
+                "f460ce42d655dee9"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -962,6 +975,16 @@
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
+    },
+    {
+        "id": "c0af6c7b24354074",
+        "type": "ui-spacer",
+        "group": "5f03761aafa114cc",
+        "name": "spacer",
+        "order": 4,
+        "width": 1,
+        "height": 1,
+        "className": ""
     },
     {
         "id": "f7676b47d7dc782a",
@@ -10003,7 +10026,7 @@
             "17aefc05b1be602f"
         ],
         "x": 1015,
-        "y": 640,
+        "y": 660,
         "wires": [
             [
                 "14509f6701be1fc6",
@@ -10624,8 +10647,8 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nnode.status({ fill: \"yellow\", shape: \"ring\", text: \"disabled\" });\n",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 980,
+        "x": 550,
+        "y": 620,
         "wires": [
             []
         ]
@@ -10646,8 +10669,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "enable",
-        "x": 430,
-        "y": 980,
+        "x": 410,
+        "y": 620,
         "wires": [
             [
                 "52278dc01e9440cb"
@@ -10695,8 +10718,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1520,
-        "y": 1200,
+        "x": 660,
+        "y": 920,
         "wires": []
     },
     {
@@ -10761,8 +10784,7 @@
         "y": 520,
         "wires": [
             [
-                "4662a75cd903356a",
-                "f460ce42d655dee9"
+                "c32cd654257ec93b"
             ]
         ]
     },
@@ -11065,7 +11087,7 @@
         "links": [
             "8315ff55db0da242"
         ],
-        "x": 915,
+        "x": 925,
         "y": 560,
         "wires": []
     },
@@ -11333,6 +11355,51 @@
         "x": 1275,
         "y": 1180,
         "wires": []
+    },
+    {
+        "id": "2ac87897e50c7458",
+        "type": "function",
+        "z": "85a0c31e48c798bf",
+        "name": "aggregate for export",
+        "func": "msg.operation = 'aggregate';\nmsg.payload = [\n    [\n  {\n    '$match': {\n      'order': `${msg.order}`\n    }\n  }, {\n    '$limit': 300\n  }, {\n    '$sort': {\n      'timestamp': -1\n    }\n  }, {\n    '$unset': [\n      'stage_data', 'features', 'parameters', 'testplan', 'results.final'\n    ]\n  }, {\n    '$addFields': {\n      'data': {\n        '$objectToArray': '$results.data'\n      }\n    }\n  }, {\n    '$unset': 'results'\n  }, {\n    '$addFields': {\n      'data': {\n        '$arrayToObject': {\n          '$map': {\n            'input': '$data', \n            'as': 'comp', \n            'in': {\n              '$setField': {\n                'field': 'k', \n                'value': {\n                  '$cond': [\n                    {\n                      '$eq': [\n                        '$$comp.k', 'button'\n                      ]\n                    }, 'push', '$$comp.k'\n                  ]\n                }, \n                'input': {\n                  '$setField': {\n                    'field': 'v', \n                    'input': '$$comp', \n                    'value': {\n                      '$arrayToObject': {\n                        '$map': {\n                          'input': {\n                            '$objectToArray': '$$comp.v'\n                          }, \n                          'as': 'x', \n                          'in': {\n                            '$setField': {\n                              'field': 'k', \n                              'value': '$$x.k', \n                              'input': {\n                                '$setField': {\n                                  'field': 'v', \n                                  'input': '$$x', \n                                  'value': {\n                                    '$setField': {\n                                      'field': 'result', \n                                      'value': {\n                                        '$cond': [\n                                          '$$x.v.result', 'pass', 'fail'\n                                        ]\n                                      }, \n                                      'input': {\n                                        '$unsetField': {\n                                          'field': 'component', \n                                          'input': {\n                                            '$unsetField': {\n                                              'field': 'label', \n                                              'input': {\n                                                '$unsetField': {\n                                                  'field': 'measurement', \n                                                  'input': {\n                                                    '$unsetField': {\n                                                      'field': 'limits', \n                                                      'input': '$$x.v'\n                                                    }\n                                                  }\n                                                }\n                                              }\n                                            }\n                                          }\n                                        }\n                                      }\n                                    }\n                                  }\n                                }\n                              }\n                            }\n                          }\n                        }\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }, {\n    '$group': {\n      '_id': {\n        '$concat': [\n          '$order', '_', '$type'\n        ]\n      }, \n      'results': {\n        '$push': {\n          'timestamp': {\n            '$dateToString': {\n              'date': {\n                '$dateFromString': {\n                  'dateString': '$timestamp'\n                }\n              }, \n              'timezone': 'Europe/Bucharest', \n              'format': '%Y-%m-%d %H:%M:%S'\n            }\n          }, \n          'data': '$data', \n          'duration': '$info.cycle_time', \n          'operator': '$operator'\n        }\n      }\n    }\n  }\n]\n];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 940,
+        "wires": [
+            [
+                "d348adc4ac6a0016"
+            ]
+        ]
+    },
+    {
+        "id": "d2cbb94365036e64",
+        "type": "inject",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "props": [
+            {
+                "p": "order",
+                "v": "00558135",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 230,
+        "y": 940,
+        "wires": [
+            [
+                "2ac87897e50c7458"
+            ]
+        ]
     },
     {
         "id": "8435f37c02a9e26b",
@@ -15113,15 +15180,5 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "c0af6c7b24354074",
-        "type": "ui-spacer",
-        "group": "5f03761aafa114cc",
-        "name": "spacer",
-        "order": 4,
-        "width": 1,
-        "height": 1,
-        "className": ""
     }
 ]
