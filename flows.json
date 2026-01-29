@@ -10763,7 +10763,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "get stage setup",
-        "func": "const setup = flow.get(\"data.setup\");\nconst dict = global.get(\"settings.data.dictionary\", \"file\");\n\nconst table = [];\n\nObject.entries(setup).forEach(([k, v]) => {table.push({label: k, value: dict[k][v] ?? v})});\n\nreturn {payload: table};",
+        "func": "const setup = flow.get(\"data.setup\");\nconst dict = global.get(\"settings.data.dictionary\", \"file\");\n\nconst table = [];\n\nObject.entries(setup).forEach(([k, v]) => {table.push({label: k, value: (dict[k][v] ?? v)})});\n\nreturn {payload: table};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
