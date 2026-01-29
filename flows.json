@@ -11441,7 +11441,7 @@
         "name": "",
         "property": "payload[0]",
         "action": "",
-        "pretty": false,
+        "pretty": true,
         "x": 590,
         "y": 1140,
         "wires": [
@@ -11455,13 +11455,13 @@
         "type": "file",
         "z": "85a0c31e48c798bf",
         "name": "",
-        "filename": "/appcache/node/static/export.txt",
+        "filename": "/appcache/node/static/export.json",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "true",
-        "encoding": "utf8",
-        "x": 670,
+        "encoding": "none",
+        "x": 680,
         "y": 1180,
         "wires": [
             []
