@@ -9603,51 +9603,19 @@
         "columns": [
             {
                 "title": "",
-                "key": "col0",
+                "key": "label",
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "center"
+                "align": "start"
             },
             {
                 "title": "",
-                "key": "col1",
+                "key": "value",
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "center"
-            },
-            {
-                "title": "",
-                "key": "col2",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "center"
-            },
-            {
-                "title": "",
-                "key": "col3",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "center"
-            },
-            {
-                "title": "",
-                "key": "col4",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "center"
-            },
-            {
-                "title": "",
-                "key": "col5",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "center"
+                "align": "start"
             }
         ],
         "mobileBreakpoint": "",
@@ -9788,7 +9756,7 @@
             "10bab48e7c420909",
             "21a8c894e9bc4a6a"
         ],
-        "x": 1585,
+        "x": 1545,
         "y": 300,
         "wires": [
             [
@@ -10727,8 +10695,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1380,
-        "y": 1240,
+        "x": 1520,
+        "y": 1200,
         "wires": []
     },
     {
@@ -10861,7 +10829,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "get stage setup",
-        "func": "const setup = flow.get(\"data.setup\");\nconst dict = global.get(\"settings.data.dictionary\", \"file\");\n\nconst table = [{},{}];\n\nObject.entries(setup).forEach(([k, v], i) => { table[0][`col${i}`] = k + ':'; table[1][`col${i}`] = (dict[k] !== undefined ? dict[k][v] : v?.toFixed(2)) });\n\nreturn {payload: table};\n\n/*\n([k, v]) => { if (((c) => (c !== 'B' && k !== 'count') || (c === 'B' && k !== 'channel'))(setup.component))  table.push({label: k, value: (dict[k] !== undefined ? dict[k][v] : v?.toFixed(2))})}\n */",
+        "func": "const setup = flow.get(\"data.setup\");\nconst dict = global.get(\"settings.data.dictionary\", \"file\");\n\nconst table = [];\n\nObject.entries(setup).forEach(([k, v]) => { if (((c) => (c !== 'B' && k !== 'count') || (c === 'B' && k !== 'channel'))(setup.component)) table.push({ label: k, value: (dict[k] !== undefined ? dict[k][v] : v?.toFixed(2)) }) });\n\nreturn { payload: table };\n\n/*\n([k, v]) => { if (((c) => (c !== 'B' && k !== 'count') || (c === 'B' && k !== 'channel'))(setup.component))  table.push({label: k, value: (dict[k] !== undefined ? dict[k][v] : v?.toFixed(2))})}\n */",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -11110,7 +11078,7 @@
             "1221e947099edb7b"
         ],
         "x": 1045,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
                 "0facc45860d972cf"
@@ -11130,19 +11098,16 @@
         "finalize": "",
         "libs": [],
         "x": 1150,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
-                "d348adc4ac6a0016",
                 "a289ad899d997083"
             ],
             [
-                "10550a3fe65cce76",
-                "e3e20fb4e6953b9f"
+                "10550a3fe65cce76"
             ],
             [
-                "2c47993648022419",
-                "33f626f459039f55"
+                "2c47993648022419"
             ]
         ]
     },
@@ -11367,40 +11332,6 @@
         ],
         "x": 1275,
         "y": 1180,
-        "wires": []
-    },
-    {
-        "id": "e3e20fb4e6953b9f",
-        "type": "debug",
-        "z": "85a0c31e48c798bf",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1380,
-        "y": 1280,
-        "wires": []
-    },
-    {
-        "id": "33f626f459039f55",
-        "type": "debug",
-        "z": "85a0c31e48c798bf",
-        "name": "debug 18",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1380,
-        "y": 1320,
         "wires": []
     },
     {
