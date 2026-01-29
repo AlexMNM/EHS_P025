@@ -5830,6 +5830,7 @@
         "id": "27efb598df1cfccb",
         "type": "change",
         "z": "f0b99c790d575624",
+        "d": true,
         "name": "",
         "rules": [
             {
@@ -5859,6 +5860,7 @@
         "id": "bcb1f5a1118b58d4",
         "type": "ui-chart",
         "z": "f0b99c790d575624",
+        "d": true,
         "group": "0155d20efeeefd06",
         "name": "",
         "label": "filtered",
@@ -5921,6 +5923,7 @@
         "id": "a28bb7266b6580f9",
         "type": "ui-chart",
         "z": "f0b99c790d575624",
+        "d": true,
         "group": "0155d20efeeefd06",
         "name": "",
         "label": "unfiltered",
