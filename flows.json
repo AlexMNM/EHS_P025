@@ -5859,7 +5859,7 @@
         "group": "0155d20efeeefd06",
         "name": "",
         "label": "chart",
-        "order": 2,
+        "order": 1,
         "chartType": "line",
         "category": "topic",
         "categoryType": "msg",
@@ -8951,32 +8951,6 @@
         "output": "str",
         "x": 880,
         "y": 1420,
-        "wires": [
-            [
-                "0e34fb0998a34fce"
-            ]
-        ]
-    },
-    {
-        "id": "0e34fb0998a34fce",
-        "type": "ui-template",
-        "z": "0637f22188042045",
-        "group": "0155d20efeeefd06",
-        "page": "",
-        "ui": "",
-        "name": "",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "head": "",
-        "format": "",
-        "storeOutMessages": true,
-        "passthru": false,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 900,
-        "y": 1460,
         "wires": [
             []
         ]
