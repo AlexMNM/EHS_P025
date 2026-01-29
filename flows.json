@@ -9533,7 +9533,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "end"
+                "align": "center"
             },
             {
                 "title": "",
@@ -9541,7 +9541,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "end"
+                "align": "center"
             },
             {
                 "title": "",
@@ -9549,7 +9549,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "end"
+                "align": "center"
             },
             {
                 "title": "",
@@ -9557,7 +9557,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "end"
+                "align": "center"
             },
             {
                 "title": "",
@@ -9565,7 +9565,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "end"
+                "align": "center"
             },
             {
                 "title": "",
@@ -9573,7 +9573,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "end"
+                "align": "center"
             }
         ],
         "mobileBreakpoint": "",
