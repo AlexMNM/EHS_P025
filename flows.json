@@ -391,7 +391,6 @@
         "y": 1040,
         "wires": [
             [
-                "791d830d64d13ba5",
                 "3dad963931899fbe"
             ]
         ]
@@ -11352,7 +11351,7 @@
         "id": "d2cbb94365036e64",
         "type": "inject",
         "z": "85a0c31e48c798bf",
-        "name": "",
+        "name": "order: 00558135",
         "props": [
             {
                 "p": "order",
@@ -11365,7 +11364,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 350,
+        "x": 380,
         "y": 840,
         "wires": [
             [
@@ -11486,6 +11485,29 @@
                 "8a85dcb76cb4163c",
                 "d348adc4ac6a0016"
             ]
+        ]
+    },
+    {
+        "id": "8cfba2a34f0bed8a",
+        "type": "inject",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "props": [
+            {
+                "p": "order",
+                "v": "00558135",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 350,
+        "y": 800,
+        "wires": [
+            []
         ]
     },
     {
