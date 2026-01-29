@@ -491,7 +491,7 @@
         "width": 5,
         "height": 1,
         "order": 2,
-        "showTitle": false,
+        "showTitle": true,
         "className": "",
         "visible": "true",
         "disabled": "false",
@@ -500,12 +500,12 @@
     {
         "id": "5f03761aafa114cc",
         "type": "ui-group",
-        "name": "Graphic",
+        "name": "Details",
         "page": "848bac8770d29cf3",
         "width": 4,
         "height": 1,
         "order": 3,
-        "showTitle": false,
+        "showTitle": true,
         "className": "",
         "visible": "true",
         "disabled": "false",
@@ -9666,7 +9666,7 @@
         "z": "85a0c31e48c798bf",
         "group": "08a4c47b7bced26d",
         "name": "values",
-        "label": "",
+        "label": "Push",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -11152,7 +11152,9 @@
         "z": "85a0c31e48c798bf",
         "name": "outResults",
         "mode": "link",
-        "links": [],
+        "links": [
+            "59cd384d0face872"
+        ],
         "x": 1275,
         "y": 1100,
         "wires": []
@@ -11163,7 +11165,7 @@
         "z": "85a0c31e48c798bf",
         "group": "08a4c47b7bced26d",
         "name": "values",
-        "label": "",
+        "label": "Inner",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -11231,7 +11233,7 @@
         "z": "85a0c31e48c798bf",
         "group": "08a4c47b7bced26d",
         "name": "values",
-        "label": "",
+        "label": "Outer",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -11298,7 +11300,9 @@
         "type": "link in",
         "z": "85a0c31e48c798bf",
         "name": "link in 3",
-        "links": [],
+        "links": [
+            "a289ad899d997083"
+        ],
         "x": 1545,
         "y": 340,
         "wires": [
@@ -11312,7 +11316,9 @@
         "type": "link in",
         "z": "85a0c31e48c798bf",
         "name": "link in 5",
-        "links": [],
+        "links": [
+            "10550a3fe65cce76"
+        ],
         "x": 1545,
         "y": 380,
         "wires": [
@@ -11326,7 +11332,9 @@
         "type": "link in",
         "z": "85a0c31e48c798bf",
         "name": "link in 6",
-        "links": [],
+        "links": [
+            "2c47993648022419"
+        ],
         "x": 1545,
         "y": 420,
         "wires": [
@@ -11341,7 +11349,9 @@
         "z": "85a0c31e48c798bf",
         "name": "outResults",
         "mode": "link",
-        "links": [],
+        "links": [
+            "ddae270bf24cb44c"
+        ],
         "x": 1275,
         "y": 1140,
         "wires": []
@@ -11352,7 +11362,9 @@
         "z": "85a0c31e48c798bf",
         "name": "outResults",
         "mode": "link",
-        "links": [],
+        "links": [
+            "a7a9a7e4cc3064a3"
+        ],
         "x": 1275,
         "y": 1180,
         "wires": []
