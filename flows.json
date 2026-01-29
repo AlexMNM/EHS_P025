@@ -9655,7 +9655,7 @@
         "z": "85a0c31e48c798bf",
         "group": "5f03761aafa114cc",
         "name": "",
-        "label": "collated, normalized",
+        "label": "",
         "order": 5,
         "chartType": "line",
         "category": "series",
@@ -9705,8 +9705,8 @@
         "height": "5",
         "className": "",
         "interpolation": "smooth",
-        "x": 2280,
-        "y": 920,
+        "x": 2260,
+        "y": 960,
         "wires": [
             []
         ]
@@ -9749,68 +9749,6 @@
             [
                 "e1f1c9ed849d7837"
             ]
-        ]
-    },
-    {
-        "id": "ecba115984f1aa50",
-        "type": "ui-chart",
-        "z": "85a0c31e48c798bf",
-        "group": "5f03761aafa114cc",
-        "name": "",
-        "label": "abs. values",
-        "order": 4,
-        "chartType": "line",
-        "category": "series",
-        "categoryType": "msg",
-        "xAxisLabel": "X axis",
-        "xAxisProperty": "x",
-        "xAxisPropertyType": "property",
-        "xAxisType": "linear",
-        "xAxisFormat": "",
-        "xAxisFormatType": "auto",
-        "xmin": "",
-        "xmax": "",
-        "yAxisLabel": "",
-        "yAxisProperty": "",
-        "yAxisPropertyType": "property",
-        "ymin": "",
-        "ymax": "",
-        "bins": 10,
-        "action": "replace",
-        "stackSeries": false,
-        "pointShape": "circle",
-        "pointRadius": 4,
-        "showLegend": true,
-        "removeOlder": 1,
-        "removeOlderUnit": "3600",
-        "removeOlderPoints": "",
-        "colors": [
-            "#0095ff",
-            "#ff0000",
-            "#ff7f0e",
-            "#2ca02c",
-            "#a347e1",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "textColor": [
-            "#666666"
-        ],
-        "textColorDefault": true,
-        "gridColor": [
-            "#e5e5e5"
-        ],
-        "gridColorDefault": true,
-        "width": "5",
-        "height": "5",
-        "className": "",
-        "interpolation": "smooth",
-        "x": 2250,
-        "y": 960,
-        "wires": [
-            []
         ]
     },
     {
@@ -9953,7 +9891,8 @@
         "y": 600,
         "wires": [
             [
-                "14509f6701be1fc6"
+                "14509f6701be1fc6",
+                "2ad07077a66e2c75"
             ]
         ]
     },
@@ -10340,7 +10279,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2080,
+        "x": 2260,
         "y": 920,
         "wires": [
             [
@@ -10496,8 +10435,7 @@
         "y": 960,
         "wires": [
             [
-                "5059d830a059caad",
-                "ecba115984f1aa50"
+                "e2ef9e4a16c83889"
             ]
         ]
     },
@@ -10843,7 +10781,134 @@
         "y": 1000,
         "wires": [
             [
-                "ecba115984f1aa50",
+                "37a7f15b42e4d3ad"
+            ]
+        ]
+    },
+    {
+        "id": "a84ed122459ba306",
+        "type": "ui-button-group",
+        "z": "85a0c31e48c798bf",
+        "name": "View type",
+        "group": "5f03761aafa114cc",
+        "order": 4,
+        "width": 2,
+        "height": 2,
+        "label": " ",
+        "className": "",
+        "rounded": true,
+        "useThemeColors": true,
+        "passthru": true,
+        "options": [
+            {
+                "label": "Absolute",
+                "icon": "",
+                "value": "abs",
+                "valueType": "str",
+                "color": "#009933"
+            },
+            {
+                "label": "Normalized",
+                "icon": "",
+                "value": "norm",
+                "valueType": "str",
+                "color": "#999999"
+            }
+        ],
+        "topic": "selectView",
+        "topicType": "str",
+        "x": 1340,
+        "y": 640,
+        "wires": [
+            [
+                "c6229ebe98d37507"
+            ]
+        ]
+    },
+    {
+        "id": "2ad07077a66e2c75",
+        "type": "change",
+        "z": "85a0c31e48c798bf",
+        "name": "reset view type",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "abs",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1140,
+        "y": 640,
+        "wires": [
+            [
+                "a84ed122459ba306"
+            ]
+        ]
+    },
+    {
+        "id": "c6229ebe98d37507",
+        "type": "change",
+        "z": "85a0c31e48c798bf",
+        "name": "set flow scale",
+        "rules": [
+            {
+                "t": "set",
+                "p": "scale",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1520,
+        "y": 640,
+        "wires": [
+            [
+                "6db37fcb97b81b6e"
+            ]
+        ]
+    },
+    {
+        "id": "e2ef9e4a16c83889",
+        "type": "switch",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "property": "scale",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "norm",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "abs",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2030,
+        "y": 960,
+        "wires": [
+            [
+                "5059d830a059caad"
+            ],
+            [
                 "37a7f15b42e4d3ad"
             ]
         ]
