@@ -297,6 +297,30 @@
         ]
     },
     {
+        "id": "c34a2473e52e1c09",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 620,
+        "y": 480,
+        "wires": [
+            [
+                "87b37c9dbbfa572a"
+            ]
+        ]
+    },
+    {
+        "id": "52f8103ba0c2ad17",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 1920,
+        "y": 1020,
+        "wires": [
+            [
+                "37a7f15b42e4d3ad"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -9336,7 +9360,7 @@
         "wires": [
             [
                 "065a7bff88b5e873",
-                "87b37c9dbbfa572a"
+                "c34a2473e52e1c09"
             ]
         ]
     },
@@ -9639,8 +9663,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 710,
-        "y": 620,
+        "x": 470,
+        "y": 520,
         "wires": [
             [
                 "10bab48e7c420909"
@@ -9660,8 +9684,8 @@
             "295b0e9412db2e89",
             "20f1ac6aebff9ae1"
         ],
-        "x": 825,
-        "y": 620,
+        "x": 595,
+        "y": 520,
         "wires": []
     },
     {
@@ -9737,7 +9761,7 @@
         "height": "5",
         "className": "",
         "interpolation": "smooth",
-        "x": 1970,
+        "x": 2030,
         "y": 1020,
         "wires": [
             []
@@ -10311,11 +10335,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2000,
-        "y": 980,
+        "x": 1800,
+        "y": 960,
         "wires": [
             [
-                "37a7f15b42e4d3ad"
+                "52f8103ba0c2ad17"
             ]
         ]
     },
@@ -10542,7 +10566,7 @@
         "finalize": "",
         "libs": [],
         "x": 590,
-        "y": 900,
+        "y": 980,
         "wires": [
             []
         ]
@@ -10564,7 +10588,7 @@
         "onceDelay": 0.1,
         "topic": "enable",
         "x": 430,
-        "y": 900,
+        "y": 980,
         "wires": [
             [
                 "52278dc01e9440cb"
@@ -10595,7 +10619,7 @@
         "y": 480,
         "wires": [
             [
-                "87b37c9dbbfa572a"
+                "c34a2473e52e1c09"
             ]
         ]
     },
@@ -10604,7 +10628,7 @@
         "type": "debug",
         "z": "85a0c31e48c798bf",
         "name": "debug 11",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -10612,8 +10636,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1440,
-        "y": 940,
+        "x": 1320,
+        "y": 1220,
         "wires": []
     },
     {
@@ -10757,7 +10781,6 @@
         "y": 940,
         "wires": [
             [
-                "d348adc4ac6a0016",
                 "21a8c894e9bc4a6a"
             ]
         ]
@@ -10810,11 +10833,11 @@
         "links": [
             "10bab48e7c420909"
         ],
-        "x": 1875,
+        "x": 1805,
         "y": 1060,
         "wires": [
             [
-                "37a7f15b42e4d3ad"
+                "52f8103ba0c2ad17"
             ]
         ]
     },
@@ -10942,7 +10965,7 @@
                 "5059d830a059caad"
             ],
             [
-                "37a7f15b42e4d3ad"
+                "52f8103ba0c2ad17"
             ]
         ]
     },
@@ -10969,8 +10992,71 @@
         "x": 810,
         "y": 560,
         "wires": [
-            []
+            [
+                "1221e947099edb7b"
+            ]
         ]
+    },
+    {
+        "id": "1221e947099edb7b",
+        "type": "link out",
+        "z": "85a0c31e48c798bf",
+        "name": "outEntry",
+        "mode": "link",
+        "links": [
+            "8315ff55db0da242"
+        ],
+        "x": 915,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "8315ff55db0da242",
+        "type": "link in",
+        "z": "85a0c31e48c798bf",
+        "name": "inResults",
+        "links": [
+            "1221e947099edb7b"
+        ],
+        "x": 1045,
+        "y": 1100,
+        "wires": [
+            [
+                "0facc45860d972cf"
+            ]
+        ]
+    },
+    {
+        "id": "0facc45860d972cf",
+        "type": "function",
+        "z": "85a0c31e48c798bf",
+        "name": "get results",
+        "func": "const {data, final} = flow.get(\"entry.results\");\n\nconst lines = [];\n\nObject.values(data).forEach((c) => {Object.values(c).forEach((m) => {lines.push({...m})})});\n\nreturn ret;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 1100,
+        "wires": [
+            [
+                "a289ad899d997083",
+                "d348adc4ac6a0016"
+            ]
+        ]
+    },
+    {
+        "id": "a289ad899d997083",
+        "type": "link out",
+        "z": "85a0c31e48c798bf",
+        "name": "outResults",
+        "mode": "link",
+        "links": [],
+        "x": 1265,
+        "y": 1100,
+        "wires": []
     },
     {
         "id": "8435f37c02a9e26b",
