@@ -13377,39 +13377,6 @@
         ]
     },
     {
-        "id": "a3b238edb37fe513",
-        "type": "ui-text-input",
-        "z": "aecf9ba551ec4a57",
-        "group": "18d32b8bd2cc40ae",
-        "name": "",
-        "label": "Torque offset",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "topic": "tq_offset",
-        "topicType": "str",
-        "mode": "number",
-        "tooltip": "",
-        "delay": 300,
-        "passthru": true,
-        "sendOnDelay": false,
-        "sendOnBlur": true,
-        "sendOnEnter": true,
-        "className": "",
-        "clearable": false,
-        "sendOnClear": false,
-        "icon": "",
-        "iconPosition": "left",
-        "iconInnerPosition": "inside",
-        "x": 1230,
-        "y": 760,
-        "wires": [
-            [
-                "c69f1de560be5128"
-            ]
-        ]
-    },
-    {
         "id": "c69f1de560be5128",
         "type": "change",
         "z": "aecf9ba551ec4a57",
@@ -13429,10 +13396,43 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1480,
+        "x": 1600,
         "y": 760,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "94b67983e6469855",
+        "type": "ui-number-input",
+        "z": "aecf9ba551ec4a57",
+        "group": "18d32b8bd2cc40ae",
+        "name": "",
+        "label": "Torque offset",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "topic": "torque_offset",
+        "topicType": "str",
+        "min": "-10",
+        "max": 10,
+        "step": "0.01",
+        "tooltip": "",
+        "passthru": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "stacked",
+        "x": 1310,
+        "y": 760,
+        "wires": [
+            [
+                "c69f1de560be5128"
+            ]
         ]
     },
     {
