@@ -10016,8 +10016,7 @@
         "wires": [
             [
                 "14509f6701be1fc6",
-                "2ad07077a66e2c75",
-                "52278dc01e9440cb"
+                "2ad07077a66e2c75"
             ]
         ]
     },
@@ -10634,8 +10633,8 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\nnode.status({ fill: \"yellow\", shape: \"ring\", text: \"disabled\" });\n",
         "finalize": "",
         "libs": [],
-        "x": 1170,
-        "y": 760,
+        "x": 850,
+        "y": 620,
         "wires": [
             []
         ]
@@ -10656,8 +10655,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "enable",
-        "x": 1030,
-        "y": 760,
+        "x": 710,
+        "y": 620,
         "wires": [
             [
                 "52278dc01e9440cb"
@@ -11061,7 +11060,8 @@
         "y": 560,
         "wires": [
             [
-                "1221e947099edb7b"
+                "1221e947099edb7b",
+                "52278dc01e9440cb"
             ]
         ]
     },
