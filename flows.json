@@ -9606,15 +9606,15 @@
                 "key": "label",
                 "keyType": "key",
                 "type": "text",
-                "width": "1",
-                "align": "start"
+                "width": "",
+                "align": "end"
             },
             {
                 "title": "",
                 "key": "value",
                 "keyType": "key",
                 "type": "text",
-                "width": "5",
+                "width": "",
                 "align": "start"
             }
         ],
