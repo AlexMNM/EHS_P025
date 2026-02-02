@@ -11395,8 +11395,8 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 790,
-        "y": 1160,
+        "x": 630,
+        "y": 1200,
         "wires": [
             [
                 "8f60d74c53f2f3f6"
@@ -11414,8 +11414,8 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 600,
-        "y": 1200,
+        "x": 740,
+        "y": 1220,
         "wires": [
             []
         ]
@@ -11425,18 +11425,18 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "format csv",
-        "func": "const {flatten} = global.get(\"settings.data\", \"file\");\nconst header = Object.keys(msg.payload.results[0]);\nconst filename = msg.payload[\"_id\"].order.toLowerCase().replaceAll(\" \", \"-\") + \"_\" + msg.payload[\"_id\"].type\n\nconst rows = msg.payload.results;\n\nreturn {\n    payload: rows, \n    columns: header.join(\",\"),\n    filename: `/appcache/reports/${filename}.csv`\n    };",
+        "func": "const {flatten} = global.get(\"settings.data\", \"file\");\nconst header = Object.keys(msg.payload.results[0]);\nconst filename = msg.payload[\"_id\"].order.toLowerCase().replaceAll(\" \", \"-\") + \"_\" + msg.payload[\"_id\"].type\n\nconst rows = flatten(msg.payload.results);\n\nreturn {\n    payload: rows, \n    columns: header.join(\",\"),\n    filename: `/appcache/reports/${filename}.csv`\n    };",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 610,
+        "x": 450,
         "y": 1160,
         "wires": [
             [
-                "8a85dcb76cb4163c"
+                "d348adc4ac6a0016"
             ]
         ]
     },
@@ -11464,7 +11464,7 @@
         "type": "debug",
         "z": "85a0c31e48c798bf",
         "name": "debug 11",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
