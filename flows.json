@@ -9606,7 +9606,7 @@
                 "key": "label",
                 "keyType": "key",
                 "type": "text",
-                "width": "",
+                "width": "1",
                 "align": "start"
             },
             {
@@ -9614,7 +9614,7 @@
                 "key": "value",
                 "keyType": "key",
                 "type": "text",
-                "width": "",
+                "width": "1",
                 "align": "start"
             }
         ],
