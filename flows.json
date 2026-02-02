@@ -11423,13 +11423,13 @@
         "type": "file",
         "z": "85a0c31e48c798bf",
         "name": "",
-        "filename": "/appcache/node/static/export.csv",
-        "filenameType": "str",
+        "filename": "filename",
+        "filenameType": "msg",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 680,
+        "x": 600,
         "y": 1200,
         "wires": [
             [
