@@ -11435,7 +11435,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "format csv",
-        "func": "const {flatten} = global.get(\"settings.data\", \"file\");\nconst header = Object.keys(flatten(msg.payload.results[0])).map((k) => k.split(\".\").slice(-2).join(\" \"));\nconst filename = msg.payload[\"_id\"].order.toLowerCase().replaceAll(\" \", \"-\") + \"_\" + msg.payload[\"_id\"].type\n\nconst rows = msg.payload.results;\n\nreturn {\n    payload: rows, \n    columns: header.join(\",\"),\n    filename: `/appcache/node/static/${filename}.csv`\n    };",
+        "func": "const {flatten} = global.get(\"settings.data\", \"file\");\nconst header = Object.keys(flatten(msg.payload.results[0])).map((k) => k.split(\".\").slice(-3).join(\" \"));\nconst filename = msg.payload[\"_id\"].order.toLowerCase().replaceAll(\" \", \"-\") + \"_\" + msg.payload[\"_id\"].type\n\nconst rows = msg.payload.results;\n\nreturn {\n    payload: rows, \n    columns: header.join(\",\"),\n    filename: `/appcache/node/static/${filename}.csv`\n    };",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
