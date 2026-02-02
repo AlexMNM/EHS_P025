@@ -4826,7 +4826,6 @@
         "links": [
             "5e9a48c35cbb3f52",
             "1781f6c6962eae25",
-            "3497169f475f9514",
             "717a5c1f605a6344"
         ],
         "x": 645,
@@ -11512,7 +11511,7 @@
         "color": "",
         "bgcolor": "",
         "className": "",
-        "icon": "",
+        "icon": "FileDownload",
         "iconPosition": "left",
         "payload": "",
         "payloadType": "str",
