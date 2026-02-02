@@ -994,7 +994,7 @@
         "type": "ui-spacer",
         "group": "5f03761aafa114cc",
         "name": "spacer",
-        "order": 5,
+        "order": 3,
         "width": 1,
         "height": 1,
         "className": ""
@@ -9559,7 +9559,7 @@
         "name": "Select stage",
         "group": "5f03761aafa114cc",
         "order": 1,
-        "width": 5,
+        "width": 3,
         "height": 2,
         "label": " ",
         "className": "",
@@ -9600,9 +9600,9 @@
         "group": "5f03761aafa114cc",
         "name": "stage setup",
         "label": "",
-        "order": 3,
+        "order": 2,
         "width": 2,
-        "height": 0,
+        "height": 3.867310420182828e+61,
         "maxrows": 0,
         "passthru": false,
         "autocols": false,
@@ -15366,12 +15366,12 @@
         ]
     },
     {
-        "id": "c1db145f1e5ea9a5",
+        "id": "c1db3f52ada36c97",
         "type": "ui-spacer",
         "group": "5f03761aafa114cc",
         "name": "spacer",
-        "order": 2,
-        "width": 3,
+        "order": 5,
+        "width": 1,
         "height": 1,
         "className": ""
     }
