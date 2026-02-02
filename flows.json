@@ -9598,7 +9598,7 @@
         "passthru": false,
         "autocols": false,
         "showSearch": false,
-        "deselect": true,
+        "deselect": false,
         "selectionType": "none",
         "columns": [
             {
@@ -9607,7 +9607,7 @@
                 "keyType": "key",
                 "type": "text",
                 "width": "",
-                "align": "end"
+                "align": "start"
             },
             {
                 "title": "",
