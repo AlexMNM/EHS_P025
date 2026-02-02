@@ -1014,6 +1014,16 @@
         "groupType": "default"
     },
     {
+        "id": "c1db3f52ada36c97",
+        "type": "ui-spacer",
+        "group": "5f03761aafa114cc",
+        "name": "spacer",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
         "id": "f7676b47d7dc782a",
         "type": "tcp in",
         "z": "a7c7ec5294135863",
@@ -9589,7 +9599,8 @@
         "wires": [
             [
                 "585297eb4357824b",
-                "17aefc05b1be602f"
+                "17aefc05b1be602f",
+                "d348adc4ac6a0016"
             ]
         ]
     },
@@ -9879,7 +9890,7 @@
         "id": "14509f6701be1fc6",
         "type": "change",
         "z": "85a0c31e48c798bf",
-        "name": "reset view type",
+        "name": "reset view axis",
         "rules": [
             {
                 "t": "set",
@@ -10704,8 +10715,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 840,
-        "y": 820,
+        "x": 1540,
+        "y": 560,
         "wires": []
     },
     {
@@ -10952,7 +10963,7 @@
         "id": "2ad07077a66e2c75",
         "type": "change",
         "z": "85a0c31e48c798bf",
-        "name": "reset view type",
+        "name": "reset view scale",
         "rules": [
             {
                 "t": "set",
@@ -11402,7 +11413,6 @@
         "y": 880,
         "wires": [
             [
-                "d348adc4ac6a0016",
                 "d7e95f225cba0949"
             ]
         ]
@@ -11427,8 +11437,7 @@
         "y": 1040,
         "wires": [
             [
-                "8f60d74c53f2f3f6",
-                "d348adc4ac6a0016"
+                "8f60d74c53f2f3f6"
             ]
         ]
     },
@@ -11498,8 +11507,7 @@
         "y": 1040,
         "wires": [
             [
-                "8a85dcb76cb4163c",
-                "d348adc4ac6a0016"
+                "8a85dcb76cb4163c"
             ]
         ]
     },
@@ -13409,7 +13417,7 @@
         "group": "18d32b8bd2cc40ae",
         "name": "",
         "label": "Torque offset",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "topic": "torque_offset",
@@ -15364,15 +15372,5 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "c1db3f52ada36c97",
-        "type": "ui-spacer",
-        "group": "5f03761aafa114cc",
-        "name": "spacer",
-        "order": 5,
-        "width": 1,
-        "height": 1,
-        "className": ""
     }
 ]
