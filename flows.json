@@ -384,19 +384,6 @@
         ]
     },
     {
-        "id": "d7e95f225cba0949",
-        "type": "junction",
-        "z": "85a0c31e48c798bf",
-        "x": 440,
-        "y": 1160,
-        "wires": [
-            [
-                "3dad963931899fbe",
-                "791d830d64d13ba5"
-            ]
-        ]
-    },
-    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -11370,7 +11357,6 @@
         "y": 880,
         "wires": [
             [
-                "d348adc4ac6a0016",
                 "cce6453a6d4807e2"
             ]
         ]
@@ -11413,7 +11399,6 @@
         "y": 1160,
         "wires": [
             [
-                "d348adc4ac6a0016",
                 "8f60d74c53f2f3f6"
             ]
         ]
@@ -11432,41 +11417,6 @@
         "x": 600,
         "y": 1200,
         "wires": [
-            [
-                "d348adc4ac6a0016"
-            ]
-        ]
-    },
-    {
-        "id": "791d830d64d13ba5",
-        "type": "json",
-        "z": "85a0c31e48c798bf",
-        "name": "",
-        "property": "payload[0]",
-        "action": "",
-        "pretty": true,
-        "x": 590,
-        "y": 1260,
-        "wires": [
-            [
-                "cb8459f3b48de033"
-            ]
-        ]
-    },
-    {
-        "id": "cb8459f3b48de033",
-        "type": "file",
-        "z": "85a0c31e48c798bf",
-        "name": "",
-        "filename": "/appcache/node/static/export.json",
-        "filenameType": "str",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 680,
-        "y": 1300,
-        "wires": [
             []
         ]
     },
@@ -11475,7 +11425,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "format csv",
-        "func": "const {flatten} = global.get(\"settings.data\", \"file\");\nconst header = Object.keys(msg.payload.results[0]);\nconst filename = msg.payload[\"_id\"].order.toLowerCase().replaceAll(\" \", \"-\") + \"_\" + msg.payload[\"_id\"].type\n\nconst rows = msg.payload.results;\n\nreturn {\n    payload: rows, \n    columns: header.join(\",\"),\n    filename: `/appcache/node/static/${filename}.csv`\n    };",
+        "func": "const {flatten} = global.get(\"settings.data\", \"file\");\nconst header = Object.keys(msg.payload.results[0]);\nconst filename = msg.payload[\"_id\"].order.toLowerCase().replaceAll(\" \", \"-\") + \"_\" + msg.payload[\"_id\"].type\n\nconst rows = msg.payload.results;\n\nreturn {\n    payload: rows, \n    columns: header.join(\",\"),\n    filename: `/appcache/reports/${filename}.csv`\n    };",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -11486,8 +11436,7 @@
         "y": 1160,
         "wires": [
             [
-                "8a85dcb76cb4163c",
-                "d348adc4ac6a0016"
+                "8a85dcb76cb4163c"
             ]
         ]
     },
@@ -11515,7 +11464,7 @@
         "type": "debug",
         "z": "85a0c31e48c798bf",
         "name": "debug 11",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
