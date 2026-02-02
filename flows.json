@@ -388,7 +388,7 @@
         "type": "junction",
         "z": "85a0c31e48c798bf",
         "x": 440,
-        "y": 1040,
+        "y": 1160,
         "wires": [
             [
                 "3dad963931899fbe",
@@ -11352,7 +11352,7 @@
         "y": 880,
         "wires": [
             [
-                "d348adc4ac6a0016"
+                "9140718d397f3444"
             ]
         ]
     },
@@ -11373,7 +11373,7 @@
         "include_empty_strings": "",
         "include_null_values": "",
         "x": 750,
-        "y": 1040,
+        "y": 1160,
         "wires": [
             [
                 "8f60d74c53f2f3f6"
@@ -11392,7 +11392,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 680,
-        "y": 1080,
+        "y": 1200,
         "wires": [
             []
         ]
@@ -11406,7 +11406,7 @@
         "action": "",
         "pretty": true,
         "x": 590,
-        "y": 1140,
+        "y": 1260,
         "wires": [
             [
                 "cb8459f3b48de033"
@@ -11425,7 +11425,7 @@
         "overwriteFile": "true",
         "encoding": "none",
         "x": 680,
-        "y": 1180,
+        "y": 1300,
         "wires": [
             []
         ]
@@ -11443,7 +11443,7 @@
         "finalize": "",
         "libs": [],
         "x": 610,
-        "y": 1040,
+        "y": 1160,
         "wires": [
             [
                 "8a85dcb76cb4163c"
@@ -11483,8 +11483,28 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 840,
-        "y": 860,
+        "y": 920,
         "wires": []
+    },
+    {
+        "id": "9140718d397f3444",
+        "type": "split",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 550,
+        "y": 920,
+        "wires": [
+            [
+                "d348adc4ac6a0016"
+            ]
+        ]
     },
     {
         "id": "8435f37c02a9e26b",
