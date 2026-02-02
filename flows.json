@@ -9246,7 +9246,7 @@
         "name": "",
         "group": "26cc4e226e9df6bb",
         "label": "",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "options": [
@@ -9310,7 +9310,7 @@
         "group": "26cc4e226e9df6bb",
         "name": "",
         "label": "Update types",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -9388,7 +9388,7 @@
         "group": "26cc4e226e9df6bb",
         "name": "Search results",
         "label": "",
-        "order": 3,
+        "order": 4,
         "width": 0,
         "height": 0,
         "maxrows": "10",
@@ -11452,8 +11452,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 350,
-        "y": 840,
+        "x": 190,
+        "y": 880,
         "wires": [
             [
                 "2ac87897e50c7458"
@@ -11494,6 +11494,45 @@
         "wires": [
             [
                 "3dad963931899fbe"
+            ]
+        ]
+    },
+    {
+        "id": "e0d846aa8d8743ff",
+        "type": "ui-button",
+        "z": "85a0c31e48c798bf",
+        "group": "26cc4e226e9df6bb",
+        "name": "",
+        "label": "Export selection",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "report",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 380,
+        "y": 840,
+        "wires": [
+            [
+                "2ac87897e50c7458"
             ]
         ]
     },
