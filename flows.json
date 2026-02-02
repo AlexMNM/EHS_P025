@@ -9614,7 +9614,7 @@
                 "key": "value",
                 "keyType": "key",
                 "type": "text",
-                "width": "1",
+                "width": "3",
                 "align": "start"
             }
         ],
