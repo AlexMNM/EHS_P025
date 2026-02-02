@@ -11394,7 +11394,7 @@
         "strings": true,
         "include_empty_strings": "",
         "include_null_values": "",
-        "x": 650,
+        "x": 630,
         "y": 980,
         "wires": [
             [
@@ -11413,7 +11413,7 @@
         "createDir": false,
         "overwriteFile": "true",
         "encoding": "none",
-        "x": 780,
+        "x": 760,
         "y": 980,
         "wires": [
             [
@@ -11535,6 +11535,30 @@
                 "2ac87897e50c7458"
             ]
         ]
+    },
+    {
+        "id": "25b1630260257099",
+        "type": "ui-text",
+        "z": "85a0c31e48c798bf",
+        "group": "26cc4e226e9df6bb",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Report location:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "\"D:\" & msg.filename",
+        "valueType": "jsonata",
+        "x": 360,
+        "y": 1040,
+        "wires": []
     },
     {
         "id": "8435f37c02a9e26b",
