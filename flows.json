@@ -2357,6 +2357,39 @@
         ]
     },
     {
+        "id": "01e9722412728d60",
+        "type": "status",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "scope": [
+            "42f86a76711d556d"
+        ],
+        "x": 400,
+        "y": 700,
+        "wires": [
+            [
+                "b6e0ad8dafd9e379"
+            ]
+        ]
+    },
+    {
+        "id": "b6e0ad8dafd9e379",
+        "type": "debug",
+        "z": "a7c7ec5294135863",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 700,
+        "wires": []
+    },
+    {
         "id": "6ad9f8fe51b00404",
         "type": "tcp request",
         "z": "8e125f4bb2233c4b",
