@@ -11555,7 +11555,7 @@
         "color": "#717171",
         "wrapText": false,
         "className": "",
-        "value": "\"D:\" & msg.filename",
+        "value": "$replace(\"D:\" & msg.filename, \"/\", \"\\\\\") ",
         "valueType": "jsonata",
         "x": 660,
         "y": 1020,
