@@ -2377,7 +2377,7 @@
         "type": "debug",
         "z": "a7c7ec5294135863",
         "name": "debug 5",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -4780,7 +4780,7 @@
         "type": "function",
         "z": "c4157bddbbb8817a",
         "name": "update_data_set_results",
-        "func": "const {ObjectId} = global.get(\"mongodb\");\nconst {evaluate, ...results} = global.get(\"results\");\n\nconst data = {\n    ['results.final'] : results\n}\n\nmsg.payload.forEach(function(res) {\n    data[`results.data.${res.component}.${res.label.replaceAll(\" \", \"_\").toLowerCase()}`] = res;\n});\n\nconst operation = 'updateOne'\n\nconst payload = [{ '_id': new ObjectId(flow.get('currentId', 'file')) }, { '$set': { ...data }}]\n\nreturn {\n    operation: operation,\n    payload: payload,\n    topic: \"results\"\n};",
+        "func": "const {ObjectId} = global.get(\"mongodb\");\n\nconst data = {}\n\nmsg.payload.forEach(function(res) {\n    data[`results.data.${res.component}.${res.label.replaceAll(\" \", \"_\").toLowerCase()}`] = res;\n});\n\nconst operation = 'updateOne'\n\nconst payload = [{ '_id': new ObjectId(flow.get('currentId', 'file')) }, { '$set': { ...data }}]\n\nreturn {\n    operation: operation,\n    payload: payload,\n    topic: \"results\"\n};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -4838,7 +4838,9 @@
         "name": "inUpdateAny",
         "links": [
             "5e9a48c35cbb3f52",
-            "1781f6c6962eae25"
+            "1781f6c6962eae25",
+            "3497169f475f9514",
+            "717a5c1f605a6344"
         ],
         "x": 645,
         "y": 580,
@@ -5870,7 +5872,7 @@
         "type": "function",
         "z": "f0b99c790d575624",
         "name": "results status",
-        "func": "const { evaluate, ...results } = global.get(\"results\");\n\nconst partial = Object.fromEntries(Object.entries(results).map(([k, v]) => ([k, evaluate(v)])));\n\nmsg = {\n    payload: {\n        total: evaluate(results),\n        ...partial\n    }\n}\n\nreturn msg;",
+        "func": "const { evaluate, ...results } = global.get(\"results\");\n\nconst partial = Object.fromEntries(Object.entries(results).map(([k, v]) => ([k, evaluate(v)])));\n\nmsg = {\n    payload: {\n        total: evaluate(results),\n        ...partial\n    }\n};\n\nmsg.path = 'results.final';\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5892,7 +5894,8 @@
         "name": "outStatus",
         "mode": "link",
         "links": [
-            "01bf1c589f7470eb"
+            "01bf1c589f7470eb",
+            "40beb22a673b04a1"
         ],
         "x": 565,
         "y": 1000,
@@ -5941,8 +5944,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 900,
+        "x": 680,
+        "y": 940,
         "wires": []
     },
     {
@@ -8834,7 +8837,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "status",
-        "func": "const colors = {\n    testing: \"#a0a0a0\",\n    pass: \"green\",\n    fail: \"red\"\n}\n\nswitch (msg.payload.total) {\n    case 0:\n        msg.topic = \"testing\";\n        msg.ui_update = {\n            buttonColor: \"#a0a0a0\",\n            label: \"Testing...\",\n        }\n        break;\n    case 1:\n        msg.topic = \"pass\";\n        msg.ui_update = {\n            buttonColor: \"green\",\n            label: \"PASS\",\n        }\n        break;\n    default:\n        msg.topic = \"fail\";\n        msg.ui_update = {\n            buttonColor: \"red\",\n            label: \"FAIL\",\n        }\n        break;\n}\n\nconst partial = {\n    payload : [ \n        {\n            label: \"Button\",\n            color: color(msg.payload.button),\n        },\n        {\n            label: \"Inner\",\n            color: color(msg.payload.inner),\n        },\n        {\n            label: \"Outer\",\n            color: color(msg.payload.outer),\n        },\n        \n    ]\n}\n\nmsg.payload = msg.payload.total;\n\n\n\n\nreturn [msg, partial];\n\n\nfunction color(status){\n    let ret = \"blue\"\n    switch(true){\n        case status === 0:\n            ret = \"#a0a0a0\";\n            break;\n        case status === 1:\n            ret = \"green\";\n            break;\n        case status > 1:\n            ret = \"red\";\n        default:\n            \n            break\n    }\n    return ret;\n}",
+        "func": "const colors = {\n    testing: \"#a0a0a0\",\n    pass: \"green\",\n    fail: \"red\"\n}\n\nswitch (msg.payload.total) {\n    case 0:\n        msg.topic = \"testing\";\n        msg.ui_update = {\n            buttonColor: \"#a0a0a0\",\n            label: \"Testing...\",\n        }\n        break;\n    case 1:\n        msg.topic = \"pass\";\n        msg.ui_update = {\n            buttonColor: \"green\",\n            label: \"PASS\",\n        }\n        break;\n    default:\n        msg.topic = \"fail\";\n        msg.ui_update = {\n            buttonColor: \"red\",\n            label: \"FAIL\",\n        }\n        break;\n}\n\nconst partial = {\n    payload : [ \n        {\n            label: \"Button\",\n            color: color(msg.payload.button),\n        },\n        {\n            label: \"Inner\",\n            color: color(msg.payload.inner),\n        },\n        {\n            label: \"Outer\",\n            color: color(msg.payload.outer),\n        },\n        \n    ]\n}\n\nmsg.payload = msg.payload.total;\n\n\nreturn [msg, partial];\n\n\nfunction color(status){\n    let ret = \"blue\"\n    switch(true){\n        case status === 0:\n            ret = \"#a0a0a0\";\n            break;\n        case status === 1:\n            ret = \"green\";\n            break;\n        case status > 1:\n            ret = \"red\";\n        default:\n            \n            break\n    }\n    return ret;\n}",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
