@@ -11512,7 +11512,7 @@
         "bgcolor": "",
         "className": "",
         "icon": "export",
-        "iconPosition": "left",
+        "iconPosition": "right",
         "payload": "",
         "payloadType": "str",
         "topic": "report",
