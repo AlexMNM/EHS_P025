@@ -994,9 +994,9 @@
         "type": "ui-spacer",
         "group": "5f03761aafa114cc",
         "name": "spacer",
-        "order": 3,
+        "order": 2,
         "width": 1,
-        "height": 1,
+        "height": 2,
         "className": ""
     },
     {
@@ -9611,8 +9611,8 @@
         "group": "5f03761aafa114cc",
         "name": "stage setup",
         "label": "",
-        "order": 2,
-        "width": 2,
+        "order": 3,
+        "width": 1,
         "height": 3.867310420182828e+61,
         "maxrows": 0,
         "passthru": false,
