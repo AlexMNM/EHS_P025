@@ -11675,7 +11675,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "button color",
-        "func": "const m = {}\nswitch (msg.topic) {\n    case \"search\":\n        m.enable = true;\n        m.ui_update = {\n            buttonColor: \"blue\",\n        }\n        break;\n    case \"refresh\":\n        m.enable = false;\n        m.ui_update = {\n            buttonColor: \"#a0a0a0\",\n        }\n        break;\n    case \"done\":\n        m.ui_update = {\n            buttonColor: \"green\",\n        }\n        break;\n}\n\nreturn m;",
+        "func": "const m = {}\nswitch (msg.topic) {\n    case \"search\":\n        m.enabled = true;\n        m.ui_update = {\n            buttonColor: \"blue\",\n        }\n        break;\n    case \"refresh\":\n        m.enabled = false;\n        m.ui_update = {\n            buttonColor: \"#a0a0a0\",\n        }\n        break;\n    case \"done\":\n        m.ui_update = {\n            buttonColor: \"green\",\n        }\n        break;\n}\n\nreturn m;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
