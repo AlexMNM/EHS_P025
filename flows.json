@@ -396,6 +396,19 @@
         ]
     },
     {
+        "id": "214a0b7062bde9b5",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 300,
+        "y": 300,
+        "wires": [
+            [
+                "a41d6d9c4686dbfe",
+                "9b8db8a1d67ce690"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -9373,7 +9386,7 @@
         "y": 300,
         "wires": [
             [
-                "a41d6d9c4686dbfe"
+                "214a0b7062bde9b5"
             ]
         ]
     },
@@ -9412,8 +9425,7 @@
         "y": 440,
         "wires": [
             [
-                "c8641b6d0e0d5594",
-                "d348adc4ac6a0016"
+                "c8641b6d0e0d5594"
             ]
         ]
     },
@@ -9799,7 +9811,8 @@
             "c35c9c2d338283df",
             "eb349fe7e872e4ca",
             "295b0e9412db2e89",
-            "20f1ac6aebff9ae1"
+            "20f1ac6aebff9ae1",
+            "b8123fc3e1869108"
         ],
         "x": 595,
         "y": 520,
@@ -10023,7 +10036,7 @@
         "y": 240,
         "wires": [
             [
-                "a41d6d9c4686dbfe"
+                "214a0b7062bde9b5"
             ]
         ]
     },
@@ -10831,8 +10844,7 @@
         "y": 440,
         "wires": [
             [
-                "87ccc1ce19e89219",
-                "d348adc4ac6a0016"
+                "87ccc1ce19e89219"
             ]
         ]
     },
@@ -11408,7 +11420,7 @@
         ],
         "linkType": "static",
         "timeout": "10",
-        "x": 680,
+        "x": 600,
         "y": 880,
         "wires": [
             [
@@ -11455,7 +11467,8 @@
         "y": 1020,
         "wires": [
             [
-                "25b1630260257099"
+                "25b1630260257099",
+                "8cab011fc1f89078"
             ]
         ]
     },
@@ -11527,8 +11540,8 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 550,
-        "y": 920,
+        "x": 470,
+        "y": 940,
         "wires": [
             [
                 "3dad963931899fbe"
@@ -11634,6 +11647,125 @@
         "wires": [
             [
                 "a46bf87625d7f811"
+            ]
+        ]
+    },
+    {
+        "id": "6df86663f91efb81",
+        "type": "link out",
+        "z": "85a0c31e48c798bf",
+        "name": "outRefresh",
+        "mode": "link",
+        "links": [
+            "b8123fc3e1869108"
+        ],
+        "x": 495,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e06f91e561ce25cd",
+        "type": "function",
+        "z": "85a0c31e48c798bf",
+        "name": "button color",
+        "func": "const m = {}\nswitch (msg.topic) {\n    case \"search\":\n        m.ui_update = {\n            buttonColor: \"blue\",\n        }\n        break;\n    case \"refresh\":\n        m.ui_update = {\n            buttonColor: \"#a0a0a0\",\n        }\n        break;\n    case \"done\":\n        m.ui_update = {\n            buttonColor: \"green\",\n        }\n        break;\n}\n\nreturn m;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 800,
+        "wires": [
+            [
+                "e0d846aa8d8743ff"
+            ]
+        ]
+    },
+    {
+        "id": "9b8db8a1d67ce690",
+        "type": "change",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "refresh",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "6df86663f91efb81"
+            ]
+        ]
+    },
+    {
+        "id": "b8123fc3e1869108",
+        "type": "link in",
+        "z": "85a0c31e48c798bf",
+        "name": "inExportButton",
+        "links": [
+            "10bab48e7c420909",
+            "6df86663f91efb81",
+            "1483e3573668197c"
+        ],
+        "x": 245,
+        "y": 800,
+        "wires": [
+            [
+                "e06f91e561ce25cd",
+                "d348adc4ac6a0016"
+            ]
+        ]
+    },
+    {
+        "id": "1483e3573668197c",
+        "type": "link out",
+        "z": "85a0c31e48c798bf",
+        "name": "outReportDone",
+        "mode": "link",
+        "links": [
+            "b8123fc3e1869108"
+        ],
+        "x": 595,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "8cab011fc1f89078",
+        "type": "change",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "done",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 1060,
+        "wires": [
+            [
+                "1483e3573668197c"
             ]
         ]
     },
