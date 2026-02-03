@@ -384,6 +384,18 @@
         ]
     },
     {
+        "id": "a46bf87625d7f811",
+        "type": "junction",
+        "z": "85a0c31e48c798bf",
+        "x": 540,
+        "y": 440,
+        "wires": [
+            [
+                "c255229e7db1d672"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -6335,7 +6347,7 @@
         "group": "",
         "page": "",
         "ui": "86cea779c465227a",
-        "name": "",
+        "name": "process-data",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -6346,7 +6358,31 @@
         "resendOnRefresh": true,
         "templateScope": "site:style",
         "className": "",
-        "x": 580,
+        "x": 590,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "124399c496c33cbd",
+        "type": "ui-template",
+        "z": "a6c85f6538755b0c",
+        "group": "",
+        "page": "",
+        "ui": "86cea779c465227a",
+        "name": "search-table",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".search-table td {\n    height: 10px !important;\n    padding: 0 1px !important;\n}\n\n.search-table th {\n    padding: 0 1px !important;\n}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 750,
         "y": 640,
         "wires": [
             []
@@ -9245,7 +9281,7 @@
         "name": "",
         "group": "26cc4e226e9df6bb",
         "label": "",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "options": [
@@ -9309,7 +9345,7 @@
         "group": "26cc4e226e9df6bb",
         "name": "",
         "label": "Update types",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -9351,12 +9387,12 @@
         ],
         "linkType": "static",
         "timeout": "10",
-        "x": 460,
+        "x": 420,
         "y": 440,
         "wires": [
             [
                 "0625785206e6cf58",
-                "c255229e7db1d672"
+                "a46bf87625d7f811"
             ]
         ]
     },
@@ -9372,7 +9408,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 310,
+        "x": 270,
         "y": 440,
         "wires": [
             [
@@ -9387,7 +9423,7 @@
         "group": "26cc4e226e9df6bb",
         "name": "Search results",
         "label": "",
-        "order": 3,
+        "order": 4,
         "width": 0,
         "height": 0,
         "maxrows": "10",
@@ -10790,7 +10826,7 @@
         "links": [
             "5e95da190b6ad8e9"
         ],
-        "x": 215,
+        "x": 185,
         "y": 440,
         "wires": [
             [
@@ -11505,7 +11541,7 @@
         "group": "26cc4e226e9df6bb",
         "name": "",
         "label": "Export selection",
-        "order": 4,
+        "order": 5,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -11542,7 +11578,7 @@
         "type": "ui-text",
         "z": "85a0c31e48c798bf",
         "group": "26cc4e226e9df6bb",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "name": "",
@@ -11560,6 +11596,45 @@
         "x": 660,
         "y": 1020,
         "wires": []
+    },
+    {
+        "id": "384229dc1ffe4013",
+        "type": "inject",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 410,
+        "y": 380,
+        "wires": [
+            [
+                "6633a507087a6a76"
+            ]
+        ]
+    },
+    {
+        "id": "6633a507087a6a76",
+        "type": "function",
+        "z": "85a0c31e48c798bf",
+        "name": "ui_update class process-data",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst add = {\n    \"class\": \"search-table\"\n}\n\nObject.assign(ui_update, add);\nmsg.ui_update = ui_update;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "a46bf87625d7f811"
+            ]
+        ]
     },
     {
         "id": "8435f37c02a9e26b",
