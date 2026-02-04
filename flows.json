@@ -863,8 +863,8 @@
         ],
         "order": 1,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "visible": true,
+        "disabled": false
     },
     {
         "id": "28b505574a770e44",
@@ -1043,6 +1043,20 @@
         "width": 1,
         "height": 1,
         "className": ""
+    },
+    {
+        "id": "acdce79d0f1c182a",
+        "type": "ui-group",
+        "name": "History",
+        "page": "78bfe53267642fbf",
+        "width": "1",
+        "height": 1,
+        "order": 5,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
     },
     {
         "id": "f7676b47d7dc782a",
@@ -9199,11 +9213,10 @@
         "id": "f78193a00e1ac470",
         "type": "ui-table",
         "z": "0637f22188042045",
-        "d": true,
-        "group": "6f6a6db0185ac9a4",
+        "group": "acdce79d0f1c182a",
         "name": "History",
         "label": "",
-        "order": 12,
+        "order": 1,
         "width": 1,
         "height": 0,
         "maxrows": 0,
