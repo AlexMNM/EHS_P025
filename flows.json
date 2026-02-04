@@ -6292,7 +6292,7 @@
         "links": [
             "874b939d0b06ddf6"
         ],
-        "x": 155,
+        "x": 115,
         "y": 460,
         "wires": [
             [
@@ -6390,8 +6390,8 @@
         "resendOnRefresh": true,
         "templateScope": "site:style",
         "className": "",
-        "x": 590,
-        "y": 640,
+        "x": 750,
+        "y": 580,
         "wires": [
             []
         ]
@@ -6414,8 +6414,32 @@
         "resendOnRefresh": true,
         "templateScope": "site:style",
         "className": "",
-        "x": 750,
-        "y": 640,
+        "x": 910,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1472fd566f28caa5",
+        "type": "ui-template",
+        "z": "a6c85f6538755b0c",
+        "group": "",
+        "page": "",
+        "ui": "86cea779c465227a",
+        "name": "Logo",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n        <img height=\"32px\" src=\"http://localhost:1880/files/media/ElmaLogoSVG_110x.svg\"></img>\n    </Teleport> \n</template>",
+        "storeOutMessages": true,
+        "passthru": false,
+        "resendOnRefresh": true,
+        "templateScope": "widget:ui",
+        "className": "",
+        "x": 350,
+        "y": 780,
         "wires": [
             []
         ]
