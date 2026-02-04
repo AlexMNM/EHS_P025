@@ -9285,7 +9285,7 @@
         "name": "History",
         "label": "",
         "order": 1,
-        "width": 1,
+        "width": "0",
         "height": 0,
         "maxrows": 0,
         "passthru": false,
