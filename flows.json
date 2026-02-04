@@ -863,8 +863,8 @@
         ],
         "order": 1,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "visible": true,
+        "disabled": false
     },
     {
         "id": "28b505574a770e44",
@@ -963,7 +963,7 @@
         "type": "ui-group",
         "name": "Setup",
         "page": "78bfe53267642fbf",
-        "width": 3,
+        "width": "2",
         "height": 1,
         "order": 1,
         "showTitle": false,
