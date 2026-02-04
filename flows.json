@@ -6207,14 +6207,15 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 300,
+        "x": 660,
+        "y": 260,
         "wires": []
     },
     {
         "id": "3a0ea380c5a06a29",
         "type": "ui-template",
         "z": "a6c85f6538755b0c",
+        "d": true,
         "group": "",
         "page": "",
         "ui": "86cea779c465227a",
@@ -6232,10 +6233,7 @@
         "x": 390,
         "y": 500,
         "wires": [
-            [
-                "50dbf2d4971dba85",
-                "f4f2fb073ad2baf1"
-            ]
+            []
         ]
     },
     {
@@ -6432,7 +6430,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n        <img height=\"32px\" src=\"http://192.168.100.90:1880/files/media/ElmaLogoSVG_110x.svg\"></img>\n    </Teleport> \n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
+        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n        <img height=\"32px\" src=\"http://192.168.100.90:1880/files/media/ElmaLogoSVG_110x.svg\"></img>\n    </Teleport> \n    <Teleport v-if=\"mounted\" to=\"#app-bar-actions\">\n        <img height=\"32px\" src=\"http://192.168.100.90:1880/files/media/ElmaLogoSVG_110x.svg\"></img>\n    </Teleport>\n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
         "storeOutMessages": true,
         "passthru": false,
         "resendOnRefresh": true,
