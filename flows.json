@@ -6432,7 +6432,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n        <img height=\"32px\" src=\"http://192.168.100.90/:1880/files/media/ElmaLogoSVG_110x.svg\"></img>\n    </Teleport> \n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
+        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n        <img height=\"32px\" src=\"http://192.168.100.90:1880/files/media/ElmaLogoSVG_110x.svg\"></img>\n    </Teleport> \n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
         "storeOutMessages": true,
         "passthru": false,
         "resendOnRefresh": true,
@@ -6442,35 +6442,6 @@
         "y": 480,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "424e6b6ea05ece75",
-        "type": "inject",
-        "z": "a6c85f6538755b0c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 740,
-        "y": 440,
-        "wires": [
-            [
-                "1472fd566f28caa5"
-            ]
         ]
     },
     {
