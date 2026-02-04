@@ -979,7 +979,7 @@
         "width": 5,
         "height": 1,
         "order": 3,
-        "showTitle": true,
+        "showTitle": false,
         "className": "",
         "visible": "true",
         "disabled": "false",
