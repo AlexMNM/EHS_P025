@@ -6887,7 +6887,8 @@
             ],
             [
                 "f78193a00e1ac470",
-                "3dc61f81dca6089f"
+                "3dc61f81dca6089f",
+                "40749bf3d70cafde"
             ]
         ]
     },
@@ -9768,8 +9769,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1090,
-        "y": 1180,
+        "x": 1030,
+        "y": 1200,
         "wires": [
             [
                 "f78193a00e1ac470"
@@ -9787,8 +9788,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1050,
-        "y": 1220,
+        "x": 950,
+        "y": 1240,
         "wires": [
             [
                 "a5001028800d37e0"
@@ -9807,7 +9808,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <v-data-table :items=\"items\" hide-default-footer></v-data-table>\n</template>\n\n<script setup>\n  const items = [\n    {\n      name: 'African Elephant',\n      species: 'Loxodonta africana',\n      diet: 'Herbivore',\n      habitat: 'Savanna, Forests',\n    },\n    // ... more items\n  ]\n</script>",
+        "format": "<template>\n    <v-data-table :items=\"msg.payload\" hide-default-footer></v-data-table>\n</template>\n\n<script setup>\n\n</script>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
