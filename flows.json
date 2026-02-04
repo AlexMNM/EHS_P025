@@ -780,13 +780,13 @@
             {
                 "name": "Desktop",
                 "px": "1024",
-                "cols": "12"
+                "cols": "11"
             }
         ],
         "order": 1,
         "className": "",
-        "visible": true,
-        "disabled": false
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "bf198eb6e69ac543",
