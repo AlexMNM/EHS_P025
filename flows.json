@@ -6430,7 +6430,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n        <img height=\"32px\" src=\"http://192.168.100.90:1880/files/media/ElmaLogoSVG_110x.svg\"></img>\n    </Teleport> \n    <Teleport v-if=\"mounted\" to=\"#app-bar-actions\">\n        <img height=\"32px\" src=\"http://192.168.100.90:1880/files/media/EHS.jpeg\"></img>\n    </Teleport>\n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
+        "format": "<template>\n    <Teleport v-if=\"mounted\" to=\"#app-bar-title\">\n        <img height=\"32px\" src=\"http://192.168.100.90:1880/files/media/ElmaLogoSVG_110x.svg\"></img>\n    </Teleport> \n    <Teleport v-if=\"mounted\" to=\"#app-bar-actions\">\n        <img height=\"64px\" src=\"http://192.168.100.90:1880/files/media/EHS.jpeg\"></img>\n    </Teleport>\n</template>\n<script>\n    export default {\n        data() {\n            return {\n                mounted: false\n            }\n        },\n        mounted() {\n            this.mounted = true\n        }\n    }\n</script>",
         "storeOutMessages": true,
         "passthru": false,
         "resendOnRefresh": true,
