@@ -11078,8 +11078,7 @@
         "y": 220,
         "wires": [
             [
-                "7cd6e1f6c33f42e9",
-                "614ea2252688a17f"
+                "7cd6e1f6c33f42e9"
             ]
         ]
     },
@@ -11098,7 +11097,8 @@
         "y": 180,
         "wires": [
             [
-                "e5976613f379b4e4"
+                "e5976613f379b4e4",
+                "614ea2252688a17f"
             ]
         ]
     },
@@ -11938,7 +11938,7 @@
         "type": "function",
         "z": "85a0c31e48c798bf",
         "name": "ui_update class compact-table",
-        "func": "const ui_update = msg.ui_update ?? {}\nconst add = {\n    \"class\": \"compact-table\"\n}\n\nObject.assign(ui_update, add);\nmsg.ui_update = ui_update;\n\nreturn msg;",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst add = {\n    \"class\": \"compact-table process-data\"\n}\n\nObject.assign(ui_update, add);\nmsg.ui_update = ui_update;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
