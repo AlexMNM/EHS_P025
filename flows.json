@@ -11714,7 +11714,7 @@
         "name": "",
         "label": "Report location:",
         "format": "{{msg.payload}}",
-        "layout": "row-spread",
+        "layout": "col-center",
         "style": false,
         "font": "",
         "fontSize": 16,
