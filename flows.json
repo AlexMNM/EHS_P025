@@ -11967,8 +11967,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1900,
-        "y": 340,
+        "x": 1960,
+        "y": 240,
         "wires": []
     },
     {
