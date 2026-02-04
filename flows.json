@@ -6887,8 +6887,7 @@
             ],
             [
                 "f78193a00e1ac470",
-                "3dc61f81dca6089f",
-                "40749bf3d70cafde"
+                "3dc61f81dca6089f"
             ]
         ]
     },
@@ -9613,6 +9612,86 @@
                 "type": "color",
                 "width": "",
                 "align": "start"
+            },
+            {
+                "title": "",
+                "key": "40",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "41",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "42",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "43",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "44",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "45",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "46",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "47",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "48",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "49",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
             }
         ],
         "mobileBreakpoint": "sm",
@@ -9794,30 +9873,6 @@
             [
                 "a5001028800d37e0"
             ]
-        ]
-    },
-    {
-        "id": "40749bf3d70cafde",
-        "type": "ui-template",
-        "z": "0637f22188042045",
-        "group": "acdce79d0f1c182a",
-        "page": "",
-        "ui": "",
-        "name": "",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "head": "",
-        "format": "<template>\n    <v-data-table :items=\"msg.payload\" hide-default-footer>\n        <template v-slot:item.icon=\"{ item }\">\n        <v-icon :icon=\"item.icon\"></v-icon>\n      </template>\n    </v-data-table>\n</template>\n\n<script setup>\n\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 1080,
-        "y": 1300,
-        "wires": [
-            []
         ]
     },
     {
