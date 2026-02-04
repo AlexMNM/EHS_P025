@@ -1001,16 +1001,6 @@
         "groupType": "dialog"
     },
     {
-        "id": "be03402fcf4e8180",
-        "type": "ui-spacer",
-        "group": "6f6a6db0185ac9a4",
-        "name": "spacer",
-        "order": 5,
-        "width": 1,
-        "height": 1,
-        "className": ""
-    },
-    {
         "id": "be036d6d2bfb093b",
         "type": "ui-spacer",
         "group": "6f6a6db0185ac9a4",
@@ -7155,7 +7145,7 @@
         "name": "",
         "label": "Progress",
         "order": 1,
-        "width": 3,
+        "width": 2,
         "height": "1",
         "color": "",
         "className": "",
@@ -8155,7 +8145,7 @@
         "name": "",
         "label": "Result",
         "order": 2,
-        "width": 3,
+        "width": 2,
         "height": 2,
         "emulateClick": false,
         "tooltip": "",
@@ -15664,6 +15654,16 @@
         "order": 4,
         "width": 1,
         "height": 3,
+        "className": ""
+    },
+    {
+        "id": "c27ca3beaea489e3",
+        "type": "ui-spacer",
+        "group": "6f6a6db0185ac9a4",
+        "name": "spacer",
+        "order": 5,
+        "width": 1,
+        "height": 1,
         "className": ""
     }
 ]
