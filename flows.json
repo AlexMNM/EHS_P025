@@ -6396,7 +6396,7 @@
         "group": "",
         "page": "78bfe53267642fbf",
         "ui": "",
-        "name": "",
+        "name": "main style",
         "order": 0,
         "width": 0,
         "height": 0,
@@ -6407,7 +6407,7 @@
         "resendOnRefresh": true,
         "templateScope": "page:style",
         "className": "",
-        "x": 590,
+        "x": 580,
         "y": 580,
         "wires": [
             []
@@ -6505,6 +6505,30 @@
         "className": "",
         "x": 360,
         "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "083490e47105b3c8",
+        "type": "ui-template",
+        "z": "a6c85f6538755b0c",
+        "group": "",
+        "page": "848bac8770d29cf3",
+        "ui": "",
+        "name": "database style",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "page:style",
+        "className": "",
+        "x": 600,
+        "y": 620,
         "wires": [
             []
         ]
