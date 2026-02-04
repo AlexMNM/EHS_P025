@@ -6483,7 +6483,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".v-toolbar {\n    height: 80px;\n}\n\n.v-main {\n    --v-layout-top: 80px !important;\n}",
+        "format": ".v-toolbar {\n    height: 80px;\n}\n\n.v-toolbar__content {\n    height: 80px;\n}\n\n.v-main {\n    --v-layout-top: 80px !important;\n}",
         "storeOutMessages": true,
         "passthru": false,
         "resendOnRefresh": true,
