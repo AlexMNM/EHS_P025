@@ -746,10 +746,10 @@
         },
         "sizes": {
             "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
+            "pagePadding": "4px",
+            "groupGap": "4px",
             "groupBorderRadius": "4px",
-            "widgetGap": "12px"
+            "widgetGap": "4px"
         }
     },
     {
@@ -838,7 +838,7 @@
         "path": "/page1",
         "icon": "home",
         "layout": "grid",
-        "theme": "db3c0ff5429c4380",
+        "theme": "91c4035e6c6bbbb5",
         "breakpoints": [
             {
                 "name": "Default",
@@ -1043,25 +1043,6 @@
         "width": 1,
         "height": 1,
         "className": ""
-    },
-    {
-        "id": "398b33f362dfb2cd",
-        "type": "ui-theme",
-        "name": "ui-base.label.theme 4",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094ce",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "24px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
     },
     {
         "id": "f7676b47d7dc782a",
