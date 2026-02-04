@@ -6570,8 +6570,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1080,
-        "y": 1360,
+        "x": 920,
+        "y": 1340,
         "wires": []
     },
     {
@@ -6887,8 +6887,7 @@
             ],
             [
                 "f78193a00e1ac470",
-                "3dc61f81dca6089f",
-                "a4cc879c4d28527a"
+                "3dc61f81dca6089f"
             ]
         ]
     },
@@ -9456,17 +9455,41 @@
             },
             {
                 "title": "",
-                "key": "",
+                "key": "20",
                 "keyType": "key",
-                "type": "text",
+                "type": "color",
                 "width": "",
                 "align": "start"
             },
             {
                 "title": "",
-                "key": "",
+                "key": "21",
                 "keyType": "key",
-                "type": "text",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "22",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "23",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "24",
+                "keyType": "key",
+                "type": "color",
                 "width": "",
                 "align": "start"
             }
@@ -9535,7 +9558,7 @@
         "syntax": "mustache",
         "template": "<template>\n    <div class=\"v-table__wrapper\">\n        <table><!---->\n            <thead><tr><th class=\"v-data-table__td v-data-table-column--align-start v-data-table__th--sortable v-data-table__th\" colspan=\"1\" rowspan=\"1\" tabindex=\"0\"><div class=\"v-data-table-header__content\"><span></span><i class=\"mdi-arrow-up mdi v-icon notranslate v-theme--nrdb v-icon--size-default v-data-table-header__sort-icon\" aria-hidden=\"true\"></i><!----></div></th></tr><!---->\n            </thead><!---->\n            <tbody><!---->\n                <tr class=\"\"><!---->\n                    {{#payload}}\n                    <td data-column-key=\"color\"><!---->\n                        <div class=\"nrdb-table-cell-align\" style=\"justify-content: start;\">\n                            <i class=\"nrdb-ui-table-cell-color-spot\" style=\"background-color: {{color}};\">\n                            </i>\n                        </div>\n                    </td>\n                    {{/payload}}\n                </tr><!----><!---->\n            </tbody><!----><!---->\n        </table>\n    </div>\n</template>",
         "output": "str",
-        "x": 840,
+        "x": 780,
         "y": 1340,
         "wires": [
             [
@@ -9611,6 +9634,45 @@
         "y": 980,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "a5001028800d37e0",
+        "type": "function",
+        "z": "0637f22188042045",
+        "name": "ui_update class compact-table",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst add = {\n    \"class\": \"compact-table process-data\"\n}\n\nObject.assign(ui_update, add);\nmsg.ui_update = ui_update;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 1180,
+        "wires": [
+            [
+                "f78193a00e1ac470"
+            ]
+        ]
+    },
+    {
+        "id": "e1c3ee4b08484592",
+        "type": "inject",
+        "z": "0637f22188042045",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1050,
+        "y": 1220,
+        "wires": [
+            [
+                "a5001028800d37e0"
+            ]
         ]
     },
     {
