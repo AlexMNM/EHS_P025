@@ -9796,6 +9796,30 @@
         ]
     },
     {
+        "id": "40749bf3d70cafde",
+        "type": "ui-template",
+        "z": "0637f22188042045",
+        "group": "acdce79d0f1c182a",
+        "page": "",
+        "ui": "",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <v-data-table :items=\"items\" hide-default-footer></v-data-table>\n</template>\n\n<script setup>\n  const items = [\n    {\n      name: 'African Elephant',\n      species: 'Loxodonta africana',\n      diet: 'Herbivore',\n      habitat: 'Savanna, Forests',\n    },\n    // ... more items\n  ]\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1080,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "93ee2f1602a0ed6c",
         "type": "ui-form",
         "z": "85a0c31e48c798bf",
