@@ -13755,8 +13755,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1600,
-        "y": 760,
+        "x": 1280,
+        "y": 800,
         "wires": [
             []
         ]
@@ -13777,7 +13777,9 @@
         "max": 10,
         "step": "0.01",
         "tooltip": "",
-        "passthru": true,
+        "delay": "0",
+        "passthru": false,
+        "sendOnDelay": true,
         "sendOnBlur": true,
         "sendOnEnter": true,
         "className": "",
@@ -13786,11 +13788,36 @@
         "iconPosition": "left",
         "iconInnerPosition": "inside",
         "spinner": "stacked",
-        "x": 1310,
+        "x": 1190,
         "y": 760,
         "wires": [
             [
                 "c69f1de560be5128"
+            ]
+        ]
+    },
+    {
+        "id": "8d3f2db83a61d35a",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::settings.options.torque_offset",
+        "payloadType": "global",
+        "x": 1270,
+        "y": 720,
+        "wires": [
+            [
+                "94b67983e6469855"
             ]
         ]
     },
