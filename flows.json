@@ -479,7 +479,7 @@
         "path": "/page2",
         "icon": "database-search ",
         "layout": "grid",
-        "theme": "db3c0ff5429c4380",
+        "theme": "91c4035e6c6bbbb5",
         "breakpoints": [
             {
                 "name": "Default",
@@ -504,7 +504,7 @@
         ],
         "order": 2,
         "className": "",
-        "visible": true,
+        "visible": "true",
         "disabled": "false"
     },
     {
@@ -732,7 +732,7 @@
         "path": "/page3",
         "icon": "tune",
         "layout": "grid",
-        "theme": "db3c0ff5429c4380",
+        "theme": "91c4035e6c6bbbb5",
         "breakpoints": [
             {
                 "name": "Default",
@@ -757,8 +757,8 @@
         ],
         "order": 3,
         "className": "",
-        "visible": true,
-        "disabled": false
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "328519736c0eac55",
