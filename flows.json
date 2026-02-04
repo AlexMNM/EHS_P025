@@ -6521,7 +6521,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "",
+        "format": ".nrdb-ui-group {\n    --widget-row-height: 32px;\n}",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
