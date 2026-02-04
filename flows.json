@@ -9289,18 +9289,186 @@
         "height": 0,
         "maxrows": 0,
         "passthru": false,
-        "autocols": true,
+        "autocols": false,
         "showSearch": false,
         "deselect": true,
         "selectionType": "none",
         "columns": [
             {
                 "title": "",
-                "key": "color",
+                "key": "0",
                 "keyType": "key",
                 "type": "color",
-                "width": "1",
+                "width": "",
                 "align": "center"
+            },
+            {
+                "title": "",
+                "key": "1",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "2",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "3",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "4",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "5",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "6",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "7",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "8",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "9",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "10",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "11",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "12",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "13",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "14",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "15",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "16",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "17",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "18",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "19",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
             }
         ],
         "mobileBreakpoint": "sm",
