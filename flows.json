@@ -6555,7 +6555,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".no-width td th div {\n    margin: 0 0 0 0 !important;\n    padding: 0;\n    width: 16px;\n    min-width: 0em;\n}",
+        "format": ".no-width td th div i {\n    margin: 0 0 0 0 !important;\n    padding: 0;\n    width: 16px;\n    min-width: 0em;\n    \n}",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
