@@ -9781,7 +9781,7 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "",
+                "title": "Stage setup",
                 "key": "label",
                 "keyType": "key",
                 "type": "text",
