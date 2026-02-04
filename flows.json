@@ -1025,6 +1025,26 @@
         "groupType": "default"
     },
     {
+        "id": "c27c923d0eabc53b",
+        "type": "ui-spacer",
+        "group": "89a4f69b951b98f3",
+        "name": "spacer",
+        "order": 5,
+        "width": 1,
+        "height": 3,
+        "className": ""
+    },
+    {
+        "id": "c27ca3beaea489e3",
+        "type": "ui-spacer",
+        "group": "6f6a6db0185ac9a4",
+        "name": "spacer",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
         "id": "f7676b47d7dc782a",
         "type": "tcp in",
         "z": "a7c7ec5294135863",
@@ -6445,8 +6465,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1120,
-        "y": 1000,
+        "x": 1080,
+        "y": 1360,
         "wires": []
     },
     {
@@ -6758,8 +6778,7 @@
         "y": 1100,
         "wires": [
             [
-                "5a12dcb34b6c43ce",
-                "a4cc879c4d28527a"
+                "5a12dcb34b6c43ce"
             ],
             [
                 "f78193a00e1ac470",
@@ -8948,8 +8967,8 @@
         "links": [
             "cd6316b3ef208832"
         ],
-        "x": 835,
-        "y": 1200,
+        "x": 665,
+        "y": 1060,
         "wires": []
     },
     {
@@ -9126,8 +9145,8 @@
         "mobileBreakpointType": "none",
         "action": "replace",
         "className": "",
-        "x": 890,
-        "y": 1240,
+        "x": 650,
+        "y": 1140,
         "wires": [
             []
         ]
@@ -9242,10 +9261,12 @@
         "syntax": "mustache",
         "template": "<template>\n    <div class=\"v-table__wrapper\">\n        <table><!---->\n            <thead><tr><th class=\"v-data-table__td v-data-table-column--align-start v-data-table__th--sortable v-data-table__th\" colspan=\"1\" rowspan=\"1\" tabindex=\"0\"><div class=\"v-data-table-header__content\"><span></span><i class=\"mdi-arrow-up mdi v-icon notranslate v-theme--nrdb v-icon--size-default v-data-table-header__sort-icon\" aria-hidden=\"true\"></i><!----></div></th></tr><!---->\n            </thead><!---->\n            <tbody><!---->\n                <tr class=\"\"><!---->\n                    {{#payload}}\n                    <td data-column-key=\"color\"><!---->\n                        <div class=\"nrdb-table-cell-align\" style=\"justify-content: start;\">\n                            <i class=\"nrdb-ui-table-cell-color-spot\" style=\"background-color: {{color}};\">\n                            </i>\n                        </div>\n                    </td>\n                    {{/payload}}\n                </tr><!----><!---->\n            </tbody><!----><!---->\n        </table>\n    </div>\n</template>",
         "output": "str",
-        "x": 880,
-        "y": 1420,
+        "x": 840,
+        "y": 1340,
         "wires": [
-            []
+            [
+                "a4cc879c4d28527a"
+            ]
         ]
     },
     {
@@ -15645,25 +15666,5 @@
         "wires": [
             []
         ]
-    },
-    {
-        "id": "c27c923d0eabc53b",
-        "type": "ui-spacer",
-        "group": "89a4f69b951b98f3",
-        "name": "spacer",
-        "order": 4,
-        "width": 1,
-        "height": 3,
-        "className": ""
-    },
-    {
-        "id": "c27ca3beaea489e3",
-        "type": "ui-spacer",
-        "group": "6f6a6db0185ac9a4",
-        "name": "spacer",
-        "order": 5,
-        "width": 1,
-        "height": 1,
-        "className": ""
     }
 ]
