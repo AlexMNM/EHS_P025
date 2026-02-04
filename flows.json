@@ -9692,6 +9692,86 @@
                 "type": "color",
                 "width": "",
                 "align": "start"
+            },
+            {
+                "title": "",
+                "key": "50",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "51",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "52",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "53",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "54",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "55",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "56",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "57",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "58",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "59",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "start"
             }
         ],
         "mobileBreakpoint": "sm",
