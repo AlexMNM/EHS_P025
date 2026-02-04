@@ -9808,7 +9808,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <v-data-table :items=\"msg.payload\" hide-default-footer></v-data-table>\n</template>\n\n<script setup>\n\n</script>",
+        "format": "<template>\n    <v-data-table :items=\"msg.payload\" hide-default-footer>\n        <template v-slot:item.icon=\"{ item }\">\n        <v-icon :icon=\"item.icon\"></v-icon>\n      </template>\n    </v-data-table>\n</template>\n\n<script setup>\n\n</script>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
