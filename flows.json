@@ -875,20 +875,6 @@
         "className": ""
     },
     {
-        "id": "acdce79d0f1c182a",
-        "type": "ui-group",
-        "name": "History",
-        "page": "78bfe53267642fbf",
-        "width": "11",
-        "height": 1,
-        "order": 5,
-        "showTitle": false,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
         "id": "b7b59c422434065f",
         "type": "ui-theme",
         "name": "compact theme",
@@ -9280,10 +9266,10 @@
         "id": "f78193a00e1ac470",
         "type": "ui-table",
         "z": "0637f22188042045",
-        "group": "acdce79d0f1c182a",
+        "group": "6f6a6db0185ac9a4",
         "name": "History",
         "label": "",
-        "order": 1,
+        "order": 12,
         "width": "0",
         "height": 0,
         "maxrows": 0,
