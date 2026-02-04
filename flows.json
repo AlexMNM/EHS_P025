@@ -1020,7 +1020,7 @@
         "type": "ui-theme",
         "name": "ui-base.label.theme 3",
         "colors": {
-            "surface": "#000000",
+            "surface": "#ffffff",
             "primary": "#0094ce",
             "bgPage": "#eeeeee",
             "groupBg": "#ffffff",
