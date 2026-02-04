@@ -263,8 +263,8 @@
         "id": "58ea3458b94de2a5",
         "type": "junction",
         "z": "c4157bddbbb8817a",
-        "x": 980,
-        "y": 520,
+        "x": 960,
+        "y": 560,
         "wires": [
             [
                 "43ee3d72e8e6ab80"
@@ -915,7 +915,7 @@
         "path": "/page2",
         "icon": "database-search ",
         "layout": "grid",
-        "theme": "b7b59c422434065f",
+        "theme": "91c4035e6c6bbbb5",
         "breakpoints": [
             {
                 "name": "Default",
@@ -4861,8 +4861,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
-        "y": 520,
+        "x": 810,
+        "y": 540,
         "wires": [
             [
                 "58ea3458b94de2a5"
@@ -4877,8 +4877,8 @@
         "links": [
             "ab51ad437d60ed84"
         ],
-        "x": 645,
-        "y": 520,
+        "x": 665,
+        "y": 540,
         "wires": [
             [
                 "2a9b303e0bccd07b"
@@ -4897,8 +4897,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
-        "y": 560,
+        "x": 780,
+        "y": 580,
         "wires": [
             [
                 "58ea3458b94de2a5"
@@ -4915,8 +4915,8 @@
             "1781f6c6962eae25",
             "717a5c1f605a6344"
         ],
-        "x": 645,
-        "y": 560,
+        "x": 665,
+        "y": 580,
         "wires": [
             [
                 "52a9ab709fc6575d"
