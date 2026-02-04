@@ -9812,8 +9812,8 @@
         "type": "ui-table",
         "z": "85a0c31e48c798bf",
         "group": "08a4c47b7bced26d",
-        "name": "values",
-        "label": "Push",
+        "name": "Push",
+        "label": "",
         "order": 1,
         "width": 0,
         "height": 0,
@@ -9825,7 +9825,7 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "Measurement",
+                "title": "Push",
                 "key": "measurement",
                 "keyType": "key",
                 "type": "text",
@@ -9833,7 +9833,7 @@
                 "align": "start"
             },
             {
-                "title": "Status",
+                "title": "",
                 "key": "result",
                 "keyType": "key",
                 "type": "tickcross",
@@ -11301,8 +11301,8 @@
         "type": "ui-table",
         "z": "85a0c31e48c798bf",
         "group": "08a4c47b7bced26d",
-        "name": "values",
-        "label": "Inner",
+        "name": "Inner",
+        "label": "",
         "order": 3,
         "width": 0,
         "height": 0,
@@ -11314,7 +11314,7 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "Measurement",
+                "title": "Inner",
                 "key": "measurement",
                 "keyType": "key",
                 "type": "text",
@@ -11322,7 +11322,7 @@
                 "align": "start"
             },
             {
-                "title": "Status",
+                "title": "",
                 "key": "result",
                 "keyType": "key",
                 "type": "tickcross",
@@ -11369,8 +11369,8 @@
         "type": "ui-table",
         "z": "85a0c31e48c798bf",
         "group": "08a4c47b7bced26d",
-        "name": "values",
-        "label": "Outer",
+        "name": "Outer",
+        "label": "",
         "order": 2,
         "width": 0,
         "height": 0,
@@ -11382,7 +11382,7 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "Measurement",
+                "title": "Outer",
                 "key": "measurement",
                 "keyType": "key",
                 "type": "text",
@@ -11390,7 +11390,7 @@
                 "align": "start"
             },
             {
-                "title": "Status",
+                "title": "",
                 "key": "result",
                 "keyType": "key",
                 "type": "tickcross",
