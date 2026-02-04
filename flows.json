@@ -810,7 +810,7 @@
         "width": 4,
         "height": 1,
         "order": 2,
-        "showTitle": true,
+        "showTitle": false,
         "className": "",
         "visible": "true",
         "disabled": "false",
