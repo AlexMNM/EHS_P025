@@ -837,7 +837,7 @@
         "ui": "86cea779c465227a",
         "path": "/page1",
         "icon": "home",
-        "layout": "grid",
+        "layout": "flex",
         "theme": "91c4035e6c6bbbb5",
         "breakpoints": [
             {
