@@ -9280,7 +9280,7 @@
         "selectionType": "none",
         "columns": [
             {
-                "title": "",
+                "title": "History",
                 "key": "0",
                 "keyType": "key",
                 "type": "color",
@@ -9764,7 +9764,7 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 1180,
+        "x": 1120,
         "y": 1120,
         "wires": [
             []
