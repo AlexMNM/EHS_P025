@@ -9931,7 +9931,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "ui_update class compact-table",
-        "func": "const ui_update = msg.ui_update ?? {}\nconst add = {\n    \"class\": \"compact-table no-width\"\n}\n\nObject.assign(ui_update, add);\nmsg.ui_update = ui_update;\n\nreturn msg;",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst add = {\n    \"class\": \"compact-table no-width hide-default-header\"\n}\n\nObject.assign(ui_update, add);\nmsg.ui_update = ui_update;\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
