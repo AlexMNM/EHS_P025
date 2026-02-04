@@ -1005,7 +1005,7 @@
         "type": "ui-spacer",
         "group": "6f6a6db0185ac9a4",
         "name": "spacer",
-        "order": 9,
+        "order": 5,
         "width": 1,
         "height": 1,
         "className": ""
@@ -1015,8 +1015,8 @@
         "type": "ui-spacer",
         "group": "6f6a6db0185ac9a4",
         "name": "spacer",
-        "order": 8,
-        "width": 2,
+        "order": 9,
+        "width": 3,
         "height": 1,
         "className": ""
     },
@@ -6466,7 +6466,7 @@
         "group": "6f6a6db0185ac9a4",
         "name": "product",
         "label": "Product",
-        "order": 5,
+        "order": 6,
         "width": 1,
         "height": "1",
         "topic": "product",
@@ -6499,7 +6499,7 @@
         "group": "6f6a6db0185ac9a4",
         "name": "order",
         "label": "Order",
-        "order": 6,
+        "order": 7,
         "width": "1",
         "height": "1",
         "topic": "order",
@@ -6557,7 +6557,7 @@
         "name": "Setup",
         "label": "",
         "order": 4,
-        "width": 4,
+        "width": 2,
         "height": "",
         "maxrows": 0,
         "passthru": false,
@@ -6627,7 +6627,7 @@
         "group": "6f6a6db0185ac9a4",
         "name": "",
         "label": "Operator",
-        "order": 7,
+        "order": 8,
         "width": "1",
         "height": "1",
         "topic": "operator",
@@ -9106,7 +9106,7 @@
         "name": "Partial status",
         "label": "",
         "order": 3,
-        "width": "",
+        "width": 2,
         "height": "",
         "maxrows": 0,
         "passthru": false,
@@ -9170,7 +9170,7 @@
         "name": "History",
         "label": "",
         "order": 12,
-        "width": 0,
+        "width": 1,
         "height": 0,
         "maxrows": 0,
         "passthru": false,
@@ -15655,5 +15655,15 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "c27c923d0eabc53b",
+        "type": "ui-spacer",
+        "group": "89a4f69b951b98f3",
+        "name": "spacer",
+        "order": 4,
+        "width": 1,
+        "height": 3,
+        "className": ""
     }
 ]
