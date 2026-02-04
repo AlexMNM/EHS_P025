@@ -445,7 +445,7 @@
         ],
         "showPathInSidebar": false,
         "headerContent": "none",
-        "navigationStyle": "fixed",
+        "navigationStyle": "default",
         "titleBarStyle": "fixed",
         "showReconnectNotification": true,
         "notificationDisplayTime": 1,
