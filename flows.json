@@ -760,7 +760,7 @@
         "path": "/page2",
         "icon": "database-search ",
         "layout": "grid",
-        "theme": "91c4035e6c6bbbb5",
+        "theme": "b7b59c422434065f",
         "breakpoints": [
             {
                 "name": "Default",
@@ -1057,6 +1057,25 @@
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
+    },
+    {
+        "id": "b7b59c422434065f",
+        "type": "ui-theme",
+        "name": "database theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "comfortable",
+            "pagePadding": "24px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
     },
     {
         "id": "f7676b47d7dc782a",
