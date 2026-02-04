@@ -324,8 +324,8 @@
         "id": "7cd6e1f6c33f42e9",
         "type": "junction",
         "z": "85a0c31e48c798bf",
-        "x": 1540,
-        "y": 280,
+        "x": 1560,
+        "y": 260,
         "wires": [
             [
                 "780a456ee4060e20",
@@ -6534,6 +6534,30 @@
         ]
     },
     {
+        "id": "5737e6083e273752",
+        "type": "ui-template",
+        "z": "a6c85f6538755b0c",
+        "group": "",
+        "page": "",
+        "ui": "86cea779c465227a",
+        "name": "compact-table",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".compact-table th {\n    height: 0 !important;\n}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 920,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "a4cc879c4d28527a",
         "type": "debug",
         "z": "0637f22188042045",
@@ -11051,11 +11075,11 @@
         "finalize": "",
         "libs": [],
         "x": 1740,
-        "y": 260,
+        "y": 220,
         "wires": [
             [
-                "f8d736e68bd97453",
-                "7cd6e1f6c33f42e9"
+                "7cd6e1f6c33f42e9",
+                "614ea2252688a17f"
             ]
         ]
     },
@@ -11071,7 +11095,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 1670,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "e5976613f379b4e4"
@@ -11906,6 +11930,26 @@
         "wires": [
             [
                 "1483e3573668197c"
+            ]
+        ]
+    },
+    {
+        "id": "614ea2252688a17f",
+        "type": "function",
+        "z": "85a0c31e48c798bf",
+        "name": "ui_update class compact-table",
+        "func": "const ui_update = msg.ui_update ?? {}\nconst add = {\n    \"class\": \"compact-table\"\n}\n\nObject.assign(ui_update, add);\nmsg.ui_update = ui_update;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1750,
+        "y": 260,
+        "wires": [
+            [
+                "f8d736e68bd97453"
             ]
         ]
     },
