@@ -444,9 +444,9 @@
             "ui-control"
         ],
         "showPathInSidebar": false,
-        "headerContent": "page",
+        "headerContent": "none",
         "navigationStyle": "icon",
-        "titleBarStyle": "hidden",
+        "titleBarStyle": "fixed",
         "showReconnectNotification": true,
         "notificationDisplayTime": 1,
         "showDisconnectNotification": true,
