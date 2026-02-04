@@ -445,7 +445,7 @@
         ],
         "showPathInSidebar": false,
         "headerContent": "none",
-        "navigationStyle": "icon",
+        "navigationStyle": "default",
         "titleBarStyle": "fixed",
         "showReconnectNotification": true,
         "notificationDisplayTime": 1,
@@ -470,84 +470,6 @@
             "groupBorderRadius": "4px",
             "widgetGap": "8px"
         }
-    },
-    {
-        "id": "848bac8770d29cf3",
-        "type": "ui-page",
-        "name": "Database",
-        "ui": "86cea779c465227a",
-        "path": "/page2",
-        "icon": "database-search ",
-        "layout": "grid",
-        "theme": "91c4035e6c6bbbb5",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 2,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
-        "id": "26cc4e226e9df6bb",
-        "type": "ui-group",
-        "name": "Search database",
-        "page": "848bac8770d29cf3",
-        "width": "3",
-        "height": 1,
-        "order": 1,
-        "showTitle": false,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "08a4c47b7bced26d",
-        "type": "ui-group",
-        "name": "Results",
-        "page": "848bac8770d29cf3",
-        "width": 4,
-        "height": 1,
-        "order": 2,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "5f03761aafa114cc",
-        "type": "ui-group",
-        "name": "Details",
-        "page": "848bac8770d29cf3",
-        "width": 5,
-        "height": 1,
-        "order": 3,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
     },
     {
         "id": "08baf0b5c9586966",
@@ -687,6 +609,226 @@
                 "S7_Name": "cycleTime"
             }
         ]
+    },
+    {
+        "id": "0d92c765bfad87e6",
+        "type": "ui-theme",
+        "name": "Basic Blue Theme",
+        "colors": {
+            "surface": "#4d58ff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px",
+            "density": "default"
+        }
+    },
+    {
+        "id": "c01c2fd267be9ece",
+        "type": "ui-page",
+        "d": true,
+        "name": "Test",
+        "ui": "86cea779c465227a",
+        "path": "/page4",
+        "icon": "axe",
+        "layout": "grid",
+        "theme": "0d92c765bfad87e6",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "0155d20efeeefd06",
+        "type": "ui-group",
+        "d": true,
+        "name": "Group Name",
+        "page": "c01c2fd267be9ece",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c466b7e4bb472f99",
+        "type": "ui-page",
+        "d": true,
+        "name": "Tables",
+        "ui": "86cea779c465227a",
+        "path": "/tables",
+        "icon": "table",
+        "layout": "notebook",
+        "theme": "0d92c765bfad87e6",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 5,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "fb2e77ec2c2a5dd1",
+        "type": "ui-group",
+        "d": true,
+        "name": "Table examples",
+        "page": "c466b7e4bb472f99",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "91c4035e6c6bbbb5",
+        "type": "ui-theme",
+        "name": "ui-base.label.theme 3",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "848bac8770d29cf3",
+        "type": "ui-page",
+        "name": "Database",
+        "ui": "86cea779c465227a",
+        "path": "/page2",
+        "icon": "database-search ",
+        "layout": "grid",
+        "theme": "91c4035e6c6bbbb5",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "26cc4e226e9df6bb",
+        "type": "ui-group",
+        "name": "Search database",
+        "page": "848bac8770d29cf3",
+        "width": "3",
+        "height": 1,
+        "order": 1,
+        "showTitle": false,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "08a4c47b7bced26d",
+        "type": "ui-group",
+        "name": "Results",
+        "page": "848bac8770d29cf3",
+        "width": 4,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5f03761aafa114cc",
+        "type": "ui-group",
+        "name": "Details",
+        "page": "848bac8770d29cf3",
+        "width": 5,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
     },
     {
         "id": "78bfe53267642fbf",
@@ -859,25 +1001,6 @@
         "groupType": "dialog"
     },
     {
-        "id": "0d92c765bfad87e6",
-        "type": "ui-theme",
-        "name": "Basic Blue Theme",
-        "colors": {
-            "surface": "#4d58ff",
-            "primary": "#0094ce",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px",
-            "density": "default"
-        }
-    },
-    {
         "id": "be03402fcf4e8180",
         "type": "ui-spacer",
         "group": "6f6a6db0185ac9a4",
@@ -898,110 +1021,6 @@
         "className": ""
     },
     {
-        "id": "c01c2fd267be9ece",
-        "type": "ui-page",
-        "d": true,
-        "name": "Test",
-        "ui": "86cea779c465227a",
-        "path": "/page4",
-        "icon": "axe",
-        "layout": "grid",
-        "theme": "0d92c765bfad87e6",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 4,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
-        "id": "0155d20efeeefd06",
-        "type": "ui-group",
-        "d": true,
-        "name": "Group Name",
-        "page": "c01c2fd267be9ece",
-        "width": 6,
-        "height": 1,
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "c466b7e4bb472f99",
-        "type": "ui-page",
-        "d": true,
-        "name": "Tables",
-        "ui": "86cea779c465227a",
-        "path": "/tables",
-        "icon": "table",
-        "layout": "notebook",
-        "theme": "0d92c765bfad87e6",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 5,
-        "className": "",
-        "visible": "true",
-        "disabled": "false"
-    },
-    {
-        "id": "fb2e77ec2c2a5dd1",
-        "type": "ui-group",
-        "d": true,
-        "name": "Table examples",
-        "page": "c466b7e4bb472f99",
-        "width": "6",
-        "height": "1",
-        "order": 1,
-        "showTitle": false,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
         "id": "18d32b8bd2cc40ae",
         "type": "ui-group",
         "name": "Options",
@@ -1014,25 +1033,6 @@
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
-    },
-    {
-        "id": "91c4035e6c6bbbb5",
-        "type": "ui-theme",
-        "name": "ui-base.label.theme 3",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094ce",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
     },
     {
         "id": "f7676b47d7dc782a",
