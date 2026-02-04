@@ -838,7 +838,7 @@
         "path": "/page1",
         "icon": "home",
         "layout": "grid",
-        "theme": "91c4035e6c6bbbb5",
+        "theme": "398b33f362dfb2cd",
         "breakpoints": [
             {
                 "name": "Default",
@@ -863,8 +863,8 @@
         ],
         "order": 1,
         "className": "",
-        "visible": true,
-        "disabled": false
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "28b505574a770e44",
@@ -1043,6 +1043,25 @@
         "width": 1,
         "height": 1,
         "className": ""
+    },
+    {
+        "id": "398b33f362dfb2cd",
+        "type": "ui-theme",
+        "name": "ui-base.label.theme 4",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "24px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
     },
     {
         "id": "f7676b47d7dc782a",
