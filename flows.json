@@ -1071,10 +1071,10 @@
         },
         "sizes": {
             "density": "comfortable",
-            "pagePadding": "24px",
-            "groupGap": "12px",
+            "pagePadding": "12px",
+            "groupGap": "4px",
             "groupBorderRadius": "4px",
-            "widgetGap": "12px"
+            "widgetGap": "4px"
         }
     },
     {
