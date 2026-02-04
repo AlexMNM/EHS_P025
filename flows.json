@@ -9731,7 +9731,7 @@
         "order": 1,
         "width": 5,
         "height": 2,
-        "label": " ",
+        "label": " Test stage:",
         "className": "",
         "rounded": true,
         "useThemeColors": true,
