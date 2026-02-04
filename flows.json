@@ -1061,7 +1061,7 @@
     {
         "id": "b7b59c422434065f",
         "type": "ui-theme",
-        "name": "database theme",
+        "name": "compact theme",
         "colors": {
             "surface": "#ffffff",
             "primary": "#0094ce",
@@ -1070,7 +1070,7 @@
             "groupOutline": "#cccccc"
         },
         "sizes": {
-            "density": "comfortable",
+            "density": "compact",
             "pagePadding": "24px",
             "groupGap": "12px",
             "groupBorderRadius": "4px",
