@@ -13822,6 +13822,92 @@
         ]
     },
     {
+        "id": "9c83766d183de482",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::settings.options.force_offset",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1270,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9dc75f75c3b5c7b1",
+        "type": "ui-number-input",
+        "z": "aecf9ba551ec4a57",
+        "group": "18d32b8bd2cc40ae",
+        "name": "",
+        "label": "Force offset",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "torque_offset",
+        "topicType": "str",
+        "min": "-10",
+        "max": 10,
+        "step": "0.01",
+        "tooltip": "",
+        "delay": "0",
+        "passthru": false,
+        "sendOnDelay": true,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "stacked",
+        "x": 1190,
+        "y": 900,
+        "wires": [
+            [
+                "9c83766d183de482"
+            ]
+        ]
+    },
+    {
+        "id": "44d3387869fc45a2",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(file)::settings.options.force_offset",
+        "payloadType": "global",
+        "x": 1260,
+        "y": 860,
+        "wires": [
+            [
+                "9dc75f75c3b5c7b1"
+            ]
+        ]
+    },
+    {
         "id": "fe36b4aab8e4b51e",
         "type": "inject",
         "z": "6b7a48cdf37ecce9",
