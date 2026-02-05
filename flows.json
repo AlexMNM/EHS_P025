@@ -9894,6 +9894,14 @@
         "rules": [
             {
                 "t": "set",
+                "p": "list.types",
+                "pt": "global",
+                "to": "payload[0]",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "set",
                 "p": "ui_update.dropdownOptions",
                 "pt": "msg",
                 "to": "[\t    $map(msg.payload[0], function($x) {{\"dropdown\":\"type\",\"value\":$x,\"label\":$x}}),\t    $map(msg.payload[1], function($x) {{\"dropdown\":\"order\",\"value\":$x,\"label\":$x}})\t]\t\t",
