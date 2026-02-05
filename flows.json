@@ -6601,7 +6601,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".no-width :is(td, th, i) {\n    margin: 0 0 0 0 !important;\n    margin-right: 0 !important;\n    padding: 0 !important;\n    width: 1rem !important;\n    min-width: 0 !important;\n\n}\n\n.no-width thead {\n    display: none;\n}\n\n.no-width label {\n    text-align: start;\n    font-size: .875rem;\n}",
+        "format": ".no-width :is(td, th, i) {\n    margin: 0 0 0 0 !important;\n    margin-right: 0 !important;\n    padding: 0 !important;\n    width: 1rem !important;\n    min-width: 0 !important;\n\n}\n\n.no-width thead {\n    display: none;\n}\n\n.no-width label {\n    text-align: start;\n    font-size: .875rem;\n}\n\n.no-width {\n    padding-top: 1rem;\n}",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
