@@ -10002,7 +10002,7 @@
         "name": "stage setup",
         "label": "",
         "order": 2,
-        "width": 5,
+        "width": 2,
         "height": 1,
         "maxrows": 0,
         "passthru": false,
@@ -10189,7 +10189,7 @@
         "group": "5f03761aafa114cc",
         "name": "strain",
         "label": "Strain measurement",
-        "order": 5,
+        "order": 6,
         "chartType": "line",
         "category": "series",
         "categoryType": "msg",
@@ -10250,7 +10250,7 @@
         "z": "85a0c31e48c798bf",
         "name": "View type",
         "group": "5f03761aafa114cc",
-        "order": 3,
+        "order": 4,
         "width": 2,
         "height": 2,
         "label": "",
@@ -10897,7 +10897,7 @@
         "group": "5f03761aafa114cc",
         "name": "Extra",
         "label": "Electrical measurement",
-        "order": 6,
+        "order": 7,
         "chartType": "line",
         "category": "series",
         "categoryType": "msg",
@@ -11307,7 +11307,7 @@
         "z": "85a0c31e48c798bf",
         "name": "View type",
         "group": "5f03761aafa114cc",
-        "order": 4,
+        "order": 5,
         "width": 3,
         "height": 2,
         "label": " ",
@@ -15664,5 +15664,15 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "c2e6f3491fd29eaa",
+        "type": "ui-spacer",
+        "group": "5f03761aafa114cc",
+        "name": "spacer",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "className": ""
     }
 ]
