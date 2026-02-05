@@ -11861,30 +11861,11 @@
         ]
     },
     {
-        "id": "8cfba2a34f0bed8a",
-        "type": "inject",
-        "z": "85a0c31e48c798bf",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 190,
-        "y": 880,
-        "wires": [
-            [
-                "2ac87897e50c7458"
-            ]
-        ]
-    },
-    {
         "id": "d348adc4ac6a0016",
         "type": "debug",
         "z": "85a0c31e48c798bf",
         "name": "debug 11",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
