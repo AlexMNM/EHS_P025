@@ -815,8 +815,8 @@
         ],
         "order": 1,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "visible": true,
+        "disabled": false
     },
     {
         "id": "bf198eb6e69ac543",
@@ -903,25 +903,6 @@
         "width": 1,
         "height": 1,
         "className": ""
-    },
-    {
-        "id": "b7b59c422434065f",
-        "type": "ui-theme",
-        "name": "compact theme",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094ce",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "comfortable",
-            "pagePadding": "12px",
-            "groupGap": "4px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "4px"
-        }
     },
     {
         "id": "848bac8770d29cf3",
@@ -1100,7 +1081,7 @@
         "page": "28b505574a770e44",
         "width": "3",
         "height": 1,
-        "order": -1,
+        "order": 5,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -14226,7 +14207,7 @@
         "type": "ui-text",
         "z": "aecf9ba551ec4a57",
         "group": "bcd876364099320c",
-        "order": 0,
+        "order": 2,
         "width": "1",
         "height": "1",
         "name": "",
@@ -14252,7 +14233,7 @@
         "group": "bcd876364099320c",
         "name": "",
         "label": "Login",
-        "order": 0,
+        "order": 1,
         "width": "1",
         "height": "1",
         "topic": "password",
