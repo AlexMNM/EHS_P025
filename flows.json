@@ -6655,8 +6655,8 @@
         "icon": "",
         "iconPosition": "left",
         "iconInnerPosition": "inside",
-        "x": 140,
-        "y": 120,
+        "x": 300,
+        "y": 180,
         "wires": [
             [
                 "014a23b36f2b2e80"
@@ -7639,8 +7639,8 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 450,
-        "y": 120,
+        "x": 610,
+        "y": 180,
         "wires": [
             [
                 "adb1841767b874f2"
@@ -7662,8 +7662,8 @@
         "syntax": "mustache",
         "template": "Input error: Product undefined!\nCheck features in settings page.",
         "output": "str",
-        "x": 600,
-        "y": 80,
+        "x": 760,
+        "y": 140,
         "wires": [
             [
                 "9219cb1ab5ee34fc"
@@ -7680,8 +7680,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 830,
-        "y": 140,
+        "x": 990,
+        "y": 200,
         "wires": [
             [
                 "337ebe561ce901c5"
@@ -7716,8 +7716,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 620,
-        "y": 140,
+        "x": 780,
+        "y": 200,
         "wires": [
             [
                 "903ba0d996bcb9d8"
@@ -7733,8 +7733,8 @@
         "links": [
             "3d64c50fa540eed8"
         ],
-        "x": 945,
-        "y": 140,
+        "x": 1105,
+        "y": 200,
         "wires": []
     },
     {
@@ -7756,8 +7756,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 160,
-        "y": 160,
+        "x": 320,
+        "y": 220,
         "wires": [
             [
                 "31b312cbae942fc4"
@@ -8575,8 +8575,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 300,
-        "y": 120,
+        "x": 460,
+        "y": 180,
         "wires": [
             [
                 "1b66859a540ad827"
@@ -9011,8 +9011,8 @@
         "links": [
             "2c9f6f19ec5c61f5"
         ],
-        "x": 705,
-        "y": 80,
+        "x": 865,
+        "y": 140,
         "wires": []
     },
     {
@@ -9727,45 +9727,6 @@
         "wires": [
             [
                 "5e95da190b6ad8e9"
-            ]
-        ]
-    },
-    {
-        "id": "3bb054fda693b6bd",
-        "type": "ui-button",
-        "z": "85a0c31e48c798bf",
-        "group": "26cc4e226e9df6bb",
-        "name": "",
-        "label": "Update types",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "emulateClick": false,
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "iconPosition": "left",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "topic",
-        "topicType": "msg",
-        "buttonColor": "",
-        "textColor": "",
-        "iconColor": "",
-        "enableClick": true,
-        "enablePointerdown": false,
-        "pointerdownPayload": "",
-        "pointerdownPayloadType": "str",
-        "enablePointerup": false,
-        "pointerupPayload": "",
-        "pointerupPayloadType": "str",
-        "x": 210,
-        "y": 300,
-        "wires": [
-            [
-                "214a0b7062bde9b5"
             ]
         ]
     },
@@ -11989,8 +11950,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 410,
-        "y": 380,
+        "x": 190,
+        "y": 400,
         "wires": [
             [
                 "6633a507087a6a76"
@@ -12009,8 +11970,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 600,
-        "y": 380,
+        "x": 380,
+        "y": 400,
         "wires": [
             [
                 "a46bf87625d7f811"
@@ -12173,6 +12134,65 @@
         "x": 1960,
         "y": 240,
         "wires": []
+    },
+    {
+        "id": "c8b797bc227960d0",
+        "type": "inject",
+        "z": "85a0c31e48c798bf",
+        "name": "",
+        "props": [],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 340,
+        "wires": [
+            [
+                "214a0b7062bde9b5"
+            ]
+        ]
+    },
+    {
+        "id": "3bb054fda693b6bd",
+        "type": "ui-button",
+        "z": "85a0c31e48c798bf",
+        "d": true,
+        "group": "26cc4e226e9df6bb",
+        "name": "",
+        "label": "Update types",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 190,
+        "y": 300,
+        "wires": [
+            [
+                "214a0b7062bde9b5"
+            ]
+        ]
     },
     {
         "id": "8435f37c02a9e26b",
