@@ -895,16 +895,6 @@
         "className": ""
     },
     {
-        "id": "c27ca3beaea489e3",
-        "type": "ui-spacer",
-        "group": "6f6a6db0185ac9a4",
-        "name": "spacer",
-        "order": 5,
-        "width": 1,
-        "height": 1,
-        "className": ""
-    },
-    {
         "id": "848bac8770d29cf3",
         "type": "ui-page",
         "name": "Database",
@@ -9349,7 +9339,7 @@
         "name": "",
         "label": "History",
         "order": 12,
-        "width": "0",
+        "width": null,
         "height": 0,
         "maxrows": 0,
         "passthru": false,
@@ -9699,7 +9689,7 @@
         "name": "product",
         "label": "Product",
         "tooltip": "",
-        "order": 0,
+        "order": 5,
         "width": "1",
         "height": "1",
         "passthru": false,
