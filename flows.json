@@ -6433,7 +6433,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".v-table td {\n    height: 12px !important;\n    padding: 0 0 !important;\n}\n\n.v-table th {\n    padding: 0 0 !important;\n}\n\n.v-card-text {\n    padding: 1rem;\n}",
+        "format": ".v-table td {\n    height: 12px !important;\n    padding: 0 0 !important;\n}\n\n.v-table th {\n    padding: 0 0 !important;\n}\n",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -8313,7 +8313,7 @@
         "y": 880,
         "wires": [
             [
-                "9d7402ce6a788bea"
+                "8d5085360fba77b8"
             ]
         ]
     },
@@ -9517,26 +9517,6 @@
         "y": 680,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "9d7402ce6a788bea",
-        "type": "function",
-        "z": "0637f22188042045",
-        "name": "ui_update class process-data",
-        "func": "const ui_update = msg.ui_update ?? {}\nconst add = {\n    \"class\": \"process-data\"\n}\n\nObject.assign(ui_update, add);\nmsg.ui_update = ui_update;\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 960,
-        "y": 920,
-        "wires": [
-            [
-                "8d5085360fba77b8"
-            ]
         ]
     },
     {
