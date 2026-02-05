@@ -6601,7 +6601,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".no-width :is(td, th, i){\n    margin: 0 0 0 0 !important;\n    margin-right: 0 !important;\n    padding: 0 !important;\n    width: 1rem !important;\n    min-width: 0 !important;\n    \n}\n\n",
+        "format": ".no-width :is(td, th, i){\n    margin: 0 0 0 0 !important;\n    margin-right: 0 !important;\n    padding: 0 !important;\n    width: 1rem !important;\n    min-width: 0 !important;\n    \n}\n\n.no-width header {\n    display: none;\n}\n\n",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
