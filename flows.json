@@ -6433,7 +6433,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": ".v-table td {\n    /*height: 8px !important;*/\n    padding: 0 0 !important;\n}\n\n.v-table th {\n    padding: 0 0 !important;\n}\n\n.v-card-text {\n    padding: 1rem;\n}",
+        "format": ".v-table td {\n    height: 12px !important;\n    padding: 0 0 !important;\n}\n\n.v-table th {\n    padding: 0 0 !important;\n}\n\n.v-card-text {\n    padding: 1rem;\n}",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
