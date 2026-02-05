@@ -3493,13 +3493,13 @@
         "type": "file",
         "z": "8e125f4bb2233c4b",
         "name": "",
-        "filename": "/appcache/dump",
+        "filename": "/appcache/node/keysight_dump",
         "filenameType": "str",
         "appendNewline": true,
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 470,
+        "x": 510,
         "y": 60,
         "wires": [
             []
