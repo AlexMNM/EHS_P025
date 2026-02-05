@@ -9680,7 +9680,9 @@
         "type": "link in",
         "z": "0637f22188042045",
         "name": "inTypesDropdown",
-        "links": [],
+        "links": [
+            "f7a0abfe160d1c17"
+        ],
         "x": 255,
         "y": 100,
         "wires": [
@@ -12286,7 +12288,9 @@
         "z": "85a0c31e48c798bf",
         "name": "outTypesUpdated",
         "mode": "link",
-        "links": [],
+        "links": [
+            "36e0fe2b623c0db1"
+        ],
         "x": 1255,
         "y": 260,
         "wires": []
