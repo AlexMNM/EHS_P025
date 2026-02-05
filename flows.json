@@ -6724,8 +6724,8 @@
         "raw": false,
         "className": "",
         "name": "input_error",
-        "x": 1310,
-        "y": 40,
+        "x": 1650,
+        "y": 180,
         "wires": [
             []
         ]
@@ -6790,8 +6790,7 @@
         "y": 560,
         "wires": [
             [
-                "2a63bdad653909e6",
-                "d984f1c52bbb7a42"
+                "2a63bdad653909e6"
             ],
             [
                 "8766ed8d27633676"
@@ -9004,8 +9003,8 @@
             "9219cb1ab5ee34fc",
             "36be27abe7646662"
         ],
-        "x": 1195,
-        "y": 40,
+        "x": 1545,
+        "y": 180,
         "wires": [
             [
                 "b9195f648eb6d99b"
@@ -9048,7 +9047,7 @@
         "type": "debug",
         "z": "0637f22188042045",
         "name": "debug 10",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9056,8 +9055,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 640,
+        "x": 600,
+        "y": 80,
         "wires": []
     },
     {
@@ -9677,6 +9676,74 @@
         ]
     },
     {
+        "id": "36e0fe2b623c0db1",
+        "type": "link in",
+        "z": "0637f22188042045",
+        "name": "inTypesDropdown",
+        "links": [],
+        "x": 255,
+        "y": 100,
+        "wires": [
+            [
+                "2b2c3cf3f8ffc5a2"
+            ]
+        ]
+    },
+    {
+        "id": "3a1867fa2009b9c1",
+        "type": "ui-dropdown",
+        "z": "0637f22188042045",
+        "group": "6f6a6db0185ac9a4",
+        "name": "product",
+        "label": "Product",
+        "tooltip": "",
+        "order": 0,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [
+            {
+                "label": "",
+                "value": "",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "product",
+        "topicType": "str",
+        "className": "",
+        "typeIsComboBox": true,
+        "msgTrigger": "onChange",
+        "x": 300,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b2c3cf3f8ffc5a2",
+        "type": "function",
+        "z": "0637f22188042045",
+        "name": "list products",
+        "func": "const types = global.get(\"list.types\");\n\nreturn {\n    payload: [],\n    ui_update: {\n        options: types.map((v) => ({value: v, label: v}))\n    }\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 100,
+        "wires": [
+            [
+                "d984f1c52bbb7a42"
+            ]
+        ]
+    },
+    {
         "id": "93ee2f1602a0ed6c",
         "type": "ui-form",
         "z": "85a0c31e48c798bf",
@@ -9922,7 +9989,8 @@
         "y": 300,
         "wires": [
             [
-                "93ee2f1602a0ed6c"
+                "93ee2f1602a0ed6c",
+                "f7a0abfe160d1c17"
             ]
         ]
     },
@@ -12211,6 +12279,17 @@
                 "214a0b7062bde9b5"
             ]
         ]
+    },
+    {
+        "id": "f7a0abfe160d1c17",
+        "type": "link out",
+        "z": "85a0c31e48c798bf",
+        "name": "outTypesUpdated",
+        "mode": "link",
+        "links": [],
+        "x": 1255,
+        "y": 260,
+        "wires": []
     },
     {
         "id": "8435f37c02a9e26b",
