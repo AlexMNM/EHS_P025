@@ -14501,7 +14501,7 @@
         "label": "New user",
         "order": 3,
         "width": 0,
-        "height": 0,
+        "height": 6,
         "options": [
             {
                 "label": "User",
@@ -14568,7 +14568,7 @@
         "label": "Log in",
         "order": 2,
         "width": 0,
-        "height": 0,
+        "height": 5,
         "options": [
             {
                 "label": "User",
