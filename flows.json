@@ -463,12 +463,25 @@
         "id": "a880c21f020f2bb6",
         "type": "junction",
         "z": "aecf9ba551ec4a57",
-        "x": 1360,
-        "y": 1140,
+        "x": 1400,
+        "y": 1120,
         "wires": [
             [
                 "d532dbf0f38cc984",
                 "11c2761c69701879"
+            ]
+        ]
+    },
+    {
+        "id": "290a51077f70e23f",
+        "type": "junction",
+        "z": "aecf9ba551ec4a57",
+        "x": 1400,
+        "y": 1160,
+        "wires": [
+            [
+                "11c2761c69701879",
+                "637032cc7696e15d"
             ]
         ]
     },
@@ -14260,8 +14273,8 @@
         "type": "function",
         "z": "aecf9ba551ec4a57",
         "name": "get user",
-        "func": "const {groups} = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nconst user = groups[get_group(msg.payload.user + msg.payload.password)]\n\nglobal.set(\"current.user\", user);\n\nreturn;\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction get_group(pass, rec=users){\n    return users[hash(pass)] ?? wrong_password();\n}\n\nfunction wrong_password(default_group=\"operator\"){\n    node.send({payload: \"Wrong password!\"});\n    return default_group;\n}",
-        "outputs": 1,
+        "func": "const {groups} = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nconst user = groups[get_group(msg.payload.user + msg.payload.password)]\n\nglobal.set(\"current.user\", user);\n\nreturn [,msg];\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction get_group(pass, rec=users){\n    return users[hash(pass)] ?? wrong_password();\n}\n\nfunction wrong_password(default_group=\"operator\"){\n    node.send([{payload: \"Wrong password!\"}]);\n    return default_group;\n}",
+        "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
@@ -14277,6 +14290,9 @@
         "wires": [
             [
                 "a880c21f020f2bb6"
+            ],
+            [
+                "290a51077f70e23f"
             ]
         ]
     },
@@ -14293,8 +14309,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1460,
-        "y": 1200,
+        "x": 1580,
+        "y": 1220,
         "wires": []
     },
     {
@@ -14469,7 +14485,8 @@
         "z": "aecf9ba551ec4a57",
         "name": "inUpdateUser",
         "links": [
-            "e59b5e32850ec8e1"
+            "e59b5e32850ec8e1",
+            "637032cc7696e15d"
         ],
         "x": 1125,
         "y": 1040,
@@ -14488,7 +14505,7 @@
         "links": [
             "2c9f6f19ec5c61f5"
         ],
-        "x": 1405,
+        "x": 1435,
         "y": 1120,
         "wires": []
     },
@@ -14606,6 +14623,19 @@
                 "30f0f5dff5c624b2"
             ]
         ]
+    },
+    {
+        "id": "637032cc7696e15d",
+        "type": "link out",
+        "z": "aecf9ba551ec4a57",
+        "name": "outSetUser",
+        "mode": "link",
+        "links": [
+            "62713632412bc9ab"
+        ],
+        "x": 1435,
+        "y": 1160,
+        "wires": []
     },
     {
         "id": "fe36b4aab8e4b51e",
