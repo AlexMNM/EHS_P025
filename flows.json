@@ -443,8 +443,7 @@
         "y": 1040,
         "wires": [
             [
-                "44946df44c209c43",
-                "e001da36c6e12c59"
+                "44946df44c209c43"
             ]
         ]
     },
@@ -14254,7 +14253,7 @@
         "width": "2",
         "height": "1",
         "name": "",
-        "label": "Current user:",
+        "label": "Current user:group:",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "style": false,
@@ -14263,9 +14262,9 @@
         "color": "#717171",
         "wrapText": false,
         "className": "",
-        "value": "current.user.name",
-        "valueType": "global",
-        "x": 1370,
+        "value": "$globalContext(\"current.user.name\") & \":\" & $globalContext(\"current.user.label\")\t",
+        "valueType": "jsonata",
+        "x": 1390,
         "y": 1040,
         "wires": []
     },
@@ -14636,30 +14635,6 @@
         ],
         "x": 1435,
         "y": 1160,
-        "wires": []
-    },
-    {
-        "id": "e001da36c6e12c59",
-        "type": "ui-text",
-        "z": "aecf9ba551ec4a57",
-        "group": "bcd876364099320c",
-        "order": 2,
-        "width": "2",
-        "height": "1",
-        "name": "",
-        "label": "Group:",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "style": false,
-        "font": "",
-        "fontSize": 16,
-        "color": "#717171",
-        "wrapText": false,
-        "className": "",
-        "value": "current.user.label",
-        "valueType": "global",
-        "x": 1350,
-        "y": 1080,
         "wires": []
     },
     {
