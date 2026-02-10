@@ -14273,7 +14273,7 @@
         "type": "function",
         "z": "aecf9ba551ec4a57",
         "name": "get user",
-        "func": "const {groups} = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nconst user = get_user(msg.payload.user + msg.payload.password);\n\nglobal.set(\"current.user\", {...user, ...groups[user.group]});\n\nreturn [,msg];\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction get_user(key, rec=users){\n    return users[hash(key)] ?? wrong_password();\n}\n\nfunction wrong_password(default_group=\"operator\"){\n    node.send([{payload: \"Wrong password!\"}]);\n    return default_group;\n}",
+        "func": "const {groups} = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nconst user = get_user(msg.payload.user + msg.payload.password);\n\nglobal.set(\"current.user\", {name: user.name, ...groups[user.group]});\n\nreturn [,msg];\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction get_user(key, rec=users){\n    return users[hash(key)] ?? wrong_password();\n}\n\nfunction wrong_password(default_group=\"operator\"){\n    node.send([{payload: \"Wrong password!\"}]);\n    return default_group;\n}",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
