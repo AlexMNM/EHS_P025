@@ -14430,7 +14430,7 @@
                 "t": "set",
                 "p": "current.user",
                 "pt": "global",
-                "to": "#:(file)::settings.data.users.groups.operator",
+                "to": "#:(file)::settings.data.groups.operator",
                 "tot": "global",
                 "dc": true
             }
