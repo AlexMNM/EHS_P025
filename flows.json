@@ -9036,7 +9036,7 @@
         "type": "debug",
         "z": "0637f22188042045",
         "name": "debug 10",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -9044,8 +9044,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 120,
+        "x": 560,
+        "y": 140,
         "wires": []
     },
     {
@@ -9495,29 +9495,6 @@
         ]
     },
     {
-        "id": "7bed142c261ef11f",
-        "type": "inject",
-        "z": "0637f22188042045",
-        "name": "",
-        "props": [
-            {
-                "p": "ui_update",
-                "v": "{\"class\":\"compact-table\"}",
-                "vt": "json"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 2270,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "3dc61f81dca6089f",
         "type": "template",
         "z": "0637f22188042045",
@@ -9534,24 +9511,6 @@
             [
                 "a4cc879c4d28527a"
             ]
-        ]
-    },
-    {
-        "id": "3d144c873a729c0d",
-        "type": "function",
-        "z": "0637f22188042045",
-        "name": "pivot",
-        "func": "\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 2670,
-        "y": 560,
-        "wires": [
-            []
         ]
     },
     {
@@ -14367,8 +14326,52 @@
         "x": 1270,
         "y": 620,
         "wires": [
-            []
+            [
+                "30f0f5dff5c624b2"
+            ]
         ]
+    },
+    {
+        "id": "30f0f5dff5c624b2",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "name": "hash test",
+        "func": "cryptoJs.SHA256(JSON.stringify(msg.payload)).toString()\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "cryptoJs",
+                "module": "crypto-js"
+            }
+        ],
+        "x": 1500,
+        "y": 620,
+        "wires": [
+            [
+                "11c2761c69701879"
+            ]
+        ]
+    },
+    {
+        "id": "11c2761c69701879",
+        "type": "debug",
+        "z": "aecf9ba551ec4a57",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1720,
+        "y": 620,
+        "wires": []
     },
     {
         "id": "fe36b4aab8e4b51e",
