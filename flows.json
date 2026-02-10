@@ -14453,7 +14453,7 @@
         "type": "function",
         "z": "aecf9ba551ec4a57",
         "name": "add new user",
-        "func": "const { groups } = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nusers[hash(msg.password) ?? \"default\"] = groups[msg.group] ?? groups[\"operator\"];\n\nglobal.set(\"users\", users, \"file\")\nmsg.users = users;\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "func": "const { groups } = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nusers[hash(msg.password) ?? \"default\"] = groups[msg.group] !== undefined ? msg.group : \"operator\";\n\nglobal.set(\"users\", users, \"file\")\nmsg.users = users;\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14465,7 +14465,7 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1340,
+        "x": 1300,
         "y": 1300,
         "wires": [
             [
