@@ -14283,7 +14283,7 @@
         "type": "function",
         "z": "aecf9ba551ec4a57",
         "name": "get user",
-        "func": "const {records, groups} = global.get(\"settings.data.users\", \"file\");\n\nconst user = groups[records[hash(msg.payload)]] ?? wrong_password();\n\nglobal.set(\"current.user\", user);\n\nreturn;\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction wrong_password(default_user=groups[\"operator\"]){\n    node.send({payload: \"Wrong password!\"});\n    return default_user;\n}",
+        "func": "const {records, groups} = global.get(\"settings.data.users\", \"file\");\n\nconst user = groups[records[hash(msg.payload)]] ?? wrong_password();\n\nglobal.set(\"current.user\", user);\n\nreturn msg;\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction wrong_password(default_user=groups[\"operator\"]){\n    node.send({payload: \"Wrong password!\"});\n    return default_user;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
