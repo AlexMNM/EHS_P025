@@ -1077,16 +1077,6 @@
         "groupType": "default"
     },
     {
-        "id": "c2e449adf6dee535",
-        "type": "ui-spacer",
-        "group": "bcd876364099320c",
-        "name": "spacer",
-        "order": 2,
-        "width": 1,
-        "height": 1,
-        "className": ""
-    },
-    {
         "id": "c2e44f62d2b95ef0",
         "type": "ui-spacer",
         "group": "18d32b8bd2cc40ae",
@@ -14237,7 +14227,7 @@
         "group": "bcd876364099320c",
         "name": "",
         "label": "Login",
-        "order": 3,
+        "order": 2,
         "width": "2",
         "height": "1",
         "topic": "password",
