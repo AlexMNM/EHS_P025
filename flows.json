@@ -166,13 +166,12 @@
             "eaa2da6793b55f40",
             "76313568f2a04441",
             "db5b289970cf2446",
-            "b19da3d04cf94fc2",
-            "162c50f36e9f6133"
+            "b19da3d04cf94fc2"
         ],
         "x": 114,
         "y": 1459,
         "w": 522,
-        "h": 202
+        "h": 162
     },
     {
         "id": "3eb3d696e34bc6e2",
@@ -433,6 +432,30 @@
             [
                 "a41d6d9c4686dbfe",
                 "9b8db8a1d67ce690"
+            ]
+        ]
+    },
+    {
+        "id": "40262d705c80875c",
+        "type": "junction",
+        "z": "aecf9ba551ec4a57",
+        "x": 1260,
+        "y": 1040,
+        "wires": [
+            [
+                "44946df44c209c43"
+            ]
+        ]
+    },
+    {
+        "id": "7574b45e2d25122d",
+        "type": "junction",
+        "z": "aecf9ba551ec4a57",
+        "x": 1180,
+        "y": 960,
+        "wires": [
+            [
+                "162c50f36e9f6133"
             ]
         ]
     },
@@ -6601,6 +6624,49 @@
         ]
     },
     {
+        "id": "b9195f648eb6d99b",
+        "type": "ui-notification",
+        "z": "a6c85f6538755b0c",
+        "ui": "86cea779c465227a",
+        "position": "top center",
+        "colorDefault": true,
+        "color": "#000000",
+        "displayTime": "10",
+        "showCountdown": true,
+        "outputs": 1,
+        "allowDismiss": true,
+        "dismissText": "Confirm",
+        "allowConfirm": false,
+        "confirmText": "Confirm",
+        "raw": false,
+        "className": "",
+        "name": "input_error",
+        "x": 950,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c9f6f19ec5c61f5",
+        "type": "link in",
+        "z": "a6c85f6538755b0c",
+        "name": "inErrPopup",
+        "links": [
+            "9219cb1ab5ee34fc",
+            "36be27abe7646662",
+            "d218a781601d7689",
+            "d532dbf0f38cc984"
+        ],
+        "x": 845,
+        "y": 340,
+        "wires": [
+            [
+                "b9195f648eb6d99b"
+            ]
+        ]
+    },
+    {
         "id": "a4cc879c4d28527a",
         "type": "debug",
         "z": "0637f22188042045",
@@ -6681,30 +6747,6 @@
             [
                 "7949c9e9025be6c9"
             ]
-        ]
-    },
-    {
-        "id": "b9195f648eb6d99b",
-        "type": "ui-notification",
-        "z": "0637f22188042045",
-        "ui": "86cea779c465227a",
-        "position": "top center",
-        "colorDefault": true,
-        "color": "#000000",
-        "displayTime": "10",
-        "showCountdown": true,
-        "outputs": 1,
-        "allowDismiss": true,
-        "dismissText": "Confirm",
-        "allowConfirm": false,
-        "confirmText": "Confirm",
-        "raw": false,
-        "className": "",
-        "name": "input_error",
-        "x": 1650,
-        "y": 180,
-        "wires": [
-            []
         ]
     },
     {
@@ -8965,28 +9007,12 @@
         "name": "outProdErr",
         "mode": "link",
         "links": [
-            "2c9f6f19ec5c61f5"
+            "2c9f6f19ec5c61f5",
+            "0a2f14e5f24c1c07"
         ],
         "x": 1095,
         "y": 380,
         "wires": []
-    },
-    {
-        "id": "2c9f6f19ec5c61f5",
-        "type": "link in",
-        "z": "0637f22188042045",
-        "name": "inErrPopup",
-        "links": [
-            "9219cb1ab5ee34fc",
-            "36be27abe7646662"
-        ],
-        "x": 1545,
-        "y": 180,
-        "wires": [
-            [
-                "b9195f648eb6d99b"
-            ]
-        ]
     },
     {
         "id": "9219cb1ab5ee34fc",
@@ -8995,7 +9021,8 @@
         "name": "outProdErr",
         "mode": "link",
         "links": [
-            "2c9f6f19ec5c61f5"
+            "2c9f6f19ec5c61f5",
+            "0a2f14e5f24c1c07"
         ],
         "x": 865,
         "y": 140,
@@ -12305,8 +12332,7 @@
         "wires": [
             [
                 "d4219e24a88dc0e8",
-                "b19da3d04cf94fc2",
-                "162c50f36e9f6133"
+                "b19da3d04cf94fc2"
             ]
         ]
     },
@@ -12532,8 +12558,7 @@
         "name": "outSetProduct",
         "mode": "link",
         "links": [
-            "d7e034faf7f8dad2",
-            "62713632412bc9ab"
+            "d7e034faf7f8dad2"
         ],
         "x": 885,
         "y": 660,
@@ -14216,8 +14241,8 @@
         "className": "",
         "value": "current.user.label",
         "valueType": "global",
-        "x": 1190,
-        "y": 1020,
+        "x": 1370,
+        "y": 1040,
         "wires": []
     },
     {
@@ -14245,8 +14270,8 @@
         "icon": "",
         "iconPosition": "left",
         "iconInnerPosition": "inside",
-        "x": 1170,
-        "y": 1060,
+        "x": 1150,
+        "y": 1140,
         "wires": [
             [
                 "30f0f5dff5c624b2"
@@ -14257,8 +14282,8 @@
         "id": "30f0f5dff5c624b2",
         "type": "function",
         "z": "aecf9ba551ec4a57",
-        "name": "hash test",
-        "func": "msg.hashed = cryptoJs.SHA256(JSON.stringify(msg.payload)).toString()\n\nreturn msg;",
+        "name": "get user",
+        "func": "const {records, groups} = global.get(\"settings.data.users\", \"file\");\n\nconst user = groups[records[hash(msg.payload)]] ?? wrong_password();\n\nglobal.set(\"current.user\", user);\n\nreturn;\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction wrong_password(default_user=groups[\"operator\"]){\n    node.send({payload: \"Wrong password!\"});\n    return default_user;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14270,11 +14295,12 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1380,
-        "y": 1060,
+        "x": 1300,
+        "y": 1140,
         "wires": [
             [
-                "11c2761c69701879"
+                "11c2761c69701879",
+                "d532dbf0f38cc984"
             ]
         ]
     },
@@ -14291,36 +14317,9 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1540,
-        "y": 1060,
+        "x": 1480,
+        "y": 1180,
         "wires": []
-    },
-    {
-        "id": "162c50f36e9f6133",
-        "type": "change",
-        "z": "aecf9ba551ec4a57",
-        "g": "32c9d68b1d798fbc",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "current.user",
-                "pt": "global",
-                "to": "#:(file)::settings.data.users.groups.operator",
-                "tot": "global",
-                "dc": true
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 480,
-        "y": 1620,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "01ca71914a9e1a02",
@@ -14403,19 +14402,147 @@
         "wires": []
     },
     {
+        "id": "7ea4c07afdd0849a",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "name": "once",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1170,
+        "y": 920,
+        "wires": [
+            [
+                "7574b45e2d25122d"
+            ]
+        ]
+    },
+    {
+        "id": "162c50f36e9f6133",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "name": "set default user",
+        "rules": [
+            {
+                "t": "set",
+                "p": "current.user",
+                "pt": "global",
+                "to": "#:(file)::settings.data.users.groups.operator",
+                "tot": "global",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1300,
+        "y": 960,
+        "wires": [
+            [
+                "40262d705c80875c"
+            ]
+        ]
+    },
+    {
+        "id": "892c7024909ad05f",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "name": "add new user",
+        "func": "const { records, groups } = global.get(\"settings.data.users\", \"file\");\n\nrecords[hash(msg.password) ?? \"default\"] = groups[msg.group] ?? groups[\"operator\"];\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "cryptoJs",
+                "module": "crypto-js"
+            }
+        ],
+        "x": 1340,
+        "y": 1300,
+        "wires": [
+            [
+                "11c2761c69701879"
+            ]
+        ]
+    },
+    {
+        "id": "5b8f166f4b9e379a",
+        "type": "link in",
+        "z": "aecf9ba551ec4a57",
+        "name": "inDefaultUser",
+        "links": [],
+        "x": 1125,
+        "y": 960,
+        "wires": [
+            [
+                "7574b45e2d25122d"
+            ]
+        ]
+    },
+    {
         "id": "62713632412bc9ab",
         "type": "link in",
         "z": "aecf9ba551ec4a57",
         "name": "inUpdateUser",
         "links": [
-            "e59b5e32850ec8e1",
-            "acd4787a8b6262f8"
+            "e59b5e32850ec8e1"
         ],
-        "x": 1085,
-        "y": 1020,
+        "x": 1125,
+        "y": 1040,
         "wires": [
             [
-                "44946df44c209c43"
+                "40262d705c80875c"
+            ]
+        ]
+    },
+    {
+        "id": "d532dbf0f38cc984",
+        "type": "link out",
+        "z": "aecf9ba551ec4a57",
+        "name": "outPasswordErr",
+        "mode": "link",
+        "links": [
+            "2c9f6f19ec5c61f5"
+        ],
+        "x": 1435,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "9bd701330e0b56c1",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "name": "",
+        "props": [
+            {
+                "p": "password",
+                "v": "test",
+                "vt": "str"
+            },
+            {
+                "p": "group",
+                "v": "technician",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1150,
+        "y": 1300,
+        "wires": [
+            [
+                "892c7024909ad05f"
             ]
         ]
     },
