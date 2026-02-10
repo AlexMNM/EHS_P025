@@ -460,6 +460,19 @@
         ]
     },
     {
+        "id": "a880c21f020f2bb6",
+        "type": "junction",
+        "z": "aecf9ba551ec4a57",
+        "x": 1360,
+        "y": 1140,
+        "wires": [
+            [
+                "d532dbf0f38cc984",
+                "11c2761c69701879"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -14226,7 +14239,7 @@
         "type": "ui-text",
         "z": "aecf9ba551ec4a57",
         "group": "bcd876364099320c",
-        "order": 1,
+        "order": 2,
         "width": "2",
         "height": "1",
         "name": "",
@@ -14246,44 +14259,11 @@
         "wires": []
     },
     {
-        "id": "0b94c55f630bda13",
-        "type": "ui-text-input",
-        "z": "aecf9ba551ec4a57",
-        "group": "bcd876364099320c",
-        "name": "",
-        "label": "Login",
-        "order": 2,
-        "width": "2",
-        "height": "1",
-        "topic": "password",
-        "topicType": "str",
-        "mode": "password",
-        "tooltip": "Insert password",
-        "delay": 300,
-        "passthru": false,
-        "sendOnDelay": false,
-        "sendOnBlur": false,
-        "sendOnEnter": true,
-        "className": "",
-        "clearable": true,
-        "sendOnClear": false,
-        "icon": "",
-        "iconPosition": "left",
-        "iconInnerPosition": "inside",
-        "x": 1150,
-        "y": 1140,
-        "wires": [
-            [
-                "30f0f5dff5c624b2"
-            ]
-        ]
-    },
-    {
         "id": "30f0f5dff5c624b2",
         "type": "function",
         "z": "aecf9ba551ec4a57",
         "name": "get user",
-        "func": "const {groups} = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nconst user = groups[get_group(msg.payload)]\n\nglobal.set(\"current.user\", user);\n\nreturn;\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction get_group(pass, rec=users){\n    return users[hash(pass)] ?? wrong_password();\n}\n\nfunction wrong_password(default_group=\"operator\"){\n    node.send({payload: \"Wrong password!\"});\n    return default_group;\n}",
+        "func": "const {groups} = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nconst user = groups[get_group(msg.user + msg.password)]\n\nglobal.set(\"current.user\", user);\n\nreturn;\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction get_group(pass, rec=users){\n    return users[hash(pass)] ?? wrong_password();\n}\n\nfunction wrong_password(default_group=\"operator\"){\n    node.send({payload: \"Wrong password!\"});\n    return default_group;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14295,12 +14275,11 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1300,
+        "x": 1280,
         "y": 1140,
         "wires": [
             [
-                "11c2761c69701879",
-                "d532dbf0f38cc984"
+                "a880c21f020f2bb6"
             ]
         ]
     },
@@ -14452,8 +14431,8 @@
         "id": "892c7024909ad05f",
         "type": "function",
         "z": "aecf9ba551ec4a57",
-        "name": "add new user",
-        "func": "const { groups } = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nusers[hash(msg.group + msg.password) ?? \"default\"] = groups[msg.group] !== undefined ? msg.group : \"operator\";\n\nglobal.set(\"users\", users, \"file\")\nmsg.users = users;\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "name": "add user",
+        "func": "const { groups } = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nusers[hash(msg.user + msg.password) ?? \"default\"] = groups[msg.group] !== undefined ? msg.group : \"operator\";\n\nglobal.set(\"users\", users, \"file\")\nmsg.users = users;\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14465,8 +14444,8 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1300,
-        "y": 1300,
+        "x": 1280,
+        "y": 1200,
         "wires": [
             [
                 "11c2761c69701879"
@@ -14512,34 +14491,71 @@
         "links": [
             "2c9f6f19ec5c61f5"
         ],
-        "x": 1435,
-        "y": 1140,
+        "x": 1405,
+        "y": 1120,
         "wires": []
     },
     {
-        "id": "9bd701330e0b56c1",
-        "type": "inject",
+        "id": "e1b2a938923b5883",
+        "type": "ui-form",
         "z": "aecf9ba551ec4a57",
-        "name": "technician",
-        "props": [
+        "name": "",
+        "group": "bcd876364099320c",
+        "label": "New user",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
             {
-                "p": "password",
-                "v": "test",
-                "vt": "str"
+                "label": "User",
+                "key": "user",
+                "type": "text",
+                "required": true,
+                "rows": null
             },
             {
-                "p": "group",
-                "v": "technician",
-                "vt": "str"
+                "label": "Password",
+                "key": "password",
+                "type": "password",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Group",
+                "key": "group",
+                "type": "dropdown",
+                "required": true,
+                "rows": null
             }
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 1120,
-        "y": 1300,
+        "formValue": {
+            "user": "",
+            "password": "",
+            "group": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "new_user",
+        "topicType": "str",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [
+            {
+                "dropdown": "group",
+                "value": "technician",
+                "label": "Technician"
+            },
+            {
+                "dropdown": "group",
+                "value": "engineer",
+                "label": "Engineer"
+            }
+        ],
+        "x": 1140,
+        "y": 1200,
         "wires": [
             [
                 "892c7024909ad05f"
@@ -14547,32 +14563,50 @@
         ]
     },
     {
-        "id": "8546ffdda7dfa546",
-        "type": "inject",
+        "id": "12c0bdfdfae9a759",
+        "type": "ui-form",
         "z": "aecf9ba551ec4a57",
-        "name": "engineer",
-        "props": [
+        "name": "",
+        "group": "bcd876364099320c",
+        "label": "Log in",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
             {
-                "p": "password",
-                "v": "test",
-                "vt": "str"
+                "label": "User",
+                "key": "user",
+                "type": "text",
+                "required": true,
+                "rows": null
             },
             {
-                "p": "group",
-                "v": "engineer",
-                "vt": "str"
+                "label": "Password",
+                "key": "password",
+                "type": "password",
+                "required": true,
+                "rows": null
             }
         ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 1120,
-        "y": 1340,
+        "formValue": {
+            "user": "",
+            "password": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "clear",
+        "resetOnSubmit": true,
+        "topic": "login",
+        "topicType": "str",
+        "splitLayout": "",
+        "className": "",
+        "passthru": false,
+        "dropdownOptions": [],
+        "x": 1150,
+        "y": 1140,
         "wires": [
             [
-                "892c7024909ad05f"
+                "30f0f5dff5c624b2"
             ]
         ]
     },
