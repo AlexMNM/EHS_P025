@@ -14315,7 +14315,7 @@
         "delay": 300,
         "passthru": false,
         "sendOnDelay": false,
-        "sendOnBlur": true,
+        "sendOnBlur": false,
         "sendOnEnter": true,
         "className": "",
         "clearable": true,
@@ -14336,7 +14336,7 @@
         "type": "function",
         "z": "aecf9ba551ec4a57",
         "name": "hash test",
-        "func": "cryptoJs.SHA256(JSON.stringify(msg.payload)).toString()\n\nreturn msg;",
+        "func": "msg.hashed = cryptoJs.SHA256(JSON.stringify(msg.payload)).toString()\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14348,7 +14348,7 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1500,
+        "x": 1420,
         "y": 620,
         "wires": [
             [
@@ -14369,7 +14369,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1720,
+        "x": 1620,
         "y": 620,
         "wires": []
     },
