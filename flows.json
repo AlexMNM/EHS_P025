@@ -14453,7 +14453,7 @@
         "type": "function",
         "z": "aecf9ba551ec4a57",
         "name": "add new user",
-        "func": "const { records={}, groups } = global.get(\"settings.data.users\", \"file\");\n\nrecords[hash(msg.password) ?? \"default\"] = groups[msg.group] ?? groups[\"operator\"];\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "func": "const { records={}, groups } = global.get(\"settings.data.users\", \"file\");\n\nrecords[hash(msg.password) ?? \"default\"] = groups[msg.group] ?? groups[\"operator\"];\n\nmsg.rec = records;\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
