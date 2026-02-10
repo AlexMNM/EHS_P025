@@ -166,12 +166,13 @@
             "eaa2da6793b55f40",
             "76313568f2a04441",
             "db5b289970cf2446",
-            "b19da3d04cf94fc2"
+            "b19da3d04cf94fc2",
+            "162c50f36e9f6133"
         ],
         "x": 154,
         "y": 1019,
         "w": 522,
-        "h": 162
+        "h": 202
     },
     {
         "id": "3eb3d696e34bc6e2",
@@ -12317,7 +12318,8 @@
         "wires": [
             [
                 "d4219e24a88dc0e8",
-                "b19da3d04cf94fc2"
+                "b19da3d04cf94fc2",
+                "162c50f36e9f6133"
             ]
         ]
     },
@@ -14283,7 +14285,7 @@
         "width": "1",
         "height": "1",
         "name": "",
-        "label": "User",
+        "label": "Current user:",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "style": false,
@@ -14292,9 +14294,9 @@
         "color": "#717171",
         "wrapText": false,
         "className": "",
-        "value": "users.current",
+        "value": "current.user.label",
         "valueType": "global",
-        "x": 1210,
+        "x": 1230,
         "y": 580,
         "wires": []
     },
@@ -14372,6 +14374,33 @@
         "x": 1580,
         "y": 620,
         "wires": []
+    },
+    {
+        "id": "162c50f36e9f6133",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "32c9d68b1d798fbc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "current.user",
+                "pt": "global",
+                "to": "#:(file)::settings.data.users.groups.operator",
+                "tot": "global",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 520,
+        "y": 1180,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "fe36b4aab8e4b51e",
