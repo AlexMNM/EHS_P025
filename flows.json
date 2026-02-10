@@ -14239,7 +14239,7 @@
         "type": "ui-text",
         "z": "aecf9ba551ec4a57",
         "group": "bcd876364099320c",
-        "order": 2,
+        "order": 1,
         "width": "2",
         "height": "1",
         "name": "",
@@ -14502,7 +14502,7 @@
         "name": "",
         "group": "bcd876364099320c",
         "label": "New user",
-        "order": 1,
+        "order": 3,
         "width": 0,
         "height": 0,
         "options": [
@@ -14569,7 +14569,7 @@
         "name": "",
         "group": "bcd876364099320c",
         "label": "Log in",
-        "order": 0,
+        "order": 2,
         "width": 0,
         "height": 0,
         "options": [
