@@ -14453,7 +14453,7 @@
         "type": "function",
         "z": "aecf9ba551ec4a57",
         "name": "add new user",
-        "func": "const { groups } = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nusers[hash(msg.password) ?? \"default\"] = groups[msg.group] !== undefined ? msg.group : \"operator\";\n\nglobal.set(\"users\", users, \"file\")\nmsg.users = users;\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "func": "const { groups } = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nusers[hash(msg.group + msg.password) ?? \"default\"] = groups[msg.group] !== undefined ? msg.group : \"operator\";\n\nglobal.set(\"users\", users, \"file\")\nmsg.users = users;\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -14520,7 +14520,7 @@
         "id": "9bd701330e0b56c1",
         "type": "inject",
         "z": "aecf9ba551ec4a57",
-        "name": "",
+        "name": "technician",
         "props": [
             {
                 "p": "password",
@@ -14538,8 +14538,38 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1150,
+        "x": 1120,
         "y": 1300,
+        "wires": [
+            [
+                "892c7024909ad05f"
+            ]
+        ]
+    },
+    {
+        "id": "8546ffdda7dfa546",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "name": "engineer",
+        "props": [
+            {
+                "p": "password",
+                "v": "test",
+                "vt": "str"
+            },
+            {
+                "p": "group",
+                "v": "engineer",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1120,
+        "y": 1340,
         "wires": [
             [
                 "892c7024909ad05f"
