@@ -1289,7 +1289,7 @@
         "type": "ui-group",
         "name": "Products",
         "page": "28b505574a770e44",
-        "width": "4",
+        "width": 3,
         "height": 1,
         "order": 3,
         "showTitle": true,
@@ -1345,7 +1345,7 @@
         "type": "ui-group",
         "name": "Log in",
         "page": "28b505574a770e44",
-        "width": "3",
+        "width": 3,
         "height": 1,
         "order": 1,
         "showTitle": true,
@@ -1353,16 +1353,6 @@
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
-    },
-    {
-        "id": "c2e44f62d2b95ef0",
-        "type": "ui-spacer",
-        "group": "18d32b8bd2cc40ae",
-        "name": "spacer",
-        "order": 2,
-        "width": 1,
-        "height": 1,
-        "className": ""
     },
     {
         "id": "c2e6f3491fd29eaa",
@@ -14388,7 +14378,7 @@
         "name": "",
         "label": "Torque offset",
         "order": 1,
-        "width": 1,
+        "width": 2,
         "height": 0,
         "topic": "torque_offset",
         "topicType": "str",
@@ -14477,7 +14467,7 @@
         "name": "",
         "label": "Force offset",
         "order": 3,
-        "width": 1,
+        "width": 2,
         "height": 0,
         "topic": "torque_offset",
         "topicType": "str",
@@ -14682,7 +14672,7 @@
         "group": "bcd876364099320c",
         "label": "New user",
         "order": 4,
-        "width": 2,
+        "width": 3,
         "height": 6,
         "options": [
             {
@@ -14750,7 +14740,7 @@
         "group": "bcd876364099320c",
         "label": "",
         "order": 3,
-        "width": 2,
+        "width": 3,
         "height": null,
         "options": [
             {
