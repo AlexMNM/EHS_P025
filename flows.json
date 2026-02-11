@@ -14569,8 +14569,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3000,
-        "y": 1200,
+        "x": 2860,
+        "y": 1320,
         "wires": []
     },
     {
@@ -16086,7 +16086,7 @@
         "z": "aecf9ba551ec4a57",
         "g": "67a8918a8f04dd08",
         "name": "enable/disable",
-        "func": "msg.payload = {\n    groups: {\n        [msg.topic]: [ msg.payload ]\n    }\n}\n\nreturn msg;",
+        "func": "msg.payload = {\n    groups: {\n        [msg.topic]: [ ...msg.payload ]\n    }\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
