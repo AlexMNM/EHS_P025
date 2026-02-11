@@ -1276,7 +1276,7 @@
             {
                 "name": "Desktop",
                 "px": "1024",
-                "cols": "12"
+                "cols": "14"
             }
         ],
         "order": 3,
