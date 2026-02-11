@@ -14379,8 +14379,8 @@
         "g": "4081afdecba56dbc",
         "group": "bcd876364099320c",
         "order": 1,
-        "width": "0",
-        "height": "0",
+        "width": null,
+        "height": null,
         "name": "",
         "label": "Current user-group:",
         "format": "{{msg.payload}}",
@@ -14523,8 +14523,8 @@
         "group": "bcd876364099320c",
         "label": "New user",
         "order": 3,
-        "width": 0,
-        "height": "0",
+        "width": 1,
+        "height": 6,
         "options": [
             {
                 "label": "User",
@@ -14591,8 +14591,8 @@
         "group": "bcd876364099320c",
         "label": "",
         "order": 2,
-        "width": 0,
-        "height": "0",
+        "width": 1,
+        "height": null,
         "options": [
             {
                 "label": "User",
