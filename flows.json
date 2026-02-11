@@ -1203,7 +1203,7 @@
         "type": "ui-group",
         "name": "Log in",
         "page": "28b505574a770e44",
-        "width": 2,
+        "width": "3",
         "height": 1,
         "order": 5,
         "showTitle": true,
