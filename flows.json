@@ -304,7 +304,8 @@
             "211a50d3876bc19f",
             "dbcaad5751467c1a",
             "8e359c0637fba986",
-            "db13b6567a11c336"
+            "db13b6567a11c336",
+            "115c40f4ef8563a7"
         ],
         "x": 1594,
         "y": 479,
@@ -14468,8 +14469,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2200,
-        "y": 1100,
+        "x": 2260,
+        "y": 1240,
         "wires": []
     },
     {
@@ -15511,13 +15512,13 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "{}",
         "payloadType": "json",
-        "x": 1870,
-        "y": 1100,
+        "x": 1720,
+        "y": 1180,
         "wires": [
             [
                 "db13b6567a11c336"
@@ -15535,8 +15536,29 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 2040,
-        "y": 1100,
+        "x": 1880,
+        "y": 1180,
+        "wires": [
+            [
+                "115c40f4ef8563a7"
+            ]
+        ]
+    },
+    {
+        "id": "115c40f4ef8563a7",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "to dropdown options",
+        "func": "msg.ui_update = {\n    dropdownOptions: msg.payload.map(({label, _id}) => ({dropdown: \"group\", label: label, value: _id}))\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2060,
+        "y": 1180,
         "wires": [
             [
                 "11c2761c69701879"
