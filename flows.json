@@ -14466,7 +14466,7 @@
         "group": "18d32b8bd2cc40ae",
         "name": "",
         "label": "Force offset",
-        "order": 3,
+        "order": 2,
         "width": 2,
         "height": 0,
         "topic": "torque_offset",
@@ -14639,7 +14639,7 @@
             "e361215bc8c832ec",
             "62713632412bc9ab"
         ],
-        "x": 515,
+        "x": 525,
         "y": 460,
         "wires": []
     },
@@ -15726,8 +15726,6 @@
         "links": [
             "8007da33acb3b51d",
             "6abc853642953e44",
-            "a9da300fcf877aca",
-            "3cd8530be4d11ad9",
             "5c456d3635692987"
         ],
         "x": 2255,
@@ -15744,8 +15742,6 @@
         "links": [
             "de1e1f58d6fe1bd1",
             "d7e9c96ab6e21195",
-            "311166676c3ae7fc",
-            "d2c92c46fb39174b",
             "8c7560b6c942afee"
         ],
         "x": 2255,
