@@ -5380,7 +5380,7 @@
         "type": "function",
         "z": "0e117d41da2683ed",
         "name": "add user",
-        "func": "const {user, password, group} = msg.form;\n\nmsg.payload = {\n    \"_id\": user,\n    \"key\": hash(password),\n    \"group\": group\n}\n\nmsg.operation = \"insertOne\"\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "func": "const {user, password, group} = msg.form;\ndelete msg.form;\n\nmsg.payload = {\n    \"_id\": user,\n    \"key\": hash(password),\n    \"group\": group\n}\n\nmsg.operation = \"insertOne\"\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5569,7 +5569,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1330,
+        "x": 1350,
         "y": 360,
         "wires": [
             [
