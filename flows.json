@@ -15498,14 +15498,14 @@
         "type": "inject",
         "z": "aecf9ba551ec4a57",
         "g": "4081afdecba56dbc",
-        "name": "get distinct id",
+        "name": "get all groups",
         "props": [
             {
                 "p": "payload"
             },
             {
                 "p": "operation",
-                "v": "distinct",
+                "v": "find",
                 "vt": "str"
             }
         ],
@@ -15514,9 +15514,9 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "[\"_id\"]",
+        "payload": "{}",
         "payloadType": "json",
-        "x": 1850,
+        "x": 1870,
         "y": 1100,
         "wires": [
             [
