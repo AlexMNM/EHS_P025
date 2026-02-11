@@ -5409,7 +5409,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1300,
+        "x": 1280,
         "y": 300,
         "wires": [
             [
@@ -5439,6 +5439,31 @@
         "wires": [
             [
                 "b6483e1369cfe5ae"
+            ]
+        ]
+    },
+    {
+        "id": "91a7a67a1df00ec5",
+        "type": "inject",
+        "z": "0e117d41da2683ed",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"user\":\"asdf\",\"password\":\"asdf\",\"group\":\"tech\"}",
+        "payloadType": "json",
+        "x": 950,
+        "y": 240,
+        "wires": [
+            [
+                "34e289f37ed26aef"
             ]
         ]
     },
