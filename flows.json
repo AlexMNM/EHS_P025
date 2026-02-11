@@ -5367,7 +5367,7 @@
         "topic": "",
         "payload": "{\"user\":\"testUser\",\"password\":\"asdf\",\"group\":\"tech\"}",
         "payloadType": "json",
-        "x": 910,
+        "x": 890,
         "y": 360,
         "wires": [
             [
@@ -5509,7 +5509,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\t    \"_id\": form.user\t}",
+                "to": "[{\t    \"_id\": form.user\t},\t{\t    \"projection\":{\"user\" : 1}\t}]",
                 "tot": "jsonata"
             },
             {
