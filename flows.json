@@ -5984,6 +5984,31 @@
         ]
     },
     {
+        "id": "4d5e9f963d4083d3",
+        "type": "inject",
+        "z": "0e117d41da2683ed",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"user\":\"root\",\"password\":\"P025\",\"group\":\"root\"}",
+        "payloadType": "json",
+        "x": 710,
+        "y": 480,
+        "wires": [
+            [
+                "9810af318600293f"
+            ]
+        ]
+    },
+    {
         "id": "79c07bea4075b2c3",
         "type": "link in",
         "z": "f0b99c790d575624",
