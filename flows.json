@@ -322,7 +322,7 @@
         ],
         "x": 1714,
         "y": 479,
-        "w": 1072,
+        "w": 1272,
         "h": 722
     },
     {
@@ -14457,7 +14457,7 @@
         "z": "aecf9ba551ec4a57",
         "g": "4081afdecba56dbc",
         "name": "debug 3",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -14465,8 +14465,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2620,
-        "y": 920,
+        "x": 2880,
+        "y": 1140,
         "wires": []
     },
     {
@@ -15733,7 +15733,9 @@
         "x": 2710,
         "y": 1140,
         "wires": [
-            []
+            [
+                "11c2761c69701879"
+            ]
         ]
     },
     {
