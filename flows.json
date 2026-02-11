@@ -236,17 +236,15 @@
         "nodes": [
             "6813df3c6f03c2c7",
             "550c8d5059845d7b",
-            "2eb05c0ad7444efc",
             "b55f43382c428383",
-            "1571f77434345c18",
             "b09bfda6e06b2f13",
             "b44ad595f3793583",
             "3479f97509a7b721"
         ],
         "x": 804,
-        "y": 659,
-        "w": 722,
-        "h": 162
+        "y": 679,
+        "w": 342,
+        "h": 142
     },
     {
         "id": "4081afdecba56dbc",
@@ -572,20 +570,6 @@
         "wires": [
             [
                 "637032cc7696e15d"
-            ]
-        ]
-    },
-    {
-        "id": "1571f77434345c18",
-        "type": "junction",
-        "z": "0e117d41da2683ed",
-        "g": "7f9b563293718dc0",
-        "x": 1040,
-        "y": 720,
-        "wires": [
-            [
-                "2eb05c0ad7444efc",
-                "b09bfda6e06b2f13"
             ]
         ]
     },
@@ -5331,24 +5315,6 @@
         "wires": []
     },
     {
-        "id": "2eb05c0ad7444efc",
-        "type": "debug",
-        "z": "0e117d41da2683ed",
-        "g": "7f9b563293718dc0",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1420,
-        "y": 700,
-        "wires": []
-    },
-    {
         "id": "6813df3c6f03c2c7",
         "type": "mongodb4",
         "z": "0e117d41da2683ed",
@@ -5365,7 +5331,7 @@
         "y": 720,
         "wires": [
             [
-                "1571f77434345c18"
+                "b09bfda6e06b2f13"
             ]
         ]
     },
@@ -5386,8 +5352,7 @@
         "y": 780,
         "wires": [
             [
-                "3479f97509a7b721",
-                "2eb05c0ad7444efc"
+                "3479f97509a7b721"
             ]
         ]
     },
@@ -5429,8 +5394,7 @@
         "y": 780,
         "wires": [
             [
-                "550c8d5059845d7b",
-                "2eb05c0ad7444efc"
+                "550c8d5059845d7b"
             ]
         ]
     },
