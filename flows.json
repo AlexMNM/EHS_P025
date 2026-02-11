@@ -523,6 +523,18 @@
         ]
     },
     {
+        "id": "211a50d3876bc19f",
+        "type": "junction",
+        "z": "0e117d41da2683ed",
+        "x": 1900,
+        "y": 380,
+        "wires": [
+            [
+                "8f38e4991d7570a7"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -5392,7 +5404,7 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1560,
+        "x": 1520,
         "y": 340,
         "wires": [
             [
@@ -5590,10 +5602,12 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1720,
+        "x": 1660,
         "y": 340,
         "wires": [
-            []
+            [
+                "9b4395489ef58cbb"
+            ]
         ]
     },
     {
@@ -5608,11 +5622,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1580,
-        "y": 400,
+        "x": 1540,
+        "y": 380,
         "wires": [
             [
-                "8f38e4991d7570a7"
+                "211a50d3876bc19f"
             ]
         ]
     },
@@ -5620,14 +5634,34 @@
         "id": "8f38e4991d7570a7",
         "type": "link out",
         "z": "0e117d41da2683ed",
-        "name": "link out 2",
+        "name": "outToPopoup",
         "mode": "link",
         "links": [
             "2c9f6f19ec5c61f5"
         ],
-        "x": 1705,
-        "y": 400,
+        "x": 1945,
+        "y": 380,
         "wires": []
+    },
+    {
+        "id": "9b4395489ef58cbb",
+        "type": "function",
+        "z": "0e117d41da2683ed",
+        "name": "user added",
+        "func": "\nreturn {payload: \"User added successfully!\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1810,
+        "y": 340,
+        "wires": [
+            [
+                "211a50d3876bc19f"
+            ]
+        ]
     },
     {
         "id": "79c07bea4075b2c3",
