@@ -15923,12 +15923,9 @@
                 "tot": "str"
             },
             {
-                "t": "set",
-                "p": "payload[0]",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg",
-                "dc": true
+                "t": "delete",
+                "p": "payload.remove",
+                "pt": "msg"
             }
         ],
         "action": "",
