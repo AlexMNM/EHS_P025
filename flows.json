@@ -15521,7 +15521,7 @@
         "z": "aecf9ba551ec4a57",
         "g": "4081afdecba56dbc",
         "name": "new msg",
-        "func": "\nreturn {payload: {}};",
+        "func": "\nreturn {};",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
