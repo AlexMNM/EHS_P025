@@ -317,7 +317,8 @@
             "430b906687c1f360",
             "17b6c609d8d4304f",
             "a3b2b947c3af6ad3",
-            "8b7f2b942c98bf46"
+            "8b7f2b942c98bf46",
+            "b1e4666493a2e721"
         ],
         "x": 1714,
         "y": 479,
@@ -15844,6 +15845,34 @@
         "linkType": "static",
         "timeout": "30",
         "x": 2540,
+        "y": 1100,
+        "wires": [
+            [
+                "b1e4666493a2e721"
+            ]
+        ]
+    },
+    {
+        "id": "b1e4666493a2e721",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "add remove",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$map(\t   payload,\t   function($v) {\t       $merge(\t           [\t               $v,\t               {\t                   'remove':'X'\t                }\t           ]\t       )\t   }\t)\t",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2690,
         "y": 1100,
         "wires": [
             [
