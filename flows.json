@@ -241,8 +241,8 @@
             "b44ad595f3793583",
             "3479f97509a7b721"
         ],
-        "x": 804,
-        "y": 679,
+        "x": 64,
+        "y": 419,
         "w": 342,
         "h": 142
     },
@@ -327,6 +327,24 @@
         "y": 479,
         "w": 1472,
         "h": 722
+    },
+    {
+        "id": "bd784ff8a8f49e07",
+        "type": "group",
+        "z": "0e117d41da2683ed",
+        "name": "test db",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ebde08458e44bf71",
+            "09d2343f773e9140",
+            "e491d2a69e3036d0"
+        ],
+        "x": 64,
+        "y": 219,
+        "w": 312,
+        "h": 82
     },
     {
         "id": "694442544535cd79",
@@ -5286,6 +5304,7 @@
         "id": "ebde08458e44bf71",
         "type": "mongodb4",
         "z": "0e117d41da2683ed",
+        "g": "bd784ff8a8f49e07",
         "clientNode": "b286894fefbfc7bc",
         "mode": "collection",
         "collection": "testrun",
@@ -5306,9 +5325,10 @@
         "id": "09d2343f773e9140",
         "type": "link in",
         "z": "0e117d41da2683ed",
+        "g": "bd784ff8a8f49e07",
         "name": "database in",
         "links": [],
-        "x": 75,
+        "x": 105,
         "y": 260,
         "wires": [
             [
@@ -5321,10 +5341,11 @@
         "id": "e491d2a69e3036d0",
         "type": "link out",
         "z": "0e117d41da2683ed",
+        "g": "bd784ff8a8f49e07",
         "name": "database return",
         "mode": "return",
         "links": [],
-        "x": 395,
+        "x": 335,
         "y": 260,
         "wires": []
     },
@@ -5358,8 +5379,8 @@
         "maxTimeMS": "0",
         "handleDocId": false,
         "name": "users",
-        "x": 950,
-        "y": 720,
+        "x": 210,
+        "y": 460,
         "wires": [
             [
                 "b09bfda6e06b2f13"
@@ -5379,8 +5400,8 @@
         "maxTimeMS": "0",
         "handleDocId": false,
         "name": "groups",
-        "x": 950,
-        "y": 780,
+        "x": 210,
+        "y": 520,
         "wires": [
             [
                 "3479f97509a7b721"
@@ -5394,8 +5415,8 @@
         "g": "7f9b563293718dc0",
         "name": "inUsers",
         "links": [],
-        "x": 845,
-        "y": 720,
+        "x": 105,
+        "y": 460,
         "wires": [
             [
                 "6813df3c6f03c2c7"
@@ -5410,8 +5431,8 @@
         "name": "outUsers",
         "mode": "return",
         "links": [],
-        "x": 1105,
-        "y": 720,
+        "x": 365,
+        "y": 460,
         "wires": []
     },
     {
@@ -5421,8 +5442,8 @@
         "g": "7f9b563293718dc0",
         "name": "inGroups",
         "links": [],
-        "x": 845,
-        "y": 780,
+        "x": 105,
+        "y": 520,
         "wires": [
             [
                 "550c8d5059845d7b"
@@ -5437,8 +5458,8 @@
         "name": "outGroups",
         "mode": "return",
         "links": [],
-        "x": 1105,
-        "y": 780,
+        "x": 365,
+        "y": 520,
         "wires": []
     },
     {
@@ -15897,7 +15918,7 @@
                 "t": "set",
                 "p": "operation",
                 "pt": "msg",
-                "to": "delete",
+                "to": "deleteOne",
                 "tot": "str"
             }
         ],
