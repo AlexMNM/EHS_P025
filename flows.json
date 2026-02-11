@@ -249,6 +249,71 @@
         "h": 162
     },
     {
+        "id": "4081afdecba56dbc",
+        "type": "group",
+        "z": "aecf9ba551ec4a57",
+        "name": "User management",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "44946df44c209c43",
+            "30f0f5dff5c624b2",
+            "11c2761c69701879",
+            "7ea4c07afdd0849a",
+            "162c50f36e9f6133",
+            "892c7024909ad05f",
+            "5b8f166f4b9e379a",
+            "62713632412bc9ab",
+            "d532dbf0f38cc984",
+            "e1b2a938923b5883",
+            "12c0bdfdfae9a759",
+            "637032cc7696e15d",
+            "3c6336d106afaae9",
+            "0bd505ed446ac36d",
+            "8d1f0adcea1619b3",
+            "b6483e1369cfe5ae",
+            "c1f8b3670dd9d967",
+            "d67c4e04338edb1c",
+            "5008955daadfce24",
+            "fcbc156b0ac9c05a",
+            "93cfc6f9f794da0f",
+            "75203bc245c899eb",
+            "8f38e4991d7570a7",
+            "9b4395489ef58cbb",
+            "9810af318600293f",
+            "9a2e79bf47833904",
+            "624eeea14bd77511",
+            "33c0fe395a75bf7b",
+            "d4baa6de344f18c4",
+            "f93ce5aaee488454",
+            "dda8699c6d06de60",
+            "c9c5e2d8a91ffdb4",
+            "3bce9afc58125d67",
+            "2b48334b3fc78287",
+            "11f7aa6caa471979",
+            "bb31f4c44a90676e",
+            "4127287cead788dc",
+            "260f56d963af450f",
+            "d57ad8bcada9bd2f",
+            "418f2627e9a4fdca",
+            "24d2b6efe0585c6c",
+            "4d5e9f963d4083d3",
+            "40262d705c80875c",
+            "7574b45e2d25122d",
+            "a880c21f020f2bb6",
+            "290a51077f70e23f",
+            "211a50d3876bc19f",
+            "dbcaad5751467c1a",
+            "8e359c0637fba986",
+            "db13b6567a11c336"
+        ],
+        "x": 1594,
+        "y": 479,
+        "w": 1392,
+        "h": 1142
+    },
+    {
         "id": "694442544535cd79",
         "type": "junction",
         "z": "0637f22188042045",
@@ -462,8 +527,9 @@
         "id": "40262d705c80875c",
         "type": "junction",
         "z": "aecf9ba551ec4a57",
-        "x": 1320,
-        "y": 1040,
+        "g": "4081afdecba56dbc",
+        "x": 2060,
+        "y": 1580,
         "wires": [
             [
                 "44946df44c209c43"
@@ -474,8 +540,9 @@
         "id": "7574b45e2d25122d",
         "type": "junction",
         "z": "aecf9ba551ec4a57",
-        "x": 1340,
-        "y": 860,
+        "g": "4081afdecba56dbc",
+        "x": 2040,
+        "y": 1400,
         "wires": [
             [
                 "162c50f36e9f6133"
@@ -486,12 +553,12 @@
         "id": "a880c21f020f2bb6",
         "type": "junction",
         "z": "aecf9ba551ec4a57",
-        "x": 1400,
-        "y": 1120,
+        "g": "4081afdecba56dbc",
+        "x": 2820,
+        "y": 1100,
         "wires": [
             [
-                "d532dbf0f38cc984",
-                "11c2761c69701879"
+                "d532dbf0f38cc984"
             ]
         ]
     },
@@ -499,11 +566,11 @@
         "id": "290a51077f70e23f",
         "type": "junction",
         "z": "aecf9ba551ec4a57",
-        "x": 1400,
-        "y": 1160,
+        "g": "4081afdecba56dbc",
+        "x": 2820,
+        "y": 1140,
         "wires": [
             [
-                "11c2761c69701879",
                 "637032cc7696e15d"
             ]
         ]
@@ -525,9 +592,10 @@
     {
         "id": "211a50d3876bc19f",
         "type": "junction",
-        "z": "0e117d41da2683ed",
-        "x": 1820,
-        "y": 420,
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "x": 2800,
+        "y": 800,
         "wires": [
             [
                 "8f38e4991d7570a7"
@@ -537,9 +605,10 @@
     {
         "id": "dbcaad5751467c1a",
         "type": "junction",
-        "z": "0e117d41da2683ed",
-        "x": 1640,
-        "y": 420,
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "x": 2620,
+        "y": 800,
         "wires": [
             [
                 "211a50d3876bc19f",
@@ -5376,637 +5445,6 @@
         "x": 1105,
         "y": 780,
         "wires": []
-    },
-    {
-        "id": "0bd505ed446ac36d",
-        "type": "inject",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"user\":\"testUser\",\"password\":\"asdf\",\"group\":\"tech\"}",
-        "payloadType": "json",
-        "x": 710,
-        "y": 360,
-        "wires": [
-            [
-                "d67c4e04338edb1c"
-            ]
-        ]
-    },
-    {
-        "id": "8d1f0adcea1619b3",
-        "type": "function",
-        "z": "0e117d41da2683ed",
-        "name": "add user",
-        "func": "const {user, password, group} = msg.form;\ndelete msg.form;\n\nmsg.payload = {\n    \"_id\": user,\n    \"key\": hash(password),\n    \"group\": group\n}\n\nmsg.operation = \"insertOne\"\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "cryptoJs",
-                "module": "crypto-js"
-            }
-        ],
-        "x": 1420,
-        "y": 340,
-        "wires": [
-            [
-                "93cfc6f9f794da0f"
-            ]
-        ]
-    },
-    {
-        "id": "b6483e1369cfe5ae",
-        "type": "link call",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "links": [
-            "b55f43382c428383"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1380,
-        "y": 200,
-        "wires": [
-            [
-                "bb31f4c44a90676e"
-            ]
-        ]
-    },
-    {
-        "id": "c1f8b3670dd9d967",
-        "type": "link in",
-        "z": "0e117d41da2683ed",
-        "name": "inLoadDefault",
-        "links": [
-            "c9c5e2d8a91ffdb4"
-        ],
-        "x": 1065,
-        "y": 200,
-        "wires": [
-            [
-                "dda8699c6d06de60"
-            ]
-        ]
-    },
-    {
-        "id": "d67c4e04338edb1c",
-        "type": "change",
-        "z": "0e117d41da2683ed",
-        "name": "find user",
-        "rules": [
-            {
-                "t": "set",
-                "p": "form",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg",
-                "dc": true
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "[{\t    \"_id\": form.user\t},\t{\t    \"projection\":{\"_id\" : 1}\t}]",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "operation",
-                "pt": "msg",
-                "to": "findOne",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1020,
-        "y": 360,
-        "wires": [
-            [
-                "5008955daadfce24"
-            ]
-        ]
-    },
-    {
-        "id": "5008955daadfce24",
-        "type": "link call",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "links": [
-            "b55f43382c428383"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1160,
-        "y": 360,
-        "wires": [
-            [
-                "fcbc156b0ac9c05a"
-            ]
-        ]
-    },
-    {
-        "id": "fcbc156b0ac9c05a",
-        "type": "switch",
-        "z": "0e117d41da2683ed",
-        "name": "if null",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "null"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 1290,
-        "y": 360,
-        "wires": [
-            [
-                "8d1f0adcea1619b3"
-            ],
-            [
-                "75203bc245c899eb"
-            ]
-        ]
-    },
-    {
-        "id": "93cfc6f9f794da0f",
-        "type": "link call",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "links": [
-            "b55f43382c428383"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1560,
-        "y": 340,
-        "wires": [
-            [
-                "9b4395489ef58cbb"
-            ]
-        ]
-    },
-    {
-        "id": "75203bc245c899eb",
-        "type": "function",
-        "z": "0e117d41da2683ed",
-        "name": "already defined",
-        "func": "\nreturn {payload: \"User already defined!\"};",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1440,
-        "y": 380,
-        "wires": [
-            [
-                "211a50d3876bc19f"
-            ]
-        ]
-    },
-    {
-        "id": "8f38e4991d7570a7",
-        "type": "link out",
-        "z": "0e117d41da2683ed",
-        "name": "outToPopoup",
-        "mode": "link",
-        "links": [
-            "2c9f6f19ec5c61f5"
-        ],
-        "x": 1965,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "9b4395489ef58cbb",
-        "type": "function",
-        "z": "0e117d41da2683ed",
-        "name": "user added",
-        "func": "\nreturn {payload: \"User added successfully!\"};",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1710,
-        "y": 340,
-        "wires": [
-            [
-                "211a50d3876bc19f"
-            ]
-        ]
-    },
-    {
-        "id": "9810af318600293f",
-        "type": "change",
-        "z": "0e117d41da2683ed",
-        "name": "find user",
-        "rules": [
-            {
-                "t": "set",
-                "p": "form",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg",
-                "dc": true
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "[{\t    \"_id\": form.user\t}]",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "operation",
-                "pt": "msg",
-                "to": "findOne",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1020,
-        "y": 440,
-        "wires": [
-            [
-                "9a2e79bf47833904"
-            ]
-        ]
-    },
-    {
-        "id": "9a2e79bf47833904",
-        "type": "link call",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "links": [
-            "b55f43382c428383"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1160,
-        "y": 440,
-        "wires": [
-            [
-                "624eeea14bd77511"
-            ]
-        ]
-    },
-    {
-        "id": "624eeea14bd77511",
-        "type": "switch",
-        "z": "0e117d41da2683ed",
-        "name": "if null",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "null"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 1290,
-        "y": 440,
-        "wires": [
-            [
-                "33c0fe395a75bf7b"
-            ],
-            [
-                "f93ce5aaee488454"
-            ]
-        ]
-    },
-    {
-        "id": "33c0fe395a75bf7b",
-        "type": "function",
-        "z": "0e117d41da2683ed",
-        "name": "not defined",
-        "func": "\nreturn {payload: \"User undefined!\"};",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1430,
-        "y": 420,
-        "wires": [
-            [
-                "dbcaad5751467c1a"
-            ]
-        ]
-    },
-    {
-        "id": "d4baa6de344f18c4",
-        "type": "inject",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"user\":\"testUser\",\"password\":\"asdf\"}",
-        "payloadType": "json",
-        "x": 710,
-        "y": 440,
-        "wires": [
-            [
-                "9810af318600293f"
-            ]
-        ]
-    },
-    {
-        "id": "f93ce5aaee488454",
-        "type": "function",
-        "z": "0e117d41da2683ed",
-        "name": "check key",
-        "func": "if(hash(msg.form.password) === msg.payload.key){\n    node.send([,msg]);\n} else {\n    node.send([{ payload: \"Wrong password!\" },]);\n}\nreturn;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}",
-        "outputs": 2,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [
-            {
-                "var": "cryptoJs",
-                "module": "crypto-js"
-            }
-        ],
-        "x": 1420,
-        "y": 460,
-        "wires": [
-            [
-                "dbcaad5751467c1a"
-            ],
-            [
-                "d57ad8bcada9bd2f"
-            ]
-        ]
-    },
-    {
-        "id": "dda8699c6d06de60",
-        "type": "function",
-        "z": "0e117d41da2683ed",
-        "name": "get default",
-        "func": "msg.payload = {\n    \"_id\": \"default\"\n}\nmsg.operation = \"findOne\"\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1210,
-        "y": 200,
-        "wires": [
-            [
-                "b6483e1369cfe5ae"
-            ]
-        ]
-    },
-    {
-        "id": "c9c5e2d8a91ffdb4",
-        "type": "link out",
-        "z": "0e117d41da2683ed",
-        "name": "outLoadDefault",
-        "mode": "link",
-        "links": [
-            "c1f8b3670dd9d967"
-        ],
-        "x": 1725,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "3bce9afc58125d67",
-        "type": "link in",
-        "z": "0e117d41da2683ed",
-        "name": "inGetGroup",
-        "links": [
-            "bb31f4c44a90676e",
-            "d57ad8bcada9bd2f"
-        ],
-        "x": 1065,
-        "y": 140,
-        "wires": [
-            [
-                "2b48334b3fc78287"
-            ]
-        ]
-    },
-    {
-        "id": "2b48334b3fc78287",
-        "type": "function",
-        "z": "0e117d41da2683ed",
-        "name": "get user group",
-        "func": "msg.user = {...msg.payload};\n\nmsg.payload = {\n    \"_id\": msg.user.group\n}\nmsg.operation = \"findOne\"\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1220,
-        "y": 140,
-        "wires": [
-            [
-                "11f7aa6caa471979"
-            ]
-        ]
-    },
-    {
-        "id": "11f7aa6caa471979",
-        "type": "link call",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "links": [
-            "b44ad595f3793583"
-        ],
-        "linkType": "static",
-        "timeout": "30",
-        "x": 1380,
-        "y": 140,
-        "wires": [
-            [
-                "4127287cead788dc"
-            ]
-        ]
-    },
-    {
-        "id": "bb31f4c44a90676e",
-        "type": "link out",
-        "z": "0e117d41da2683ed",
-        "name": "link out 2",
-        "mode": "link",
-        "links": [
-            "3bce9afc58125d67"
-        ],
-        "x": 1485,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "4127287cead788dc",
-        "type": "function",
-        "z": "0e117d41da2683ed",
-        "name": "extract access level",
-        "func": "msg.user.level = msg.payload.level;\nmsg.user.label = msg.payload.label;\nmsg.user.name = msg.user[\"_id\"];\n\nmsg.payload = msg.user\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1550,
-        "y": 140,
-        "wires": [
-            [
-                "260f56d963af450f"
-            ]
-        ]
-    },
-    {
-        "id": "260f56d963af450f",
-        "type": "change",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "current.user",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg",
-                "dc": true
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1760,
-        "y": 140,
-        "wires": [
-            [
-                "418f2627e9a4fdca"
-            ]
-        ]
-    },
-    {
-        "id": "d57ad8bcada9bd2f",
-        "type": "link out",
-        "z": "0e117d41da2683ed",
-        "name": "outLoadUser",
-        "mode": "link",
-        "links": [
-            "3bce9afc58125d67"
-        ],
-        "x": 1545,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "418f2627e9a4fdca",
-        "type": "link out",
-        "z": "0e117d41da2683ed",
-        "name": "outUpdateUser",
-        "mode": "link",
-        "links": [
-            "62713632412bc9ab"
-        ],
-        "x": 1905,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "24d2b6efe0585c6c",
-        "type": "inject",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"user\":\"root\",\"password\":\"P025\",\"group\":\"root\"}",
-        "payloadType": "json",
-        "x": 710,
-        "y": 320,
-        "wires": [
-            [
-                "d67c4e04338edb1c"
-            ]
-        ]
-    },
-    {
-        "id": "4d5e9f963d4083d3",
-        "type": "inject",
-        "z": "0e117d41da2683ed",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "{\"user\":\"root\",\"password\":\"P025\",\"group\":\"root\"}",
-        "payloadType": "json",
-        "x": 710,
-        "y": 480,
-        "wires": [
-            [
-                "9810af318600293f"
-            ]
-        ]
     },
     {
         "id": "79c07bea4075b2c3",
@@ -15002,6 +14440,7 @@
         "id": "44946df44c209c43",
         "type": "ui-text",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "group": "bcd876364099320c",
         "order": 1,
         "width": "2",
@@ -15018,14 +14457,15 @@
         "className": "",
         "value": "$globalContext(\"current.user.name\") & \"-\" & $globalContext(\"current.user.label\")\t",
         "valueType": "jsonata",
-        "x": 1490,
-        "y": 1040,
+        "x": 2170,
+        "y": 1580,
         "wires": []
     },
     {
         "id": "30f0f5dff5c624b2",
         "type": "function",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "get user",
         "func": "const {groups} = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nconst user = get_user(msg.payload.user, msg.payload.password);\n\nglobal.set(\"current.user\", {...user, ...groups[user.group]});\n\nreturn [,msg];\n\nfunction hash(str){\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n\nfunction get_user(user, key, rec=users){\n    return rec[user] === undefined ? wrong_user() : rec[user][hash(key)] === undefined ? wrong_password() : rec[user][hash(key)];\n    /*return ((x) => x ?? wrong_user())(rec[user])[hash(key)] ?? wrong_password();*/\n}\n\nfunction wrong_user(default_group = \"operator\"){\n    node.send([{ payload: \"Wrong user!\" }]);\n    return { group: default_group };\n}\n\nfunction wrong_password(default_group=\"operator\"){\n    node.send([{payload: \"Wrong password!\"}]);\n    return {group: default_group};\n}",
         "outputs": 2,
@@ -15039,8 +14479,8 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1280,
-        "y": 1140,
+        "x": 2700,
+        "y": 1120,
         "wires": [
             [
                 "a880c21f020f2bb6"
@@ -15054,6 +14494,7 @@
         "id": "11c2761c69701879",
         "type": "debug",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "debug 3",
         "active": true,
         "tosidebar": true,
@@ -15063,8 +14504,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1580,
-        "y": 1220,
+        "x": 2200,
+        "y": 1100,
         "wires": []
     },
     {
@@ -15151,6 +14592,7 @@
         "id": "7ea4c07afdd0849a",
         "type": "inject",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "once",
         "props": [],
         "repeat": "",
@@ -15158,8 +14600,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 1170,
-        "y": 860,
+        "x": 1870,
+        "y": 1400,
         "wires": [
             [
                 "7574b45e2d25122d"
@@ -15170,6 +14612,7 @@
         "id": "162c50f36e9f6133",
         "type": "change",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "get default user",
         "rules": [
             {
@@ -15186,8 +14629,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1500,
-        "y": 840,
+        "x": 2200,
+        "y": 1380,
         "wires": [
             [
                 "40262d705c80875c"
@@ -15198,6 +14641,7 @@
         "id": "892c7024909ad05f",
         "type": "function",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "add user",
         "func": "const { groups } = global.get(\"settings.data\", \"file\");\nconst users = global.get(\"users\", \"file\") ?? {};\n\nconst {user, password, group} = msg.payload;\nusers[user] = { [hash(password)]: {name: user, group: groups[group] !== undefined ? group : \"operator\"}};\n\nglobal.set(\"users\", users, \"file\")\nmsg.users = users;\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
         "outputs": 1,
@@ -15211,24 +14655,23 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1280,
-        "y": 1200,
+        "x": 2700,
+        "y": 1180,
         "wires": [
-            [
-                "11c2761c69701879"
-            ]
+            []
         ]
     },
     {
         "id": "5b8f166f4b9e379a",
         "type": "link in",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "inDefaultUser",
         "links": [
             "637032cc7696e15d"
         ],
-        "x": 1035,
-        "y": 920,
+        "x": 1735,
+        "y": 1460,
         "wires": [
             [
                 "3c6336d106afaae9"
@@ -15239,14 +14682,15 @@
         "id": "62713632412bc9ab",
         "type": "link in",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "inUpdateUser",
         "links": [
             "e59b5e32850ec8e1",
             "637032cc7696e15d",
             "418f2627e9a4fdca"
         ],
-        "x": 1125,
-        "y": 1040,
+        "x": 1865,
+        "y": 1580,
         "wires": [
             [
                 "40262d705c80875c"
@@ -15257,19 +14701,21 @@
         "id": "d532dbf0f38cc984",
         "type": "link out",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "outPasswordErr",
         "mode": "link",
         "links": [
             "2c9f6f19ec5c61f5"
         ],
-        "x": 1435,
-        "y": 1120,
+        "x": 2855,
+        "y": 1100,
         "wires": []
     },
     {
         "id": "e1b2a938923b5883",
         "type": "ui-form",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "",
         "group": "bcd876364099320c",
         "label": "New user",
@@ -15325,8 +14771,8 @@
                 "label": "Engineer"
             }
         ],
-        "x": 1140,
-        "y": 1200,
+        "x": 2560,
+        "y": 1180,
         "wires": [
             [
                 "892c7024909ad05f"
@@ -15337,6 +14783,7 @@
         "id": "12c0bdfdfae9a759",
         "type": "ui-form",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "",
         "group": "bcd876364099320c",
         "label": "",
@@ -15373,8 +14820,8 @@
         "className": "",
         "passthru": false,
         "dropdownOptions": [],
-        "x": 1150,
-        "y": 1140,
+        "x": 2570,
+        "y": 1120,
         "wires": [
             [
                 "30f0f5dff5c624b2"
@@ -15385,20 +14832,22 @@
         "id": "637032cc7696e15d",
         "type": "link out",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "outSetUser",
         "mode": "link",
         "links": [
             "62713632412bc9ab",
             "5b8f166f4b9e379a"
         ],
-        "x": 1435,
-        "y": 1160,
+        "x": 2855,
+        "y": 1140,
         "wires": []
     },
     {
         "id": "3c6336d106afaae9",
         "type": "trigger",
         "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
         "name": "",
         "op1": "",
         "op2": "0",
@@ -15412,11 +14861,721 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1170,
-        "y": 920,
+        "x": 1870,
+        "y": 1460,
         "wires": [
             [
                 "7574b45e2d25122d"
+            ]
+        ]
+    },
+    {
+        "id": "0bd505ed446ac36d",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"user\":\"testUser\",\"password\":\"asdf\",\"group\":\"tech\"}",
+        "payloadType": "json",
+        "x": 1690,
+        "y": 740,
+        "wires": [
+            [
+                "d67c4e04338edb1c"
+            ]
+        ]
+    },
+    {
+        "id": "8d1f0adcea1619b3",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "add user",
+        "func": "const {user, password, group} = msg.form;\ndelete msg.form;\n\nmsg.payload = {\n    \"_id\": user,\n    \"key\": hash(password),\n    \"group\": group\n}\n\nmsg.operation = \"insertOne\"\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "cryptoJs",
+                "module": "crypto-js"
+            }
+        ],
+        "x": 2400,
+        "y": 720,
+        "wires": [
+            [
+                "93cfc6f9f794da0f"
+            ]
+        ]
+    },
+    {
+        "id": "b6483e1369cfe5ae",
+        "type": "link call",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "links": [
+            "b55f43382c428383"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2360,
+        "y": 560,
+        "wires": [
+            [
+                "bb31f4c44a90676e"
+            ]
+        ]
+    },
+    {
+        "id": "c1f8b3670dd9d967",
+        "type": "link in",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "inLoadDefault",
+        "links": [
+            "c9c5e2d8a91ffdb4"
+        ],
+        "x": 2045,
+        "y": 560,
+        "wires": [
+            [
+                "dda8699c6d06de60"
+            ]
+        ]
+    },
+    {
+        "id": "d67c4e04338edb1c",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "find user",
+        "rules": [
+            {
+                "t": "set",
+                "p": "form",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[{\t    \"_id\": form.user\t},\t{\t    \"projection\":{\"_id\" : 1}\t}]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "operation",
+                "pt": "msg",
+                "to": "findOne",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2000,
+        "y": 740,
+        "wires": [
+            [
+                "5008955daadfce24"
+            ]
+        ]
+    },
+    {
+        "id": "5008955daadfce24",
+        "type": "link call",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "links": [
+            "b55f43382c428383"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2140,
+        "y": 740,
+        "wires": [
+            [
+                "fcbc156b0ac9c05a"
+            ]
+        ]
+    },
+    {
+        "id": "fcbc156b0ac9c05a",
+        "type": "switch",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "if null",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2270,
+        "y": 740,
+        "wires": [
+            [
+                "8d1f0adcea1619b3"
+            ],
+            [
+                "75203bc245c899eb"
+            ]
+        ]
+    },
+    {
+        "id": "93cfc6f9f794da0f",
+        "type": "link call",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "links": [
+            "b55f43382c428383"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2540,
+        "y": 720,
+        "wires": [
+            [
+                "9b4395489ef58cbb"
+            ]
+        ]
+    },
+    {
+        "id": "75203bc245c899eb",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "already defined",
+        "func": "\nreturn {payload: \"User already defined!\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2420,
+        "y": 760,
+        "wires": [
+            [
+                "211a50d3876bc19f"
+            ]
+        ]
+    },
+    {
+        "id": "8f38e4991d7570a7",
+        "type": "link out",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "outToPopoup",
+        "mode": "link",
+        "links": [
+            "2c9f6f19ec5c61f5"
+        ],
+        "x": 2945,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "9b4395489ef58cbb",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "user added",
+        "func": "\nreturn {payload: \"User added successfully!\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2690,
+        "y": 720,
+        "wires": [
+            [
+                "211a50d3876bc19f"
+            ]
+        ]
+    },
+    {
+        "id": "9810af318600293f",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "find user",
+        "rules": [
+            {
+                "t": "set",
+                "p": "form",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[{\t    \"_id\": form.user\t}]",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "operation",
+                "pt": "msg",
+                "to": "findOne",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2000,
+        "y": 820,
+        "wires": [
+            [
+                "9a2e79bf47833904"
+            ]
+        ]
+    },
+    {
+        "id": "9a2e79bf47833904",
+        "type": "link call",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "links": [
+            "b55f43382c428383"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2140,
+        "y": 820,
+        "wires": [
+            [
+                "624eeea14bd77511"
+            ]
+        ]
+    },
+    {
+        "id": "624eeea14bd77511",
+        "type": "switch",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "if null",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2270,
+        "y": 820,
+        "wires": [
+            [
+                "33c0fe395a75bf7b"
+            ],
+            [
+                "f93ce5aaee488454"
+            ]
+        ]
+    },
+    {
+        "id": "33c0fe395a75bf7b",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "not defined",
+        "func": "\nreturn {payload: \"User undefined!\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2410,
+        "y": 800,
+        "wires": [
+            [
+                "dbcaad5751467c1a"
+            ]
+        ]
+    },
+    {
+        "id": "d4baa6de344f18c4",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"user\":\"testUser\",\"password\":\"asdf\"}",
+        "payloadType": "json",
+        "x": 1690,
+        "y": 820,
+        "wires": [
+            [
+                "9810af318600293f"
+            ]
+        ]
+    },
+    {
+        "id": "f93ce5aaee488454",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "check key",
+        "func": "if(hash(msg.form.password) === msg.payload.key){\n    node.send([,msg]);\n} else {\n    node.send([{ payload: \"Wrong password!\" },]);\n}\nreturn;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "cryptoJs",
+                "module": "crypto-js"
+            }
+        ],
+        "x": 2400,
+        "y": 840,
+        "wires": [
+            [
+                "dbcaad5751467c1a"
+            ],
+            [
+                "d57ad8bcada9bd2f"
+            ]
+        ]
+    },
+    {
+        "id": "dda8699c6d06de60",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "get default",
+        "func": "msg.payload = {\n    \"_id\": \"default\"\n}\nmsg.operation = \"findOne\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2190,
+        "y": 560,
+        "wires": [
+            [
+                "b6483e1369cfe5ae"
+            ]
+        ]
+    },
+    {
+        "id": "c9c5e2d8a91ffdb4",
+        "type": "link out",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "outLoadDefault",
+        "mode": "link",
+        "links": [
+            "c1f8b3670dd9d967"
+        ],
+        "x": 2705,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "3bce9afc58125d67",
+        "type": "link in",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "inGetGroup",
+        "links": [
+            "bb31f4c44a90676e",
+            "d57ad8bcada9bd2f"
+        ],
+        "x": 2045,
+        "y": 520,
+        "wires": [
+            [
+                "2b48334b3fc78287"
+            ]
+        ]
+    },
+    {
+        "id": "2b48334b3fc78287",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "get user group",
+        "func": "msg.user = {...msg.payload};\n\nmsg.payload = {\n    \"_id\": msg.user.group\n}\nmsg.operation = \"findOne\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2200,
+        "y": 520,
+        "wires": [
+            [
+                "11f7aa6caa471979"
+            ]
+        ]
+    },
+    {
+        "id": "11f7aa6caa471979",
+        "type": "link call",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "links": [
+            "b44ad595f3793583"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2360,
+        "y": 520,
+        "wires": [
+            [
+                "4127287cead788dc"
+            ]
+        ]
+    },
+    {
+        "id": "bb31f4c44a90676e",
+        "type": "link out",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "3bce9afc58125d67"
+        ],
+        "x": 2465,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "4127287cead788dc",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "extract access level",
+        "func": "msg.user.level = msg.payload.level;\nmsg.user.label = msg.payload.label;\nmsg.user.name = msg.user[\"_id\"];\n\nmsg.payload = msg.user\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2530,
+        "y": 520,
+        "wires": [
+            [
+                "260f56d963af450f"
+            ]
+        ]
+    },
+    {
+        "id": "260f56d963af450f",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "current.user",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2740,
+        "y": 520,
+        "wires": [
+            [
+                "418f2627e9a4fdca"
+            ]
+        ]
+    },
+    {
+        "id": "d57ad8bcada9bd2f",
+        "type": "link out",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "outLoadUser",
+        "mode": "link",
+        "links": [
+            "3bce9afc58125d67"
+        ],
+        "x": 2525,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "418f2627e9a4fdca",
+        "type": "link out",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "outUpdateUser",
+        "mode": "link",
+        "links": [
+            "62713632412bc9ab"
+        ],
+        "x": 2885,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "24d2b6efe0585c6c",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"user\":\"root\",\"password\":\"P025\",\"group\":\"root\"}",
+        "payloadType": "json",
+        "x": 1690,
+        "y": 700,
+        "wires": [
+            [
+                "d67c4e04338edb1c"
+            ]
+        ]
+    },
+    {
+        "id": "4d5e9f963d4083d3",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"user\":\"root\",\"password\":\"P025\",\"group\":\"root\"}",
+        "payloadType": "json",
+        "x": 1690,
+        "y": 860,
+        "wires": [
+            [
+                "9810af318600293f"
+            ]
+        ]
+    },
+    {
+        "id": "8e359c0637fba986",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "get distinct id",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "operation",
+                "v": "distinct",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[\"_id\"]",
+        "payloadType": "json",
+        "x": 1850,
+        "y": 1100,
+        "wires": [
+            [
+                "db13b6567a11c336"
+            ]
+        ]
+    },
+    {
+        "id": "db13b6567a11c336",
+        "type": "link call",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "links": [
+            "b44ad595f3793583"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2040,
+        "y": 1100,
+        "wires": [
+            [
+                "11c2761c69701879"
             ]
         ]
     },
