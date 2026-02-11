@@ -14524,7 +14524,7 @@
         "label": "New user",
         "order": 3,
         "width": 0,
-        "height": 6,
+        "height": "0",
         "options": [
             {
                 "label": "User",
@@ -14592,7 +14592,7 @@
         "label": "",
         "order": 2,
         "width": 0,
-        "height": 5,
+        "height": "0",
         "options": [
             {
                 "label": "User",
