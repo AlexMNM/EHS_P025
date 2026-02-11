@@ -14489,7 +14489,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3020,
+        "x": 2900,
         "y": 1100,
         "wires": []
     },
@@ -15759,7 +15759,8 @@
         "y": 1140,
         "wires": [
             [
-                "4046902f24534780"
+                "4046902f24534780",
+                "11c2761c69701879"
             ]
         ]
     },
@@ -15920,6 +15921,14 @@
                 "pt": "msg",
                 "to": "deleteOne",
                 "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload[0]",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
             }
         ],
         "action": "",
@@ -15927,7 +15936,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 2870,
+        "x": 2860,
         "y": 1140,
         "wires": [
             [
