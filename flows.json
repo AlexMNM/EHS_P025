@@ -14470,7 +14470,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 2260,
-        "y": 1240,
+        "y": 1260,
         "wires": []
     },
     {
@@ -15550,7 +15550,7 @@
         "z": "aecf9ba551ec4a57",
         "g": "4081afdecba56dbc",
         "name": "to dropdown options",
-        "func": "msg.ui_update = {\n    dropdownOptions: msg.payload.filter(({level}) => level < 100).map(({label, _id}) => ({dropdown: \"group\", label: label, value: _id}))\n}\nreturn msg;",
+        "func": "msg.ui_update = {\n    dropdownOptions: msg.payload.filter(({level}) => level < 100).map(({label, _id}) => ({dropdown: \"group\", label: label, value: _id}))\n}\n\nmsg.payload = [];\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -15561,7 +15561,8 @@
         "y": 1180,
         "wires": [
             [
-                "11c2761c69701879"
+                "11c2761c69701879",
+                "e1b2a938923b5883"
             ]
         ]
     },
