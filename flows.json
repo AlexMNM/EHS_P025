@@ -14587,7 +14587,7 @@
         "resetOnSubmit": true,
         "topic": "new_user",
         "topicType": "str",
-        "splitLayout": "",
+        "splitLayout": true,
         "className": "",
         "passthru": false,
         "dropdownOptions": [
