@@ -302,12 +302,18 @@
             "547b5a75c6a9017e",
             "d01e94d3226d9139",
             "14428007e311b7dd",
-            "9e3c9f4d36b7e07d"
+            "9e3c9f4d36b7e07d",
+            "bb6d511d31cf1c30",
+            "d00071c44b55f05f",
+            "36b3116e438572cb",
+            "785703ad3959b586",
+            "af6c94ea5c73bba3",
+            "9534432bd1a23b7b"
         ],
         "x": 1714,
         "y": 479,
         "w": 1212,
-        "h": 682
+        "h": 722
     },
     {
         "id": "694442544535cd79",
@@ -524,11 +530,12 @@
         "type": "junction",
         "z": "aecf9ba551ec4a57",
         "g": "4081afdecba56dbc",
-        "x": 2280,
-        "y": 1120,
+        "x": 1820,
+        "y": 1160,
         "wires": [
             [
-                "44946df44c209c43"
+                "44946df44c209c43",
+                "36b3116e438572cb"
             ]
         ]
     },
@@ -569,6 +576,32 @@
         "wires": [
             [
                 "dda8699c6d06de60"
+            ]
+        ]
+    },
+    {
+        "id": "d00071c44b55f05f",
+        "type": "junction",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "x": 2320,
+        "y": 1020,
+        "wires": [
+            [
+                "e1b2a938923b5883"
+            ]
+        ]
+    },
+    {
+        "id": "9534432bd1a23b7b",
+        "type": "junction",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "x": 2300,
+        "y": 1080,
+        "wires": [
+            [
+                "d00071c44b55f05f"
             ]
         ]
     },
@@ -6808,7 +6841,6 @@
         "links": [
             "9219cb1ab5ee34fc",
             "36be27abe7646662",
-            "d532dbf0f38cc984",
             "8f38e4991d7570a7"
         ],
         "x": 845,
@@ -12459,8 +12491,7 @@
         "name": "outUpdateViews",
         "mode": "link",
         "links": [
-            "e361215bc8c832ec",
-            "1553f42182fe9185"
+            "e361215bc8c832ec"
         ],
         "x": 1335,
         "y": 720,
@@ -14393,8 +14424,8 @@
         "className": "",
         "value": "$globalContext(\"current.user.name\") & \"-\" & $globalContext(\"current.user.label\")\t",
         "valueType": "jsonata",
-        "x": 2390,
-        "y": 1120,
+        "x": 1970,
+        "y": 1160,
         "wires": []
     },
     {
@@ -14503,11 +14534,10 @@
         "name": "inUpdateUser",
         "links": [
             "e59b5e32850ec8e1",
-            "637032cc7696e15d",
             "418f2627e9a4fdca"
         ],
-        "x": 2085,
-        "y": 1120,
+        "x": 1775,
+        "y": 1160,
         "wires": [
             [
                 "40262d705c80875c"
@@ -14574,7 +14604,7 @@
                 "label": "Engineer"
             }
         ],
-        "x": 2360,
+        "x": 2420,
         "y": 1020,
         "wires": [
             [
@@ -14623,8 +14653,8 @@
         "className": "",
         "passthru": false,
         "dropdownOptions": [],
-        "x": 2350,
-        "y": 1060,
+        "x": 2410,
+        "y": 980,
         "wires": [
             [
                 "b14cf7e3ba669301"
@@ -15359,7 +15389,7 @@
         "y": 1020,
         "wires": [
             [
-                "e1b2a938923b5883"
+                "d00071c44b55f05f"
             ]
         ]
     },
@@ -15390,7 +15420,7 @@
         "links": [
             "7fb38a25c2161cdd"
         ],
-        "x": 2455,
+        "x": 2515,
         "y": 1020,
         "wires": []
     },
@@ -15404,8 +15434,8 @@
         "links": [
             "411196718dd9fb54"
         ],
-        "x": 2455,
-        "y": 1060,
+        "x": 2515,
+        "y": 980,
         "wires": []
     },
     {
@@ -15494,6 +15524,115 @@
         "wires": [
             [
                 "d01e94d3226d9139"
+            ]
+        ]
+    },
+    {
+        "id": "bb6d511d31cf1c30",
+        "type": "switch",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "if admin",
+        "property": "current.user.level",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "10",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2060,
+        "y": 1100,
+        "wires": [
+            [
+                "785703ad3959b586"
+            ],
+            [
+                "af6c94ea5c73bba3"
+            ]
+        ]
+    },
+    {
+        "id": "36b3116e438572cb",
+        "type": "function",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "new msg",
+        "func": "\nreturn {};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1920,
+        "y": 1100,
+        "wires": [
+            [
+                "bb6d511d31cf1c30"
+            ]
+        ]
+    },
+    {
+        "id": "785703ad3959b586",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "enabled",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2200,
+        "y": 1080,
+        "wires": [
+            [
+                "9534432bd1a23b7b"
+            ]
+        ]
+    },
+    {
+        "id": "af6c94ea5c73bba3",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "disabled",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enabled",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2200,
+        "y": 1120,
+        "wires": [
+            [
+                "9534432bd1a23b7b"
             ]
         ]
     },
