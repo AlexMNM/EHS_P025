@@ -317,7 +317,8 @@
             "430b906687c1f360",
             "17b6c609d8d4304f",
             "a3b2b947c3af6ad3",
-            "8b7f2b942c98bf46"
+            "8b7f2b942c98bf46",
+            "dc156a4514f6353a"
         ],
         "x": 1714,
         "y": 479,
@@ -15695,11 +15696,36 @@
         "height": 0,
         "maxrows": 0,
         "passthru": false,
-        "autocols": true,
+        "autocols": false,
         "showSearch": false,
         "deselect": true,
         "selectionType": "none",
-        "columns": [],
+        "columns": [
+            {
+                "title": "Name",
+                "key": "_id",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Group",
+                "key": "group",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Delete",
+                "key": "delete",
+                "keyType": "key",
+                "type": "button",
+                "width": "",
+                "align": "start"
+            }
+        ],
         "mobileBreakpoint": "sm",
         "mobileBreakpointType": "defaults",
         "action": "replace",
@@ -15825,6 +15851,33 @@
                 "8b7f2b942c98bf46"
             ]
         ]
+    },
+    {
+        "id": "dc156a4514f6353a",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "props": [
+            {
+                "p": "class",
+                "v": "delete-button",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 2675,
+        "y": 1080,
+        "wires": [
+            [
+                "8bcb853bab0b625b"
+            ]
+        ],
+        "l": false
     },
     {
         "id": "fe36b4aab8e4b51e",
