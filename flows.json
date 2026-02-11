@@ -5367,12 +5367,11 @@
         "topic": "",
         "payload": "{\"user\":\"testUser\",\"password\":\"asdf\",\"group\":\"tech\"}",
         "payloadType": "json",
-        "x": 950,
-        "y": 300,
+        "x": 910,
+        "y": 360,
         "wires": [
             [
-                "8d1f0adcea1619b3",
-                "34e289f37ed26aef"
+                "d67c4e04338edb1c"
             ]
         ]
     },
@@ -5381,7 +5380,7 @@
         "type": "function",
         "z": "0e117d41da2683ed",
         "name": "add user",
-        "func": "const {user, password, group} = msg.payload;\n\nmsg.payload = {\n    \"_id\": user,\n    \"key\": hash(password),\n    \"group\": group\n}\n\nmsg.operation = \"insertOne\"\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "func": "const {user, password, group} = msg.form;\n\nmsg.payload = {\n    \"_id\": user,\n    \"key\": hash(password),\n    \"group\": group\n}\n\nmsg.operation = \"insertOne\"\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5393,10 +5392,12 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1120,
-        "y": 360,
+        "x": 1560,
+        "y": 340,
         "wires": [
-            []
+            [
+                "93cfc6f9f794da0f"
+            ]
         ]
     },
     {
@@ -5409,11 +5410,11 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1280,
-        "y": 300,
+        "x": 1480,
+        "y": 200,
         "wires": [
             [
-                "2eb05c0ad7444efc"
+                "aec09761c524e40b"
             ]
         ]
     },
@@ -5422,7 +5423,7 @@
         "type": "function",
         "z": "0e117d41da2683ed",
         "name": "find user",
-        "func": "const {user, password, group} = msg.payload;\n\nmsg.payload = {\n    \"_id\": user\n}\n\n\nmsg.operation = \"findOne\"\n\nmsg.extra = \"testExtra\"\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "func": "msg.operation = \"findOne\"\n\nreturn msg;\n\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5434,8 +5435,8 @@
                 "module": "crypto-js"
             }
         ],
-        "x": 1120,
-        "y": 300,
+        "x": 1320,
+        "y": 200,
         "wires": [
             [
                 "b6483e1369cfe5ae"
@@ -5459,12 +5460,138 @@
         "topic": "",
         "payload": "{\"user\":\"asdf\",\"password\":\"asdf\",\"group\":\"tech\"}",
         "payloadType": "json",
-        "x": 950,
-        "y": 240,
+        "x": 870,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c1f8b3670dd9d967",
+        "type": "link in",
+        "z": "0e117d41da2683ed",
+        "name": "inFindUser",
+        "links": [],
+        "x": 1215,
+        "y": 200,
         "wires": [
             [
                 "34e289f37ed26aef"
             ]
+        ]
+    },
+    {
+        "id": "aec09761c524e40b",
+        "type": "link out",
+        "z": "0e117d41da2683ed",
+        "name": "retFindUsers",
+        "mode": "return",
+        "links": [],
+        "x": 1585,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d67c4e04338edb1c",
+        "type": "change",
+        "z": "0e117d41da2683ed",
+        "name": "find user",
+        "rules": [
+            {
+                "t": "set",
+                "p": "form",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\t    \"_id\": form.user\t}",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "operation",
+                "pt": "msg",
+                "to": "findOne",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1040,
+        "y": 360,
+        "wires": [
+            [
+                "5008955daadfce24"
+            ]
+        ]
+    },
+    {
+        "id": "5008955daadfce24",
+        "type": "link call",
+        "z": "0e117d41da2683ed",
+        "name": "",
+        "links": [
+            "b55f43382c428383"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1200,
+        "y": 360,
+        "wires": [
+            [
+                "fcbc156b0ac9c05a"
+            ]
+        ]
+    },
+    {
+        "id": "fcbc156b0ac9c05a",
+        "type": "switch",
+        "z": "0e117d41da2683ed",
+        "name": "if null",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1330,
+        "y": 360,
+        "wires": [
+            [
+                "8d1f0adcea1619b3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "93cfc6f9f794da0f",
+        "type": "link call",
+        "z": "0e117d41da2683ed",
+        "name": "",
+        "links": [
+            "b55f43382c428383"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1720,
+        "y": 340,
+        "wires": [
+            []
         ]
     },
     {
