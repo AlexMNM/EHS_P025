@@ -601,7 +601,7 @@
         "type": "ui-base",
         "name": "My Dashboard",
         "path": "/dashboard",
-        "appIcon": "",
+        "appIcon": "http://nucbox-k10:1880/files/media/EhsLogo.webp",
         "includeClientData": true,
         "acceptsClientConfig": [
             "ui-notification",
