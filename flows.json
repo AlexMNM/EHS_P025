@@ -5394,7 +5394,7 @@
         "topic": "",
         "payload": "{\"user\":\"testUser\",\"password\":\"asdf\",\"group\":\"tech\"}",
         "payloadType": "json",
-        "x": 790,
+        "x": 710,
         "y": 360,
         "wires": [
             [
@@ -5747,7 +5747,7 @@
         "topic": "",
         "payload": "{\"user\":\"testUser\",\"password\":\"asdf\"}",
         "payloadType": "json",
-        "x": 790,
+        "x": 710,
         "y": 440,
         "wires": [
             [
@@ -5760,13 +5760,18 @@
         "type": "function",
         "z": "0e117d41da2683ed",
         "name": "check key",
-        "func": "if(msg.form.key === msg.payload[0].key){\n    node.send([,msg]);\n} else {\n    node.send([{ payload: \"Wrong password!\" },]);\n}\nreturn;",
+        "func": "if(hash(msg.form.password) === msg.payload[0].key){\n    node.send([,msg]);\n} else {\n    node.send([{ payload: \"Wrong password!\" },]);\n}\nreturn;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "libs": [],
+        "libs": [
+            {
+                "var": "cryptoJs",
+                "module": "crypto-js"
+            }
+        ],
         "x": 1420,
         "y": 460,
         "wires": [
