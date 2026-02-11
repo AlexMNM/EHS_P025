@@ -5509,7 +5509,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "[{\t    \"_id\": form.user\t},\t{\t    \"projection\":{\"user\" : 1}\t}]",
+                "to": "[{\t    \"_id\": form.user\t},\t{\t    \"projection\":{\"_id\" : 1}\t}]",
                 "tot": "jsonata"
             },
             {
