@@ -15783,7 +15783,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "{\"_id\":{\"$ne\":[\"root\",\"default\"]}}",
+                "to": "{\"_id\":{\"$nin\":[\"root\",\"default\"]}}",
                 "tot": "json"
             },
             {
