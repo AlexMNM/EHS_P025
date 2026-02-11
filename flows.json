@@ -5889,7 +5889,7 @@
         "type": "function",
         "z": "0e117d41da2683ed",
         "name": "extract access level",
-        "func": "msg.user.level = msg.payload.level;\nreturn msg;",
+        "func": "msg.user.level = msg.payload.level;\n\nmsg.payload = {\n    user: msg.user[\"_id\"],\n    group: msg.user.group,\n    level: msg.user.level\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -5914,7 +5914,7 @@
                 "t": "set",
                 "p": "current.user",
                 "pt": "global",
-                "to": "user",
+                "to": "payload",
                 "tot": "msg",
                 "dc": true
             }
