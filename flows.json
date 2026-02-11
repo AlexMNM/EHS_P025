@@ -14550,7 +14550,7 @@
         "name": "",
         "group": "bcd876364099320c",
         "label": "New user",
-        "order": 5,
+        "order": 4,
         "width": 2,
         "height": 6,
         "options": [
@@ -14618,7 +14618,7 @@
         "name": "Log in",
         "group": "bcd876364099320c",
         "label": "",
-        "order": 2,
+        "order": 3,
         "width": 2,
         "height": null,
         "options": [
@@ -15548,8 +15548,8 @@
         "group": "bcd876364099320c",
         "name": "",
         "label": "Log out",
-        "order": 4,
-        "width": 1,
+        "order": 2,
+        "width": 2,
         "height": 0,
         "emulateClick": false,
         "tooltip": "",
