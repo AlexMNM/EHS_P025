@@ -15897,7 +15897,7 @@
                 "t": "set",
                 "p": "operation",
                 "pt": "msg",
-                "to": "remove",
+                "to": "delete",
                 "tot": "str"
             }
         ],
