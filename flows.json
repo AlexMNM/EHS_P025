@@ -5575,7 +5575,9 @@
             [
                 "8d1f0adcea1619b3"
             ],
-            []
+            [
+                "75203bc245c899eb"
+            ]
         ]
     },
     {
@@ -5593,6 +5595,39 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "75203bc245c899eb",
+        "type": "function",
+        "z": "0e117d41da2683ed",
+        "name": "already defined",
+        "func": "\nreturn {payload: \"User already defined!\"};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1580,
+        "y": 400,
+        "wires": [
+            [
+                "8f38e4991d7570a7"
+            ]
+        ]
+    },
+    {
+        "id": "8f38e4991d7570a7",
+        "type": "link out",
+        "z": "0e117d41da2683ed",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "2c9f6f19ec5c61f5"
+        ],
+        "x": 1705,
+        "y": 400,
+        "wires": []
     },
     {
         "id": "79c07bea4075b2c3",
@@ -6749,68 +6784,6 @@
         ]
     },
     {
-        "id": "7913fa0b46089759",
-        "type": "change",
-        "z": "a6c85f6538755b0c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "product",
-                "pt": "msg",
-                "to": "$globalContext(\"current.product.name\")",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 220,
-        "y": 500,
-        "wires": [
-            [
-                "3a0ea380c5a06a29"
-            ]
-        ]
-    },
-    {
-        "id": "191a57a0a0470de1",
-        "type": "inject",
-        "z": "a6c85f6538755b0c",
-        "name": "",
-        "props": [],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 150,
-        "y": 420,
-        "wires": [
-            [
-                "7913fa0b46089759"
-            ]
-        ]
-    },
-    {
-        "id": "1553f42182fe9185",
-        "type": "link in",
-        "z": "a6c85f6538755b0c",
-        "name": "link in 1",
-        "links": [
-            "874b939d0b06ddf6"
-        ],
-        "x": 115,
-        "y": 460,
-        "wires": [
-            [
-                "7913fa0b46089759"
-            ]
-        ]
-    },
-    {
         "id": "abbc0944b6949531",
         "type": "ui-template",
         "z": "a6c85f6538755b0c",
@@ -7082,7 +7055,8 @@
         "links": [
             "9219cb1ab5ee34fc",
             "36be27abe7646662",
-            "d532dbf0f38cc984"
+            "d532dbf0f38cc984",
+            "8f38e4991d7570a7"
         ],
         "x": 845,
         "y": 340,
@@ -14919,7 +14893,7 @@
         "name": "",
         "group": "bcd876364099320c",
         "label": "New user",
-        "order": 4,
+        "order": 3,
         "width": 0,
         "height": 6,
         "options": [
@@ -14986,7 +14960,7 @@
         "name": "",
         "group": "bcd876364099320c",
         "label": "",
-        "order": 3,
+        "order": 2,
         "width": 0,
         "height": 5,
         "options": [
