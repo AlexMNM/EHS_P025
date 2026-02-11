@@ -226,6 +226,26 @@
         "h": 302
     },
     {
+        "id": "7f9b563293718dc0",
+        "type": "group",
+        "z": "0e117d41da2683ed",
+        "name": "AAA",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6813df3c6f03c2c7",
+            "0bd505ed446ac36d",
+            "8d1f0adcea1619b3",
+            "550c8d5059845d7b",
+            "2eb05c0ad7444efc"
+        ],
+        "x": 454,
+        "y": 579,
+        "w": 792,
+        "h": 142
+    },
+    {
         "id": "694442544535cd79",
         "type": "junction",
         "z": "0637f22188042045",
@@ -1144,6 +1164,30 @@
         "width": 3,
         "height": 1,
         "className": ""
+    },
+    {
+        "id": "7dbd659c061a7a42",
+        "type": "mongodb4-client",
+        "name": "",
+        "protocol": "mongodb",
+        "hostname": "database",
+        "port": "",
+        "dbName": "AAA",
+        "appName": "",
+        "authSource": "",
+        "authMechanism": "DEFAULT",
+        "tls": false,
+        "tlsCAFile": "",
+        "tlsCertificateKeyFile": "",
+        "tlsInsecure": false,
+        "connectTimeoutMS": "30000",
+        "socketTimeoutMS": "0",
+        "minPoolSize": "0",
+        "maxPoolSize": "100",
+        "maxIdleTimeMS": "0",
+        "uri": "",
+        "advanced": "{}",
+        "uriTabActive": "tab-uri-simple"
     },
     {
         "id": "f7676b47d7dc782a",
@@ -5123,13 +5167,12 @@
         "output": "toArray",
         "maxTimeMS": "0",
         "handleDocId": false,
-        "name": "",
-        "x": 230,
+        "name": "testrun",
+        "x": 210,
         "y": 260,
         "wires": [
             [
-                "e491d2a69e3036d0",
-                "2eb05c0ad7444efc"
+                "e491d2a69e3036d0"
             ]
         ]
     },
@@ -5180,8 +5223,9 @@
         "id": "2eb05c0ad7444efc",
         "type": "debug",
         "z": "0e117d41da2683ed",
+        "g": "7f9b563293718dc0",
         "name": "debug 8",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -5189,9 +5233,106 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 460,
-        "y": 340,
+        "x": 1140,
+        "y": 620,
         "wires": []
+    },
+    {
+        "id": "6813df3c6f03c2c7",
+        "type": "mongodb4",
+        "z": "0e117d41da2683ed",
+        "g": "7f9b563293718dc0",
+        "clientNode": "7dbd659c061a7a42",
+        "mode": "collection",
+        "collection": "users",
+        "operation": "",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "users",
+        "x": 950,
+        "y": 620,
+        "wires": [
+            [
+                "2eb05c0ad7444efc"
+            ]
+        ]
+    },
+    {
+        "id": "0bd505ed446ac36d",
+        "type": "inject",
+        "z": "0e117d41da2683ed",
+        "g": "7f9b563293718dc0",
+        "name": "",
+        "props": [
+            {
+                "p": "operation",
+                "v": "insertOne",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"user\":\"testUser\",\"password\":\"asdf\",\"group\":\"tech\"}",
+        "payloadType": "json",
+        "x": 550,
+        "y": 620,
+        "wires": [
+            [
+                "8d1f0adcea1619b3"
+            ]
+        ]
+    },
+    {
+        "id": "8d1f0adcea1619b3",
+        "type": "function",
+        "z": "0e117d41da2683ed",
+        "g": "7f9b563293718dc0",
+        "name": "add user",
+        "func": "const {user, password, group} = msg.payload;\n\nmsg.payload = {\n    \"_id\": user,\n    \"key\": hash(password),\n    \"group\": group\n}\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "cryptoJs",
+                "module": "crypto-js"
+            }
+        ],
+        "x": 720,
+        "y": 620,
+        "wires": [
+            [
+                "6813df3c6f03c2c7"
+            ]
+        ]
+    },
+    {
+        "id": "550c8d5059845d7b",
+        "type": "mongodb4",
+        "z": "0e117d41da2683ed",
+        "g": "7f9b563293718dc0",
+        "clientNode": "7dbd659c061a7a42",
+        "mode": "collection",
+        "collection": "groups",
+        "operation": "",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "groups",
+        "x": 950,
+        "y": 680,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "79c07bea4075b2c3",
