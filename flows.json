@@ -5422,7 +5422,7 @@
         "type": "function",
         "z": "0e117d41da2683ed",
         "name": "find user",
-        "func": "const {user, password, group} = msg.payload;\n\nmsg.payload = {\n    \"_id\": user\n}\n\n\nmsg.operation = \"findOne\"\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
+        "func": "const {user, password, group} = msg.payload;\n\nmsg.payload = {\n    \"_id\": user\n}\n\n\nmsg.operation = \"findOne\"\n\nmsg.extra = \"testExtra\"\n\nreturn msg;\n\nfunction hash(str) {\n    return cryptoJs.SHA256(JSON.stringify(str)).toString()\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
