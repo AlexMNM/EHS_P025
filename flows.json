@@ -5889,7 +5889,7 @@
         "type": "function",
         "z": "0e117d41da2683ed",
         "name": "extract access level",
-        "func": "msg.user.level = msg.payload[0].level;\nreturn msg;",
+        "func": "msg.user.level = msg.payload.level;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
