@@ -305,7 +305,9 @@
             "dbcaad5751467c1a",
             "8e359c0637fba986",
             "db13b6567a11c336",
-            "115c40f4ef8563a7"
+            "115c40f4ef8563a7",
+            "7fb38a25c2161cdd",
+            "bce0162259a72e84"
         ],
         "x": 1594,
         "y": 479,
@@ -14736,11 +14738,12 @@
                 "label": "Engineer"
             }
         ],
-        "x": 2560,
+        "x": 2280,
         "y": 1180,
         "wires": [
             [
-                "892c7024909ad05f"
+                "892c7024909ad05f",
+                "bce0162259a72e84"
             ]
         ]
     },
@@ -14852,8 +14855,8 @@
         "topic": "",
         "payload": "{\"user\":\"testUser\",\"password\":\"asdf\",\"group\":\"tech\"}",
         "payloadType": "json",
-        "x": 1690,
-        "y": 740,
+        "x": 1830,
+        "y": 680,
         "wires": [
             [
                 "d67c4e04338edb1c"
@@ -15460,8 +15463,8 @@
         "topic": "",
         "payload": "{\"user\":\"root\",\"password\":\"P025\",\"group\":\"root\"}",
         "payloadType": "json",
-        "x": 1690,
-        "y": 700,
+        "x": 1830,
+        "y": 640,
         "wires": [
             [
                 "d67c4e04338edb1c"
@@ -15565,6 +15568,37 @@
                 "e1b2a938923b5883"
             ]
         ]
+    },
+    {
+        "id": "7fb38a25c2161cdd",
+        "type": "link in",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "inNewUser",
+        "links": [
+            "bce0162259a72e84"
+        ],
+        "x": 1875,
+        "y": 740,
+        "wires": [
+            [
+                "d67c4e04338edb1c"
+            ]
+        ]
+    },
+    {
+        "id": "bce0162259a72e84",
+        "type": "link out",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "outNewUser",
+        "mode": "link",
+        "links": [
+            "7fb38a25c2161cdd"
+        ],
+        "x": 2405,
+        "y": 1220,
+        "wires": []
     },
     {
         "id": "fe36b4aab8e4b51e",
