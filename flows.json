@@ -285,7 +285,6 @@
             "260f56d963af450f",
             "d57ad8bcada9bd2f",
             "418f2627e9a4fdca",
-            "40262d705c80875c",
             "211a50d3876bc19f",
             "dbcaad5751467c1a",
             "8e359c0637fba986",
@@ -327,7 +326,10 @@
             "9de20d3aee850902",
             "1b65c07a34e185ee",
             "4aecf8c2bcd6d826",
-            "1b4150b5114cc60b"
+            "1b4150b5114cc60b",
+            "09bed9563544bf7b",
+            "d02a7abbfd0ed4de",
+            "148aab978cefe990"
         ],
         "x": 1694,
         "y": 579,
@@ -596,20 +598,6 @@
         ]
     },
     {
-        "id": "40262d705c80875c",
-        "type": "junction",
-        "z": "aecf9ba551ec4a57",
-        "g": "4081afdecba56dbc",
-        "x": 1780,
-        "y": 1220,
-        "wires": [
-            [
-                "44946df44c209c43",
-                "36b3116e438572cb"
-            ]
-        ]
-    },
-    {
         "id": "211a50d3876bc19f",
         "type": "junction",
         "z": "aecf9ba551ec4a57",
@@ -711,6 +699,21 @@
         "wires": [
             [
                 "1b4150b5114cc60b"
+            ]
+        ]
+    },
+    {
+        "id": "09bed9563544bf7b",
+        "type": "junction",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "x": 1920,
+        "y": 1260,
+        "wires": [
+            [
+                "bb6d511d31cf1c30",
+                "44946df44c209c43",
+                "d02a7abbfd0ed4de"
             ]
         ]
     },
@@ -913,6 +916,15 @@
                 "S7_BitOffset": "0",
                 "S7_Quantity": "1",
                 "S7_Name": "cycleTime"
+            },
+            {
+                "S7_Type": "M",
+                "S7_DBnum": "0",
+                "S7_Datatype": "I",
+                "S7_Offset": "2",
+                "S7_BitOffset": "0",
+                "S7_Quantity": "1",
+                "S7_Name": "currentAccessLevel"
             }
         ]
     },
@@ -2773,6 +2785,61 @@
         "x": 580,
         "y": 700,
         "wires": []
+    },
+    {
+        "id": "02e018846a7bbd24",
+        "type": "s7comm write",
+        "z": "a7c7ec5294135863",
+        "connection": "3cb7f915b2dc54d4",
+        "payload": "{\"S7_Type\":\"M\",\"S7_DBnum\":\"0\",\"S7_Datatype\":\"I\",\"S7_Offset\":\"2\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"1\",\"S7_Name\":\"currentAccessLevel\"}",
+        "s7Name": "currentAccessLevel",
+        "topic": "set_accessLevel",
+        "name": "set_accessLevel",
+        "signalSetted": false,
+        "x": 630,
+        "y": 2040,
+        "wires": [
+            [
+                "940c88e071820f48"
+            ]
+        ]
+    },
+    {
+        "id": "653dde9ed20ac7ed",
+        "type": "link in",
+        "z": "a7c7ec5294135863",
+        "name": "inSetPlcAccessLevel",
+        "links": [
+            "148aab978cefe990"
+        ],
+        "x": 215,
+        "y": 2040,
+        "wires": [
+            [
+                "940c88e071820f48"
+            ]
+        ]
+    },
+    {
+        "id": "940c88e071820f48",
+        "type": "function",
+        "z": "a7c7ec5294135863",
+        "name": "compose_payload",
+        "func": "switch(msg.topic) {\n    case \"set_accessLevel\":\n        return [context.get(\"msg_ret\"),null];\n    default:\n        context.set(\"msg_ret\", msg);\n        const value = [msg.payload];\n        return [null, { payload: { \"value\": value }}];\n}\n\nreturn;",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 2040,
+        "wires": [
+            [],
+            [
+                "02e018846a7bbd24"
+            ]
+        ]
     },
     {
         "id": "6ad9f8fe51b00404",
@@ -14541,8 +14608,8 @@
         "className": "",
         "value": "$globalContext(\"current.user.name\") & \"-\" & $globalContext(\"current.user.label\")\t",
         "valueType": "jsonata",
-        "x": 1910,
-        "y": 1260,
+        "x": 2050,
+        "y": 1320,
         "wires": []
     },
     {
@@ -14659,7 +14726,7 @@
         "y": 1220,
         "wires": [
             [
-                "40262d705c80875c"
+                "36b3116e438572cb"
             ]
         ]
     },
@@ -15598,11 +15665,11 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1880,
+        "x": 1840,
         "y": 1220,
         "wires": [
             [
-                "bb6d511d31cf1c30"
+                "09bed9563544bf7b"
             ]
         ]
     },
@@ -16203,6 +16270,49 @@
         ],
         "x": 2125,
         "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "d02a7abbfd0ed4de",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "current.user.level",
+                "tot": "global",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2040,
+        "y": 1280,
+        "wires": [
+            [
+                "148aab978cefe990"
+            ]
+        ]
+    },
+    {
+        "id": "148aab978cefe990",
+        "type": "link out",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "outSetPlcAccessLevel",
+        "mode": "link",
+        "links": [
+            "653dde9ed20ac7ed"
+        ],
+        "x": 2155,
+        "y": 1280,
         "wires": []
     },
     {
