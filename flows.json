@@ -921,10 +921,10 @@
                 "S7_Type": "M",
                 "S7_DBnum": "0",
                 "S7_Datatype": "I",
-                "S7_Offset": "2",
+                "S7_Offset": "20",
                 "S7_BitOffset": "0",
                 "S7_Quantity": "1",
-                "S7_Name": "currentAccessLevel"
+                "S7_Name": "accessLevel"
             }
         ]
     },
@@ -2772,8 +2772,8 @@
         "type": "s7comm write",
         "z": "a7c7ec5294135863",
         "connection": "3cb7f915b2dc54d4",
-        "payload": "{\"S7_Type\":\"M\",\"S7_DBnum\":\"0\",\"S7_Datatype\":\"I\",\"S7_Offset\":\"2\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"1\",\"S7_Name\":\"currentAccessLevel\"}",
-        "s7Name": "currentAccessLevel",
+        "payload": "{\"S7_Type\":\"M\",\"S7_DBnum\":\"0\",\"S7_Datatype\":\"I\",\"S7_Offset\":\"20\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"1\",\"S7_Name\":\"accessLevel\"}",
+        "s7Name": "accessLevel",
         "topic": "set_accessLevel",
         "name": "set_accessLevel",
         "signalSetted": false,
