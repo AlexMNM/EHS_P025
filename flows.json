@@ -2830,7 +2830,7 @@
         "type": "debug",
         "z": "a7c7ec5294135863",
         "name": "debug 5",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
