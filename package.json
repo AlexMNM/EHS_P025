@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "dependencies": {
         "node-red-contrib-s7comm": "1.1.6",
-        "node-red-contrib-s7": "3.1.1"
+        "@flowfuse/node-red-dashboard": "1.30.2"
     },
     "node-red": {
         "settings": {
