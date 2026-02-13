@@ -3,7 +3,7 @@
     "description": "Elma test station for E37 product",
     "version": "0.0.1",
     "dependencies": {
-        "node-red-contrib-mongodb4": "3.4.0"
+        "node-red-contrib-s7": "3.1.1"
     },
     "node-red": {
         "settings": {
