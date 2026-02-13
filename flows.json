@@ -15540,7 +15540,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <div>\n        <iframe\n            id=\"document\"\n            title=\"document\"\n            width=\"200\"\n            height=\"400\"\n\n            src=\"/files/documents/KEYSIGHT.pdf\"\n        >\n        </iframe>\n    </div>\n</template>\n\n<script>\n\n</script>\n<style>\n\n</style>",
+        "format": "<script setup>\n    import VuePdfEmbed from 'vue-pdf-embed'\n\n// optional styles\nimport 'vue-pdf-embed/dist/styles/annotationLayer.css'\nimport 'vue-pdf-embed/dist/styles/textLayer.css'\n\n// either URL, Base64, binary, or document proxy\nconst pdfSource = '<PDF_URL>'\n</script>\n\n<template>\n    <VuePdfEmbed annotation-layer text-layer :source=\"/files/documents/KEYSIGHT.pdf\" />\n</template>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
