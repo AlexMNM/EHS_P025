@@ -2627,7 +2627,7 @@
         "type": "function",
         "z": "a7c7ec5294135863",
         "name": "compose_payload",
-        "func": "switch(msg.topic) {\n    case \"set_status\":\n        return [context.get(\"msg_ret\"),null];\n    case \"pass\":\n    case \"fail\":\n    case \"testing\":\n        context.set(\"msg_ret\", msg);\n        return [null, { payload: { \"value\": [Math.max(msg.payload, 127)] }}];\n}\n\nreturn;",
+        "func": "let value;\n\nswitch(msg.topic) {\n    case \"set_status\":\n        return [context.get(\"msg_ret\"),null];\n    case \"testing\":\n        context.set(\"msg_ret\", msg);\n        return [null, { payload: { \"value\": [0] } }];\n    case \"pass\":\n    case \"fail\":\n        context.set(\"msg_ret\", msg);\n        return [null, { payload: { \"value\": [Math.max(msg.payload, 127)] }}];\n}\n\nreturn;",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
