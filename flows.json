@@ -1043,7 +1043,7 @@
         "type": "ui-page",
         "name": "Main",
         "ui": "86cea779c465227a",
-        "path": "/page1",
+        "path": "/main",
         "icon": "home",
         "layout": "grid",
         "theme": "91c4035e6c6bbbb5",
@@ -1071,8 +1071,8 @@
         ],
         "order": 1,
         "className": "",
-        "visible": true,
-        "disabled": false
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "bf198eb6e69ac543",
@@ -1155,7 +1155,7 @@
         "type": "ui-page",
         "name": "Database",
         "ui": "86cea779c465227a",
-        "path": "/page2",
+        "path": "/database",
         "icon": "database-search ",
         "layout": "grid",
         "theme": "91c4035e6c6bbbb5",
@@ -1233,7 +1233,7 @@
         "type": "ui-page",
         "name": "Settings",
         "ui": "86cea779c465227a",
-        "path": "/page3",
+        "path": "/settings",
         "icon": "tune",
         "layout": "grid",
         "theme": "91c4035e6c6bbbb5",
