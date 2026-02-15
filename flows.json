@@ -15617,7 +15617,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1240,
+        "x": 1320,
         "y": 320,
         "wires": []
     },
@@ -15639,23 +15639,6 @@
         "wires": []
     },
     {
-        "id": "890b84358a0beaca",
-        "type": "debug",
-        "z": "1738f4bb32386bbe",
-        "name": "debug 4",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 960,
-        "y": 400,
-        "wires": []
-    },
-    {
         "id": "d8fc9501d9d93f45",
         "type": "split",
         "z": "1738f4bb32386bbe",
@@ -15671,8 +15654,7 @@
         "y": 320,
         "wires": [
             [
-                "e308ed546357cfef",
-                "890b84358a0beaca"
+                "e308ed546357cfef"
             ]
         ]
     },
@@ -15680,7 +15662,7 @@
         "id": "e308ed546357cfef",
         "type": "change",
         "z": "1738f4bb32386bbe",
-        "name": "",
+        "name": "format path",
         "rules": [
             {
                 "t": "set",
@@ -15695,7 +15677,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 940,
+        "x": 870,
         "y": 320,
         "wires": [
             [
@@ -15724,7 +15706,26 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 1090,
+        "x": 1010,
+        "y": 320,
+        "wires": [
+            [
+                "2760694940eaf160"
+            ]
+        ]
+    },
+    {
+        "id": "2760694940eaf160",
+        "type": "template",
+        "z": "1738f4bb32386bbe",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{#payload}} \n    <b>{{file}}</b>\n    <object data={{path}}/>\n{{/payload}}",
+        "output": "str",
+        "x": 1160,
         "y": 320,
         "wires": [
             [
