@@ -15540,13 +15540,13 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "{{msg.payload}}",
+        "format": "{{#payload}} \n    <b>{{file}}</b>\n    <object data=\"{{path}}\"/>\n{{/payload}}",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1300,
+        "x": 1160,
         "y": 380,
         "wires": [
             []
@@ -15710,7 +15710,8 @@
         "y": 320,
         "wires": [
             [
-                "2760694940eaf160"
+                "2760694940eaf160",
+                "254a45a6746bb78b"
             ]
         ]
     },
@@ -15729,8 +15730,7 @@
         "y": 320,
         "wires": [
             [
-                "3a909bfe1f41c7cc",
-                "254a45a6746bb78b"
+                "3a909bfe1f41c7cc"
             ]
         ]
     },
