@@ -15553,7 +15553,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<h1>Documents:</h1> <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n<div :innerHTML=msg.payload style=\"width:100%; display:flex; flex-wrap: wrap;\">\n</div>\n",
+        "format": "<h1>Documents:</h1>\n<p>Location: D:\\appcache\\node\\static\\documents\\</p>\n<div>\n    <b-tabs content-class=\"mt-3\" :innerHTML=msg.payload style=\"width:100%; display:flex; flex-wrap: wrap;\">\n</div>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -15615,7 +15615,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{#payload}} \n    <div style=\"flex: 1 0 calc(60%); padding: 0 120px 0 120px\">\n        <br/>\n        <h2>{{name}}:</h2>\n        <object \n            data=\"{{path}}\"\n            width=\"100%\"\n            height=\"800\"> \n            \n        </object>\n    </div>\n{{/payload}}",
+        "template": "{{#payload}} \n    <b-tab title={{name}}>\n        <object \n            data=\"{{path}}\"\n            width=\"100%\"\n            height=\"800\"> \n        </object>\n    </b-tab>\n{{/payload}}",
         "output": "str",
         "x": 1180,
         "y": 580,
@@ -15708,6 +15708,50 @@
         "wires": [
             [
                 "19b7a99edeaf51cc"
+            ]
+        ]
+    },
+    {
+        "id": "7d9153c79b843e28",
+        "type": "ui-template",
+        "z": "1738f4bb32386bbe",
+        "d": true,
+        "group": "f25775af95ab95fb",
+        "page": "",
+        "ui": "",
+        "name": "Show documents",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<h1>Documents:</h1> <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n<div :innerHTML=msg.payload style=\"width:100%; display:flex; flex-wrap: wrap;\">\n</div>\n",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1130,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "db1a0d916042b81e",
+        "type": "template",
+        "z": "1738f4bb32386bbe",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{#payload}} \n    <div style=\"flex: 1 0 calc(60%); padding: 0 120px 0 120px\">\n        <br/>\n        <h2>{{name}}:</h2>\n        <object \n            data=\"{{path}}\"\n            width=\"100%\"\n            height=\"800\"> \n            \n        </object>\n    </div>\n{{/payload}}",
+        "output": "str",
+        "x": 1100,
+        "y": 260,
+        "wires": [
+            [
+                "7d9153c79b843e28"
             ]
         ]
     },
