@@ -1401,8 +1401,8 @@
         ],
         "order": 5,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "visible": true,
+        "disabled": false
     },
     {
         "id": "f25775af95ab95fb",
@@ -1412,7 +1412,7 @@
         "width": "12",
         "height": 1,
         "order": 1,
-        "showTitle": true,
+        "showTitle": false,
         "className": "",
         "visible": "true",
         "disabled": "false",
