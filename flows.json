@@ -15556,7 +15556,7 @@
         "id": "717eb08060b5029d",
         "type": "exec",
         "z": "1738f4bb32386bbe",
-        "command": "find . -maxdepth 3 -type f -iname \"*\" -printf \"%h,%f,%CY-%Cm-%Cd %CT,%s,%u,%M\\n\"",
+        "command": "find /appcache/node/static/documents/ -maxdepth 3 -type f -iname \"*\" -prune ",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
