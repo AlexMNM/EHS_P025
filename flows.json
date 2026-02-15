@@ -15568,7 +15568,8 @@
         "y": 400,
         "wires": [
             [
-                "b1a798f9715bcd61"
+                "b1a798f9715bcd61",
+                "5d36b7dee730f6fd"
             ],
             [],
             []
@@ -15737,17 +15738,19 @@
         "type": "function",
         "z": "1738f4bb32386bbe",
         "name": "extract documents",
-        "func": "const entries = msg.payload.split(\"\\n\\n\");\nconst documents = [];\n\nentries.slice(1).forEach(function(element) {\n    const lines = element.split(\"\\n\");\n    const dir = lines[0].split(\"/\").at(-1);\n    const file = \n    documents.push(\n        {\n            name: lines[0].split(\"/\").at(-1),\n            path: \"/files/\" + lines[1]\n        })\n});\n\nreturn msg;",
+        "func": "const entries = msg.payload.split(\"\\n\");\nconst contents = {};\n\nentries.forEach(function(element) {\n    const path = element.replace(\"/appcache/node/static\", \"/files\");\n    contents[path.split(\"/\").at(-2)] = path;\n});\n\nmsg.payload = Object.entries(contents).map(([k, v]) => ({name: k, path: v}));\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1190,
-        "y": 640,
+        "x": 850,
+        "y": 480,
         "wires": [
-            []
+            [
+                "b1a798f9715bcd61"
+            ]
         ]
     },
     {
