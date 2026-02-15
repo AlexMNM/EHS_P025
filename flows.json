@@ -15647,7 +15647,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{#payload}} \n    <div style=\"width:400px\">\n        <br/>\n        <h2>{{name}}:</h2>\n        <object \n            data=\"{{path}}\"\n            width=\"100%\"\n            height=\"600\"> \n            \n        </object>\n    </div>\n{{/payload}}",
+        "template": "{{#payload}} \n    <div style=\"flex: 1 0 calc(50%)\">\n        <br/>\n        <h2>{{name}}:</h2>\n        <object \n            data=\"{{path}}\"\n            width=\"100%\"\n            height=\"600\"> \n            \n        </object>\n    </div>\n{{/payload}}",
         "output": "str",
         "x": 1020,
         "y": 380,
