@@ -1375,7 +1375,7 @@
         "ui": "86cea779c465227a",
         "path": "/documents",
         "icon": "file-document-multiple",
-        "layout": "notebook",
+        "layout": "grid",
         "theme": "db3c0ff5429c4380",
         "breakpoints": [
             {
