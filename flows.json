@@ -15540,7 +15540,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "{{#payload}} \n    <b>{{file}}</b>\n    <object data=\"{{path}}\"/>\n{{/payload}}",
+        "format": "<div>\n    {{#payload}}\n        <b>{{file}}</b>\n        <object data=\"{{path}}\"/>\n    {{/payload}}\n</div>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
