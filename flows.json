@@ -15768,7 +15768,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n  <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n  <v-sheet elevation=\"4\">\n    <v-tabs v-model=\"tab\" show-arrows>\n      <v-tab v-for=\"(item, index) in msg.payload\" :value=\"index\" :key=\"index\" :text=\"item.name\"></v-tab>\n    </v-tabs>\n\n    <v-divider></v-divider>\n\n    <v-tabs-window v-model=\"tab\">\n      <v-tabs-window-item eager v-for=\"(item, index) in msg.payload\" :key=\"index\" :value=\"index\" style=\"width:600px\">\n        <object\n            :data=\"item.path\"\n            width=\"100%\"\n            height=\"800\">\n        </object>\n      </v-tabs-window-item>\n    </v-tabs-window>\n  </v-sheet>\n</template>\n\n<script>\n  export default {\n  data() {\n    return {\n      tab: 1\n    }\n  }\n}\n</script>",
+        "format": "<template>\n  <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n  <v-sheet elevation=\"4\">\n    <v-tabs v-model=\"tab\" show-arrows>\n      <v-tab v-for=\"(item, index) in msg.payload\" :value=\"index\" :key=\"index\" :text=\"item.name\"></v-tab>\n    </v-tabs>\n\n    <v-divider></v-divider>\n\n    <v-tabs-window v-model=\"tab\">\n      <v-tabs-window-item eager v-for=\"(item, index) in msg.payload\" :key=\"index\" :value=\"index\" style=\"width:800px\">\n        <object\n            :data=\"item.path\"\n            width=\"100%\"\n            height=\"800\">\n        </object>\n      </v-tabs-window-item>\n    </v-tabs-window>\n  </v-sheet>\n</template>\n\n<script>\n  export default {\n  data() {\n    return {\n      tab: 1\n    }\n  }\n}\n</script>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
