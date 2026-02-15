@@ -15540,7 +15540,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<div>\n    \"msg.payload\"\n</div>",
+        "format": "<div>\n    ${msg.payload}\n</div>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
