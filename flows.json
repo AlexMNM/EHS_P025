@@ -15793,7 +15793,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <v-window v-model=\"window\" show-arrows>\n        <v-window-item v-for=\"n in length\" :key=\"n\">\n            <v-card class=\"d-flex justify-center align-center\" height=\"200px\">\n                <span class=\"text-h2\">Card {{ n }}</span>\n            </v-card>\n        </v-window-item>\n    </v-window>\n</template>",
+        "format": "<template>\n    <v-window v-model=\"window\" show-arrows>\n        <v-window-item v-for=\"n in length\" :key=\"n\">\n            <v-card class=\"d-flex justify-center align-center\" height=\"200px\">\n                <span class=\"text-h2\">Card {{ n }}</span>\n            </v-card>\n        </v-window-item>\n    </v-window>\n</template>\n<script>\n    export default {\n    data: () => ({\n      length: 3,\n      window: 0,\n    }),\n  }\n</script>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
