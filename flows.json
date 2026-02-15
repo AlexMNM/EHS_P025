@@ -15549,7 +15549,7 @@
         "page": "",
         "ui": "",
         "name": "Show documents",
-        "order": 1,
+        "order": 2,
         "width": "10",
         "height": "1",
         "head": "",
@@ -15720,7 +15720,7 @@
         "page": "",
         "ui": "",
         "name": "Show documents",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "head": "",
@@ -15763,7 +15763,7 @@
         "page": "",
         "ui": "",
         "name": "",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "head": "",
@@ -15775,6 +15775,30 @@
         "className": "",
         "x": 1180,
         "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5a962b7f5c9e4470",
+        "type": "ui-template",
+        "z": "1738f4bb32386bbe",
+        "group": "f25775af95ab95fb",
+        "page": "",
+        "ui": "",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n    <v-window v-model=\"window\" show-arrows>\n        <v-window-item v-for=\"n in length\" :key=\"n\">\n            <v-card class=\"d-flex justify-center align-center\" height=\"200px\">\n                <span class=\"text-h2\">Card {{ n }}</span>\n            </v-card>\n        </v-window-item>\n    </v-window>\n</template>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1180,
+        "y": 740,
         "wires": [
             []
         ]
