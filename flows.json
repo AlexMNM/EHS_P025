@@ -15643,7 +15643,7 @@
         "type": "split",
         "z": "1738f4bb32386bbe",
         "name": "",
-        "splt": "\\n",
+        "splt": "\\n\\n",
         "spltType": "str",
         "arraySplt": 1,
         "arraySpltType": "len",
@@ -15677,7 +15677,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 870,
+        "x": 890,
         "y": 320,
         "wires": [
             [
@@ -15706,7 +15706,7 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 1010,
+        "x": 1070,
         "y": 320,
         "wires": [
             [
