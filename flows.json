@@ -15556,7 +15556,7 @@
         "id": "717eb08060b5029d",
         "type": "exec",
         "z": "1738f4bb32386bbe",
-        "command": "ls -R /appcache/node/static/documents/",
+        "command": "find /appcache/node/static/documents/ -maxdepth 3 -type f -iname \"*\" -printf \"%h,%f,%CY-%Cm-%Cd %CT,%s,%u,%M\\n\"",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
@@ -15568,7 +15568,6 @@
         "y": 400,
         "wires": [
             [
-                "d8fc9501d9d93f45",
                 "b1a798f9715bcd61"
             ],
             [],
@@ -15617,8 +15616,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1400,
-        "y": 320,
+        "x": 1580,
+        "y": 140,
         "wires": []
     },
     {
@@ -15634,8 +15633,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 400,
+        "x": 760,
+        "y": 380,
         "wires": []
     },
     {
@@ -15650,8 +15649,8 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 730,
-        "y": 320,
+        "x": 910,
+        "y": 140,
         "wires": [
             [
                 "e308ed546357cfef"
@@ -15677,8 +15676,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 890,
-        "y": 320,
+        "x": 1070,
+        "y": 140,
         "wires": [
             [
                 "9410932cba96c96b"
@@ -15706,8 +15705,8 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 1070,
-        "y": 320,
+        "x": 1250,
+        "y": 140,
         "wires": [
             [
                 "2760694940eaf160"
@@ -15725,12 +15724,30 @@
         "syntax": "mustache",
         "template": "{{#payload}} \n    <div>\n        <br/>\n        <h2>{{file}}:</h2>\n        <object \n            data=\"{{path}}\"\n            width=\"800\"\n            height=\"600\"> \n            \n        </object>\n    </div>\n{{/payload}}",
         "output": "str",
-        "x": 1240,
-        "y": 320,
+        "x": 1420,
+        "y": 140,
         "wires": [
             [
                 "3a909bfe1f41c7cc"
             ]
+        ]
+    },
+    {
+        "id": "5d36b7dee730f6fd",
+        "type": "function",
+        "z": "1738f4bb32386bbe",
+        "name": "extract documents",
+        "func": "const entries = msg.payload.split(\"\\n\\n\");\nconst documents = [];\n\nentries.slice(1).forEach(function(element) {\n    const lines = element.split(\"\\n\");\n    const dir = lines[0].split(\"/\").at(-1);\n    const file = \n    documents.push(\n        {\n            name: lines[0].split(\"/\").at(-1),\n            path: \"/files/\" + lines[1]\n        })\n});\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 640,
+        "wires": [
+            []
         ]
     },
     {
