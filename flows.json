@@ -15684,9 +15684,16 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "payload.file",
                 "pt": "msg",
-                "to": "\"/files/documents/\" & payload",
+                "to": "payload",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "payload.path",
+                "pt": "msg",
+                "to": "\"/files/documents/\" & payload.file",
                 "tot": "jsonata"
             }
         ],
@@ -15695,7 +15702,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 880,
+        "x": 940,
         "y": 320,
         "wires": [
             [
@@ -15724,7 +15731,7 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 1050,
+        "x": 1090,
         "y": 320,
         "wires": [
             [
