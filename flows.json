@@ -15553,7 +15553,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <b-card no-body>\n            <b-tabs :v-html=msg.payload>\n            </b-tabs>\n        </b-card>\n    </div>\n</template>\n\n",
+        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <b-card no-body>\n            <b-tabs v-for=\"doc in msg.payload\">\n                <b-tab :title=\"doc.name\">\n                    <object\n                        data=\"doc.path\"\n                        width=\"100%\"\n                        height=\"800\">\n                    </object>\n                </b-tab>\n            </b-tabs>\n        </b-card>\n    </div>\n</template>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -15620,9 +15620,7 @@
         "x": 1420,
         "y": 580,
         "wires": [
-            [
-                "254a45a6746bb78b"
-            ]
+            []
         ]
     },
     {
@@ -15641,7 +15639,8 @@
         "y": 540,
         "wires": [
             [
-                "2760694940eaf160"
+                "2760694940eaf160",
+                "254a45a6746bb78b"
             ]
         ]
     },
