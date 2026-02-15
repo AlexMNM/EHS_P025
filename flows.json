@@ -15540,7 +15540,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<iframe src=\"/files/documents/KEYSIGHT.pdf\" />",
+        "format": "<iframe src=\"/files/documents/KEYSIGHT.pdf\" />\n<object data=\"/files/documents/KEYSIGHT.pdf\" />",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
