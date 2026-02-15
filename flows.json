@@ -15553,7 +15553,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <b-card no-body>\n            <b-tabs :v-html=msg.payload>\n        </b-card>\n    </div>\n</template>",
+        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <b-card no-body>\n            <b-tabs :v-html=msg.payload>\n            </b-tabs>\n        </b-card>\n    </div>\n</template>\n\n",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -15617,7 +15617,7 @@
         "syntax": "mustache",
         "template": "{{#payload}} \n    <b-tab title={{name}}>\n        <object \n            data=\"{{path}}\"\n            width=\"100%\"\n            height=\"800\"> \n        </object>\n    </b-tab>\n{{/payload}}",
         "output": "str",
-        "x": 1180,
+        "x": 1420,
         "y": 580,
         "wires": [
             [
