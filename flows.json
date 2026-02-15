@@ -15540,7 +15540,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<h1>Documents:</h1>\n<div :innerHTML=msg.payload style=\"width:800px\">\n</div>\n",
+        "format": "<h1>Documents:</h1>\n<div :innerHTML=msg.payload style=\"width:800px; display:flex\">\n</div>\n",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
