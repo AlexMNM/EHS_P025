@@ -15546,7 +15546,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1350,
+        "x": 1430,
         "y": 380,
         "wires": [
             []
@@ -15617,7 +15617,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1320,
+        "x": 1400,
         "y": 320,
         "wires": []
     },
@@ -15723,9 +15723,9 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{#payload}} \n    <div>\n        <br/>\n        <h2>{{file}}:</h2>\n        <iframe \n            src=\"{{path}}\"\n            width=\"600\"\n            height=\"800\"> \n            \n        </iframe>\n    </div>\n{{/payload}}",
+        "template": "{{#payload}} \n    <div>\n        <br/>\n        <h2>{{file}}:</h2>\n        <object \n            data=\"{{path}}\"\n            width=\"800\"\n            height=\"600\"> \n            \n        </object>\n    </div>\n{{/payload}}",
         "output": "str",
-        "x": 1160,
+        "x": 1240,
         "y": 320,
         "wires": [
             [
