@@ -15540,7 +15540,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<h1>Documents:</h1>\n<div :innerHTML=msg.payload style=\"width:100%; display:flex; flex-wrap: wrap;\">\n</div>\n",
+        "format": "<h1>Documents:</h1> <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n<div :innerHTML=msg.payload style=\"width:100%; display:flex; flex-wrap: wrap;\">\n</div>\n",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
