@@ -15640,7 +15640,8 @@
         "wires": [
             [
                 "2760694940eaf160",
-                "254a45a6746bb78b"
+                "254a45a6746bb78b",
+                "b630a19ddc5f22c5"
             ]
         ]
     },
@@ -15766,14 +15767,14 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <v-sheet elevation=\"4\">\n  <v-tabs v-model=\"tab\">\n    <v-tab value=\"one\">Item One</v-tab>\n    <v-tab value=\"two\">Item Two</v-tab>\n    <v-tab value=\"three\">Item Three</v-tab>\n  </v-tabs>\n\n  <v-divider></v-divider>\n\n  <v-tabs-window v-model=\"tab\">\n    <v-tabs-window-item value=\"one\">\n      <v-sheet class=\"pa-5\" color=\"purple\">One</v-sheet>\n    </v-tabs-window-item>\n    <v-tabs-window-item value=\"two\">\n      <v-sheet class=\"pa-5\" color=\"orange\">Two</v-sheet>\n    </v-tabs-window-item>\n    <v-tabs-window-item value=\"three\">\n      <v-sheet class=\"pa-5\" color=\"brown\">Three</v-sheet>\n    </v-tabs-window-item>\n  </v-tabs-window>\n</v-sheet>\n</template>\n\n<script setup>\n  import { ref } from 'vue'\n\n  const tab = ref('one')\n</script>\n\n<script>\n    export default {\n        mounted() {\n            // code here when the component is first loaded\n        },\n        unmounted() {\n            // code here when the component is removed from the Dashboard\n            // i.e. when the user navigates away from the page\n        }\n    }\n</script>\n<style>\n\n</style>",
+        "format": "<template>\n    <v-sheet elevation=\"4\">\n  <v-tabs v-model=\"tab\">\n    <v-tab v-for=\"(item, index) in msg.payload\" :value=\"index\">{{item.name}}</v-tab>\n  </v-tabs>\n\n  <v-divider></v-divider>\n\n  <v-tabs-window v-model=\"tab\">\n    <v-tabs-window-item value=\"one\">\n      <v-sheet class=\"pa-5\" color=\"purple\">One</v-sheet>\n    </v-tabs-window-item>\n    <v-tabs-window-item value=\"two\">\n      <v-sheet class=\"pa-5\" color=\"orange\">Two</v-sheet>\n    </v-tabs-window-item>\n    <v-tabs-window-item value=\"three\">\n      <v-sheet class=\"pa-5\" color=\"brown\">Three</v-sheet>\n    </v-tabs-window-item>\n  </v-tabs-window>\n</v-sheet>\n</template>\n\n<script setup>\n  import { ref } from 'vue'\n\n  const tab = ref('one')\n</script>\n\n<script>\n    export default {\n        mounted() {\n            // code here when the component is first loaded\n        },\n        unmounted() {\n            // code here when the component is removed from the Dashboard\n            // i.e. when the user navigates away from the page\n        }\n    }\n</script>\n<style>\n\n</style>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1200,
-        "y": 700,
+        "x": 1180,
+        "y": 680,
         "wires": [
             []
         ]
