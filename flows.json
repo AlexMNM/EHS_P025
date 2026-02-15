@@ -15540,7 +15540,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<iframe src=\"/files/documents/KEYSIGHT.pdf\" />\n<object data=\"/files/documents/KEYSIGHT.pdf\" />",
+        "format": "<object data=\"/files/documents/KEYSIGHT.pdf\" />",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
@@ -15551,6 +15551,112 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "717eb08060b5029d",
+        "type": "exec",
+        "z": "1738f4bb32386bbe",
+        "command": "ls /appcache/node/static/documents/",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "list documents",
+        "x": 520,
+        "y": 400,
+        "wires": [
+            [
+                "3a909bfe1f41c7cc"
+            ],
+            [
+                "b1a798f9715bcd61"
+            ],
+            [
+                "890b84358a0beaca"
+            ]
+        ]
+    },
+    {
+        "id": "d31fadcb1d6b46a8",
+        "type": "inject",
+        "z": "1738f4bb32386bbe",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 400,
+        "wires": [
+            [
+                "717eb08060b5029d"
+            ]
+        ]
+    },
+    {
+        "id": "3a909bfe1f41c7cc",
+        "type": "debug",
+        "z": "1738f4bb32386bbe",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b1a798f9715bcd61",
+        "type": "debug",
+        "z": "1738f4bb32386bbe",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "890b84358a0beaca",
+        "type": "debug",
+        "z": "1738f4bb32386bbe",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 440,
+        "wires": []
     },
     {
         "id": "fe36b4aab8e4b51e",
