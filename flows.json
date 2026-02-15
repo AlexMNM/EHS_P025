@@ -1409,7 +1409,7 @@
         "type": "ui-group",
         "name": "Group Name",
         "page": "f93765d1279ad806",
-        "width": 6,
+        "width": "12",
         "height": 1,
         "order": 1,
         "showTitle": true,
