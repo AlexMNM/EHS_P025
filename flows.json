@@ -15553,7 +15553,7 @@
         "width": "10",
         "height": "1",
         "head": "",
-        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <b-tabs card>\n            <b-tab v-for=\"item in msg.payload\" :key=\"item.name\" :title=\"item.name\">\n                <b-embed type=\"object\" aspect=\"1by1\">\n                    <source :src=\"item.path\">\n                </b-embed>\n                \n            </b-tab>\n        </b-tabs>\n    </div>\n</template>",
+        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <b-tabs card>\n            <b-tab v-for=\"item in msg.payload\" :key=\"item.name\" :title=\"item.name\">\n                <b-embed :src=\"item.path\" type=\"object\" aspect=\"1by1\">\n                </b-embed>\n            </b-tab>\n        </b-tabs>\n    </div>\n</template>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
