@@ -15553,7 +15553,7 @@
         "width": "10",
         "height": "1",
         "head": "",
-        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <template>\n            <v-treeview :items=\"msg.payload\" item-value=\"name\"></v-treeview>\n        </template>\n        \n    </div>\n</template>\n<script>\n    export default{\n\n        mounted() {\n            // code here when the component is first loaded\n            this.loaded = true\n        },\n        unmounted() {\n            // code here when the component is removed from the Dashboard\n            // i.e. when the user navigates away from the page\n        }\n    }\n</script>",
+        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <template>\n            <v-window v-model=\"window\" show-arrows>\n                <v-window-item :v-for=\"n in msg.payload\" :key=\"n.name\">\n                    <v-card class=\"d-flex justify-center align-center\" height=\"200px\">\n                        <span class=\"text-h2\">Card {{ n.name }}</span>\n                    </v-card>\n                </v-window-item>\n            </v-window>\n        </template>\n        \n    </div>\n</template>\n<script>\n    export default{\n\n        mounted() {\n            // code here when the component is first loaded\n            this.loaded = true\n        },\n        unmounted() {\n            // code here when the component is removed from the Dashboard\n            // i.e. when the user navigates away from the page\n        }\n    }\n</script>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
