@@ -15553,7 +15553,7 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <b-card no-body>\n            <b-tabs :innerHTML=msg.payload>\n        </b-card>\n    </div>\n</template>",
+        "format": "<template>\n    <h1>Documents:</h1>\n    <p>Location: D:\\appcache\\node\\static\\documents\\</p>\n    <div>\n        <b-card no-body>\n            <b-tabs :v-html=msg.payload>\n        </b-card>\n    </div>\n</template>",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
