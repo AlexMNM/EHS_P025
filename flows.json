@@ -15684,16 +15684,9 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload.file",
+                "p": "payload",
                 "pt": "msg",
-                "to": "payload",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "payload.path",
-                "pt": "msg",
-                "to": "\"/files/documents/\" & payload.file",
+                "to": "{\t    \"path\": payload ? \"/files/documents/\" & payload : \"\",\t    \"file\": payload\t}",
                 "tot": "jsonata"
             }
         ],
