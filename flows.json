@@ -15738,7 +15738,7 @@
         "type": "function",
         "z": "1738f4bb32386bbe",
         "name": "extract documents",
-        "func": "const entries = msg.payload.split(\"\\n\");\nconst contents = {};\n\nentries.forEach(function(element) {\n    const path = element.replace(\"/appcache/node/static\", \"/files\");\n    contents[path.split(\"/\").at(-2)] = path;\n});\n\nmsg.payload = Object.entries(contents).map(([k, v]) => ({name: k, path: v}));\nreturn msg;",
+        "func": "const entries = msg.payload.split(\"\\n\");\nconst contents = {};\n\nentries.slice(0,-1).forEach(function(element) {\n    const path = element.replace(\"/appcache/node/static\", \"/files\");\n    contents[path.split(\"/\").at(-2)] = path;\n});\n\nmsg.payload = Object.entries(contents).map(([k, v]) => ({name: k, path: v}));\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
