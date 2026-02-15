@@ -768,6 +768,18 @@
         ]
     },
     {
+        "id": "12fabf3458f33fe2",
+        "type": "junction",
+        "z": "1738f4bb32386bbe",
+        "x": 880,
+        "y": 540,
+        "wires": [
+            [
+                "717eb08060b5029d"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -6221,7 +6233,8 @@
         "links": [
             "90dc1519d61ce087",
             "150473f2c686409d",
-            "5134f1f6cc610093"
+            "5134f1f6cc610093",
+            "44709ae07618b37e"
         ],
         "x": 485,
         "y": 180,
@@ -15546,8 +15559,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1250,
-        "y": 400,
+        "x": 1210,
+        "y": 620,
         "wires": [
             []
         ]
@@ -15564,12 +15577,11 @@
         "winHide": false,
         "oldrc": false,
         "name": "list documents",
-        "x": 520,
-        "y": 400,
+        "x": 1000,
+        "y": 560,
         "wires": [
             [
-                "5d36b7dee730f6fd",
-                "b1a798f9715bcd61"
+                "5d36b7dee730f6fd"
             ],
             [],
             []
@@ -15580,63 +15592,19 @@
         "type": "inject",
         "z": "1738f4bb32386bbe",
         "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
+        "props": [],
         "repeat": "",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 500,
-        "y": 340,
+        "x": 810,
+        "y": 560,
         "wires": [
             [
-                "717eb08060b5029d"
+                "12fabf3458f33fe2"
             ]
         ]
-    },
-    {
-        "id": "3a909bfe1f41c7cc",
-        "type": "debug",
-        "z": "1738f4bb32386bbe",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1580,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "b1a798f9715bcd61",
-        "type": "debug",
-        "z": "1738f4bb32386bbe",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 820,
-        "y": 280,
-        "wires": []
     },
     {
         "id": "2760694940eaf160",
@@ -15649,11 +15617,10 @@
         "syntax": "mustache",
         "template": "{{#payload}} \n    <div style=\"flex: 1 0 calc(50%); padding: 0 10px 0 10px\">\n        <br/>\n        <h2>{{name}}:</h2>\n        <object \n            data=\"{{path}}\"\n            width=\"100%\"\n            height=\"600\"> \n            \n        </object>\n    </div>\n{{/payload}}",
         "output": "str",
-        "x": 1020,
-        "y": 380,
+        "x": 1180,
+        "y": 580,
         "wires": [
             [
-                "3a909bfe1f41c7cc",
                 "254a45a6746bb78b"
             ]
         ]
@@ -15670,11 +15637,77 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 810,
-        "y": 380,
+        "x": 1210,
+        "y": 540,
         "wires": [
             [
                 "2760694940eaf160"
+            ]
+        ]
+    },
+    {
+        "id": "44709ae07618b37e",
+        "type": "link in",
+        "z": "1738f4bb32386bbe",
+        "name": "inUiEvent",
+        "links": [
+            "26df795f70aac6ed"
+        ],
+        "x": 715,
+        "y": 440,
+        "wires": [
+            [
+                "dfe97e4d972c9599"
+            ]
+        ]
+    },
+    {
+        "id": "19b7a99edeaf51cc",
+        "type": "switch",
+        "z": "1738f4bb32386bbe",
+        "name": "to:Documents",
+        "property": "name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Documents",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 520,
+        "wires": [
+            [
+                "12fabf3458f33fe2"
+            ]
+        ]
+    },
+    {
+        "id": "dfe97e4d972c9599",
+        "type": "switch",
+        "z": "1738f4bb32386bbe",
+        "name": "ui:change",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "change",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 760,
+        "y": 480,
+        "wires": [
+            [
+                "19b7a99edeaf51cc"
             ]
         ]
     },
