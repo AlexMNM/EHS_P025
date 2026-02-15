@@ -15556,7 +15556,7 @@
         "id": "717eb08060b5029d",
         "type": "exec",
         "z": "1738f4bb32386bbe",
-        "command": "ls -r /appcache/node/static/documents/",
+        "command": "ls -R /appcache/node/static/documents/",
         "addpay": "",
         "append": "",
         "useSpawn": "false",
