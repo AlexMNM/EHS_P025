@@ -15723,7 +15723,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "{{#payload}} \n    <div>\n        <b>{{file}}</b>\n        <object data=\"{{path}}\"/>\n    </div>\n{{/payload}}",
+        "template": "{{#payload}} \n    <div>\n        <b>{{file}}</b>\n        <object data=\"{{path}}\"> </object>\n    </div>\n{{/payload}}",
         "output": "str",
         "x": 1160,
         "y": 320,
