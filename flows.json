@@ -15546,8 +15546,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 480,
-        "y": 500,
+        "x": 720,
+        "y": 600,
         "wires": [
             []
         ]
@@ -15568,7 +15568,7 @@
         "y": 400,
         "wires": [
             [
-                "3a909bfe1f41c7cc"
+                "d8fc9501d9d93f45"
             ],
             [
                 "b1a798f9715bcd61"
@@ -15620,8 +15620,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 740,
-        "y": 360,
+        "x": 880,
+        "y": 320,
         "wires": []
     },
     {
@@ -15657,6 +15657,26 @@
         "x": 740,
         "y": 440,
         "wires": []
+    },
+    {
+        "id": "d8fc9501d9d93f45",
+        "type": "split",
+        "z": "1738f4bb32386bbe",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 690,
+        "y": 320,
+        "wires": [
+            [
+                "3a909bfe1f41c7cc"
+            ]
+        ]
     },
     {
         "id": "fe36b4aab8e4b51e",
