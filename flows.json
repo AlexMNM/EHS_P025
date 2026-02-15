@@ -15540,14 +15540,14 @@
         "width": 0,
         "height": 0,
         "head": "",
-        "format": "<object data=\"/files/documents/KEYSIGHT.pdf\" />",
+        "format": "{{msg.payload}}",
         "storeOutMessages": true,
         "passthru": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 720,
-        "y": 600,
+        "x": 1300,
+        "y": 380,
         "wires": [
             []
         ]
@@ -15596,8 +15596,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 280,
-        "y": 400,
+        "x": 500,
+        "y": 360,
         "wires": [
             [
                 "717eb08060b5029d"
@@ -15729,7 +15729,8 @@
         "y": 320,
         "wires": [
             [
-                "3a909bfe1f41c7cc"
+                "3a909bfe1f41c7cc",
+                "254a45a6746bb78b"
             ]
         ]
     },
