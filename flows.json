@@ -15545,7 +15545,6 @@
         "id": "254a45a6746bb78b",
         "type": "ui-template",
         "z": "1738f4bb32386bbe",
-        "d": true,
         "group": "f25775af95ab95fb",
         "page": "",
         "ui": "",
@@ -15642,8 +15641,7 @@
             [
                 "2760694940eaf160",
                 "254a45a6746bb78b",
-                "b630a19ddc5f22c5",
-                "5a962b7f5c9e4470"
+                "b630a19ddc5f22c5"
             ]
         ]
     },
@@ -15777,30 +15775,6 @@
         "className": "",
         "x": 1180,
         "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5a962b7f5c9e4470",
-        "type": "ui-template",
-        "z": "1738f4bb32386bbe",
-        "group": "f25775af95ab95fb",
-        "page": "",
-        "ui": "",
-        "name": "",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "head": "",
-        "format": "<template>\n    <v-card>\n        <v-tabs v-model=\"tab\" align-tabs=\"center\" color=\"deep-purple-accent-4\">\n            <v-tab :value=\"1\">Landscape</v-tab>\n            <v-tab :value=\"2\">City</v-tab>\n            <v-tab :value=\"3\">Abstract</v-tab>\n        </v-tabs>\n\n        <v-tabs-window v-model=\"tab\">\n            <v-tabs-window-item v-for=\"n in 3\" :key=\"n\" :value=\"n\">\n                <v-container fluid>\n                    <v-row>\n                        <v-col v-for=\"i in 6\" :key=\"i\" cols=\"12\" md=\"4\">\n                            <v-img :lazy-src=\"`https://picsum.photos/10/6?image=${i * n * 5 + 10}`\"\n                                :src=\"`https://picsum.photos/500/300?image=${i * n * 5 + 10}`\" height=\"205\"\n                                cover></v-img>\n                        </v-col>\n                    </v-row>\n                </v-container>\n            </v-tabs-window-item>\n        </v-tabs-window>\n    </v-card>\n</template>\n\n<script>\n    const ref = Vue.ref;\n    \n  const tab = ref(null);\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 1180,
-        "y": 740,
         "wires": [
             []
         ]
