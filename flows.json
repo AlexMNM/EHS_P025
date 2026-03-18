@@ -9786,7 +9786,7 @@
         "type": "function",
         "z": "0637f22188042045",
         "name": "parse",
-        "func": "const setup = msg.payload;\n\nmsg.payload = [\n    {\n        label:\"Product\",\n        value: setup.type\n    },\n    {\n        label: \"Order\",\n        value: setup.order\n    },\n    {\n        label: \"Timestamp\",\n        value: setup.timestamp\n    },\n    {\n        label: \"Operator\",\n        value: setup.operator\n    }\n]\n\nreturn msg;",
+        "func": "const setup = msg.payload;\n\nmsg.payload = [\n    {\n        label:\"Product\",\n        value: setup.name || setup.type\n    },\n    {\n        label: \"Order\",\n        value: setup.order\n    },\n    {\n        label: \"Timestamp\",\n        value: setup.timestamp\n    },\n    {\n        label: \"Operator\",\n        value: setup.operator\n    }\n]\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
