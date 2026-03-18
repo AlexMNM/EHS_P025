@@ -3637,8 +3637,7 @@
         "y": 980,
         "wires": [
             [
-                "9ca3cd1e4cfebc65",
-                "b168d5200d7aa283"
+                "9ca3cd1e4cfebc65"
             ]
         ]
     },
