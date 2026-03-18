@@ -957,6 +957,15 @@
                 "S7_BitOffset": "0",
                 "S7_Quantity": "1",
                 "S7_Name": "accessLevel"
+            },
+            {
+                "S7_Type": "DB",
+                "S7_DBnum": "17",
+                "S7_Datatype": "STRING",
+                "S7_Offset": "0",
+                "S7_BitOffset": "0",
+                "S7_Quantity": "254",
+                "S7_Name": "productName"
             }
         ]
     },
@@ -2813,6 +2822,73 @@
                 "02e018846a7bbd24"
             ]
         ]
+    },
+    {
+        "id": "d9cf41235360df37",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 660,
+        "y": 940,
+        "wires": [
+            [
+                "8e429454435cec5e"
+            ]
+        ]
+    },
+    {
+        "id": "8e429454435cec5e",
+        "type": "s7comm read",
+        "z": "a7c7ec5294135863",
+        "connection": "3cb7f915b2dc54d4",
+        "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"17\",\"S7_Datatype\":\"STRING\",\"S7_Offset\":\"0\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"254\",\"S7_Name\":\"productName\"}",
+        "s7Name": "productName",
+        "topic": "name",
+        "name": "",
+        "signalSetted": false,
+        "none": "true",
+        "repeat": "",
+        "once": false,
+        "x": 810,
+        "y": 940,
+        "wires": [
+            [
+                "a5b79fba1b173ac2"
+            ]
+        ]
+    },
+    {
+        "id": "a5b79fba1b173ac2",
+        "type": "debug",
+        "z": "a7c7ec5294135863",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 940,
+        "wires": []
     },
     {
         "id": "6ad9f8fe51b00404",
