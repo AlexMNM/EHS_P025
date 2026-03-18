@@ -3440,6 +3440,49 @@
         ]
     },
     {
+        "id": "09836b0d2f8ddee4",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "api logout",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"method\":\"Api.Logout\"}",
+        "payloadType": "json",
+        "x": 1940,
+        "y": 480,
+        "wires": [
+            [
+                "ff6354613f1b9915"
+            ]
+        ]
+    },
+    {
+        "id": "ff6354613f1b9915",
+        "type": "link call",
+        "z": "a7c7ec5294135863",
+        "name": "plcApi",
+        "links": [
+            "a78b83a47c8fb6f5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2090,
+        "y": 480,
+        "wires": [
+            [
+                "86481eba70d74c9c"
+            ]
+        ]
+    },
+    {
         "id": "6ad9f8fe51b00404",
         "type": "tcp request",
         "z": "8e125f4bb2233c4b",
