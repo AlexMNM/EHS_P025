@@ -826,7 +826,44 @@
         "y": 1000,
         "wires": [
             [
-                "323208cc749c6dee"
+                "323208cc749c6dee",
+                "7416a04fe219358a"
+            ]
+        ]
+    },
+    {
+        "id": "8398432d49166ced",
+        "type": "junction",
+        "z": "a7c7ec5294135863",
+        "x": 2040,
+        "y": 700,
+        "wires": [
+            [
+                "c02c3132502895a8"
+            ]
+        ]
+    },
+    {
+        "id": "a0572999a7651e6c",
+        "type": "junction",
+        "z": "a7c7ec5294135863",
+        "x": 2020,
+        "y": 560,
+        "wires": [
+            [
+                "3cef18b72d27861f"
+            ]
+        ]
+    },
+    {
+        "id": "11b3448a5bb40437",
+        "type": "junction",
+        "z": "a7c7ec5294135863",
+        "x": 480,
+        "y": 1040,
+        "wires": [
+            [
+                "930314226d710c42"
             ]
         ]
     },
@@ -1851,7 +1888,7 @@
         "type": "function",
         "z": "a7c7ec5294135863",
         "name": "compose_payload",
-        "func": "switch (msg.topic) {\n    default:\n        break\n    case \"type\":\n        context.set(\"type\", msg.payload.value[0])\n        break\n    case \"order\":\n        context.set(\"order\", msg.payload.value[0])\n        break\n    case \"features\":\n    case \"parameters\": {\n        const data = new Uint8Array(msg.payload.value)\n        const buff = data.buffer\n\n        switch (msg.topic) {\n            case \"features\":\n                const features = {\n                    name: String.fromCharCode.apply(null, data.slice(2, 2 + data[1])),\n                    orientation: String.fromCharCode(data[12]),\n                    bushing: String.fromCharCode(data[13]),\n                    buttonForce: new DataView(buff).getFloat32(14, false),\n                    innerShaft: {\n                        detents: new DataView(buff).getUint16(18, false),\n                        resolution: new DataView(buff).getUint16(20, false),\n                        torque: new DataView(buff).getFloat32(22, false),\n                    },\n                    outerShaft: {\n                        detents: new DataView(buff).getUint16(26, false),\n                        resolution: new DataView(buff).getUint16(28, false),\n                        torque: new DataView(buff).getFloat32(30, false),\n                    },\n                    ipSealing: String.fromCharCode(data[34]),\n                    shaftType: String.fromCharCode(data[35]),\n                }\n                context.set(\"features\", features);\n                break\n            case \"parameters\":\n                const groupLim = sliceToObj(float32BigE(buff), [\"upper\", \"nominal\", \"lower\"])\n                const groupComp = sliceToObj(groupLim, [\"zPosition\", \"zVelocity\", \"displacement\", \"dVelocity\", \"strain\"])\n                const parameters = {\n                    button: groupComp[0],\n                    inner: groupComp[1],\n                    outer: groupComp[2],\n                }\n                msg.payload = {\n                    operator: global.get(\"operator\", \"file\"),\n                    type: context.get(\"type\"),\n                    order: context.get(\"order\"),\n                    features: context.get(\"features\"),\n                    parameters: parameters\n                }\n                msg.topic = \"productData\"\n                return msg\n        }\n    }\n        break\n}\nreturn\n\nfunction chunk(arr, chunkSize) {\n    return Array.from({ length: Math.ceil(arr.length / chunkSize) }, (_, i) =>\n        arr.slice(i * chunkSize, i * chunkSize + chunkSize)\n    );\n}\nfunction sliceToObj(arr, keys) {\n    const chunks = chunk(arr, keys.length)\n    const ret = []\n    chunks.forEach(function(chunk) {\n        const obj = {}\n        keys.forEach(function(key, i) {\n            obj[key] = chunk[i]\n        })\n        ret.push(obj)\n    });\n    return ret\n}\nfunction float32BigE(buf) {\n    const ret = [];\n    let index = 0;\n    for (; index < buf.byteLength; index += 4) {\n        ret.push(new DataView(buf).getFloat32(index, false));\n    }\n    return ret;\n}\n",
+        "func": "switch (msg.topic) {\n    default:\n        break\n    case \"name\":\n        context.set(\"name\", msg.payload[0].ressult ?? \"\");\n        break;\n    case \"type\":\n        context.set(\"type\", msg.payload.value[0])\n        break\n    case \"order\":\n        context.set(\"order\", msg.payload.value[0])\n        break\n    case \"features\":\n    case \"parameters\": {\n        const data = new Uint8Array(msg.payload.value)\n        const buff = data.buffer\n\n        switch (msg.topic) {\n            case \"features\":\n                const features = {\n                    name: String.fromCharCode.apply(null, data.slice(2, 2 + data[1])),\n                    orientation: String.fromCharCode(data[12]),\n                    bushing: String.fromCharCode(data[13]),\n                    buttonForce: new DataView(buff).getFloat32(14, false),\n                    innerShaft: {\n                        detents: new DataView(buff).getUint16(18, false),\n                        resolution: new DataView(buff).getUint16(20, false),\n                        torque: new DataView(buff).getFloat32(22, false),\n                    },\n                    outerShaft: {\n                        detents: new DataView(buff).getUint16(26, false),\n                        resolution: new DataView(buff).getUint16(28, false),\n                        torque: new DataView(buff).getFloat32(30, false),\n                    },\n                    ipSealing: String.fromCharCode(data[34]),\n                    shaftType: String.fromCharCode(data[35]),\n                }\n                context.set(\"features\", features);\n                break\n            case \"parameters\":\n                const groupLim = sliceToObj(float32BigE(buff), [\"upper\", \"nominal\", \"lower\"])\n                const groupComp = sliceToObj(groupLim, [\"zPosition\", \"zVelocity\", \"displacement\", \"dVelocity\", \"strain\"])\n                const parameters = {\n                    button: groupComp[0],\n                    inner: groupComp[1],\n                    outer: groupComp[2],\n                }\n                msg.payload = {\n                    operator: global.get(\"operator\", \"file\"),\n                    type: context.get(\"type\"),\n                    name: context.get(\"name\"),\n                    order: context.get(\"order\"),\n                    features: context.get(\"features\"),\n                    parameters: parameters\n                }\n                msg.topic = \"productData\"\n                return msg\n        }\n    }\n        break\n}\nreturn\n\nfunction chunk(arr, chunkSize) {\n    return Array.from({ length: Math.ceil(arr.length / chunkSize) }, (_, i) =>\n        arr.slice(i * chunkSize, i * chunkSize + chunkSize)\n    );\n}\nfunction sliceToObj(arr, keys) {\n    const chunks = chunk(arr, keys.length)\n    const ret = []\n    chunks.forEach(function(chunk) {\n        const obj = {}\n        keys.forEach(function(key, i) {\n            obj[key] = chunk[i]\n        })\n        ret.push(obj)\n    });\n    return ret\n}\nfunction float32BigE(buf) {\n    const ret = [];\n    let index = 0;\n    for (; index < buf.byteLength; index += 4) {\n        ret.push(new DataView(buf).getFloat32(index, false));\n    }\n    return ret;\n}\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3225,11 +3262,11 @@
         "topic": "",
         "payload": "{\"method\":\"Api.Login\",\"params\":{\"user\":\"admin\",\"password\":\"Adminpassword123\"}}",
         "payloadType": "json",
-        "x": 1920,
+        "x": 1900,
         "y": 560,
         "wires": [
             [
-                "3cef18b72d27861f"
+                "a0572999a7651e6c"
             ]
         ]
     },
@@ -3334,11 +3371,11 @@
         "topic": "",
         "payload": "{\"method\":\"Api.Login\",\"params\":{\"user\":\"read\",\"password\":\"Readpassword123\"}}",
         "payloadType": "json",
-        "x": 1920,
+        "x": 1900,
         "y": 600,
         "wires": [
             [
-                "3cef18b72d27861f"
+                "a0572999a7651e6c"
             ]
         ]
     },
@@ -3365,7 +3402,7 @@
         "y": 660,
         "wires": [
             [
-                "c02c3132502895a8"
+                "8398432d49166ced"
             ]
         ]
     },
@@ -3406,7 +3443,7 @@
         "y": 700,
         "wires": [
             [
-                "c02c3132502895a8"
+                "8398432d49166ced"
             ]
         ]
     },
@@ -3420,7 +3457,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 2090,
+        "x": 2130,
         "y": 700,
         "wires": [
             []
@@ -3448,10 +3485,10 @@
         "payload": "{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"ProductAddon\\\".name\"}}",
         "payloadType": "json",
         "x": 1910,
-        "y": 760,
+        "y": 740,
         "wires": [
             [
-                "c02c3132502895a8"
+                "8398432d49166ced"
             ]
         ]
     },
@@ -3495,6 +3532,58 @@
         "wires": [
             [
                 "86481eba70d74c9c"
+            ]
+        ]
+    },
+    {
+        "id": "7416a04fe219358a",
+        "type": "change",
+        "z": "a7c7ec5294135863",
+        "name": "get optional name",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"ProductAddon\\\".name\"}}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "name",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 980,
+        "wires": [
+            [
+                "b9b73b72d51066c0"
+            ]
+        ]
+    },
+    {
+        "id": "b9b73b72d51066c0",
+        "type": "link call",
+        "z": "a7c7ec5294135863",
+        "name": "plcApi",
+        "links": [
+            "a78b83a47c8fb6f5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 550,
+        "y": 980,
+        "wires": [
+            [
+                "11b3448a5bb40437"
             ]
         ]
     },
