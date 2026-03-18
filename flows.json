@@ -2224,7 +2224,7 @@
             "ab059ae988157308"
         ],
         "x": 235,
-        "y": 980,
+        "y": 1000,
         "wires": [
             [
                 "8d7937b4d13c6b28"
@@ -3599,6 +3599,35 @@
         "y": 980,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "1148760bb081cfb4",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "api PlcProgram read",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "features",
+        "payload": "{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"ProductData\\\".product\"}}",
+        "payloadType": "json",
+        "x": 1910,
+        "y": 780,
+        "wires": [
+            [
+                "8398432d49166ced"
+            ]
         ]
     },
     {
