@@ -3620,7 +3620,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "features",
-        "payload": "{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"ProductData\\\".product\"}}",
+        "payload": "{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"ProductParameters\\\".product\"}}",
         "payloadType": "json",
         "x": 1910,
         "y": 780,
