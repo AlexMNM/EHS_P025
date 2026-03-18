@@ -3429,7 +3429,7 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "[{\"id\":22,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"DU1_XIST_A\\\"\"}},{\"id\":33,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"DU2_XIST_A\\\"\"}}]",
+        "payload": "{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"ProductAddon\\\".name\"}}",
         "payloadType": "json",
         "x": 1910,
         "y": 760,
