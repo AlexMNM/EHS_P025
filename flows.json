@@ -856,18 +856,6 @@
         ]
     },
     {
-        "id": "11b3448a5bb40437",
-        "type": "junction",
-        "z": "a7c7ec5294135863",
-        "x": 480,
-        "y": 1040,
-        "wires": [
-            [
-                "930314226d710c42"
-            ]
-        ]
-    },
-    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -3583,8 +3571,34 @@
         "y": 980,
         "wires": [
             [
-                "11b3448a5bb40437"
+                "40d0b3b1b40e1e46"
             ]
+        ]
+    },
+    {
+        "id": "40d0b3b1b40e1e46",
+        "type": "change",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "session.product.name",
+                "pt": "global",
+                "to": "payload[0].result",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 980,
+        "wires": [
+            []
         ]
     },
     {
