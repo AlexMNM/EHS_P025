@@ -2949,7 +2949,7 @@
         "type": "function",
         "z": "a7c7ec5294135863",
         "name": "api request",
-        "func": "const { token=\"\", cookie=\"\" } = flow.get(\"apiSession\") ?? {};\nconst host = flow.get(\"plc\");\n\nconst calls = ([].concat(msg.payload)).map((c, i) => ({\"jsonrpc\":\"2.0\", \"id\": c.id ?? i + 1, \"method\":c.method, \"params\":c.params}));\n\nconst ret = {};\nret.url = \"https://\" + host.address + \"/api/jsonrpc\";\nret.method = \"POST\";\nif (token !== \"\") {\n    ret.headers = {\"X-Auth-Token\": token};\n}\nret.payload = calls;\ncontext.set(\"calls\", calls);\nret[\"_linkSource\"] = msg[\"_linkSource\"];\nret.topic = msg.topic;\n\nreturn ret;",
+        "func": "const { token=\"\", cookie=\"\" } = flow.get(\"apiSession\") ?? {};\nconst host = flow.get(\"plc\");\n\nconst calls = ([].concat(msg.payload)).map((c, i) => ({\"jsonrpc\":\"2.0\", \"id\": c.id ?? i + 1, \"method\":c.method, \"params\":c.params}));\n\nconst ret = {};\nret.url = \"https://\" + host.address + \"/api/jsonrpc\";\nret.method = \"POST\";\nif (token !== \"\") {\n    ret.headers = {\"X-Auth-Token\": token};\n}\nret.payload = calls;\ncontext.set(\"calls\", calls);\nret[\"_linkSource\"] = msg[\"_linkSource\"];\n\nif(msg.topic) ret.topic = msg.topic;\n\n\nreturn ret;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
