@@ -780,6 +780,45 @@
         ]
     },
     {
+        "id": "aa2d79e10e1daf07",
+        "type": "junction",
+        "z": "a7c7ec5294135863",
+        "x": 2780,
+        "y": 260,
+        "wires": [
+            [
+                "d3dc04d0dd689a5f",
+                "ecf737098bfe44dd",
+                "a5b79fba1b173ac2"
+            ]
+        ]
+    },
+    {
+        "id": "5eb8abe8c8d7d32a",
+        "type": "junction",
+        "z": "a7c7ec5294135863",
+        "x": 2000,
+        "y": 380,
+        "wires": [
+            [
+                "de817c06d991f38c"
+            ]
+        ]
+    },
+    {
+        "id": "ecf737098bfe44dd",
+        "type": "junction",
+        "z": "a7c7ec5294135863",
+        "x": 2540,
+        "y": 320,
+        "wires": [
+            [
+                "16467ac59c660a5d",
+                "0c31b702c6e5f853"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -1020,7 +1059,7 @@
                 "cols": "12"
             }
         ],
-        "order": 4,
+        "order": 5,
         "className": "",
         "visible": true,
         "disabled": false
@@ -1202,7 +1241,7 @@
                 "cols": "12"
             }
         ],
-        "order": 2,
+        "order": 3,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -1280,7 +1319,7 @@
                 "cols": "14"
             }
         ],
-        "order": 3,
+        "order": 4,
         "className": "",
         "visible": "true",
         "disabled": "false"
@@ -1420,7 +1459,7 @@
                 "cols": "12"
             }
         ],
-        "order": 5,
+        "order": 6,
         "className": "",
         "visible": true,
         "disabled": false
@@ -1438,6 +1477,39 @@
         "visible": "true",
         "disabled": "false",
         "groupType": "default"
+    },
+    {
+        "id": "89f028e9c50b2385",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "6540e250d8261692",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
     },
     {
         "id": "f7676b47d7dc782a",
@@ -2824,56 +2896,6 @@
         ]
     },
     {
-        "id": "d9cf41235360df37",
-        "type": "inject",
-        "z": "a7c7ec5294135863",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 660,
-        "y": 940,
-        "wires": [
-            [
-                "8e429454435cec5e"
-            ]
-        ]
-    },
-    {
-        "id": "8e429454435cec5e",
-        "type": "s7comm read",
-        "z": "a7c7ec5294135863",
-        "connection": "3cb7f915b2dc54d4",
-        "payload": "{\"S7_Type\":\"DB\",\"S7_DBnum\":\"17\",\"S7_Datatype\":\"STRING\",\"S7_Offset\":\"0\",\"S7_BitOffset\":\"0\",\"S7_Quantity\":\"254\",\"S7_Name\":\"productName\"}",
-        "s7Name": "productName",
-        "topic": "name",
-        "name": "",
-        "signalSetted": false,
-        "none": "true",
-        "repeat": "",
-        "once": false,
-        "x": 810,
-        "y": 940,
-        "wires": [
-            [
-                "a5b79fba1b173ac2"
-            ]
-        ]
-    },
-    {
         "id": "a5b79fba1b173ac2",
         "type": "debug",
         "z": "a7c7ec5294135863",
@@ -2886,9 +2908,419 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
-        "y": 940,
+        "x": 2700,
+        "y": 120,
         "wires": []
+    },
+    {
+        "id": "a78b83a47c8fb6f5",
+        "type": "link in",
+        "z": "a7c7ec5294135863",
+        "name": "inPlcApi",
+        "links": [],
+        "x": 2385,
+        "y": 260,
+        "wires": [
+            [
+                "1ea18d41c6283f27",
+                "a5b79fba1b173ac2"
+            ]
+        ]
+    },
+    {
+        "id": "bb226ab3ba523fe8",
+        "type": "http request",
+        "z": "a7c7ec5294135863",
+        "name": "permissive TLS",
+        "method": "use",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "89f028e9c50b2385",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2660,
+        "y": 260,
+        "wires": [
+            [
+                "aa2d79e10e1daf07"
+            ]
+        ]
+    },
+    {
+        "id": "1ea18d41c6283f27",
+        "type": "function",
+        "z": "a7c7ec5294135863",
+        "name": "api request",
+        "func": "const { token=\"\", cookie=\"\" } = flow.get(\"session\") ?? {};\nconst host = flow.get(\"plc\");\n\nconst calls = ([].concat(msg.payload)).map((c, i) => ({\"jsonrpc\":\"2.0\", \"id\": c.id ?? i + 1, \"method\":c.method, \"params\":c.params}));\n\nconst ret = {};\nret.url = \"https://\" + host.address + \"/api/jsonrpc\";\nret.method = \"POST\";\nif (token !== \"\") {\n    ret.headers = {\"X-Auth-Token\": token};\n}\nret.payload = calls;\ncontext.set(\"calls\", calls);\nret[\"_linkSource\"] = msg[\"_linkSource\"];\n\nreturn ret;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2490,
+        "y": 260,
+        "wires": [
+            [
+                "bb226ab3ba523fe8"
+            ]
+        ]
+    },
+    {
+        "id": "d3dc04d0dd689a5f",
+        "type": "link out",
+        "z": "a7c7ec5294135863",
+        "name": "outPlcApi",
+        "mode": "return",
+        "links": [],
+        "x": 2845,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8e5352817fdbf2a3",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 1930,
+        "y": 300,
+        "wires": [
+            [
+                "9fd6872d86ce115a",
+                "48cb6f8c21556317"
+            ]
+        ]
+    },
+    {
+        "id": "9fd6872d86ce115a",
+        "type": "change",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "plc",
+                "pt": "flow",
+                "to": "{\"address\":\"192.168.100.10\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2110,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "81cd7d5143f212b5",
+        "type": "trigger",
+        "z": "a7c7ec5294135863",
+        "name": "auto ping trigger",
+        "op1": "",
+        "op2": "0",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 2680,
+        "y": 400,
+        "wires": [
+            [
+                "9005b08a6c648870"
+            ]
+        ]
+    },
+    {
+        "id": "9005b08a6c648870",
+        "type": "link out",
+        "z": "a7c7ec5294135863",
+        "name": "outKeepLogin",
+        "mode": "link",
+        "links": [],
+        "x": 2805,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0c31b702c6e5f853",
+        "type": "switch",
+        "z": "a7c7ec5294135863",
+        "name": "if auto ping enabled",
+        "property": "auto_ping",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 2690,
+        "y": 360,
+        "wires": [
+            [
+                "81cd7d5143f212b5"
+            ]
+        ]
+    },
+    {
+        "id": "42a14c03bf53f6c0",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 1930,
+        "y": 360,
+        "wires": [
+            [
+                "5eb8abe8c8d7d32a"
+            ]
+        ]
+    },
+    {
+        "id": "6233649856233605",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 1930,
+        "y": 400,
+        "wires": [
+            [
+                "5eb8abe8c8d7d32a"
+            ]
+        ]
+    },
+    {
+        "id": "de817c06d991f38c",
+        "type": "change",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "auto_ping",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2130,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "16467ac59c660a5d",
+        "type": "trigger",
+        "z": "a7c7ec5294135863",
+        "name": "session expired",
+        "op1": "",
+        "op2": "0",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "2",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 2680,
+        "y": 320,
+        "wires": [
+            [
+                "fbbb4e01ed8eb4f3"
+            ]
+        ]
+    },
+    {
+        "id": "fbbb4e01ed8eb4f3",
+        "type": "link out",
+        "z": "a7c7ec5294135863",
+        "name": "outSessionExpired",
+        "mode": "link",
+        "links": [
+            "a3c91dfac5415cc6"
+        ],
+        "x": 2805,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "48cb6f8c21556317",
+        "type": "link out",
+        "z": "a7c7ec5294135863",
+        "name": "outStartup",
+        "mode": "link",
+        "links": [
+            "a3c91dfac5415cc6"
+        ],
+        "x": 2055,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "05fe256dc0a21b4e",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "api login",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"method\":\"Api.Login\",\"params\":{\"user\":\"admin\",\"password\":\"Adminpassword123\"}}",
+        "payloadType": "json",
+        "x": 1940,
+        "y": 560,
+        "wires": [
+            [
+                "3cef18b72d27861f"
+            ]
+        ]
+    },
+    {
+        "id": "3cef18b72d27861f",
+        "type": "link call",
+        "z": "a7c7ec5294135863",
+        "name": "plcApi",
+        "links": [
+            "a78b83a47c8fb6f5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2090,
+        "y": 560,
+        "wires": [
+            [
+                "d1769ac556d66367"
+            ]
+        ]
+    },
+    {
+        "id": "d1769ac556d66367",
+        "type": "change",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "apiSession",
+                "pt": "flow",
+                "to": "payload[0].result",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2290,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a3c91dfac5415cc6",
+        "type": "link in",
+        "z": "a7c7ec5294135863",
+        "name": "inDelSession",
+        "links": [
+            "fbbb4e01ed8eb4f3",
+            "48cb6f8c21556317"
+        ],
+        "x": 2125,
+        "y": 520,
+        "wires": [
+            [
+                "86481eba70d74c9c"
+            ]
+        ]
+    },
+    {
+        "id": "86481eba70d74c9c",
+        "type": "change",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "apiSession",
+                "pt": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2300,
+        "y": 520,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "6ad9f8fe51b00404",
