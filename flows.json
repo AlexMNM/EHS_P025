@@ -3329,12 +3329,12 @@
         ],
         "repeat": "",
         "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
+        "once": true,
+        "onceDelay": "1",
         "topic": "",
         "payload": "{\"method\":\"Api.Login\",\"params\":{\"user\":\"read\",\"password\":\"Readpassword123\"}}",
         "payloadType": "json",
-        "x": 1930,
+        "x": 1920,
         "y": 600,
         "wires": [
             [
