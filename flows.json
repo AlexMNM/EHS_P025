@@ -3571,36 +3571,7 @@
         "y": 980,
         "wires": [
             [
-                "40d0b3b1b40e1e46"
-            ]
-        ]
-    },
-    {
-        "id": "40d0b3b1b40e1e46",
-        "type": "change",
-        "z": "a7c7ec5294135863",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload.name",
-                "pt": "msg",
-                "to": "payload[0].result",
-                "tot": "msg",
-                "dc": true
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 760,
-        "y": 980,
-        "wires": [
-            [
-                "9ca3cd1e4cfebc65",
-                "b168d5200d7aa283"
+                "8f4194cb11b9d91f"
             ]
         ]
     },
@@ -3646,6 +3617,26 @@
         "y": 980,
         "wires": [
             [
+                "9ca3cd1e4cfebc65"
+            ]
+        ]
+    },
+    {
+        "id": "8f4194cb11b9d91f",
+        "type": "template",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n   \"name\": {{payload[0].result}}\n}",
+        "output": "json",
+        "x": 720,
+        "y": 980,
+        "wires": [
+            [
+                "b168d5200d7aa283",
                 "9ca3cd1e4cfebc65"
             ]
         ]
