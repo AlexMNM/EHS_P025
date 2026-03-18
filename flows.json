@@ -3198,7 +3198,7 @@
         "id": "05fe256dc0a21b4e",
         "type": "inject",
         "z": "a7c7ec5294135863",
-        "name": "api login",
+        "name": "api admin login",
         "props": [
             {
                 "p": "payload"
@@ -3211,7 +3211,7 @@
         "topic": "",
         "payload": "{\"method\":\"Api.Login\",\"params\":{\"user\":\"admin\",\"password\":\"Adminpassword123\"}}",
         "payloadType": "json",
-        "x": 1940,
+        "x": 1920,
         "y": 560,
         "wires": [
             [
@@ -3299,6 +3299,29 @@
         "reg": false,
         "x": 2300,
         "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a9b3494c23c5871",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "api read login",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"method\":\"Api.Login\",\"params\":{\"user\":\"read\",\"password\":\"Readpassword123\"}}",
+        "payloadType": "json",
+        "x": 1950,
+        "y": 600,
         "wires": [
             []
         ]
