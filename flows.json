@@ -3320,10 +3320,12 @@
         "topic": "",
         "payload": "{\"method\":\"Api.Login\",\"params\":{\"user\":\"read\",\"password\":\"Readpassword123\"}}",
         "payloadType": "json",
-        "x": 1950,
+        "x": 1930,
         "y": 600,
         "wires": [
-            []
+            [
+                "3cef18b72d27861f"
+            ]
         ]
     },
     {
