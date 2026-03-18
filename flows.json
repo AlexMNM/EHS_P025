@@ -1887,7 +1887,7 @@
         "y": 1080,
         "wires": [
             [
-                "e5a7e70048bace36"
+                "b168d5200d7aa283"
             ]
         ]
     },
@@ -2342,7 +2342,7 @@
         "y": 940,
         "wires": [
             [
-                "7416a04fe219358a"
+                "8d7937b4d13c6b28"
             ]
         ]
     },
@@ -3599,7 +3599,8 @@
         "y": 980,
         "wires": [
             [
-                "9ca3cd1e4cfebc65"
+                "9ca3cd1e4cfebc65",
+                "b168d5200d7aa283"
             ]
         ]
     },
@@ -3612,12 +3613,42 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "true",
+        "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
-        "y": 980,
+        "x": 1080,
+        "y": 920,
         "wires": []
+    },
+    {
+        "id": "b168d5200d7aa283",
+        "type": "join",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "2",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1010,
+        "y": 980,
+        "wires": [
+            [
+                "9ca3cd1e4cfebc65"
+            ]
+        ]
     },
     {
         "id": "6ad9f8fe51b00404",
