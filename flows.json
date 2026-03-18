@@ -3415,6 +3415,31 @@
         ]
     },
     {
+        "id": "7247d82e2306ca91",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "api PlcProgram read",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[{\"id\":22,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"DU1_XIST_A\\\"\"}},{\"id\":33,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"DU2_XIST_A\\\"\"}}]",
+        "payloadType": "json",
+        "x": 1910,
+        "y": 760,
+        "wires": [
+            [
+                "c02c3132502895a8"
+            ]
+        ]
+    },
+    {
         "id": "6ad9f8fe51b00404",
         "type": "tcp request",
         "z": "8e125f4bb2233c4b",
