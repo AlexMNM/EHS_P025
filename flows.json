@@ -856,6 +856,18 @@
         ]
     },
     {
+        "id": "6bd3bd101ab625ba",
+        "type": "junction",
+        "z": "a7c7ec5294135863",
+        "x": 740,
+        "y": 1080,
+        "wires": [
+            [
+                "b168d5200d7aa283"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -1887,7 +1899,7 @@
         "y": 1080,
         "wires": [
             [
-                "b168d5200d7aa283"
+                "6bd3bd101ab625ba"
             ]
         ]
     },
@@ -2073,7 +2085,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1050,
+        "x": 1070,
         "y": 1080,
         "wires": [
             [
@@ -3613,11 +3625,12 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 1010,
-        "y": 980,
+        "x": 850,
+        "y": 1080,
         "wires": [
             [
-                "9ca3cd1e4cfebc65"
+                "9ca3cd1e4cfebc65",
+                "e5a7e70048bace36"
             ]
         ]
     },
@@ -3638,7 +3651,7 @@
         "wires": [
             [
                 "9ca3cd1e4cfebc65",
-                "b168d5200d7aa283"
+                "6bd3bd101ab625ba"
             ]
         ]
     },
