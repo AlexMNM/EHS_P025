@@ -3039,7 +3039,9 @@
         "z": "a7c7ec5294135863",
         "name": "outKeepLogin",
         "mode": "link",
-        "links": [],
+        "links": [
+            "a99397716ebf30c5"
+        ],
         "x": 2805,
         "y": 400,
         "wires": []
@@ -3326,6 +3328,90 @@
             [
                 "3cef18b72d27861f"
             ]
+        ]
+    },
+    {
+        "id": "6c75f7e1a6e953dd",
+        "type": "change",
+        "z": "a7c7ec5294135863",
+        "name": "api ping",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"method\":\"Api.Ping\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1940,
+        "y": 660,
+        "wires": [
+            [
+                "c02c3132502895a8"
+            ]
+        ]
+    },
+    {
+        "id": "a99397716ebf30c5",
+        "type": "link in",
+        "z": "a7c7ec5294135863",
+        "name": "inApiPing",
+        "links": [
+            "9005b08a6c648870"
+        ],
+        "x": 1835,
+        "y": 660,
+        "wires": [
+            [
+                "6c75f7e1a6e953dd"
+            ]
+        ]
+    },
+    {
+        "id": "add30a540e49cc0b",
+        "type": "inject",
+        "z": "a7c7ec5294135863",
+        "name": "api get perm + browse",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "[{\"method\":\"Api.GetPermissions\"},{\"method\":\"Api.Browse\"}]",
+        "payloadType": "json",
+        "x": 1900,
+        "y": 700,
+        "wires": [
+            [
+                "c02c3132502895a8"
+            ]
+        ]
+    },
+    {
+        "id": "c02c3132502895a8",
+        "type": "link call",
+        "z": "a7c7ec5294135863",
+        "name": "plcApi",
+        "links": [
+            "a78b83a47c8fb6f5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 2090,
+        "y": 700,
+        "wires": [
+            []
         ]
     },
     {
