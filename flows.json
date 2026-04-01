@@ -16702,7 +16702,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 690,
+        "x": 670,
         "y": 320,
         "wires": [
             [
@@ -16723,7 +16723,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
+        "x": 1080,
         "y": 320,
         "wires": []
     },
@@ -16885,7 +16885,7 @@
         "type": "join",
         "z": "31b99f8067ff832b",
         "name": "",
-        "mode": "custom",
+        "mode": "auto",
         "build": "array",
         "property": "payload",
         "propertyType": "msg",
@@ -16901,7 +16901,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 690,
+        "x": 870,
         "y": 400,
         "wires": [
             [
@@ -16922,7 +16922,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 880,
+        "x": 1080,
         "y": 400,
         "wires": []
     },
