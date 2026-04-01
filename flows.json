@@ -16828,8 +16828,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
-        "y": 520,
+        "x": 600,
+        "y": 580,
         "wires": []
     },
     {
@@ -17042,6 +17042,48 @@
         "y": 400,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "6494ff03aca028a4",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "acknowledgeAll",
+        "x": 240,
+        "y": 480,
+        "wires": [
+            [
+                "4d66acca5cf87d06"
+            ]
+        ]
+    },
+    {
+        "id": "4d66acca5cf87d06",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "GetZ",
+        "links": [
+            "58998e4d31bfec44"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 410,
+        "y": 480,
+        "wires": [
+            [
+                "dd95cfc2c92a82af"
+            ]
         ]
     },
     {
