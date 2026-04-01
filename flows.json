@@ -16674,7 +16674,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1180,
+        "x": 560,
         "y": 320,
         "wires": []
     },
@@ -16694,11 +16694,11 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 930,
+        "x": 490,
         "y": 160,
         "wires": [
             [
-                "ba841bcbbba8c4bb"
+                "dcbf3cfaecd96c12"
             ]
         ]
     },
@@ -16708,7 +16708,7 @@
         "z": "31b99f8067ff832b",
         "name": "inGetZ",
         "links": [],
-        "x": 805,
+        "x": 365,
         "y": 160,
         "wires": [
             [
@@ -16723,7 +16723,7 @@
         "name": "outGetZ",
         "mode": "return",
         "links": [],
-        "x": 1055,
+        "x": 1245,
         "y": 160,
         "wires": []
     },
@@ -16770,7 +16770,7 @@
         "y": 320,
         "wires": [
             [
-                "76a42d255162bca9"
+                "03575c8baafe6cd0"
             ]
         ]
     },
@@ -16817,56 +16817,7 @@
         "y": 400,
         "wires": [
             [
-                "517293820936d503"
-            ]
-        ]
-    },
-    {
-        "id": "517293820936d503",
-        "type": "split",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "splt": ";",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 550,
-        "y": 400,
-        "wires": [
-            [
-                "297d7e2c643b82db"
-            ]
-        ]
-    },
-    {
-        "id": "d491bc4490b7cd95",
-        "type": "join",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": true,
-        "accumulate": false,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "num",
-        "reduceFixup": "",
-        "x": 790,
-        "y": 400,
-        "wires": [
-            [
-                "6041c487d4e5a90a"
+                "dd95cfc2c92a82af"
             ]
         ]
     },
@@ -16883,88 +16834,12 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1180,
+        "x": 560,
         "y": 400,
         "wires": []
     },
     {
-        "id": "297d7e2c643b82db",
-        "type": "split",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "splt": "|",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 670,
-        "y": 400,
-        "wires": [
-            [
-                "d491bc4490b7cd95"
-            ]
-        ]
-    },
-    {
-        "id": "a1926b210a1baba1",
-        "type": "join",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": true,
-        "accumulate": false,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "num",
-        "reduceFixup": "",
-        "x": 1050,
-        "y": 400,
-        "wires": [
-            [
-                "dd95cfc2c92a82af"
-            ]
-        ]
-    },
-    {
-        "id": "6041c487d4e5a90a",
-        "type": "change",
-        "z": "31b99f8067ff832b",
-        "name": "parse row",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$zip(keys, payload){$[0]:$[1]}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 920,
-        "y": 400,
-        "wires": [
-            [
-                "a1926b210a1baba1"
-            ]
-        ]
-    },
-    {
-        "id": "76a42d255162bca9",
+        "id": "dcbf3cfaecd96c12",
         "type": "split",
         "z": "31b99f8067ff832b",
         "name": "",
@@ -16975,16 +16850,16 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 550,
-        "y": 320,
+        "x": 650,
+        "y": 160,
         "wires": [
             [
-                "25bb5a0075796f92"
+                "a2004603261ab425"
             ]
         ]
     },
     {
-        "id": "15937849f981b1f0",
+        "id": "a586d557bafdb19b",
         "type": "join",
         "z": "31b99f8067ff832b",
         "name": "",
@@ -17004,16 +16879,16 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 790,
-        "y": 320,
+        "x": 890,
+        "y": 160,
         "wires": [
             [
-                "fb1c9add95ca82bc"
+                "1cf001998def3faf"
             ]
         ]
     },
     {
-        "id": "25bb5a0075796f92",
+        "id": "a2004603261ab425",
         "type": "split",
         "z": "31b99f8067ff832b",
         "name": "",
@@ -17024,16 +16899,16 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 670,
-        "y": 320,
+        "x": 770,
+        "y": 160,
         "wires": [
             [
-                "15937849f981b1f0"
+                "a586d557bafdb19b"
             ]
         ]
     },
     {
-        "id": "427c587827b24bd4",
+        "id": "e8bdc9c824d3202a",
         "type": "join",
         "z": "31b99f8067ff832b",
         "name": "",
@@ -17053,16 +16928,16 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 1050,
-        "y": 320,
+        "x": 1150,
+        "y": 160,
         "wires": [
             [
-                "03575c8baafe6cd0"
+                "ba841bcbbba8c4bb"
             ]
         ]
     },
     {
-        "id": "fb1c9add95ca82bc",
+        "id": "1cf001998def3faf",
         "type": "change",
         "z": "31b99f8067ff832b",
         "name": "parse row",
@@ -17080,11 +16955,11 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 920,
-        "y": 320,
+        "x": 1020,
+        "y": 160,
         "wires": [
             [
-                "427c587827b24bd4"
+                "e8bdc9c824d3202a"
             ]
         ]
     },
