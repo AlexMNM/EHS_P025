@@ -17049,7 +17049,7 @@
         "type": "function",
         "z": "31b99f8067ff832b",
         "name": "entries",
-        "func": "msg.payload = Object.entries(msg.payload[0]);\nreturn msg;",
+        "func": "msg.payload = Object.entries(msg.payload[0]).map(([k, v]) => ({\"key\": k, \"value\": v}));\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
