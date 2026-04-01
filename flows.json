@@ -1676,7 +1676,7 @@
         "group": "b19fdb090e5f5f51",
         "name": "spacer",
         "tooltip": "",
-        "order": 4,
+        "order": 5,
         "width": 1,
         "height": 1,
         "className": ""
@@ -1687,7 +1687,7 @@
         "group": "b19fdb090e5f5f51",
         "name": "spacer",
         "tooltip": "",
-        "order": 6,
+        "order": 4,
         "width": "4",
         "height": 1,
         "className": ""
@@ -17055,7 +17055,7 @@
         "group": "b19fdb090e5f5f51",
         "name": "Errors",
         "label": "Diagnostics status",
-        "order": 5,
+        "order": 6,
         "width": "5",
         "height": "1",
         "maxrows": "10",
