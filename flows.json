@@ -894,6 +894,18 @@
         ]
     },
     {
+        "id": "24dc0151969711ad",
+        "type": "junction",
+        "z": "31b99f8067ff832b",
+        "x": 380,
+        "y": 500,
+        "wires": [
+            [
+                "414a432eb63dd21f"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -1676,7 +1688,7 @@
         "group": "b19fdb090e5f5f51",
         "name": "spacer",
         "tooltip": "",
-        "order": 5,
+        "order": 6,
         "width": 1,
         "height": 1,
         "className": ""
@@ -1688,7 +1700,7 @@
         "name": "spacer",
         "tooltip": "",
         "order": 4,
-        "width": "4",
+        "width": "3",
         "height": 1,
         "className": ""
     },
@@ -17055,7 +17067,7 @@
         "group": "b19fdb090e5f5f51",
         "name": "Errors",
         "label": "Diagnostics status",
-        "order": 6,
+        "order": 7,
         "width": "5",
         "height": "1",
         "maxrows": "10",
@@ -17092,7 +17104,7 @@
         "onceDelay": 0.1,
         "topic": "acknowledgeAll",
         "x": 240,
-        "y": 540,
+        "y": 560,
         "wires": [
             [
                 "4d66acca5cf87d06"
@@ -17110,10 +17122,10 @@
         "linkType": "static",
         "timeout": "30",
         "x": 410,
-        "y": 540,
+        "y": 560,
         "wires": [
             [
-                "414a432eb63dd21f"
+                "24dc0151969711ad"
             ]
         ]
     },
@@ -17124,7 +17136,7 @@
         "group": "b19fdb090e5f5f51",
         "name": "",
         "label": "Acknowledge all",
-        "order": 3,
+        "order": 5,
         "width": "1",
         "height": "1",
         "emulateClick": false,
@@ -17149,7 +17161,7 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 240,
-        "y": 580,
+        "y": 600,
         "wires": [
             [
                 "4d66acca5cf87d06"
@@ -17226,6 +17238,45 @@
         "wires": [
             [
                 "05c86b386f9d6bea"
+            ]
+        ]
+    },
+    {
+        "id": "974742dbeccc6a5c",
+        "type": "ui-button",
+        "z": "31b99f8067ff832b",
+        "group": "b19fdb090e5f5f51",
+        "name": "",
+        "label": "Refresh",
+        "order": 3,
+        "width": "1",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "file-refresh",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 220,
+        "y": 500,
+        "wires": [
+            [
+                "24dc0151969711ad"
             ]
         ]
     },
