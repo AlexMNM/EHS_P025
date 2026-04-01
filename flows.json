@@ -16662,55 +16662,6 @@
         ]
     },
     {
-        "id": "1ceaec02ae631efc",
-        "type": "split",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "splt": "|",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 550,
-        "y": 320,
-        "wires": [
-            [
-                "12a7f35b005932ce"
-            ]
-        ]
-    },
-    {
-        "id": "12a7f35b005932ce",
-        "type": "join",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": true,
-        "accumulate": false,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 670,
-        "y": 320,
-        "wires": [
-            [
-                "03575c8baafe6cd0"
-            ]
-        ]
-    },
-    {
         "id": "03575c8baafe6cd0",
         "type": "debug",
         "z": "31b99f8067ff832b",
@@ -16723,7 +16674,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
+        "x": 1180,
         "y": 320,
         "wires": []
     },
@@ -16814,7 +16765,7 @@
         "y": 320,
         "wires": [
             [
-                "1ceaec02ae631efc"
+                "76a42d255162bca9"
             ]
         ]
     },
@@ -16922,7 +16873,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
+        "x": 1180,
         "y": 400,
         "wires": []
     },
@@ -16967,7 +16918,7 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 1090,
+        "x": 1050,
         "y": 400,
         "wires": [
             [
@@ -16979,7 +16930,7 @@
         "id": "6041c487d4e5a90a",
         "type": "change",
         "z": "31b99f8067ff832b",
-        "name": "",
+        "name": "parse row",
         "rules": [
             {
                 "t": "set",
@@ -16994,11 +16945,136 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 940,
+        "x": 920,
         "y": 400,
         "wires": [
             [
                 "a1926b210a1baba1"
+            ]
+        ]
+    },
+    {
+        "id": "76a42d255162bca9",
+        "type": "split",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "splt": ";",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 550,
+        "y": 320,
+        "wires": [
+            [
+                "25bb5a0075796f92"
+            ]
+        ]
+    },
+    {
+        "id": "15937849f981b1f0",
+        "type": "join",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 790,
+        "y": 320,
+        "wires": [
+            [
+                "fb1c9add95ca82bc"
+            ]
+        ]
+    },
+    {
+        "id": "25bb5a0075796f92",
+        "type": "split",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "splt": "|",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 670,
+        "y": 320,
+        "wires": [
+            [
+                "15937849f981b1f0"
+            ]
+        ]
+    },
+    {
+        "id": "427c587827b24bd4",
+        "type": "join",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1050,
+        "y": 320,
+        "wires": [
+            [
+                "03575c8baafe6cd0"
+            ]
+        ]
+    },
+    {
+        "id": "fb1c9add95ca82bc",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "parse row",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$zip([\"Number\", \"DiagID\", \"Name\", \"Category\", \"IconNumber\", \"Time\"], payload){$[0]:$[1]}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 920,
+        "y": 320,
+        "wires": [
+            [
+                "427c587827b24bd4"
             ]
         ]
     },
