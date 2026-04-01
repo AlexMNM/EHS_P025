@@ -1635,6 +1635,17 @@
         "groupType": "default"
     },
     {
+        "id": "1f386fb1f9f645b5",
+        "type": "ui-spacer",
+        "group": "b19fdb090e5f5f51",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 2,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
         "id": "f7676b47d7dc782a",
         "type": "tcp in",
         "z": "a7c7ec5294135863",
@@ -16990,7 +17001,7 @@
         "page": "",
         "ui": "",
         "name": "Axis status",
-        "order": 2,
+        "order": 1,
         "width": "3",
         "height": "18",
         "head": "",
@@ -17013,8 +17024,8 @@
         "group": "b19fdb090e5f5f51",
         "name": "Errors",
         "label": "",
-        "order": 1,
-        "width": "3",
+        "order": 3,
+        "width": "2",
         "height": "1",
         "maxrows": 0,
         "passthru": false,
