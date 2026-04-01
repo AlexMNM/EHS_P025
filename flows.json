@@ -872,7 +872,7 @@
         "id": "14f119efb2a3c8ed",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 340,
+        "x": 420,
         "y": 420,
         "wires": [
             [
@@ -885,7 +885,7 @@
         "id": "19f7c22ca3e2f3d7",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 520,
+        "x": 600,
         "y": 420,
         "wires": [
             [
@@ -16867,7 +16867,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 430,
+        "x": 510,
         "y": 400,
         "wires": [
             [
@@ -17066,7 +17066,7 @@
         "z": "31b99f8067ff832b",
         "group": "b19fdb090e5f5f51",
         "name": "Errors",
-        "label": "Diagnostics status",
+        "label": "",
         "order": 7,
         "width": "5",
         "height": "1",
@@ -17081,7 +17081,7 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 590,
+        "x": 750,
         "y": 420,
         "wires": [
             []
@@ -17200,7 +17200,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
+        "x": 510,
         "y": 440,
         "wires": [
             [
