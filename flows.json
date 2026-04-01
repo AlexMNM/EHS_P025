@@ -1549,7 +1549,7 @@
         "ui": "86cea779c465227a",
         "path": "/maintenance",
         "icon": "glasses",
-        "layout": "tabs",
+        "layout": "grid",
         "theme": "db3c0ff5429c4380",
         "breakpoints": [
             {
@@ -1575,8 +1575,8 @@
         ],
         "order": 6,
         "className": "",
-        "visible": true,
-        "disabled": false
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "b19fdb090e5f5f51",
