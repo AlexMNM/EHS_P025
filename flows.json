@@ -1624,7 +1624,7 @@
         "path": "/maintenance",
         "icon": "glasses",
         "layout": "tabs",
-        "theme": "db3c0ff5429c4380",
+        "theme": "91c4035e6c6bbbb5",
         "breakpoints": [
             {
                 "name": "Default",
@@ -1649,8 +1649,8 @@
         ],
         "order": 6,
         "className": "",
-        "visible": true,
-        "disabled": false
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "b19fdb090e5f5f51",
@@ -17292,8 +17292,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1340,
-        "y": 580,
+        "x": 1540,
+        "y": 680,
         "wires": []
     },
     {
@@ -17304,8 +17304,8 @@
         "links": [
             "26df795f70aac6ed"
         ],
-        "x": 1195,
-        "y": 580,
+        "x": 1395,
+        "y": 680,
         "wires": [
             [
                 "05c86b386f9d6bea"
