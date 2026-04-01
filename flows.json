@@ -16723,7 +16723,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1080,
+        "x": 1040,
         "y": 320,
         "wires": []
     },
@@ -16886,7 +16886,7 @@
         "z": "31b99f8067ff832b",
         "name": "",
         "mode": "custom",
-        "build": "array",
+        "build": "merged",
         "property": "payload",
         "propertyType": "msg",
         "key": "topic",
@@ -16901,7 +16901,7 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 850,
+        "x": 790,
         "y": 400,
         "wires": [
             [
@@ -16922,7 +16922,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1100,
+        "x": 1040,
         "y": 400,
         "wires": []
     },
@@ -16938,7 +16938,7 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 690,
+        "x": 670,
         "y": 400,
         "wires": [
             [
@@ -16967,7 +16967,7 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 970,
+        "x": 910,
         "y": 400,
         "wires": [
             [
