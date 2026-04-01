@@ -1671,6 +1671,17 @@
         "className": ""
     },
     {
+        "id": "42b2da61ff751dfb",
+        "type": "ui-spacer",
+        "group": "b19fdb090e5f5f51",
+        "name": "spacer",
+        "tooltip": "",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "className": ""
+    },
+    {
         "id": "f7676b47d7dc782a",
         "type": "tcp in",
         "z": "a7c7ec5294135863",
@@ -17033,7 +17044,7 @@
         "group": "b19fdb090e5f5f51",
         "name": "Errors",
         "label": "Diagnostics status",
-        "order": 3,
+        "order": 4,
         "width": "5",
         "height": "1",
         "maxrows": "10",
@@ -17102,7 +17113,7 @@
         "group": "b19fdb090e5f5f51",
         "name": "",
         "label": "Acknowledge all",
-        "order": 0,
+        "order": 3,
         "width": "1",
         "height": "1",
         "emulateClick": false,
