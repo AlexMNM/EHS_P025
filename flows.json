@@ -16819,7 +16819,6 @@
         "y": 400,
         "wires": [
             [
-                "7002e2e10229cc67",
                 "dd95cfc2c92a82af"
             ]
         ]
@@ -16975,77 +16974,6 @@
         ]
     },
     {
-        "id": "e417e276a5fc3de3",
-        "type": "ui-table",
-        "z": "31b99f8067ff832b",
-        "group": "b19fdb090e5f5f51",
-        "name": "",
-        "label": "State",
-        "order": 3,
-        "width": "1",
-        "height": "1",
-        "maxrows": "10",
-        "passthru": false,
-        "autocols": false,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "",
-                "key": "key",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "",
-                "key": "value",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "replace",
-        "className": "",
-        "x": 730,
-        "y": 320,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7002e2e10229cc67",
-        "type": "ui-table",
-        "z": "31b99f8067ff832b",
-        "group": "b19fdb090e5f5f51",
-        "name": "",
-        "label": "Diagnostics",
-        "order": 2,
-        "width": "3",
-        "height": "1",
-        "maxrows": 0,
-        "passthru": false,
-        "autocols": true,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "replace",
-        "className": "",
-        "x": 710,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "e85c35def131158f",
         "type": "function",
         "z": "31b99f8067ff832b",
@@ -17061,7 +16989,6 @@
         "y": 320,
         "wires": [
             [
-                "e417e276a5fc3de3",
                 "03575c8baafe6cd0"
             ]
         ]
