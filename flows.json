@@ -1624,7 +1624,7 @@
         "path": "/maintenance",
         "icon": "glasses",
         "layout": "tabs",
-        "theme": "91c4035e6c6bbbb5",
+        "theme": "e5ed551eb94ade1f",
         "breakpoints": [
             {
                 "name": "Default",
@@ -1773,6 +1773,25 @@
         "width": "3",
         "height": 1,
         "className": ""
+    },
+    {
+        "id": "e5ed551eb94ade1f",
+        "type": "ui-theme",
+        "name": "narrow",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "comfortable",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
     },
     {
         "id": "f7676b47d7dc782a",
