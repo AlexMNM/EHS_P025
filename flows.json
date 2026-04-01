@@ -16662,23 +16662,6 @@
         ]
     },
     {
-        "id": "03575c8baafe6cd0",
-        "type": "debug",
-        "z": "31b99f8067ff832b",
-        "name": "debug 6",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 720,
-        "y": 280,
-        "wires": []
-    },
-    {
         "id": "1846bf9e6749371c",
         "type": "http request",
         "z": "31b99f8067ff832b",
@@ -16770,8 +16753,6 @@
         "y": 320,
         "wires": [
             [
-                "03575c8baafe6cd0",
-                "e85c35def131158f",
                 "3485666ddb03f570"
             ]
         ]
@@ -16819,7 +16800,7 @@
         "y": 400,
         "wires": [
             [
-                "dd95cfc2c92a82af"
+                "e9b721561f180e99"
             ]
         ]
     },
@@ -16836,8 +16817,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 700,
-        "y": 360,
+        "x": 540,
+        "y": 520,
         "wires": []
     },
     {
@@ -16974,26 +16955,6 @@
         ]
     },
     {
-        "id": "e85c35def131158f",
-        "type": "function",
-        "z": "31b99f8067ff832b",
-        "name": "entries",
-        "func": "msg.payload = Object.entries(msg.payload[0]).map(([k, v]) => ({\"key\": k, \"value\": v}));\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 590,
-        "y": 320,
-        "wires": [
-            [
-                "03575c8baafe6cd0"
-            ]
-        ]
-    },
-    {
         "id": "3485666ddb03f570",
         "type": "change",
         "z": "31b99f8067ff832b",
@@ -17013,31 +16974,13 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 640,
-        "y": 240,
+        "x": 580,
+        "y": 320,
         "wires": [
             [
-                "7460bec73b82ef22",
                 "11a7569da2b04348"
             ]
         ]
-    },
-    {
-        "id": "7460bec73b82ef22",
-        "type": "debug",
-        "z": "31b99f8067ff832b",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1000,
-        "y": 180,
-        "wires": []
     },
     {
         "id": "11a7569da2b04348",
@@ -17047,7 +16990,7 @@
         "page": "",
         "ui": "",
         "name": "Axis status",
-        "order": 1,
+        "order": 2,
         "width": "3",
         "height": "18",
         "head": "",
@@ -17057,8 +17000,35 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 910,
-        "y": 240,
+        "x": 770,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e9b721561f180e99",
+        "type": "ui-table",
+        "z": "31b99f8067ff832b",
+        "group": "b19fdb090e5f5f51",
+        "name": "",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 610,
+        "y": 400,
         "wires": [
             []
         ]
