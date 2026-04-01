@@ -16770,7 +16770,7 @@
         "y": 320,
         "wires": [
             [
-                "e417e276a5fc3de3"
+                "fb2b81439a346a7f"
             ]
         ]
     },
@@ -16944,9 +16944,17 @@
         "rules": [
             {
                 "t": "set",
+                "p": "values",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$zip(keys, payload){$[0]:$[1]}",
+                "to": "$zip(keys, values){$[0]:$[1]}",
                 "tot": "jsonata"
             }
         ],
@@ -16976,7 +16984,7 @@
         "maxrows": 0,
         "passthru": false,
         "autocols": true,
-        "showSearch": true,
+        "showSearch": false,
         "deselect": true,
         "selectionType": "none",
         "columns": [],
@@ -16984,7 +16992,7 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 690,
+        "x": 710,
         "y": 320,
         "wires": [
             [
@@ -17018,6 +17026,33 @@
         "wires": [
             [
                 "dd95cfc2c92a82af"
+            ]
+        ]
+    },
+    {
+        "id": "fb2b81439a346a7f",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 320,
+        "wires": [
+            [
+                "e417e276a5fc3de3"
             ]
         ]
     },
