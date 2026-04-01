@@ -17011,11 +17011,11 @@
         "type": "ui-table",
         "z": "31b99f8067ff832b",
         "group": "b19fdb090e5f5f51",
-        "name": "",
+        "name": "Errors",
         "label": "",
         "order": 1,
-        "width": 0,
-        "height": 0,
+        "width": "3",
+        "height": "1",
         "maxrows": 0,
         "passthru": false,
         "autocols": true,
@@ -17027,7 +17027,7 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 610,
+        "x": 750,
         "y": 400,
         "wires": [
             []
