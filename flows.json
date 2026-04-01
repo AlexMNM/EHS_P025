@@ -16770,8 +16770,8 @@
         "y": 320,
         "wires": [
             [
-                "e417e276a5fc3de3",
-                "03575c8baafe6cd0"
+                "03575c8baafe6cd0",
+                "e85c35def131158f"
             ]
         ]
     },
@@ -16985,16 +16985,33 @@
         "height": "0",
         "maxrows": 0,
         "passthru": false,
-        "autocols": true,
+        "autocols": false,
         "showSearch": false,
         "deselect": true,
         "selectionType": "none",
-        "columns": [],
+        "columns": [
+            {
+                "title": "",
+                "key": "key",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "value",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
         "mobileBreakpoint": "sm",
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 710,
+        "x": 730,
         "y": 320,
         "wires": [
             []
@@ -17025,6 +17042,26 @@
         "y": 400,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "e85c35def131158f",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "entries",
+        "func": "msg.payload = Object.entries(msg.payload[0]);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 320,
+        "wires": [
+            [
+                "e417e276a5fc3de3"
+            ]
         ]
     },
     {
