@@ -16797,12 +16797,12 @@
                 "vt": "json"
             }
         ],
-        "repeat": "",
+        "repeat": "1",
         "crontab": "",
-        "once": false,
+        "once": true,
         "onceDelay": 0.1,
         "topic": "diagdata",
-        "x": 260,
+        "x": 250,
         "y": 320,
         "wires": [
             [
