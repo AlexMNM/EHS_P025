@@ -16770,7 +16770,7 @@
         "y": 320,
         "wires": [
             [
-                "fb2b81439a346a7f"
+                "e417e276a5fc3de3"
             ]
         ]
     },
@@ -17026,33 +17026,6 @@
         "wires": [
             [
                 "dd95cfc2c92a82af"
-            ]
-        ]
-    },
-    {
-        "id": "fb2b81439a346a7f",
-        "type": "change",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 560,
-        "y": 320,
-        "wires": [
-            [
-                "e417e276a5fc3de3"
             ]
         ]
     },
