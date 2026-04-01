@@ -16886,7 +16886,7 @@
         "z": "31b99f8067ff832b",
         "name": "",
         "mode": "custom",
-        "build": "merged",
+        "build": "array",
         "property": "payload",
         "propertyType": "msg",
         "key": "topic",
@@ -16905,7 +16905,7 @@
         "y": 400,
         "wires": [
             [
-                "a1926b210a1baba1"
+                "6041c487d4e5a90a"
             ]
         ]
     },
@@ -16922,7 +16922,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1040,
+        "x": 1220,
         "y": 400,
         "wires": []
     },
@@ -16967,11 +16967,38 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 910,
+        "x": 1090,
         "y": 400,
         "wires": [
             [
                 "dd95cfc2c92a82af"
+            ]
+        ]
+    },
+    {
+        "id": "6041c487d4e5a90a",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$zip([\"Number\", \"DiagID\", \"Name\", \"Category\", \"IconNumber\", \"Time\"], payload){$[0]:$[1]}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 400,
+        "wires": [
+            [
+                "a1926b210a1baba1"
             ]
         ]
     },
