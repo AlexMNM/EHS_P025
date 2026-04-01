@@ -16736,6 +16736,11 @@
             {
                 "p": "topic",
                 "vt": "str"
+            },
+            {
+                "p": "keys",
+                "v": "[\"DeviceName\",\"ControllerType\",\"ProductKey\",\"AxisType\",\"MotorType\",\"FwVersion\",\"DevVersion\",\"IpAddress\",\"SubnetMask\",\"Gateway\",\"MacAddress\",\"LogicVoltage\",\"IntermediateCircuitVoltage\",\"ReferencePosition\",\"ActualPosition\",\"ActualVelocity\",\"MotorCurrentIq\",\"MotorCurrentId\",\"TemperaturePs\",\"i2tMotAct\",\"i2tMotMax\",\"i2tPsAct\",\"i2tPsMax\",\"i2tPsStandAct\",\"i2tPsStandMax\",\"StateOperationEnable\",\"StateMotionComplete\",\"StateErrorActive\",\"StateWarningActive\",\"StateHomingValid\",\"StateMoving\",\"DeviceFamily\",\"IpAddress2\",\"SubnetMask2\",\"Gateway2\",\"MacAddress2\",\"NameOfStation\",\"X1A06_State\",\"X1A06_Function\",\"X1A07_State\",\"X1A07_Function\",\"X1A08_State\",\"X1A08_Function\",\"X1A09_State\",\"X1A09_Function\",\"X1A10_State\",\"X1A10_Function\",\"X1C02_State\",\"X1C02_Function\",\"safetyFunctionActive\",\"stoAState\",\"stoBState\"]",
+                "vt": "json"
             }
         ],
         "repeat": "",
@@ -16778,6 +16783,11 @@
             {
                 "p": "topic",
                 "vt": "str"
+            },
+            {
+                "p": "keys",
+                "v": "[\"Number\", \"DiagID\", \"Name\", \"Category\", \"IconNumber\", \"Time\"]",
+                "vt": "json"
             }
         ],
         "repeat": "",
@@ -16936,7 +16946,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$zip([\"Number\", \"DiagID\", \"Name\", \"Category\", \"IconNumber\", \"Time\"], payload){$[0]:$[1]}",
+                "to": "$zip(keys, payload){$[0]:$[1]}",
                 "tot": "jsonata"
             }
         ],
@@ -17061,7 +17071,7 @@
                 "t": "set",
                 "p": "payload",
                 "pt": "msg",
-                "to": "$zip([\"Number\", \"DiagID\", \"Name\", \"Category\", \"IconNumber\", \"Time\"], payload){$[0]:$[1]}",
+                "to": "$zip(keys, payload){$[0]:$[1]}",
                 "tot": "jsonata"
             }
         ],
