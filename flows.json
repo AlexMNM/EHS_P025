@@ -3023,7 +3023,7 @@
         "type": "debug",
         "z": "a7c7ec5294135863",
         "name": "debug 2",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -16662,59 +16662,6 @@
         ]
     },
     {
-        "id": "c926f4d08db07e96",
-        "type": "inject",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 280,
-        "y": 320,
-        "wires": [
-            [
-                "9a764adba9113979"
-            ]
-        ]
-    },
-    {
-        "id": "9a764adba9113979",
-        "type": "http request",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://192.168.100.30/getData.cgi?diagdata",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": true,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 450,
-        "y": 320,
-        "wires": [
-            [
-                "1ceaec02ae631efc"
-            ]
-        ]
-    },
-    {
         "id": "1ceaec02ae631efc",
         "type": "split",
         "z": "31b99f8067ff832b",
@@ -16726,7 +16673,7 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 610,
+        "x": 550,
         "y": 320,
         "wires": [
             [
@@ -16755,7 +16702,7 @@
         "reduceInit": "",
         "reduceInitType": "",
         "reduceFixup": "",
-        "x": 750,
+        "x": 690,
         "y": 320,
         "wires": [
             [
@@ -16776,9 +16723,100 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 940,
+        "x": 880,
         "y": 320,
         "wires": []
+    },
+    {
+        "id": "1846bf9e6749371c",
+        "type": "http request",
+        "z": "31b99f8067ff832b",
+        "name": "Get Z axis",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.100.30/getData.cgi?{{{topic}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": true,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 930,
+        "y": 160,
+        "wires": [
+            [
+                "ba841bcbbba8c4bb"
+            ]
+        ]
+    },
+    {
+        "id": "58998e4d31bfec44",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "inGetZ",
+        "links": [],
+        "x": 805,
+        "y": 160,
+        "wires": [
+            [
+                "1846bf9e6749371c"
+            ]
+        ]
+    },
+    {
+        "id": "ba841bcbbba8c4bb",
+        "type": "link out",
+        "z": "31b99f8067ff832b",
+        "name": "outGetZ",
+        "mode": "return",
+        "links": [],
+        "x": 1055,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "68db1312e7f3a2ca",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "diagdata",
+        "x": 260,
+        "y": 320,
+        "wires": [
+            [
+                "3458175dbe169786"
+            ]
+        ]
+    },
+    {
+        "id": "3458175dbe169786",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "GetZ",
+        "links": [
+            "58998e4d31bfec44"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 410,
+        "y": 320,
+        "wires": [
+            [
+                "1ceaec02ae631efc"
+            ]
+        ]
     },
     {
         "id": "fe36b4aab8e4b51e",
