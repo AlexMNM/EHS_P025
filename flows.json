@@ -16674,7 +16674,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
+        "x": 860,
         "y": 320,
         "wires": []
     },
@@ -16770,7 +16770,7 @@
         "y": 320,
         "wires": [
             [
-                "03575c8baafe6cd0"
+                "e417e276a5fc3de3"
             ]
         ]
     },
@@ -16817,7 +16817,7 @@
         "y": 400,
         "wires": [
             [
-                "dd95cfc2c92a82af"
+                "7002e2e10229cc67"
             ]
         ]
     },
@@ -16834,7 +16834,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 560,
+        "x": 860,
         "y": 400,
         "wires": []
     },
@@ -16960,6 +16960,64 @@
         "wires": [
             [
                 "e8bdc9c824d3202a"
+            ]
+        ]
+    },
+    {
+        "id": "e417e276a5fc3de3",
+        "type": "ui-table",
+        "z": "31b99f8067ff832b",
+        "group": "b19fdb090e5f5f51",
+        "name": "",
+        "label": "State",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 690,
+        "y": 320,
+        "wires": [
+            [
+                "03575c8baafe6cd0"
+            ]
+        ]
+    },
+    {
+        "id": "7002e2e10229cc67",
+        "type": "ui-table",
+        "z": "31b99f8067ff832b",
+        "group": "b19fdb090e5f5f51",
+        "name": "",
+        "label": "Diagnostics",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 710,
+        "y": 400,
+        "wires": [
+            [
+                "dd95cfc2c92a82af"
             ]
         ]
     },
