@@ -869,6 +869,18 @@
         ]
     },
     {
+        "id": "14f119efb2a3c8ed",
+        "type": "junction",
+        "z": "31b99f8067ff832b",
+        "x": 340,
+        "y": 440,
+        "wires": [
+            [
+                "98a2548cfafaba9e"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -16793,7 +16805,7 @@
         "y": 400,
         "wires": [
             [
-                "98a2548cfafaba9e"
+                "14f119efb2a3c8ed"
             ]
         ]
     },
@@ -16811,27 +16823,9 @@
         "y": 400,
         "wires": [
             [
-                "e9b721561f180e99",
-                "dd95cfc2c92a82af"
+                "e9b721561f180e99"
             ]
         ]
-    },
-    {
-        "id": "dd95cfc2c92a82af",
-        "type": "debug",
-        "z": "31b99f8067ff832b",
-        "name": "debug 7",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 460,
-        "wires": []
     },
     {
         "id": "dcbf3cfaecd96c12",
@@ -17012,7 +17006,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 770,
+        "x": 910,
         "y": 320,
         "wires": [
             []
@@ -17024,7 +17018,7 @@
         "z": "31b99f8067ff832b",
         "group": "b19fdb090e5f5f51",
         "name": "Errors",
-        "label": "Error buffer",
+        "label": "Diagnostics status",
         "order": 3,
         "width": "5",
         "height": "1",
@@ -17039,7 +17033,7 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 750,
+        "x": 890,
         "y": 400,
         "wires": [
             []
@@ -17062,7 +17056,7 @@
         "onceDelay": 0.1,
         "topic": "acknowledgeAll",
         "x": 240,
-        "y": 480,
+        "y": 540,
         "wires": [
             [
                 "4d66acca5cf87d06"
@@ -17080,10 +17074,69 @@
         "linkType": "static",
         "timeout": "30",
         "x": 410,
-        "y": 480,
+        "y": 540,
         "wires": [
             [
-                "dd95cfc2c92a82af"
+                "414a432eb63dd21f"
+            ]
+        ]
+    },
+    {
+        "id": "db1f0486044c0836",
+        "type": "ui-button",
+        "z": "31b99f8067ff832b",
+        "group": "b19fdb090e5f5f51",
+        "name": "",
+        "label": "Acknowledge all",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "check-all",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "acknowledgeAll",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 240,
+        "y": 580,
+        "wires": [
+            [
+                "4d66acca5cf87d06"
+            ]
+        ]
+    },
+    {
+        "id": "414a432eb63dd21f",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "get diag",
+        "func": "\nreturn {\n    topic: \"failuresCurrent=100\",\n    keys: [\"Number\", \"DiagID\", \"Name\", \"Category\", \"IconNumber\", \"Time\"]\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 440,
+        "wires": [
+            [
+                "14f119efb2a3c8ed"
             ]
         ]
     },
