@@ -873,7 +873,7 @@
         "type": "junction",
         "z": "31b99f8067ff832b",
         "x": 340,
-        "y": 440,
+        "y": 420,
         "wires": [
             [
                 "98a2548cfafaba9e"
@@ -16820,7 +16820,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 410,
-        "y": 400,
+        "y": 420,
         "wires": [
             [
                 "e9b721561f180e99"
@@ -17006,7 +17006,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 910,
+        "x": 770,
         "y": 320,
         "wires": [
             []
@@ -17033,8 +17033,8 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 890,
-        "y": 400,
+        "x": 750,
+        "y": 420,
         "wires": [
             []
         ]
@@ -17089,8 +17089,8 @@
         "name": "",
         "label": "Acknowledge all",
         "order": 0,
-        "width": 0,
-        "height": 0,
+        "width": "1",
+        "height": "1",
         "emulateClick": false,
         "tooltip": "",
         "color": "",
