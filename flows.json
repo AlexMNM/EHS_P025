@@ -1593,6 +1593,48 @@
         "groupType": "default"
     },
     {
+        "id": "a0567ca6d5ae8707",
+        "type": "ui-group",
+        "name": "R axis",
+        "page": "4b680206871cb4fd",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "490689fb668a726b",
+        "type": "ui-group",
+        "name": "Gripper",
+        "page": "4b680206871cb4fd",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "81938fef8398ecb9",
+        "type": "ui-group",
+        "name": "Force sensor cylinder",
+        "page": "4b680206871cb4fd",
+        "width": 6,
+        "height": 1,
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
         "id": "f7676b47d7dc782a",
         "type": "tcp in",
         "z": "a7c7ec5294135863",
@@ -16620,52 +16662,123 @@
         ]
     },
     {
-        "id": "10fade3d9eabd333",
-        "type": "ui-template",
+        "id": "c926f4d08db07e96",
+        "type": "inject",
         "z": "31b99f8067ff832b",
-        "group": "b19fdb090e5f5f51",
-        "page": "",
-        "ui": "",
-        "name": "Info",
-        "order": 1,
-        "width": "3",
-        "height": "3",
-        "head": "",
-        "format": "<template>\n    <div>\n       <iframe src=\"http://192.168.100.30/info.cgi\" width=\"1000\" height=\"800\">\n       </iframe>\n    </div>\n</template>\n\n",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 390,
-        "y": 360,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 280,
+        "y": 320,
         "wires": [
-            []
+            [
+                "9a764adba9113979"
+            ]
         ]
     },
     {
-        "id": "4175a1bc0bc20df5",
-        "type": "ui-template",
+        "id": "9a764adba9113979",
+        "type": "http request",
         "z": "31b99f8067ff832b",
-        "group": "b19fdb090e5f5f51",
-        "page": "",
-        "ui": "",
-        "name": "diag",
-        "order": 2,
-        "width": "3",
-        "height": "3",
-        "head": "",
-        "format": "<template>\n    <div>\n       <iframe src=\"http://192.168.100.30/diagnosis.cgi\" width=\"1000\" height=\"800\">\n       </iframe>\n    </div>\n</template>\n\n",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 390,
-        "y": 400,
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.100.30/getData.cgi?diagdata",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": true,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 320,
         "wires": [
-            []
+            [
+                "1ceaec02ae631efc"
+            ]
         ]
+    },
+    {
+        "id": "1ceaec02ae631efc",
+        "type": "split",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "splt": "|",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 610,
+        "y": 320,
+        "wires": [
+            [
+                "12a7f35b005932ce"
+            ]
+        ]
+    },
+    {
+        "id": "12a7f35b005932ce",
+        "type": "join",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 750,
+        "y": 320,
+        "wires": [
+            [
+                "03575c8baafe6cd0"
+            ]
+        ]
+    },
+    {
+        "id": "03575c8baafe6cd0",
+        "type": "debug",
+        "z": "31b99f8067ff832b",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "fe36b4aab8e4b51e",
