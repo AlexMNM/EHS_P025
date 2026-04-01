@@ -1575,8 +1575,8 @@
         ],
         "order": 6,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "visible": true,
+        "disabled": false
     },
     {
         "id": "b19fdb090e5f5f51",
@@ -16628,8 +16628,8 @@
         "ui": "",
         "name": "Info",
         "order": 1,
-        "width": "0",
-        "height": "0",
+        "width": "3",
+        "height": "3",
         "head": "",
         "format": "<template>\n    <div>\n       <iframe src=\"http://192.168.100.30/info.cgi\" width=\"1000\" height=\"800\">\n       </iframe>\n    </div>\n</template>\n\n",
         "storeOutMessages": true,
@@ -16652,8 +16652,8 @@
         "ui": "",
         "name": "diag",
         "order": 2,
-        "width": "0",
-        "height": "0",
+        "width": "3",
+        "height": "3",
         "head": "",
         "format": "<template>\n    <div>\n       <iframe src=\"http://192.168.100.30/diagnosis.cgi\" width=\"1000\" height=\"800\">\n       </iframe>\n    </div>\n</template>\n\n",
         "storeOutMessages": true,
