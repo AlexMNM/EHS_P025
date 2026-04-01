@@ -16819,6 +16819,48 @@
         ]
     },
     {
+        "id": "83db6b5928e47eb6",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "failuresCurrent=100",
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "98a2548cfafaba9e"
+            ]
+        ]
+    },
+    {
+        "id": "98a2548cfafaba9e",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "GetZ",
+        "links": [
+            "58998e4d31bfec44"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 410,
+        "y": 400,
+        "wires": [
+            [
+                "1ceaec02ae631efc"
+            ]
+        ]
+    },
+    {
         "id": "fe36b4aab8e4b51e",
         "type": "inject",
         "z": "6b7a48cdf37ecce9",
