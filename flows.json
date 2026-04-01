@@ -876,7 +876,20 @@
         "y": 420,
         "wires": [
             [
-                "98a2548cfafaba9e"
+                "98a2548cfafaba9e",
+                "50a4f48597077918"
+            ]
+        ]
+    },
+    {
+        "id": "19f7c22ca3e2f3d7",
+        "type": "junction",
+        "z": "31b99f8067ff832b",
+        "x": 520,
+        "y": 420,
+        "wires": [
+            [
+                "e9b721561f180e99"
             ]
         ]
     },
@@ -16819,11 +16832,11 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 410,
-        "y": 420,
+        "x": 430,
+        "y": 400,
         "wires": [
             [
-                "e9b721561f180e99"
+                "19f7c22ca3e2f3d7"
             ]
         ]
     },
@@ -17033,7 +17046,7 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 750,
+        "x": 590,
         "y": 420,
         "wires": [
             []
@@ -17137,6 +17150,26 @@
         "wires": [
             [
                 "14f119efb2a3c8ed"
+            ]
+        ]
+    },
+    {
+        "id": "50a4f48597077918",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "clear",
+        "func": "return {\n    payload: []\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 440,
+        "wires": [
+            [
+                "19f7c22ca3e2f3d7"
             ]
         ]
     },
