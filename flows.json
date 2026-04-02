@@ -1649,8 +1649,8 @@
         ],
         "order": 6,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "visible": true,
+        "disabled": false
     },
     {
         "id": "b19fdb090e5f5f51",
@@ -13819,8 +13819,8 @@
         "submit": "submit",
         "cancel": "clear",
         "resetOnSubmit": false,
-        "topic": "",
-        "topicType": "str",
+        "topic": "topic",
+        "topicType": "msg",
         "splitLayout": true,
         "className": "",
         "passthru": false,
@@ -14526,7 +14526,7 @@
         "z": "aecf9ba551ec4a57",
         "g": "91212d0a56043b3b",
         "name": "edit component",
-        "func": "const {data} = global.get(\"settings\", \"file\");\nconst types = data.feature_types\nconst edit = flow.get(\"edit\");\nconst {product: prod, index: feat_ind} = edit\nconst feature = prod.features[feat_ind]\nvar {name = edit.name, ...rest} = msg?.payload \n\n\nfeature.values[name] = rest\n\nif(prod.name === \"E37\") {\n    if (feature.name === \"inner\") {\n        Object.assign(prod.features.find(x => x.name === \"outer\").values, feature.values)\n    } else if (feature.name === \"outer\") {\n        Object.assign(prod.features.find(x => x.name === \"inner\").values, feature.values)\n    }\n\n}\n\nglobal.set(edit.path + \".features\", prod.features, \"file\")\n\nreturn msg;\n\n",
+        "func": "const { data } = global.get(\"settings\", \"file\");\nconst types = data.feature_types\nconst edit = flow.get(\"edit\");\nconst { product: prod, index: feat_ind } = edit\nconst feature = prod.features[feat_ind]\nvar { name = edit.name, ...rest } = msg?.payload\n\n\nfeature.values[name] = rest\n\nif (msg.topic === \"new\") {\n    if (prod.name === \"E37\") {\n        if (feature.name === \"inner\") {\n            Object.assign(prod.features.find(x => x.name === \"outer\").values, feature.values)\n        } else if (feature.name === \"outer\") {\n            Object.assign(prod.features.find(x => x.name === \"inner\").values, feature.values)\n        }\n\n    }\n}\n\nglobal.set(edit.path + \".features\", prod.features, \"file\")\n\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
