@@ -18137,7 +18137,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "[{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"cycleCntGripper\\\"\"}},{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToWorkGripper\\\"\"}},{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToHomeGripper\\\"\"}},{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"cycleCntForce\\\"\"}},{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToWorkForce\\\"\"}},{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToHomeForce\\\"\"}}]",
+        "payload": "[{\"id\":1,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"cycleCntGripper\\\"\"}},{\"id\":2,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToWorkGripper\\\"\"}},{\"id\":3,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToHomeGripper\\\"\"}},{\"id\":4,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"cycleCntForce\\\"\"}},{\"id\":5,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToWorkForce\\\"\"}},{\"id\":6,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToHomeForce\\\"\"}}]",
         "payloadType": "json",
         "x": 270,
         "y": 980,
