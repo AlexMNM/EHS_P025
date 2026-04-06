@@ -890,7 +890,8 @@
         "y": 420,
         "wires": [
             [
-                "c8365d741af89e49"
+                "32ef10f9f26ff7ba",
+                "52e6381352578337"
             ]
         ]
     },
@@ -18021,11 +18022,48 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 770,
+        "x": 810,
         "y": 420,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "32ef10f9f26ff7ba",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "Error data",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 420,
+        "wires": [
+            [
+                "c8365d741af89e49"
+            ]
+        ]
+    },
+    {
+        "id": "52e6381352578337",
+        "type": "debug",
+        "z": "31b99f8067ff832b",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 480,
+        "wires": []
     },
     {
         "id": "fe36b4aab8e4b51e",
