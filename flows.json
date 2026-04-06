@@ -18180,7 +18180,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 820,
-        "y": 780,
+        "y": 800,
         "wires": []
     },
     {
@@ -18215,8 +18215,8 @@
         "type": "function",
         "z": "31b99f8067ff832b",
         "name": "split",
-        "func": "\nreturn [...msg.payload];",
-        "outputs": 1,
+        "func": "\nreturn [...msg.payload.sort((a, b) => a.id - b.id)];",
+        "outputs": 6,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
@@ -18227,7 +18227,14 @@
         "wires": [
             [
                 "f3db2bf5d4cd014c"
-            ]
+            ],
+            [],
+            [],
+            [],
+            [
+                "f3db2bf5d4cd014c"
+            ],
+            []
         ]
     },
     {
