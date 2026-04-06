@@ -18116,7 +18116,7 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 1220,
+        "x": 1180,
         "y": 960,
         "wires": [
             []
@@ -18180,7 +18180,9 @@
         "x": 590,
         "y": 980,
         "wires": [
-            [],
+            [
+                "04bf59b4ddaaa941"
+            ],
             [
                 "9234d496a670f1b8"
             ],
@@ -18197,17 +18199,19 @@
         "type": "function",
         "z": "31b99f8067ff832b",
         "name": "cycle counter",
-        "func": "\nreturn msg;",
+        "func": "const max = msg.max ?? 10;\nconst states = {\n    ok: {\n        \"from\": 0,\n        color: \"green\",\n        icon: \"counter\",\n        suffix: \"ok\"\n    },\n    warn: {\n        \"from\": 0.8 * max,\n        color: \"yellow\",\n        icon: \"alert-circle\",\n        suffix: \"approaching max\"\n    },\n    err: {\n        \"from\": max,\n        color: \"red\",\n        icon: \"alert\",\n        suffix: \"max cycles exceeded\"\n    }\n};\n\nconst state = msg.payload < states.warn[\"from\"] ? \"ok\" : msg.payload < states.err[\"from\"] ? \"warn\" : \"err\";\n\nmsg.ui_update = {\n    label: msg.label + \" - \" + states[state].suffix,\n    segments: [\n        states.ok,\n        states.warn,\n        states.err\n    ],\n    suffix: \"\",\n    max: 1.2 * max,\n    icon: states[state].icon\n}\n\nreturn msg;\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 830,
-        "y": 820,
+        "x": 1150,
+        "y": 860,
         "wires": [
-            []
+            [
+                "292623760dcc433b"
+            ]
         ]
     },
     {
@@ -18223,8 +18227,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1420,
-        "y": 940,
+        "x": 1300,
+        "y": 1180,
         "wires": []
     },
     {
@@ -18320,63 +18324,8 @@
         "y": 960,
         "wires": [
             [
-                "e8b673fa11db5b03",
-                "f3db2bf5d4cd014c"
+                "e8b673fa11db5b03"
             ]
-        ]
-    },
-    {
-        "id": "dd0f9490ed5efdc8",
-        "type": "ui-gauge",
-        "z": "31b99f8067ff832b",
-        "name": "act time",
-        "group": "490689fb668a726b",
-        "order": 0,
-        "value": "payload",
-        "valueType": "msg",
-        "width": "4",
-        "height": "4",
-        "gtype": "gauge-34",
-        "gstyle": "rounded",
-        "title": "",
-        "alwaysShowTitle": false,
-        "floatingTitlePosition": "top-left",
-        "units": "ms",
-        "icon": "",
-        "prefix": "",
-        "suffix": "",
-        "segments": [
-            {
-                "from": "0",
-                "color": "#5cd65c",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "4",
-                "color": "#ffc800",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "7",
-                "color": "#ea5353",
-                "text": "",
-                "textType": "label"
-            }
-        ],
-        "min": 0,
-        "max": "10",
-        "sizeThickness": 16,
-        "sizeGap": 4,
-        "sizeKeyThickness": 8,
-        "styleRounded": true,
-        "styleGlow": false,
-        "className": "",
-        "x": 1220,
-        "y": 1000,
-        "wires": [
-            []
         ]
     },
     {
@@ -18427,7 +18376,192 @@
         "y": 1000,
         "wires": [
             [
-                "dd0f9490ed5efdc8"
+                "0e499d7e80cb3b87"
+            ]
+        ]
+    },
+    {
+        "id": "b93f904acfd5bcad",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "inCycles",
+        "links": [],
+        "x": 1045,
+        "y": 860,
+        "wires": [
+            [
+                "cca0bbd0950a9ef5"
+            ]
+        ]
+    },
+    {
+        "id": "292623760dcc433b",
+        "type": "link out",
+        "z": "31b99f8067ff832b",
+        "name": "link out 10",
+        "mode": "return",
+        "links": [],
+        "x": 1285,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "0e499d7e80cb3b87",
+        "type": "ui-gauge",
+        "z": "31b99f8067ff832b",
+        "name": "act time",
+        "group": "490689fb668a726b",
+        "order": 0,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "4",
+        "height": "4",
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "ms",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "10",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1180,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c3be0245edad26a6",
+        "type": "ui-gauge",
+        "z": "31b99f8067ff832b",
+        "name": "cycles",
+        "group": "490689fb668a726b",
+        "order": 0,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "4",
+        "height": "4",
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "ms",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "10",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1170,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "04bf59b4ddaaa941",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "max",
+                "pt": "msg",
+                "to": "5000",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "label",
+                "pt": "msg",
+                "to": "Cycles",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 920,
+        "wires": [
+            [
+                "68d5b97039848e4f"
+            ]
+        ]
+    },
+    {
+        "id": "68d5b97039848e4f",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "Cycles",
+        "links": [
+            "b93f904acfd5bcad"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 970,
+        "y": 920,
+        "wires": [
+            [
+                "c3be0245edad26a6"
             ]
         ]
     },
