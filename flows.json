@@ -18343,7 +18343,7 @@
         "rules": [
             {
                 "t": "set",
-                "p": "payload",
+                "p": "max",
                 "pt": "msg",
                 "to": "#:(file)::openingTime",
                 "tot": "flow",
