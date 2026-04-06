@@ -18638,8 +18638,9 @@
                 "t": "set",
                 "p": "max",
                 "pt": "msg",
-                "to": "500",
-                "tot": "num"
+                "to": "#:(file)::extendingTime",
+                "tot": "flow",
+                "dc": true
             },
             {
                 "t": "set",
@@ -18690,8 +18691,9 @@
                 "t": "set",
                 "p": "max",
                 "pt": "msg",
-                "to": "500",
-                "tot": "num"
+                "to": "#:(file)::retractingTime",
+                "tot": "flow",
+                "dc": true
             },
             {
                 "t": "set",
@@ -18850,8 +18852,9 @@
                 "t": "set",
                 "p": "max",
                 "pt": "msg",
-                "to": "5000",
-                "tot": "num"
+                "to": "#:(file)::forceCycles",
+                "tot": "flow",
+                "dc": true
             },
             {
                 "t": "set",
