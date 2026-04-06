@@ -18903,7 +18903,7 @@
         "topicType": "msg",
         "min": 0,
         "max": "10000",
-        "step": 1,
+        "step": "10",
         "tooltip": "",
         "delay": 300,
         "passthru": true,
@@ -18915,7 +18915,7 @@
         "icon": "timer",
         "iconPosition": "left",
         "iconInnerPosition": "inside",
-        "spinner": "default",
+        "spinner": "stacked",
         "x": 450,
         "y": 1280,
         "wires": [
