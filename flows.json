@@ -18032,7 +18032,7 @@
         "type": "function",
         "z": "31b99f8067ff832b",
         "name": "Error data",
-        "func": "const colors = {\n    \"5\": \"#0091dc\",\n    \"4\": \"#6eb7db\",\n    \"17\": \"#ff0\",\n    \"16\": \"#ffff80\",\n    \"65\": \"#d00019\",\n    \"64\": \"#d16975\"\n};\n\nmsg.payload = msg.payload.filter(v => v[\"Number\"] !== \"\" );\nmsg.payload = msg.payload.map(v => v[\"IconNumber\"] = colors[v[\"IconNumber\"]]);\nreturn msg;\n\n\n",
+        "func": "const colors = {\n    \"5\": \"#0091dc\",\n    \"4\": \"#6eb7db\",\n    \"17\": \"#ff0\",\n    \"16\": \"#ffff80\",\n    \"65\": \"#d00019\",\n    \"64\": \"#d16975\"\n};\n\nmsg.payload = msg.payload.filter(v => v[\"Number\"] !== \"\" );\nmsg.payload = msg.payload.map(v => {v[\"IconNumber\"] = colors[v[\"IconNumber\"]]});\nreturn msg;\n\n\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
