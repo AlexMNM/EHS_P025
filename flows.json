@@ -18074,7 +18074,7 @@
         "z": "31b99f8067ff832b",
         "name": "act time",
         "group": "490689fb668a726b",
-        "order": 3,
+        "order": 2,
         "value": "payload",
         "valueType": "msg",
         "width": "4",
@@ -18189,9 +18189,15 @@
             [
                 "5d22acad4bc9846e"
             ],
-            [],
-            [],
-            []
+            [
+                "7f15d1d2d7edcb98"
+            ],
+            [
+                "53092fb9620202bd"
+            ],
+            [
+                "c22ea59cc86957b4"
+            ]
         ]
     },
     {
@@ -18207,7 +18213,7 @@
         "finalize": "",
         "libs": [],
         "x": 1150,
-        "y": 860,
+        "y": 800,
         "wires": [
             [
                 "292623760dcc433b"
@@ -18227,8 +18233,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1300,
-        "y": 1180,
+        "x": 640,
+        "y": 740,
         "wires": []
     },
     {
@@ -18248,7 +18254,7 @@
                 "t": "set",
                 "p": "label",
                 "pt": "msg",
-                "to": "Working time",
+                "to": "Closing time",
                 "tot": "str"
             }
         ],
@@ -18278,7 +18284,7 @@
         "finalize": "",
         "libs": [],
         "x": 1160,
-        "y": 800,
+        "y": 760,
         "wires": [
             [
                 "0341d9cd4dc72ea7"
@@ -18292,7 +18298,7 @@
         "name": "inActTime",
         "links": [],
         "x": 1045,
-        "y": 800,
+        "y": 760,
         "wires": [
             [
                 "9fa53be1d938e9a4"
@@ -18307,7 +18313,7 @@
         "mode": "return",
         "links": [],
         "x": 1285,
-        "y": 800,
+        "y": 760,
         "wires": []
     },
     {
@@ -18345,7 +18351,7 @@
                 "t": "set",
                 "p": "label",
                 "pt": "msg",
-                "to": "Homing time",
+                "to": "Opening time",
                 "tot": "str"
             }
         ],
@@ -18387,7 +18393,7 @@
         "name": "inCycles",
         "links": [],
         "x": 1045,
-        "y": 860,
+        "y": 800,
         "wires": [
             [
                 "cca0bbd0950a9ef5"
@@ -18402,7 +18408,7 @@
         "mode": "return",
         "links": [],
         "x": 1285,
-        "y": 860,
+        "y": 800,
         "wires": []
     },
     {
@@ -18411,7 +18417,7 @@
         "z": "31b99f8067ff832b",
         "name": "act time",
         "group": "490689fb668a726b",
-        "order": 2,
+        "order": 3,
         "value": "payload",
         "valueType": "msg",
         "width": "4",
@@ -18562,6 +18568,324 @@
         "wires": [
             [
                 "c3be0245edad26a6"
+            ]
+        ]
+    },
+    {
+        "id": "c1f081eebe051cf6",
+        "type": "ui-gauge",
+        "z": "31b99f8067ff832b",
+        "name": "act time",
+        "group": "81938fef8398ecb9",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "4",
+        "height": "4",
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "ms",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "10",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1200,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "53092fb9620202bd",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "max",
+                "pt": "msg",
+                "to": "500",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "label",
+                "pt": "msg",
+                "to": "Extending time",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 1100,
+        "wires": [
+            [
+                "b78e73572aa31a26"
+            ]
+        ]
+    },
+    {
+        "id": "b78e73572aa31a26",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "ActTime",
+        "links": [
+            "0c128fdacdd7c9eb"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1000,
+        "y": 1100,
+        "wires": [
+            [
+                "c1f081eebe051cf6"
+            ]
+        ]
+    },
+    {
+        "id": "c22ea59cc86957b4",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "max",
+                "pt": "msg",
+                "to": "500",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "label",
+                "pt": "msg",
+                "to": "Retracting time",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 1140,
+        "wires": [
+            [
+                "5c14ed2aa29b1a82"
+            ]
+        ]
+    },
+    {
+        "id": "5c14ed2aa29b1a82",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "ActTime",
+        "links": [
+            "0c128fdacdd7c9eb"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1000,
+        "y": 1140,
+        "wires": [
+            [
+                "7da115b2cc7add4d"
+            ]
+        ]
+    },
+    {
+        "id": "7da115b2cc7add4d",
+        "type": "ui-gauge",
+        "z": "31b99f8067ff832b",
+        "name": "act time",
+        "group": "81938fef8398ecb9",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "4",
+        "height": "4",
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "ms",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "10",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1200,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "993c1c6768b57c6e",
+        "type": "ui-gauge",
+        "z": "31b99f8067ff832b",
+        "name": "cycles",
+        "group": "81938fef8398ecb9",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "4",
+        "height": "4",
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "10",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1190,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f15d1d2d7edcb98",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "max",
+                "pt": "msg",
+                "to": "5000",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "label",
+                "pt": "msg",
+                "to": "Cycles",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 1060,
+        "wires": [
+            [
+                "cfd3e20d592d6126"
+            ]
+        ]
+    },
+    {
+        "id": "cfd3e20d592d6126",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "Cycles",
+        "links": [
+            "b93f904acfd5bcad"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 990,
+        "y": 1060,
+        "wires": [
+            [
+                "993c1c6768b57c6e"
             ]
         ]
     },
