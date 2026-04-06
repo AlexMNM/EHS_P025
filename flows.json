@@ -18033,7 +18033,7 @@
         "type": "function",
         "z": "31b99f8067ff832b",
         "name": "Error data",
-        "func": "\nreturn msg;",
+        "func": "msg.payload = msg.payload.filter(v => v[\"Number\"] !== \"\" );\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -18044,7 +18044,8 @@
         "y": 420,
         "wires": [
             [
-                "c8365d741af89e49"
+                "c8365d741af89e49",
+                "52e6381352578337"
             ]
         ]
     },
