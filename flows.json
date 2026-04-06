@@ -18116,8 +18116,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 1060,
-        "y": 860,
+        "x": 1040,
+        "y": 920,
         "wires": [
             []
         ]
@@ -18166,23 +18166,6 @@
         ]
     },
     {
-        "id": "f3db2bf5d4cd014c",
-        "type": "debug",
-        "z": "31b99f8067ff832b",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 860,
-        "y": 1200,
-        "wires": []
-    },
-    {
         "id": "3763b289c1978976",
         "type": "function",
         "z": "31b99f8067ff832b",
@@ -18198,10 +18181,10 @@
         "y": 980,
         "wires": [
             [],
-            [],
             [
-                "f3db2bf5d4cd014c"
+                "1aea0b0459014f24"
             ],
+            [],
             [],
             [],
             []
@@ -18230,18 +18213,38 @@
         "type": "function",
         "z": "31b99f8067ff832b",
         "name": "actuation time",
-        "func": "switch(msg.topic){\n    case \"update\":\n        break;\n    default:\n        \n        break;\n}\n\n\nreturn {\n    ui_update: {\n        label: \"\",\n        segments: [],\n        max: 10,\n        icon: \"timer-check\"\n    }\n};",
+        "func": "const max = 10;\nmsg.ui_update = {\n    label: msg.label,\n        segments: [\n            {\n                color: \"green\",\n                \"from\": 0\n            },\n            {\n                color: \"yellow\",\n                \"from\": 0.8 * max\n            },\n            {\n                color: \"red\",\n                \"from\": max\n            }\n        ],\n            max: 1.2 * max,\n                icon: \"timer-check\"\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 840,
-        "y": 860,
+        "x": 820,
+        "y": 920,
         "wires": [
-            []
+            [
+                "f3db2bf5d4cd014c",
+                "e8b673fa11db5b03"
+            ]
         ]
+    },
+    {
+        "id": "f3db2bf5d4cd014c",
+        "type": "debug",
+        "z": "31b99f8067ff832b",
+        "name": "debug 8",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 1200,
+        "wires": []
     },
     {
         "id": "fe36b4aab8e4b51e",
