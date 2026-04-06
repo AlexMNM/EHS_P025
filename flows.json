@@ -18116,7 +18116,7 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 1040,
+        "x": 1220,
         "y": 920,
         "wires": [
             []
@@ -18182,7 +18182,7 @@
         "wires": [
             [],
             [
-                "1aea0b0459014f24"
+                "9234d496a670f1b8"
             ],
             [],
             [],
@@ -18213,14 +18213,14 @@
         "type": "function",
         "z": "31b99f8067ff832b",
         "name": "actuation time",
-        "func": "const max = 10;\nmsg.ui_update = {\n    label: msg.label,\n        segments: [\n            {\n                color: \"green\",\n                \"from\": 0\n            },\n            {\n                color: \"yellow\",\n                \"from\": 0.8 * max\n            },\n            {\n                color: \"red\",\n                \"from\": max\n            }\n        ],\n            max: 1.2 * max,\n                icon: \"timer-check\"\n}\n\nreturn msg;",
+        "func": "const max = msg.max ?? 10;\nmsg.ui_update = {\n    label: msg.label,\n        segments: [\n            {\n                color: \"green\",\n                \"from\": 0\n            },\n            {\n                color: \"yellow\",\n                \"from\": 0.8 * max\n            },\n            {\n                color: \"red\",\n                \"from\": max\n            }\n        ],\n            max: 1.2 * max,\n                icon: \"timer-check\"\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
+        "x": 1000,
         "y": 920,
         "wires": [
             [
@@ -18242,9 +18242,36 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 860,
-        "y": 1200,
+        "x": 1220,
+        "y": 980,
         "wires": []
+    },
+    {
+        "id": "9234d496a670f1b8",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "max",
+                "pt": "msg",
+                "to": "500",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 920,
+        "wires": [
+            [
+                "1aea0b0459014f24"
+            ]
+        ]
     },
     {
         "id": "fe36b4aab8e4b51e",
