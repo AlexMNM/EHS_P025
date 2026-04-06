@@ -18079,7 +18079,7 @@
         "valueType": "msg",
         "width": "4",
         "height": "4",
-        "gtype": "gauge-tile",
+        "gtype": "gauge-battery",
         "gstyle": "needle",
         "title": "",
         "alwaysShowTitle": false,
@@ -18091,25 +18091,25 @@
         "segments": [
             {
                 "from": "0",
-                "color": "#5cd65c",
+                "color": "#ea5353",
                 "text": "",
                 "textType": "label"
             },
             {
-                "from": "4",
+                "from": "40",
                 "color": "#ffc800",
                 "text": "",
                 "textType": "label"
             },
             {
-                "from": "7",
-                "color": "#ea5353",
+                "from": "70",
+                "color": "#5cd65c",
                 "text": "",
                 "textType": "label"
             }
         ],
         "min": 0,
-        "max": 10,
+        "max": "100",
         "sizeThickness": 16,
         "sizeGap": 4,
         "sizeKeyThickness": 8,
