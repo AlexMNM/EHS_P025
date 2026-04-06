@@ -7347,8 +7347,7 @@
             "150473f2c686409d",
             "5134f1f6cc610093",
             "44709ae07618b37e",
-            "04b531371ebdf3c5",
-            "f57e35741453e5b5"
+            "04b531371ebdf3c5"
         ],
         "x": 485,
         "y": 180,
@@ -18067,6 +18066,120 @@
         "links": [],
         "x": 1735,
         "y": 320,
+        "wires": []
+    },
+    {
+        "id": "e8b673fa11db5b03",
+        "type": "ui-gauge",
+        "z": "31b99f8067ff832b",
+        "name": "Work time",
+        "group": "490689fb668a726b",
+        "order": 0,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "1",
+        "height": "1",
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "gauge",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "ms",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": 10,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 820,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "317d543d19730e1d",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"timeToWorkGripper\"}}",
+        "payloadType": "json",
+        "x": 270,
+        "y": 980,
+        "wires": [
+            [
+                "390ffec4317ff32c"
+            ]
+        ]
+    },
+    {
+        "id": "390ffec4317ff32c",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "plcApi",
+        "links": [
+            "a78b83a47c8fb6f5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 450,
+        "y": 980,
+        "wires": [
+            [
+                "f3db2bf5d4cd014c"
+            ]
+        ]
+    },
+    {
+        "id": "f3db2bf5d4cd014c",
+        "type": "debug",
+        "z": "31b99f8067ff832b",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 900,
         "wires": []
     },
     {
