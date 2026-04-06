@@ -890,7 +890,7 @@
         "y": 420,
         "wires": [
             [
-                "32ef10f9f26ff7ba"
+                "8d0caeb8f9b71fb6"
             ]
         ]
     },
@@ -927,7 +927,7 @@
         "y": 1080,
         "wires": [
             [
-                "052826c7ef0bb35b"
+                "176a22a1cc3f7a5d"
             ]
         ]
     },
@@ -17674,82 +17674,6 @@
         ]
     },
     {
-        "id": "052826c7ef0bb35b",
-        "type": "ui-table",
-        "z": "31b99f8067ff832b",
-        "group": "a0567ca6d5ae8707",
-        "name": "Errors",
-        "label": "",
-        "order": 7,
-        "width": "5",
-        "height": "1",
-        "maxrows": "10",
-        "passthru": false,
-        "autocols": false,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [
-            {
-                "title": "Number",
-                "key": "Number",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Diagnosis ID",
-                "key": "DiagID",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Name",
-                "key": "Name",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Category",
-                "key": "Category",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Status",
-                "key": "IconNumber",
-                "keyType": "key",
-                "type": "html",
-                "width": "",
-                "align": "start"
-            },
-            {
-                "title": "Time",
-                "key": "Time",
-                "keyType": "key",
-                "type": "text",
-                "width": "",
-                "align": "start"
-            }
-        ],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "replace",
-        "className": "",
-        "x": 790,
-        "y": 1080,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "52c6c69d8f9ae53f",
         "type": "inject",
         "z": "31b99f8067ff832b",
@@ -18028,27 +17952,6 @@
         ]
     },
     {
-        "id": "32ef10f9f26ff7ba",
-        "type": "function",
-        "z": "31b99f8067ff832b",
-        "name": "Error data",
-        "func": "const colors = {\n    \"5\": \"#0091dc\",\n    \"4\": \"#6eb7db\",\n    \"17\": \"#ff0\",\n    \"16\": \"#ffff80\",\n    \"65\": \"#d00019\",\n    \"64\": \"#d16975\"\n};\n\nmsg.payload = msg.payload.filter(v => v[\"Number\"] !== \"\" );\nmsg.payload = msg.payload.map(v => Object.assign(v, {status: colors[v[\"IconNumber\"]]}));\nreturn msg;\n\n\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 680,
-        "y": 420,
-        "wires": [
-            [
-                "c8365d741af89e49",
-                "52e6381352578337"
-            ]
-        ]
-    },
-    {
         "id": "52e6381352578337",
         "type": "debug",
         "z": "31b99f8067ff832b",
@@ -18064,6 +17967,163 @@
         "x": 700,
         "y": 480,
         "wires": []
+    },
+    {
+        "id": "d7a0e342fdc9503d",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "inErrDat",
+        "links": [],
+        "x": 1175,
+        "y": 240,
+        "wires": [
+            [
+                "32ef10f9f26ff7ba"
+            ]
+        ]
+    },
+    {
+        "id": "32ef10f9f26ff7ba",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "Error data",
+        "func": "const colors = {\n    \"5\": \"#0091dc\",\n    \"4\": \"#6eb7db\",\n    \"17\": \"#ff0\",\n    \"16\": \"#ffff80\",\n    \"65\": \"#d00019\",\n    \"64\": \"#d16975\"\n};\n\nmsg.payload = msg.payload.filter(v => v[\"Number\"] !== \"\" );\nmsg.payload = msg.payload.map(v => Object.assign(v, {status: colors[v[\"IconNumber\"]]}));\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 240,
+        "wires": [
+            [
+                "e5d16a2c8b3bcbf1"
+            ]
+        ]
+    },
+    {
+        "id": "e5d16a2c8b3bcbf1",
+        "type": "link out",
+        "z": "31b99f8067ff832b",
+        "name": "link out 6",
+        "mode": "return",
+        "links": [],
+        "x": 1385,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "8d0caeb8f9b71fb6",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "ErrData",
+        "links": [
+            "d7a0e342fdc9503d"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 680,
+        "y": 420,
+        "wires": [
+            [
+                "c8365d741af89e49"
+            ]
+        ]
+    },
+    {
+        "id": "8cbb0b7d62dd295c",
+        "type": "ui-table",
+        "z": "31b99f8067ff832b",
+        "group": "a0567ca6d5ae8707",
+        "name": "Errors",
+        "label": "",
+        "order": 8,
+        "width": "5",
+        "height": "1",
+        "maxrows": "10",
+        "passthru": false,
+        "autocols": false,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Number",
+                "key": "Number",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Diagnosis ID",
+                "key": "DiagID",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Name",
+                "key": "Name",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Category",
+                "key": "Category",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Status",
+                "key": "status",
+                "keyType": "key",
+                "type": "color",
+                "width": "",
+                "align": "center"
+            },
+            {
+                "title": "Time",
+                "key": "Time",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 810,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "176a22a1cc3f7a5d",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "ErrData",
+        "links": [
+            "d7a0e342fdc9503d"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 680,
+        "y": 1080,
+        "wires": [
+            [
+                "8cbb0b7d62dd295c"
+            ]
+        ]
     },
     {
         "id": "fe36b4aab8e4b51e",
