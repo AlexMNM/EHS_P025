@@ -873,8 +873,8 @@
         "id": "14f119efb2a3c8ed",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 440,
-        "y": 320,
+        "x": 520,
+        "y": 220,
         "wires": [
             [
                 "98a2548cfafaba9e",
@@ -886,8 +886,8 @@
         "id": "19f7c22ca3e2f3d7",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 620,
-        "y": 320,
+        "x": 700,
+        "y": 220,
         "wires": [
             [
                 "8d0caeb8f9b71fb6"
@@ -898,8 +898,8 @@
         "id": "24dc0151969711ad",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 400,
-        "y": 400,
+        "x": 340,
+        "y": 240,
         "wires": [
             [
                 "414a432eb63dd21f"
@@ -910,8 +910,8 @@
         "id": "ed4c7fdbbd2d1afd",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 440,
-        "y": 700,
+        "x": 520,
+        "y": 540,
         "wires": [
             [
                 "e45aab72118f3f1d",
@@ -923,8 +923,8 @@
         "id": "ecd5417c611a6980",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 620,
-        "y": 700,
+        "x": 700,
+        "y": 540,
         "wires": [
             [
                 "176a22a1cc3f7a5d"
@@ -935,8 +935,8 @@
         "id": "fada46fa7041d7e5",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 400,
-        "y": 780,
+        "x": 340,
+        "y": 560,
         "wires": [
             [
                 "bf03d0f25f99ae5e"
@@ -16863,8 +16863,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "diagdata",
-        "x": 270,
-        "y": 220,
+        "x": 430,
+        "y": 140,
         "wires": [
             [
                 "3458175dbe169786"
@@ -16881,8 +16881,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 430,
-        "y": 220,
+        "x": 570,
+        "y": 140,
         "wires": [
             [
                 "3485666ddb03f570"
@@ -16910,8 +16910,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "failuresCurrent=100",
-        "x": 250,
-        "y": 300,
+        "x": 390,
+        "y": 200,
         "wires": [
             [
                 "14f119efb2a3c8ed"
@@ -16928,8 +16928,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 530,
-        "y": 300,
+        "x": 610,
+        "y": 200,
         "wires": [
             [
                 "19f7c22ca3e2f3d7"
@@ -16956,8 +16956,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 600,
-        "y": 220,
+        "x": 720,
+        "y": 140,
         "wires": [
             [
                 "11a7569da2b04348"
@@ -16982,8 +16982,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 790,
-        "y": 220,
+        "x": 890,
+        "y": 140,
         "wires": [
             []
         ]
@@ -17004,8 +17004,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "acknowledgeAll",
-        "x": 260,
-        "y": 460,
+        "x": 220,
+        "y": 280,
         "wires": [
             [
                 "4d66acca5cf87d06"
@@ -17023,7 +17023,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 430,
-        "y": 460,
+        "y": 280,
         "wires": [
             [
                 "24dc0151969711ad"
@@ -17061,8 +17061,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 260,
-        "y": 500,
+        "x": 220,
+        "y": 320,
         "wires": [
             [
                 "4d66acca5cf87d06"
@@ -17081,8 +17081,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 340,
+        "x": 420,
+        "y": 240,
         "wires": [
             [
                 "14f119efb2a3c8ed"
@@ -17101,8 +17101,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 340,
+        "x": 610,
+        "y": 240,
         "wires": [
             [
                 "19f7c22ca3e2f3d7"
@@ -17173,8 +17173,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 240,
-        "y": 400,
+        "x": 200,
+        "y": 240,
         "wires": [
             [
                 "24dc0151969711ad"
@@ -17202,8 +17202,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "diagdata",
-        "x": 330,
-        "y": 620,
+        "x": 430,
+        "y": 460,
         "wires": [
             [
                 "8b48865e356d2996"
@@ -17220,8 +17220,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 490,
-        "y": 620,
+        "x": 570,
+        "y": 460,
         "wires": [
             [
                 "3ac2283e1c6d641b"
@@ -17249,8 +17249,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "failuresCurrent=100",
-        "x": 250,
-        "y": 680,
+        "x": 390,
+        "y": 520,
         "wires": [
             [
                 "ed4c7fdbbd2d1afd"
@@ -17277,8 +17277,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 620,
+        "x": 720,
+        "y": 460,
         "wires": [
             [
                 "14a5821d53b6121b"
@@ -17303,8 +17303,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 850,
-        "y": 620,
+        "x": 890,
+        "y": 460,
         "wires": [
             []
         ]
@@ -17325,8 +17325,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "acknowledgeAll",
-        "x": 260,
-        "y": 840,
+        "x": 220,
+        "y": 600,
         "wires": [
             [
                 "e501b3babd3de7eb"
@@ -17364,8 +17364,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 260,
-        "y": 880,
+        "x": 220,
+        "y": 640,
         "wires": [
             [
                 "e501b3babd3de7eb"
@@ -17384,8 +17384,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 280,
-        "y": 720,
+        "x": 420,
+        "y": 560,
         "wires": [
             [
                 "ed4c7fdbbd2d1afd"
@@ -17404,8 +17404,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
-        "y": 720,
+        "x": 610,
+        "y": 560,
         "wires": [
             [
                 "ecd5417c611a6980"
@@ -17443,8 +17443,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 240,
-        "y": 780,
+        "x": 200,
+        "y": 560,
         "wires": [
             [
                 "fada46fa7041d7e5"
@@ -17461,8 +17461,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 530,
-        "y": 680,
+        "x": 610,
+        "y": 520,
         "wires": [
             [
                 "ecd5417c611a6980"
@@ -17480,7 +17480,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 430,
-        "y": 840,
+        "y": 600,
         "wires": [
             [
                 "fada46fa7041d7e5"
@@ -17581,8 +17581,8 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 830,
-        "y": 320,
+        "x": 910,
+        "y": 220,
         "wires": [
             []
         ]
@@ -17642,8 +17642,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 700,
-        "y": 320,
+        "x": 780,
+        "y": 220,
         "wires": [
             [
                 "c8365d741af89e49"
@@ -17720,8 +17720,8 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 830,
-        "y": 700,
+        "x": 910,
+        "y": 540,
         "wires": [
             []
         ]
@@ -17736,8 +17736,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 700,
-        "y": 700,
+        "x": 780,
+        "y": 540,
         "wires": [
             [
                 "8cbb0b7d62dd295c"
