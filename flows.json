@@ -18248,7 +18248,7 @@
                 "t": "set",
                 "p": "label",
                 "pt": "msg",
-                "to": "Work time",
+                "to": "Working time",
                 "tot": "str"
             }
         ],
@@ -18345,7 +18345,7 @@
                 "t": "set",
                 "p": "label",
                 "pt": "msg",
-                "to": "Home time",
+                "to": "Homing time",
                 "tot": "str"
             }
         ],
