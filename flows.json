@@ -873,8 +873,8 @@
         "id": "14f119efb2a3c8ed",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 420,
-        "y": 420,
+        "x": 440,
+        "y": 320,
         "wires": [
             [
                 "98a2548cfafaba9e",
@@ -886,8 +886,8 @@
         "id": "19f7c22ca3e2f3d7",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 600,
-        "y": 420,
+        "x": 620,
+        "y": 320,
         "wires": [
             [
                 "8d0caeb8f9b71fb6"
@@ -898,8 +898,8 @@
         "id": "24dc0151969711ad",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 380,
-        "y": 500,
+        "x": 400,
+        "y": 400,
         "wires": [
             [
                 "414a432eb63dd21f"
@@ -910,8 +910,8 @@
         "id": "ed4c7fdbbd2d1afd",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 420,
-        "y": 1080,
+        "x": 440,
+        "y": 700,
         "wires": [
             [
                 "e45aab72118f3f1d",
@@ -923,8 +923,8 @@
         "id": "ecd5417c611a6980",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 600,
-        "y": 1080,
+        "x": 620,
+        "y": 700,
         "wires": [
             [
                 "176a22a1cc3f7a5d"
@@ -935,8 +935,8 @@
         "id": "fada46fa7041d7e5",
         "type": "junction",
         "z": "31b99f8067ff832b",
-        "x": 380,
-        "y": 1160,
+        "x": 400,
+        "y": 780,
         "wires": [
             [
                 "bf03d0f25f99ae5e"
@@ -16843,55 +16843,6 @@
         ]
     },
     {
-        "id": "1846bf9e6749371c",
-        "type": "http request",
-        "z": "31b99f8067ff832b",
-        "name": "Get Z axis",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://192.168.100.30/getData.cgi?{{{topic}}}",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": true,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1450,
-        "y": 180,
-        "wires": [
-            [
-                "dcbf3cfaecd96c12"
-            ]
-        ]
-    },
-    {
-        "id": "58998e4d31bfec44",
-        "type": "link in",
-        "z": "31b99f8067ff832b",
-        "name": "inGetZ",
-        "links": [],
-        "x": 1345,
-        "y": 180,
-        "wires": [
-            [
-                "1846bf9e6749371c"
-            ]
-        ]
-    },
-    {
-        "id": "ba841bcbbba8c4bb",
-        "type": "link out",
-        "z": "31b99f8067ff832b",
-        "name": "outGetZ",
-        "mode": "return",
-        "links": [],
-        "x": 2175,
-        "y": 180,
-        "wires": []
-    },
-    {
         "id": "68db1312e7f3a2ca",
         "type": "inject",
         "z": "31b99f8067ff832b",
@@ -16912,8 +16863,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "diagdata",
-        "x": 250,
-        "y": 320,
+        "x": 270,
+        "y": 220,
         "wires": [
             [
                 "3458175dbe169786"
@@ -16926,12 +16877,12 @@
         "z": "31b99f8067ff832b",
         "name": "GetZ",
         "links": [
-            "58998e4d31bfec44"
+            "abd68a5f144fcbd6"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 410,
-        "y": 320,
+        "x": 430,
+        "y": 220,
         "wires": [
             [
                 "3485666ddb03f570"
@@ -16959,8 +16910,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "failuresCurrent=100",
-        "x": 230,
-        "y": 400,
+        "x": 250,
+        "y": 300,
         "wires": [
             [
                 "14f119efb2a3c8ed"
@@ -16973,148 +16924,15 @@
         "z": "31b99f8067ff832b",
         "name": "GetZ",
         "links": [
-            "58998e4d31bfec44"
+            "abd68a5f144fcbd6"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 510,
-        "y": 400,
+        "x": 530,
+        "y": 300,
         "wires": [
             [
                 "19f7c22ca3e2f3d7"
-            ]
-        ]
-    },
-    {
-        "id": "dcbf3cfaecd96c12",
-        "type": "split",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "splt": ";",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 1590,
-        "y": 180,
-        "wires": [
-            [
-                "a2004603261ab425"
-            ]
-        ]
-    },
-    {
-        "id": "a586d557bafdb19b",
-        "type": "join",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": true,
-        "accumulate": false,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "num",
-        "reduceFixup": "",
-        "x": 1830,
-        "y": 180,
-        "wires": [
-            [
-                "1cf001998def3faf"
-            ]
-        ]
-    },
-    {
-        "id": "a2004603261ab425",
-        "type": "split",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "splt": "|",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 1710,
-        "y": 180,
-        "wires": [
-            [
-                "a586d557bafdb19b"
-            ]
-        ]
-    },
-    {
-        "id": "e8bdc9c824d3202a",
-        "type": "join",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": true,
-        "accumulate": false,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "num",
-        "reduceFixup": "",
-        "x": 2090,
-        "y": 180,
-        "wires": [
-            [
-                "ba841bcbbba8c4bb"
-            ]
-        ]
-    },
-    {
-        "id": "1cf001998def3faf",
-        "type": "change",
-        "z": "31b99f8067ff832b",
-        "name": "parse row",
-        "rules": [
-            {
-                "t": "set",
-                "p": "values",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg",
-                "dc": true
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$zip(keys, values){$[0]:$[1]}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1960,
-        "y": 180,
-        "wires": [
-            [
-                "e8bdc9c824d3202a"
             ]
         ]
     },
@@ -17138,8 +16956,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 320,
+        "x": 600,
+        "y": 220,
         "wires": [
             [
                 "11a7569da2b04348"
@@ -17164,8 +16982,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 770,
-        "y": 320,
+        "x": 790,
+        "y": 220,
         "wires": [
             []
         ]
@@ -17186,8 +17004,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "acknowledgeAll",
-        "x": 240,
-        "y": 560,
+        "x": 260,
+        "y": 460,
         "wires": [
             [
                 "4d66acca5cf87d06"
@@ -17200,12 +17018,12 @@
         "z": "31b99f8067ff832b",
         "name": "GetZ",
         "links": [
-            "58998e4d31bfec44"
+            "abd68a5f144fcbd6"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 410,
-        "y": 560,
+        "x": 430,
+        "y": 460,
         "wires": [
             [
                 "24dc0151969711ad"
@@ -17243,8 +17061,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 240,
-        "y": 600,
+        "x": 260,
+        "y": 500,
         "wires": [
             [
                 "4d66acca5cf87d06"
@@ -17263,8 +17081,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 440,
+        "x": 280,
+        "y": 340,
         "wires": [
             [
                 "14f119efb2a3c8ed"
@@ -17283,8 +17101,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 440,
+        "x": 530,
+        "y": 340,
         "wires": [
             [
                 "19f7c22ca3e2f3d7"
@@ -17355,193 +17173,11 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 220,
-        "y": 500,
+        "x": 240,
+        "y": 400,
         "wires": [
             [
                 "24dc0151969711ad"
-            ]
-        ]
-    },
-    {
-        "id": "d0123997ba650ca8",
-        "type": "http request",
-        "z": "31b99f8067ff832b",
-        "name": "Get R axis",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://192.168.100.31/getData.cgi?{{{topic}}}",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": true,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 1210,
-        "y": 480,
-        "wires": [
-            [
-                "2bf80131941cd01d"
-            ]
-        ]
-    },
-    {
-        "id": "95431be9df1ceb51",
-        "type": "link in",
-        "z": "31b99f8067ff832b",
-        "name": "inGetR",
-        "links": [],
-        "x": 1085,
-        "y": 480,
-        "wires": [
-            [
-                "d0123997ba650ca8"
-            ]
-        ]
-    },
-    {
-        "id": "555f331ebdf17bda",
-        "type": "link out",
-        "z": "31b99f8067ff832b",
-        "name": "outGetZ",
-        "mode": "return",
-        "links": [],
-        "x": 1965,
-        "y": 480,
-        "wires": []
-    },
-    {
-        "id": "2bf80131941cd01d",
-        "type": "split",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "splt": ";",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 1370,
-        "y": 480,
-        "wires": [
-            [
-                "e86ce135b61e4014"
-            ]
-        ]
-    },
-    {
-        "id": "b4b620d00593d472",
-        "type": "join",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": true,
-        "accumulate": false,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "num",
-        "reduceFixup": "",
-        "x": 1610,
-        "y": 480,
-        "wires": [
-            [
-                "1adad59ec4df7064"
-            ]
-        ]
-    },
-    {
-        "id": "e86ce135b61e4014",
-        "type": "split",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "splt": "|",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "property": "payload",
-        "x": 1490,
-        "y": 480,
-        "wires": [
-            [
-                "b4b620d00593d472"
-            ]
-        ]
-    },
-    {
-        "id": "eeb3fb202f41db5b",
-        "type": "join",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "mode": "custom",
-        "build": "array",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": true,
-        "accumulate": false,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "num",
-        "reduceFixup": "",
-        "x": 1870,
-        "y": 480,
-        "wires": [
-            [
-                "555f331ebdf17bda"
-            ]
-        ]
-    },
-    {
-        "id": "1adad59ec4df7064",
-        "type": "change",
-        "z": "31b99f8067ff832b",
-        "name": "parse row",
-        "rules": [
-            {
-                "t": "set",
-                "p": "values",
-                "pt": "msg",
-                "to": "payload",
-                "tot": "msg",
-                "dc": true
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "$zip(keys, values){$[0]:$[1]}",
-                "tot": "jsonata"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 1740,
-        "y": 480,
-        "wires": [
-            [
-                "eeb3fb202f41db5b"
             ]
         ]
     },
@@ -17566,8 +17202,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "diagdata",
-        "x": 250,
-        "y": 980,
+        "x": 330,
+        "y": 620,
         "wires": [
             [
                 "8b48865e356d2996"
@@ -17580,12 +17216,12 @@
         "z": "31b99f8067ff832b",
         "name": "GetR",
         "links": [
-            "95431be9df1ceb51"
+            "3688d154455a7730"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 410,
-        "y": 980,
+        "x": 490,
+        "y": 620,
         "wires": [
             [
                 "3ac2283e1c6d641b"
@@ -17613,8 +17249,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "failuresCurrent=100",
-        "x": 230,
-        "y": 1060,
+        "x": 250,
+        "y": 680,
         "wires": [
             [
                 "ed4c7fdbbd2d1afd"
@@ -17641,8 +17277,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 980,
+        "x": 660,
+        "y": 620,
         "wires": [
             [
                 "14a5821d53b6121b"
@@ -17667,8 +17303,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 770,
-        "y": 980,
+        "x": 850,
+        "y": 620,
         "wires": [
             []
         ]
@@ -17689,8 +17325,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "acknowledgeAll",
-        "x": 240,
-        "y": 1220,
+        "x": 260,
+        "y": 840,
         "wires": [
             [
                 "e501b3babd3de7eb"
@@ -17728,8 +17364,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 240,
-        "y": 1260,
+        "x": 260,
+        "y": 880,
         "wires": [
             [
                 "e501b3babd3de7eb"
@@ -17748,8 +17384,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 1100,
+        "x": 280,
+        "y": 720,
         "wires": [
             [
                 "ed4c7fdbbd2d1afd"
@@ -17768,8 +17404,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 510,
-        "y": 1100,
+        "x": 530,
+        "y": 720,
         "wires": [
             [
                 "ecd5417c611a6980"
@@ -17807,8 +17443,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 220,
-        "y": 1160,
+        "x": 240,
+        "y": 780,
         "wires": [
             [
                 "fada46fa7041d7e5"
@@ -17821,12 +17457,12 @@
         "z": "31b99f8067ff832b",
         "name": "GetR",
         "links": [
-            "95431be9df1ceb51"
+            "3688d154455a7730"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 510,
-        "y": 1060,
+        "x": 530,
+        "y": 680,
         "wires": [
             [
                 "ecd5417c611a6980"
@@ -17839,12 +17475,12 @@
         "z": "31b99f8067ff832b",
         "name": "GetR",
         "links": [
-            "95431be9df1ceb51"
+            "3688d154455a7730"
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 410,
-        "y": 1220,
+        "x": 430,
+        "y": 840,
         "wires": [
             [
                 "fada46fa7041d7e5"
@@ -17945,28 +17581,11 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 810,
-        "y": 420,
+        "x": 830,
+        "y": 320,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "52e6381352578337",
-        "type": "debug",
-        "z": "31b99f8067ff832b",
-        "name": "debug 8",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 600,
-        "y": 200,
-        "wires": []
     },
     {
         "id": "d7a0e342fdc9503d",
@@ -17975,7 +17594,7 @@
         "name": "inErrDat",
         "links": [],
         "x": 1355,
-        "y": 300,
+        "y": 420,
         "wires": [
             [
                 "32ef10f9f26ff7ba"
@@ -17995,7 +17614,7 @@
         "finalize": "",
         "libs": [],
         "x": 1460,
-        "y": 300,
+        "y": 420,
         "wires": [
             [
                 "e5d16a2c8b3bcbf1"
@@ -18010,7 +17629,7 @@
         "mode": "return",
         "links": [],
         "x": 1565,
-        "y": 300,
+        "y": 420,
         "wires": []
     },
     {
@@ -18023,8 +17642,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 680,
-        "y": 420,
+        "x": 700,
+        "y": 320,
         "wires": [
             [
                 "c8365d741af89e49"
@@ -18101,8 +17720,8 @@
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 810,
-        "y": 1080,
+        "x": 830,
+        "y": 700,
         "wires": [
             []
         ]
@@ -18117,8 +17736,8 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 680,
-        "y": 1080,
+        "x": 700,
+        "y": 700,
         "wires": [
             [
                 "8cbb0b7d62dd295c"
@@ -18141,45 +17760,11 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1440,
+        "x": 1500,
         "y": 220,
         "wires": [
             [
                 "d1233a57fd845f23"
-            ]
-        ]
-    },
-    {
-        "id": "5b4fa14335d8d432",
-        "type": "inject",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "keys",
-                "v": "[\"DeviceName\",\"ControllerType\",\"ProductKey\",\"AxisType\",\"MotorType\",\"FwVersion\",\"DevVersion\",\"IpAddress\",\"SubnetMask\",\"Gateway\",\"MacAddress\",\"LogicVoltage\",\"IntermediateCircuitVoltage\",\"ReferencePosition\",\"ActualPosition\",\"ActualVelocity\",\"MotorCurrentIq\",\"MotorCurrentId\",\"TemperaturePs\",\"i2tMotAct\",\"i2tMotMax\",\"i2tPsAct\",\"i2tPsMax\",\"i2tPsStandAct\",\"i2tPsStandMax\",\"StateOperationEnable\",\"StateMotionComplete\",\"StateErrorActive\",\"StateWarningActive\",\"StateHomingValid\",\"StateMoving\",\"DeviceFamily\",\"IpAddress2\",\"SubnetMask2\",\"Gateway2\",\"MacAddress2\",\"NameOfStation\",\"X1A06_State\",\"X1A06_Function\",\"X1A07_State\",\"X1A07_Function\",\"X1A08_State\",\"X1A08_Function\",\"X1A09_State\",\"X1A09_Function\",\"X1A10_State\",\"X1A10_Function\",\"X1C02_State\",\"X1C02_Function\",\"safetyFunctionActive\",\"stoAState\",\"stoBState\"]",
-                "vt": "json"
-            },
-            {
-                "p": "host",
-                "v": "192.168.100.30",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "diagdata",
-        "x": 220,
-        "y": 180,
-        "wires": [
-            [
-                "5fc9608447be1add"
             ]
         ]
     },
@@ -18189,13 +17774,14 @@
         "z": "31b99f8067ff832b",
         "name": "inGet",
         "links": [],
-        "x": 1345,
+        "x": 1370,
         "y": 220,
         "wires": [
             [
                 "7cad0a87b9c3b4fd"
             ]
-        ]
+        ],
+        "l": true
     },
     {
         "id": "a5eee108a4ec8b0c",
@@ -18204,7 +17790,7 @@
         "name": "outGetZ",
         "mode": "return",
         "links": [],
-        "x": 2155,
+        "x": 2215,
         "y": 220,
         "wires": []
     },
@@ -18220,7 +17806,7 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 1570,
+        "x": 1630,
         "y": 220,
         "wires": [
             [
@@ -18249,7 +17835,7 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 1810,
+        "x": 1870,
         "y": 220,
         "wires": [
             [
@@ -18269,7 +17855,7 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 1690,
+        "x": 1750,
         "y": 220,
         "wires": [
             [
@@ -18298,7 +17884,7 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 2070,
+        "x": 2130,
         "y": 220,
         "wires": [
             [
@@ -18333,7 +17919,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1940,
+        "x": 2000,
         "y": 220,
         "wires": [
             [
@@ -18342,7 +17928,49 @@
         ]
     },
     {
-        "id": "5fc9608447be1add",
+        "id": "abd68a5f144fcbd6",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "inGetZ",
+        "links": [],
+        "x": 1370,
+        "y": 280,
+        "wires": [
+            [
+                "8fa15116b1398af3"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "8fa15116b1398af3",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "192.168.100.30",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1510,
+        "y": 280,
+        "wires": [
+            [
+                "e3cc2888c2a77f76"
+            ]
+        ]
+    },
+    {
+        "id": "e3cc2888c2a77f76",
         "type": "link call",
         "z": "31b99f8067ff832b",
         "name": "Get",
@@ -18351,47 +17979,95 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 390,
-        "y": 200,
+        "x": 1650,
+        "y": 280,
         "wires": [
             [
-                "52e6381352578337"
+                "61feb0598ec9355c"
             ]
         ]
     },
     {
-        "id": "f0059fdf25e99307",
-        "type": "inject",
+        "id": "61feb0598ec9355c",
+        "type": "link out",
         "z": "31b99f8067ff832b",
-        "name": "",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "keys",
-                "v": "[\"DeviceName\",\"ControllerType\",\"ProductKey\",\"AxisType\",\"MotorType\",\"FwVersion\",\"DevVersion\",\"IpAddress\",\"SubnetMask\",\"Gateway\",\"MacAddress\",\"LogicVoltage\",\"IntermediateCircuitVoltage\",\"ReferencePosition\",\"ActualPosition\",\"ActualVelocity\",\"MotorCurrentIq\",\"MotorCurrentId\",\"TemperaturePs\",\"i2tMotAct\",\"i2tMotMax\",\"i2tPsAct\",\"i2tPsMax\",\"i2tPsStandAct\",\"i2tPsStandMax\",\"StateOperationEnable\",\"StateMotionComplete\",\"StateErrorActive\",\"StateWarningActive\",\"StateHomingValid\",\"StateMoving\",\"DeviceFamily\",\"IpAddress2\",\"SubnetMask2\",\"Gateway2\",\"MacAddress2\",\"NameOfStation\",\"X1A06_State\",\"X1A06_Function\",\"X1A07_State\",\"X1A07_Function\",\"X1A08_State\",\"X1A08_Function\",\"X1A09_State\",\"X1A09_Function\",\"X1A10_State\",\"X1A10_Function\",\"X1C02_State\",\"X1C02_Function\",\"safetyFunctionActive\",\"stoAState\",\"stoBState\"]",
-                "vt": "json"
-            },
-            {
-                "p": "host",
-                "v": "192.168.100.31",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "diagdata",
-        "x": 220,
-        "y": 240,
+        "name": "link out 7",
+        "mode": "return",
+        "links": [],
+        "x": 1735,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3688d154455a7730",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "inGetR",
+        "links": [],
+        "x": 1370,
+        "y": 320,
         "wires": [
             [
-                "5fc9608447be1add"
+                "eeed3c37435bc0e5"
+            ]
+        ],
+        "l": true
+    },
+    {
+        "id": "eeed3c37435bc0e5",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "host",
+                "pt": "msg",
+                "to": "192.168.100.31",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1510,
+        "y": 320,
+        "wires": [
+            [
+                "9e02aa691a9ad496"
             ]
         ]
+    },
+    {
+        "id": "9e02aa691a9ad496",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "Get",
+        "links": [
+            "16505b0b55762e1e"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1650,
+        "y": 320,
+        "wires": [
+            [
+                "e957e7b7b3d4af43"
+            ]
+        ]
+    },
+    {
+        "id": "e957e7b7b3d4af43",
+        "type": "link out",
+        "z": "31b99f8067ff832b",
+        "name": "link out 8",
+        "mode": "return",
+        "links": [],
+        "x": 1735,
+        "y": 320,
+        "wires": []
     },
     {
         "id": "fe36b4aab8e4b51e",
