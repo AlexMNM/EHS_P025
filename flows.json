@@ -18079,8 +18079,8 @@
         "valueType": "msg",
         "width": "4",
         "height": "4",
-        "gtype": "gauge-tank",
-        "gstyle": "needle",
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
         "title": "",
         "alwaysShowTitle": false,
         "floatingTitlePosition": "top-left",
@@ -18091,31 +18091,25 @@
         "segments": [
             {
                 "from": "0",
-                "color": "#a8f5ff",
+                "color": "#5cd65c",
                 "text": "",
                 "textType": "label"
             },
             {
-                "from": "15",
-                "color": "#55dbec",
+                "from": "4",
+                "color": "#ffc800",
                 "text": "",
                 "textType": "label"
             },
             {
-                "from": "35",
-                "color": "#53b4fd",
-                "text": "",
-                "textType": "label"
-            },
-            {
-                "from": "50",
-                "color": "#2397d1",
+                "from": "7",
+                "color": "#ea5353",
                 "text": "",
                 "textType": "label"
             }
         ],
         "min": 0,
-        "max": "100",
+        "max": "10",
         "sizeThickness": 16,
         "sizeGap": 4,
         "sizeKeyThickness": 8,
