@@ -18079,7 +18079,7 @@
         "valueType": "msg",
         "width": "4",
         "height": "4",
-        "gtype": "gauge-34",
+        "gtype": "gauge-tile",
         "gstyle": "needle",
         "title": "",
         "alwaysShowTitle": false,
