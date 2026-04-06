@@ -18116,7 +18116,7 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 920,
+        "x": 1140,
         "y": 980,
         "wires": [
             []
@@ -18161,7 +18161,8 @@
         "y": 980,
         "wires": [
             [
-                "f3db2bf5d4cd014c"
+                "f3db2bf5d4cd014c",
+                "3763b289c1978976"
             ]
         ]
     },
@@ -18170,7 +18171,7 @@
         "type": "debug",
         "z": "31b99f8067ff832b",
         "name": "debug 8",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -18178,9 +18179,56 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
-        "y": 900,
+        "x": 820,
+        "y": 780,
         "wires": []
+    },
+    {
+        "id": "4c6182b6cc48ba40",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 980,
+        "wires": [
+            [
+                "e8b673fa11db5b03"
+            ]
+        ]
+    },
+    {
+        "id": "3763b289c1978976",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "split",
+        "func": "\nreturn [...msg.payload];",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 980,
+        "wires": [
+            [
+                "f3db2bf5d4cd014c"
+            ]
+        ]
     },
     {
         "id": "fe36b4aab8e4b51e",
