@@ -890,7 +890,7 @@
         "y": 420,
         "wires": [
             [
-                "e9b721561f180e99"
+                "c8365d741af89e49"
             ]
         ]
     },
@@ -17171,33 +17171,6 @@
         ]
     },
     {
-        "id": "e9b721561f180e99",
-        "type": "ui-table",
-        "z": "31b99f8067ff832b",
-        "group": "b19fdb090e5f5f51",
-        "name": "Errors",
-        "label": "",
-        "order": 7,
-        "width": "5",
-        "height": "1",
-        "maxrows": "10",
-        "passthru": false,
-        "autocols": true,
-        "showSearch": false,
-        "deselect": true,
-        "selectionType": "none",
-        "columns": [],
-        "mobileBreakpoint": "sm",
-        "mobileBreakpointType": "defaults",
-        "action": "replace",
-        "className": "",
-        "x": 750,
-        "y": 420,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "6494ff03aca028a4",
         "type": "inject",
         "z": "31b99f8067ff832b",
@@ -17974,6 +17947,82 @@
         "className": "",
         "x": 150,
         "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8365d741af89e49",
+        "type": "ui-table",
+        "z": "31b99f8067ff832b",
+        "group": "b19fdb090e5f5f51",
+        "name": "Errors",
+        "label": "",
+        "order": 7,
+        "width": "5",
+        "height": "1",
+        "maxrows": "10",
+        "passthru": false,
+        "autocols": false,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "Number",
+                "key": "Number",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Diagnosis ID",
+                "key": "DiagID",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Name",
+                "key": "Name",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Category",
+                "key": "Category",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Status",
+                "key": "IconNumber",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Time",
+                "key": "Time",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 770,
+        "y": 420,
         "wires": [
             []
         ]
