@@ -18072,7 +18072,7 @@
         "id": "e8b673fa11db5b03",
         "type": "ui-gauge",
         "z": "31b99f8067ff832b",
-        "name": "Work time",
+        "name": "act time",
         "group": "490689fb668a726b",
         "order": 0,
         "value": "payload",
@@ -18184,7 +18184,9 @@
             [
                 "9234d496a670f1b8"
             ],
-            [],
+            [
+                "5d22acad4bc9846e"
+            ],
             [],
             [],
             []
@@ -18209,27 +18211,6 @@
         ]
     },
     {
-        "id": "1aea0b0459014f24",
-        "type": "function",
-        "z": "31b99f8067ff832b",
-        "name": "actuation time",
-        "func": "const max = msg.max ?? 10;\nconst states = {\n    ok: {\n        \"from\": 0,\n        color: \"green\",\n        icon: \"timer-check\",\n        suffix: \"ok\"\n    },\n    warn: {\n        \"from\": 0.8 * max,\n        color: \"yellow\",\n        icon: \"timer-cog\",\n        suffix: \"warning\"\n    },\n    err: {\n        \"from\": max,\n        color: \"red\",\n        icon: \"timer-alert\",\n        suffix: \"error\"\n    }\n};\n\nconst state = msg.payload < states.warn[\"from\"] ? \"ok\" :  msg.payload < states.err[\"from\"] ? \"warn\" : \"err\";\n\nmsg.ui_update = {\n    label: msg.label + \" - \" + states[state].suffix,\n    segments: [\n        states.ok,\n        states.warn,\n        states.err\n    ],\n    suffix: \"\",\n    max: 1.2 * max,\n    icon: states[state].icon\n}\n\nreturn msg;\n\n",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 920,
-        "wires": [
-            [
-                "f3db2bf5d4cd014c",
-                "e8b673fa11db5b03"
-            ]
-        ]
-    },
-    {
         "id": "f3db2bf5d4cd014c",
         "type": "debug",
         "z": "31b99f8067ff832b",
@@ -18242,8 +18223,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1220,
-        "y": 980,
+        "x": 1200,
+        "y": 880,
         "wires": []
     },
     {
@@ -18276,7 +18257,177 @@
         "y": 920,
         "wires": [
             [
-                "1aea0b0459014f24"
+                "fd8018b311138592"
+            ]
+        ]
+    },
+    {
+        "id": "9fa53be1d938e9a4",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "actuation time",
+        "func": "const max = msg.max ?? 10;\nconst states = {\n    ok: {\n        \"from\": 0,\n        color: \"green\",\n        icon: \"timer-check\",\n        suffix: \"ok\"\n    },\n    warn: {\n        \"from\": 0.8 * max,\n        color: \"yellow\",\n        icon: \"timer-cog\",\n        suffix: \"warning\"\n    },\n    err: {\n        \"from\": max,\n        color: \"red\",\n        icon: \"timer-alert\",\n        suffix: \"error\"\n    }\n};\n\nconst state = msg.payload < states.warn[\"from\"] ? \"ok\" :  msg.payload < states.err[\"from\"] ? \"warn\" : \"err\";\n\nmsg.ui_update = {\n    label: msg.label + \" - \" + states[state].suffix,\n    segments: [\n        states.ok,\n        states.warn,\n        states.err\n    ],\n    suffix: \"\",\n    max: 1.2 * max,\n    icon: states[state].icon\n}\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1160,
+        "y": 800,
+        "wires": [
+            [
+                "0341d9cd4dc72ea7"
+            ]
+        ]
+    },
+    {
+        "id": "0c128fdacdd7c9eb",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "inActTime",
+        "links": [],
+        "x": 1045,
+        "y": 800,
+        "wires": [
+            [
+                "9fa53be1d938e9a4"
+            ]
+        ]
+    },
+    {
+        "id": "0341d9cd4dc72ea7",
+        "type": "link out",
+        "z": "31b99f8067ff832b",
+        "name": "link out 9",
+        "mode": "return",
+        "links": [],
+        "x": 1285,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "fd8018b311138592",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "ActTime",
+        "links": [
+            "0c128fdacdd7c9eb"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 980,
+        "y": 920,
+        "wires": [
+            [
+                "e8b673fa11db5b03",
+                "f3db2bf5d4cd014c"
+            ]
+        ]
+    },
+    {
+        "id": "dd0f9490ed5efdc8",
+        "type": "ui-gauge",
+        "z": "31b99f8067ff832b",
+        "name": "act time",
+        "group": "490689fb668a726b",
+        "order": 0,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "4",
+        "height": "4",
+        "gtype": "gauge-34",
+        "gstyle": "rounded",
+        "title": "",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "ms",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "10",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1220,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d22acad4bc9846e",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "max",
+                "pt": "msg",
+                "to": "500",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "label",
+                "pt": "msg",
+                "to": "Home time",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 960,
+        "wires": [
+            [
+                "3a36f1166f11cd2b"
+            ]
+        ]
+    },
+    {
+        "id": "3a36f1166f11cd2b",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "ActTime",
+        "links": [
+            "0c128fdacdd7c9eb"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 980,
+        "y": 960,
+        "wires": [
+            [
+                "dd0f9490ed5efdc8"
             ]
         ]
     },
