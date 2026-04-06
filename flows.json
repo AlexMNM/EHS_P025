@@ -18477,7 +18477,7 @@
         "value": "payload",
         "valueType": "msg",
         "width": "4",
-        "height": "4",
+        "height": "5",
         "gtype": "gauge-half",
         "gstyle": "rounded",
         "title": "",
