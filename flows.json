@@ -18475,7 +18475,7 @@
         "title": "",
         "alwaysShowTitle": false,
         "floatingTitlePosition": "top-left",
-        "units": "ms",
+        "units": "cycles",
         "icon": "",
         "prefix": "",
         "suffix": "",
