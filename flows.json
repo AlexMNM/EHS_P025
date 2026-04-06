@@ -18079,7 +18079,7 @@
         "valueType": "msg",
         "width": "4",
         "height": "4",
-        "gtype": "gauge-34",
+        "gtype": "gauge-half",
         "gstyle": "rounded",
         "title": "",
         "alwaysShowTitle": false,
@@ -18117,7 +18117,7 @@
         "styleGlow": false,
         "className": "",
         "x": 1220,
-        "y": 920,
+        "y": 960,
         "wires": [
             []
         ]
@@ -18223,8 +18223,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1200,
-        "y": 880,
+        "x": 1420,
+        "y": 940,
         "wires": []
     },
     {
@@ -18254,7 +18254,7 @@
         "to": "",
         "reg": false,
         "x": 820,
-        "y": 920,
+        "y": 960,
         "wires": [
             [
                 "fd8018b311138592"
@@ -18317,7 +18317,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 980,
-        "y": 920,
+        "y": 960,
         "wires": [
             [
                 "e8b673fa11db5b03",
@@ -18374,7 +18374,7 @@
         "styleGlow": false,
         "className": "",
         "x": 1220,
-        "y": 960,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -18406,7 +18406,7 @@
         "to": "",
         "reg": false,
         "x": 820,
-        "y": 960,
+        "y": 1000,
         "wires": [
             [
                 "3a36f1166f11cd2b"
@@ -18424,7 +18424,7 @@
         "linkType": "static",
         "timeout": "30",
         "x": 980,
-        "y": 960,
+        "y": 1000,
         "wires": [
             [
                 "dd0f9490ed5efdc8"
