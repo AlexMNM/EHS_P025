@@ -18116,8 +18116,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 1140,
-        "y": 980,
+        "x": 1060,
+        "y": 860,
         "wires": [
             []
         ]
@@ -18170,7 +18170,7 @@
         "type": "debug",
         "z": "31b99f8067ff832b",
         "name": "debug 8",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -18178,60 +18178,69 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 820,
-        "y": 800,
+        "x": 860,
+        "y": 1200,
         "wires": []
-    },
-    {
-        "id": "4c6182b6cc48ba40",
-        "type": "change",
-        "z": "31b99f8067ff832b",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 940,
-        "y": 980,
-        "wires": [
-            [
-                "e8b673fa11db5b03"
-            ]
-        ]
     },
     {
         "id": "3763b289c1978976",
         "type": "function",
         "z": "31b99f8067ff832b",
         "name": "split",
-        "func": "\nreturn [...msg.payload.sort((a, b) => a.id - b.id)];",
+        "func": "\nreturn [...msg.payload.sort((a, b) => a.id - b.id).map((v) => ({payload: v.result}))];",
         "outputs": 6,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
+        "x": 590,
         "y": 980,
         "wires": [
             [],
             [],
-            [],
-            [],
-            [],
             [
                 "f3db2bf5d4cd014c"
-            ]
+            ],
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "cca0bbd0950a9ef5",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "cycle counter",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1aea0b0459014f24",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "actuation time",
+        "func": "switch(msg.topic){\n    case \"update\":\n        break;\n    default:\n        \n        break;\n}\n\n\nreturn {\n    ui_update: {\n        label: \"\",\n        segments: [],\n        max: 10,\n        icon: \"timer-check\"\n    }\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 860,
+        "wires": [
+            []
         ]
     },
     {
