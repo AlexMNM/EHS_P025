@@ -944,6 +944,18 @@
         ]
     },
     {
+        "id": "a6bbb0ed11934aa3",
+        "type": "junction",
+        "z": "31b99f8067ff832b",
+        "x": 600,
+        "y": 1660,
+        "wires": [
+            [
+                "a5348e0d26f9e776"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -16172,7 +16184,8 @@
         "links": [
             "8007da33acb3b51d",
             "6abc853642953e44",
-            "5c456d3635692987"
+            "5c456d3635692987",
+            "6ce81b82a7a53495"
         ],
         "x": 2135,
         "y": 1200,
@@ -16188,7 +16201,8 @@
         "links": [
             "de1e1f58d6fe1bd1",
             "d7e9c96ab6e21195",
-            "8c7560b6c942afee"
+            "8c7560b6c942afee",
+            "a3180b4681bce6d6"
         ],
         "x": 2135,
         "y": 1240,
@@ -19430,6 +19444,244 @@
         "wires": [
             [
                 "fa49a8a6c807e6f2"
+            ]
+        ]
+    },
+    {
+        "id": "a763298b4a838cdd",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "disable",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enable",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 1640,
+        "wires": [
+            [
+                "a6bbb0ed11934aa3"
+            ]
+        ]
+    },
+    {
+        "id": "d432527ecbacc4ce",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "enable",
+        "rules": [
+            {
+                "t": "set",
+                "p": "enable",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 490,
+        "y": 1680,
+        "wires": [
+            [
+                "a6bbb0ed11934aa3"
+            ]
+        ]
+    },
+    {
+        "id": "a5348e0d26f9e776",
+        "type": "link out",
+        "z": "31b99f8067ff832b",
+        "name": "link out 11",
+        "mode": "link",
+        "links": [
+            "8da2a20d615f3df8",
+            "3b756af5b2bf58a8",
+            "b104c934a1d80775",
+            "1c1df80892f8d550",
+            "be3e9f3cbf99661e",
+            "21f95e8f006cc095"
+        ],
+        "x": 685,
+        "y": 1660,
+        "wires": []
+    },
+    {
+        "id": "8da2a20d615f3df8",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "link in 7",
+        "links": [
+            "a5348e0d26f9e776"
+        ],
+        "x": 315,
+        "y": 1280,
+        "wires": [
+            [
+                "1be9c26064b0aa8d"
+            ]
+        ]
+    },
+    {
+        "id": "3b756af5b2bf58a8",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "link in 8",
+        "links": [
+            "a5348e0d26f9e776"
+        ],
+        "x": 355,
+        "y": 1380,
+        "wires": [
+            [
+                "f84f986dd1872ff9"
+            ]
+        ]
+    },
+    {
+        "id": "b104c934a1d80775",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "link in 9",
+        "links": [
+            "a5348e0d26f9e776"
+        ],
+        "x": 325,
+        "y": 1480,
+        "wires": [
+            [
+                "e2290845dc3f0c72"
+            ]
+        ]
+    },
+    {
+        "id": "1c1df80892f8d550",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "link in 10",
+        "links": [
+            "a5348e0d26f9e776"
+        ],
+        "x": 905,
+        "y": 1280,
+        "wires": [
+            [
+                "8cdf030c355ad3c3"
+            ]
+        ]
+    },
+    {
+        "id": "be3e9f3cbf99661e",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "link in 11",
+        "links": [
+            "a5348e0d26f9e776"
+        ],
+        "x": 945,
+        "y": 1380,
+        "wires": [
+            [
+                "4863de6573f7d52d"
+            ]
+        ]
+    },
+    {
+        "id": "21f95e8f006cc095",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "link in 12",
+        "links": [
+            "a5348e0d26f9e776"
+        ],
+        "x": 905,
+        "y": 1480,
+        "wires": [
+            [
+                "4566e08569683459"
+            ]
+        ]
+    },
+    {
+        "id": "a3e3086ff42755dd",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 350,
+        "y": 1600,
+        "wires": [
+            [
+                "a763298b4a838cdd"
+            ]
+        ]
+    },
+    {
+        "id": "7ff8c82c1f5ef0f0",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 350,
+        "y": 1720,
+        "wires": [
+            [
+                "d432527ecbacc4ce"
+            ]
+        ]
+    },
+    {
+        "id": "a3180b4681bce6d6",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "inIsNotAdmin",
+        "links": [
+            "6cd64334b9025961"
+        ],
+        "x": 375,
+        "y": 1640,
+        "wires": [
+            [
+                "a763298b4a838cdd"
+            ]
+        ]
+    },
+    {
+        "id": "6ce81b82a7a53495",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "inIsAdmin",
+        "links": [
+            "b570f096ab26b380"
+        ],
+        "x": 375,
+        "y": 1680,
+        "wires": [
+            [
+                "d432527ecbacc4ce"
             ]
         ]
     },
