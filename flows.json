@@ -18116,7 +18116,7 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 820,
+        "x": 920,
         "y": 980,
         "wires": [
             []
@@ -18137,7 +18137,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"timeToWorkGripper\"}}",
+        "payload": "{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToWorkGripper\\\"\"}}",
         "payloadType": "json",
         "x": 270,
         "y": 980,
