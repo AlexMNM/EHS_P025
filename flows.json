@@ -18074,7 +18074,7 @@
         "z": "31b99f8067ff832b",
         "name": "act time",
         "group": "490689fb668a726b",
-        "order": 4,
+        "order": 5,
         "value": "payload",
         "valueType": "msg",
         "width": "4",
@@ -18419,7 +18419,7 @@
         "z": "31b99f8067ff832b",
         "name": "act time",
         "group": "490689fb668a726b",
-        "order": 5,
+        "order": 6,
         "value": "payload",
         "valueType": "msg",
         "width": "4",
@@ -18473,7 +18473,7 @@
         "z": "31b99f8067ff832b",
         "name": "cycles",
         "group": "490689fb668a726b",
-        "order": 3,
+        "order": 4,
         "value": "payload",
         "valueType": "msg",
         "width": "4",
@@ -18899,7 +18899,7 @@
         "group": "490689fb668a726b",
         "name": "",
         "label": "Closing time limit ms",
-        "order": 6,
+        "order": 8,
         "width": 0,
         "height": 0,
         "topic": "topic",
@@ -18985,7 +18985,7 @@
         "group": "490689fb668a726b",
         "name": "Gripper cycles",
         "label": "Max cycles",
-        "order": 2,
+        "order": 9,
         "width": 0,
         "height": 0,
         "topic": "topic",
@@ -19147,6 +19147,264 @@
         "wires": [
             [
                 "e651a1e43ee4d400"
+            ]
+        ]
+    },
+    {
+        "id": "8cdf030c355ad3c3",
+        "type": "ui-number-input",
+        "z": "31b99f8067ff832b",
+        "group": "490689fb668a726b",
+        "name": "",
+        "label": "Extending time limit ms",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "10000",
+        "step": "10",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": false,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "timer",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "stacked",
+        "x": 1050,
+        "y": 1280,
+        "wires": [
+            [
+                "f80c029d3a6adf1d"
+            ]
+        ]
+    },
+    {
+        "id": "f80c029d3a6adf1d",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::extendingTime",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1280,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "33b0ad17184e0502",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "500",
+        "payloadType": "num",
+        "x": 1070,
+        "y": 1240,
+        "wires": [
+            [
+                "f80c029d3a6adf1d"
+            ]
+        ]
+    },
+    {
+        "id": "4863de6573f7d52d",
+        "type": "ui-number-input",
+        "z": "31b99f8067ff832b",
+        "group": "490689fb668a726b",
+        "name": "Force cycles",
+        "label": "Max cycles",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100000000000000",
+        "step": "1",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": false,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "counter",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "stacked",
+        "x": 1050,
+        "y": 1380,
+        "wires": [
+            [
+                "2e38bcc709ca00a9"
+            ]
+        ]
+    },
+    {
+        "id": "2e38bcc709ca00a9",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::forceCycles",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1280,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c56375a03719106f",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "500000",
+        "payloadType": "num",
+        "x": 1090,
+        "y": 1340,
+        "wires": [
+            [
+                "2e38bcc709ca00a9"
+            ]
+        ]
+    },
+    {
+        "id": "4566e08569683459",
+        "type": "ui-number-input",
+        "z": "31b99f8067ff832b",
+        "group": "490689fb668a726b",
+        "name": "",
+        "label": "Retracting time limit ms",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "10000",
+        "step": "10",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": false,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "timer",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "stacked",
+        "x": 1050,
+        "y": 1480,
+        "wires": [
+            [
+                "fa49a8a6c807e6f2"
+            ]
+        ]
+    },
+    {
+        "id": "fa49a8a6c807e6f2",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::retractingTime",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1280,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "64dbf79a184c1ab0",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "500",
+        "payloadType": "num",
+        "x": 1070,
+        "y": 1440,
+        "wires": [
+            [
+                "fa49a8a6c807e6f2"
             ]
         ]
     },
