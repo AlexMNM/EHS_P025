@@ -7293,7 +7293,7 @@
         "type": "debug",
         "z": "f0b99c790d575624",
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -17712,16 +17712,65 @@
         "height": "1",
         "maxrows": "10",
         "passthru": false,
-        "autocols": true,
+        "autocols": false,
         "showSearch": false,
         "deselect": true,
         "selectionType": "none",
-        "columns": [],
+        "columns": [
+            {
+                "title": "Number",
+                "key": "Number",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Diagnosis ID",
+                "key": "DiagID",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Name",
+                "key": "Name",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Category",
+                "key": "Category",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Status",
+                "key": "IconNumber",
+                "keyType": "key",
+                "type": "html",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Time",
+                "key": "Time",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
         "mobileBreakpoint": "sm",
         "mobileBreakpointType": "defaults",
         "action": "replace",
         "className": "",
-        "x": 750,
+        "x": 790,
         "y": 1080,
         "wires": [
             []
