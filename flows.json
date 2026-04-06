@@ -18263,7 +18263,7 @@
                 "t": "set",
                 "p": "label",
                 "pt": "msg",
-                "to": "Gripper work time",
+                "to": "Work time",
                 "tot": "str"
             }
         ],
