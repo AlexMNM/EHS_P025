@@ -16858,8 +16858,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 310,
-        "y": 140,
+        "x": 1450,
+        "y": 180,
         "wires": [
             [
                 "dcbf3cfaecd96c12"
@@ -16872,8 +16872,8 @@
         "z": "31b99f8067ff832b",
         "name": "inGetZ",
         "links": [],
-        "x": 185,
-        "y": 140,
+        "x": 1345,
+        "y": 180,
         "wires": [
             [
                 "1846bf9e6749371c"
@@ -16887,8 +16887,8 @@
         "name": "outGetZ",
         "mode": "return",
         "links": [],
-        "x": 1065,
-        "y": 140,
+        "x": 2175,
+        "y": 180,
         "wires": []
     },
     {
@@ -16997,8 +16997,8 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 470,
-        "y": 140,
+        "x": 1590,
+        "y": 180,
         "wires": [
             [
                 "a2004603261ab425"
@@ -17026,8 +17026,8 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 710,
-        "y": 140,
+        "x": 1830,
+        "y": 180,
         "wires": [
             [
                 "1cf001998def3faf"
@@ -17046,8 +17046,8 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 590,
-        "y": 140,
+        "x": 1710,
+        "y": 180,
         "wires": [
             [
                 "a586d557bafdb19b"
@@ -17075,8 +17075,8 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 970,
-        "y": 140,
+        "x": 2090,
+        "y": 180,
         "wires": [
             [
                 "ba841bcbbba8c4bb"
@@ -17110,8 +17110,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
-        "y": 140,
+        "x": 1960,
+        "y": 180,
         "wires": [
             [
                 "e8bdc9c824d3202a"
@@ -17379,8 +17379,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 310,
-        "y": 840,
+        "x": 1210,
+        "y": 480,
         "wires": [
             [
                 "2bf80131941cd01d"
@@ -17393,8 +17393,8 @@
         "z": "31b99f8067ff832b",
         "name": "inGetR",
         "links": [],
-        "x": 185,
-        "y": 840,
+        "x": 1085,
+        "y": 480,
         "wires": [
             [
                 "d0123997ba650ca8"
@@ -17408,8 +17408,8 @@
         "name": "outGetZ",
         "mode": "return",
         "links": [],
-        "x": 1065,
-        "y": 840,
+        "x": 1965,
+        "y": 480,
         "wires": []
     },
     {
@@ -17424,8 +17424,8 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 470,
-        "y": 840,
+        "x": 1370,
+        "y": 480,
         "wires": [
             [
                 "e86ce135b61e4014"
@@ -17453,8 +17453,8 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 710,
-        "y": 840,
+        "x": 1610,
+        "y": 480,
         "wires": [
             [
                 "1adad59ec4df7064"
@@ -17473,8 +17473,8 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 590,
-        "y": 840,
+        "x": 1490,
+        "y": 480,
         "wires": [
             [
                 "b4b620d00593d472"
@@ -17502,8 +17502,8 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 970,
-        "y": 840,
+        "x": 1870,
+        "y": 480,
         "wires": [
             [
                 "555f331ebdf17bda"
@@ -17537,8 +17537,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 840,
-        "y": 840,
+        "x": 1740,
+        "y": 480,
         "wires": [
             [
                 "eeb3fb202f41db5b"
@@ -17869,8 +17869,8 @@
         "resendOnRefresh": true,
         "templateScope": "page:style",
         "className": "",
-        "x": 150,
-        "y": 60,
+        "x": 1410,
+        "y": 120,
         "wires": [
             []
         ]
@@ -17964,8 +17964,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 700,
-        "y": 480,
+        "x": 600,
+        "y": 200,
         "wires": []
     },
     {
@@ -17974,8 +17974,8 @@
         "z": "31b99f8067ff832b",
         "name": "inErrDat",
         "links": [],
-        "x": 1175,
-        "y": 240,
+        "x": 1355,
+        "y": 300,
         "wires": [
             [
                 "32ef10f9f26ff7ba"
@@ -17994,8 +17994,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1280,
-        "y": 240,
+        "x": 1460,
+        "y": 300,
         "wires": [
             [
                 "e5d16a2c8b3bcbf1"
@@ -18009,8 +18009,8 @@
         "name": "link out 6",
         "mode": "return",
         "links": [],
-        "x": 1385,
-        "y": 240,
+        "x": 1565,
+        "y": 300,
         "wires": []
     },
     {
@@ -18122,6 +18122,274 @@
         "wires": [
             [
                 "8cbb0b7d62dd295c"
+            ]
+        ]
+    },
+    {
+        "id": "7cad0a87b9c3b4fd",
+        "type": "http request",
+        "z": "31b99f8067ff832b",
+        "name": "Get axis",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://{{{host}}}/getData.cgi?{{{topic}}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": true,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1440,
+        "y": 220,
+        "wires": [
+            [
+                "d1233a57fd845f23"
+            ]
+        ]
+    },
+    {
+        "id": "5b4fa14335d8d432",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "keys",
+                "v": "[\"DeviceName\",\"ControllerType\",\"ProductKey\",\"AxisType\",\"MotorType\",\"FwVersion\",\"DevVersion\",\"IpAddress\",\"SubnetMask\",\"Gateway\",\"MacAddress\",\"LogicVoltage\",\"IntermediateCircuitVoltage\",\"ReferencePosition\",\"ActualPosition\",\"ActualVelocity\",\"MotorCurrentIq\",\"MotorCurrentId\",\"TemperaturePs\",\"i2tMotAct\",\"i2tMotMax\",\"i2tPsAct\",\"i2tPsMax\",\"i2tPsStandAct\",\"i2tPsStandMax\",\"StateOperationEnable\",\"StateMotionComplete\",\"StateErrorActive\",\"StateWarningActive\",\"StateHomingValid\",\"StateMoving\",\"DeviceFamily\",\"IpAddress2\",\"SubnetMask2\",\"Gateway2\",\"MacAddress2\",\"NameOfStation\",\"X1A06_State\",\"X1A06_Function\",\"X1A07_State\",\"X1A07_Function\",\"X1A08_State\",\"X1A08_Function\",\"X1A09_State\",\"X1A09_Function\",\"X1A10_State\",\"X1A10_Function\",\"X1C02_State\",\"X1C02_Function\",\"safetyFunctionActive\",\"stoAState\",\"stoBState\"]",
+                "vt": "json"
+            },
+            {
+                "p": "host",
+                "v": "192.168.100.30",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "diagdata",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "5fc9608447be1add"
+            ]
+        ]
+    },
+    {
+        "id": "16505b0b55762e1e",
+        "type": "link in",
+        "z": "31b99f8067ff832b",
+        "name": "inGet",
+        "links": [],
+        "x": 1345,
+        "y": 220,
+        "wires": [
+            [
+                "7cad0a87b9c3b4fd"
+            ]
+        ]
+    },
+    {
+        "id": "a5eee108a4ec8b0c",
+        "type": "link out",
+        "z": "31b99f8067ff832b",
+        "name": "outGetZ",
+        "mode": "return",
+        "links": [],
+        "x": 2155,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "d1233a57fd845f23",
+        "type": "split",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "splt": ";",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1570,
+        "y": 220,
+        "wires": [
+            [
+                "a41b11f957a593fd"
+            ]
+        ]
+    },
+    {
+        "id": "4d785dd78b87da77",
+        "type": "join",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1810,
+        "y": 220,
+        "wires": [
+            [
+                "3debfa9cfb55c464"
+            ]
+        ]
+    },
+    {
+        "id": "a41b11f957a593fd",
+        "type": "split",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "splt": "|",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1690,
+        "y": 220,
+        "wires": [
+            [
+                "4d785dd78b87da77"
+            ]
+        ]
+    },
+    {
+        "id": "6a736555f03bf206",
+        "type": "join",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": true,
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 2070,
+        "y": 220,
+        "wires": [
+            [
+                "a5eee108a4ec8b0c"
+            ]
+        ]
+    },
+    {
+        "id": "3debfa9cfb55c464",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "parse row",
+        "rules": [
+            {
+                "t": "set",
+                "p": "values",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "$zip(keys, values){$[0]:$[1]}",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1940,
+        "y": 220,
+        "wires": [
+            [
+                "6a736555f03bf206"
+            ]
+        ]
+    },
+    {
+        "id": "5fc9608447be1add",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "Get",
+        "links": [
+            "16505b0b55762e1e"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "52e6381352578337"
+            ]
+        ]
+    },
+    {
+        "id": "f0059fdf25e99307",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "keys",
+                "v": "[\"DeviceName\",\"ControllerType\",\"ProductKey\",\"AxisType\",\"MotorType\",\"FwVersion\",\"DevVersion\",\"IpAddress\",\"SubnetMask\",\"Gateway\",\"MacAddress\",\"LogicVoltage\",\"IntermediateCircuitVoltage\",\"ReferencePosition\",\"ActualPosition\",\"ActualVelocity\",\"MotorCurrentIq\",\"MotorCurrentId\",\"TemperaturePs\",\"i2tMotAct\",\"i2tMotMax\",\"i2tPsAct\",\"i2tPsMax\",\"i2tPsStandAct\",\"i2tPsStandMax\",\"StateOperationEnable\",\"StateMotionComplete\",\"StateErrorActive\",\"StateWarningActive\",\"StateHomingValid\",\"StateMoving\",\"DeviceFamily\",\"IpAddress2\",\"SubnetMask2\",\"Gateway2\",\"MacAddress2\",\"NameOfStation\",\"X1A06_State\",\"X1A06_Function\",\"X1A07_State\",\"X1A07_Function\",\"X1A08_State\",\"X1A08_Function\",\"X1A09_State\",\"X1A09_Function\",\"X1A10_State\",\"X1A10_Function\",\"X1C02_State\",\"X1C02_Function\",\"safetyFunctionActive\",\"stoAState\",\"stoBState\"]",
+                "vt": "json"
+            },
+            {
+                "p": "host",
+                "v": "192.168.100.31",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "diagdata",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "5fc9608447be1add"
             ]
         ]
     },
