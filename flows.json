@@ -18074,7 +18074,7 @@
         "z": "31b99f8067ff832b",
         "name": "act time",
         "group": "490689fb668a726b",
-        "order": 2,
+        "order": 4,
         "value": "payload",
         "valueType": "msg",
         "width": "4",
@@ -18343,10 +18343,11 @@
         "rules": [
             {
                 "t": "set",
-                "p": "max",
+                "p": "payload",
                 "pt": "msg",
-                "to": "500",
-                "tot": "num"
+                "to": "#:(file)::openingTime",
+                "tot": "flow",
+                "dc": true
             },
             {
                 "t": "set",
@@ -18418,7 +18419,7 @@
         "z": "31b99f8067ff832b",
         "name": "act time",
         "group": "490689fb668a726b",
-        "order": 3,
+        "order": 5,
         "value": "payload",
         "valueType": "msg",
         "width": "4",
@@ -18472,7 +18473,7 @@
         "z": "31b99f8067ff832b",
         "name": "cycles",
         "group": "490689fb668a726b",
-        "order": 1,
+        "order": 3,
         "value": "payload",
         "valueType": "msg",
         "width": "4",
@@ -18530,8 +18531,9 @@
                 "t": "set",
                 "p": "max",
                 "pt": "msg",
-                "to": "5000",
-                "tot": "num"
+                "to": "#:(file)::gripperCycles",
+                "tot": "flow",
+                "dc": true
             },
             {
                 "t": "set",
@@ -18897,7 +18899,7 @@
         "group": "490689fb668a726b",
         "name": "",
         "label": "Closing time limit ms",
-        "order": 0,
+        "order": 6,
         "width": 0,
         "height": 0,
         "topic": "topic",
@@ -18973,6 +18975,178 @@
         "wires": [
             [
                 "4a8f899fca49bc7a"
+            ]
+        ]
+    },
+    {
+        "id": "f84f986dd1872ff9",
+        "type": "ui-number-input",
+        "z": "31b99f8067ff832b",
+        "group": "490689fb668a726b",
+        "name": "Gripper cycles",
+        "label": "Max cycles",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "100000000000000",
+        "step": "1",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": false,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "counter",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "stacked",
+        "x": 480,
+        "y": 1380,
+        "wires": [
+            [
+                "ef3b38c19e64a27e"
+            ]
+        ]
+    },
+    {
+        "id": "ef3b38c19e64a27e",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::gripperCycles",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a816dd0ab1e45547",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "500000",
+        "payloadType": "num",
+        "x": 510,
+        "y": 1340,
+        "wires": [
+            [
+                "ef3b38c19e64a27e"
+            ]
+        ]
+    },
+    {
+        "id": "e2290845dc3f0c72",
+        "type": "ui-number-input",
+        "z": "31b99f8067ff832b",
+        "group": "490689fb668a726b",
+        "name": "",
+        "label": "Opening time limit ms",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "min": 0,
+        "max": "10000",
+        "step": "10",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": false,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "icon": "timer",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "spinner": "stacked",
+        "x": 460,
+        "y": 1480,
+        "wires": [
+            [
+                "e651a1e43ee4d400"
+            ]
+        ]
+    },
+    {
+        "id": "e651a1e43ee4d400",
+        "type": "change",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(file)::openingTime",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bd3be19788d6e742",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "500",
+        "payloadType": "num",
+        "x": 490,
+        "y": 1440,
+        "wires": [
+            [
+                "e651a1e43ee4d400"
             ]
         ]
     },
