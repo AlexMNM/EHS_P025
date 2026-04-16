@@ -19775,7 +19775,7 @@
         "once": true,
         "onceDelay": "5",
         "topic": "",
-        "payload": "[{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"InstSequence\\\".instState\"}}]",
+        "payload": "[{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"InstSequence\\\".instState.statState\"}}]",
         "payloadType": "json",
         "x": 1410,
         "y": 920,
