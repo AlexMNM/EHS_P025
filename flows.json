@@ -18344,8 +18344,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 640,
-        "y": 740,
+        "x": 1660,
+        "y": 920,
         "wires": []
     },
     {
@@ -19757,6 +19757,49 @@
         "wires": [
             [
                 "d432527ecbacc4ce"
+            ]
+        ]
+    },
+    {
+        "id": "2daeb84b3916859c",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "[{\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"InstSequence\\\".instState\"}}]",
+        "payloadType": "json",
+        "x": 1410,
+        "y": 920,
+        "wires": [
+            [
+                "47abd8ebc358c03a"
+            ]
+        ]
+    },
+    {
+        "id": "47abd8ebc358c03a",
+        "type": "link call",
+        "z": "31b99f8067ff832b",
+        "name": "plcApi",
+        "links": [
+            "a78b83a47c8fb6f5"
+        ],
+        "linkType": "static",
+        "timeout": "30",
+        "x": 1530,
+        "y": 920,
+        "wires": [
+            [
+                "f3db2bf5d4cd014c"
             ]
         ]
     },
