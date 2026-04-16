@@ -19854,7 +19854,7 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "allow",
+        "topic": "switch",
         "payload": "true",
         "payloadType": "bool",
         "x": 1560,
@@ -19883,10 +19883,10 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "topic": "allow",
+        "topic": "switch",
         "payload": "false",
         "payloadType": "bool",
-        "x": 1560,
+        "x": 1570,
         "y": 860,
         "wires": [
             [
