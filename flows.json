@@ -18345,7 +18345,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1660,
+        "x": 1760,
         "y": 920,
         "wires": []
     },
@@ -19765,6 +19765,7 @@
         "id": "2daeb84b3916859c",
         "type": "inject",
         "z": "31b99f8067ff832b",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -19796,7 +19797,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1530,
+        "x": 1630,
         "y": 920,
         "wires": [
             [
