@@ -956,6 +956,18 @@
         ]
     },
     {
+        "id": "b1d08124a02ef56c",
+        "type": "junction",
+        "z": "31b99f8067ff832b",
+        "x": 1660,
+        "y": 860,
+        "wires": [
+            [
+                "484087aca1c9d881"
+            ]
+        ]
+    },
+    {
         "id": "b286894fefbfc7bc",
         "type": "mongodb4-client",
         "name": "",
@@ -18345,7 +18357,7 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1760,
+        "x": 1840,
         "y": 920,
         "wires": []
     },
@@ -19765,7 +19777,6 @@
         "id": "2daeb84b3916859c",
         "type": "inject",
         "z": "31b99f8067ff832b",
-        "d": true,
         "name": "",
         "props": [
             {
@@ -19783,7 +19794,7 @@
         "y": 920,
         "wires": [
             [
-                "47abd8ebc358c03a"
+                "484087aca1c9d881"
             ]
         ]
     },
@@ -19797,11 +19808,89 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 1630,
+        "x": 1710,
         "y": 920,
         "wires": [
             [
                 "f3db2bf5d4cd014c"
+            ]
+        ]
+    },
+    {
+        "id": "484087aca1c9d881",
+        "type": "function",
+        "z": "31b99f8067ff832b",
+        "name": "switch",
+        "func": "const allow = context.get(\"allow\") ?? false;\n\nswitch(msg.topic) {\n    case \"switch\":\n        context.set(\"allow\", msg.payload);\n        break;\n}\n\nif(allow) return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1550,
+        "y": 920,
+        "wires": [
+            [
+                "47abd8ebc358c03a"
+            ]
+        ]
+    },
+    {
+        "id": "072b4fa2de62a0b9",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "allow",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 1560,
+        "y": 820,
+        "wires": [
+            [
+                "b1d08124a02ef56c"
+            ]
+        ]
+    },
+    {
+        "id": "88a3cde6f4384640",
+        "type": "inject",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "allow",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 1560,
+        "y": 860,
+        "wires": [
+            [
+                "b1d08124a02ef56c"
             ]
         ]
     },
