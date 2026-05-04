@@ -1800,25 +1800,6 @@
         "className": ""
     },
     {
-        "id": "e5ed551eb94ade1f",
-        "type": "ui-theme",
-        "name": "narrow",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094ce",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "comfortable",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
         "id": "c566f8f095c4d134",
         "type": "ui-spacer",
         "group": "490689fb668a726b",
