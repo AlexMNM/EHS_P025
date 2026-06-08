@@ -198,12 +198,14 @@
             "f99e252f0a818113",
             "4f8bb3c473c5249f",
             "490022bcde9f016d",
-            "aed550a0f8d6e1eb"
+            "aed550a0f8d6e1eb",
+            "e4022bcaa0bd51c8",
+            "5767f47b4724ad35"
         ],
         "x": 94,
-        "y": 579,
+        "y": 559,
         "w": 832,
-        "h": 342
+        "h": 362
     },
     {
         "id": "d75056c40acb0b9b",
@@ -7323,7 +7325,7 @@
         "type": "debug",
         "z": "f0b99c790d575624",
         "name": "debug 1",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7340,7 +7342,7 @@
         "type": "debug",
         "z": "f0b99c790d575624",
         "name": "debug 12",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -13406,7 +13408,8 @@
         "y": 720,
         "wires": [
             [
-                "877013ed22113b66"
+                "877013ed22113b66",
+                "5767f47b4724ad35"
             ]
         ]
     },
@@ -14659,7 +14662,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "x": 210,
-        "y": 620,
+        "y": 600,
         "wires": [
             [
                 "4f8bb3c473c5249f"
@@ -14677,7 +14680,7 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 590,
+        "x": 610,
         "y": 620,
         "wires": [
             [
@@ -16843,6 +16846,65 @@
                 "d67c4e04338edb1c"
             ]
         ]
+    },
+    {
+        "id": "e4022bcaa0bd51c8",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "3eb3d696e34bc6e2",
+        "name": "select E37 by default",
+        "rules": [
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "E37",
+                "tot": "str",
+                "dc": true
+            },
+            {
+                "t": "set",
+                "p": "path",
+                "pt": "msg",
+                "to": "\"settings.products.E37\"",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "store",
+                "pt": "msg",
+                "to": "file",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5767f47b4724ad35",
+        "type": "debug",
+        "z": "aecf9ba551ec4a57",
+        "g": "3eb3d696e34bc6e2",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 700,
+        "wires": []
     },
     {
         "id": "717eb08060b5029d",
