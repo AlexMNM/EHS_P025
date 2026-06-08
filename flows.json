@@ -330,7 +330,8 @@
             "1b4150b5114cc60b",
             "09bed9563544bf7b",
             "d02a7abbfd0ed4de",
-            "148aab978cefe990"
+            "148aab978cefe990",
+            "536c4830ee60a7f3"
         ],
         "x": 1694,
         "y": 579,
@@ -16792,6 +16793,36 @@
         "wires": [
             [
                 "caf3696322d30ebf"
+            ]
+        ]
+    },
+    {
+        "id": "536c4830ee60a7f3",
+        "type": "inject",
+        "z": "aecf9ba551ec4a57",
+        "g": "4081afdecba56dbc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "new_user",
+        "payload": "{\"user\":\"testRoot\",\"group\":\"admin\",\"password\":\"testRoot\"}",
+        "payloadType": "json",
+        "x": 1810,
+        "y": 740,
+        "wires": [
+            [
+                "d67c4e04338edb1c"
             ]
         ]
     },
