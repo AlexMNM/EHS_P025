@@ -199,8 +199,10 @@
             "4f8bb3c473c5249f",
             "490022bcde9f016d",
             "aed550a0f8d6e1eb",
-            "e4022bcaa0bd51c8",
-            "5767f47b4724ad35"
+            "5767f47b4724ad35",
+            "958a6cae8b828ca7",
+            "fcc9e240227e6480",
+            "e44533fbd5fe579e"
         ],
         "x": 94,
         "y": 559,
@@ -967,6 +969,19 @@
         "wires": [
             [
                 "484087aca1c9d881"
+            ]
+        ]
+    },
+    {
+        "id": "fcc9e240227e6480",
+        "type": "junction",
+        "z": "aecf9ba551ec4a57",
+        "g": "3eb3d696e34bc6e2",
+        "x": 400,
+        "y": 840,
+        "wires": [
+            [
+                "a4325849565fb5be"
             ]
         ]
     },
@@ -2578,8 +2593,9 @@
         "name": "outProductAck",
         "mode": "link",
         "links": [
+            "3d64c50fa540eed8",
             "6afdfaf5619f77bb",
-            "3d64c50fa540eed8"
+            "e44533fbd5fe579e"
         ],
         "x": 1245,
         "y": 1080,
@@ -13590,7 +13606,7 @@
         "y": 800,
         "wires": [
             [
-                "a4325849565fb5be"
+                "fcc9e240227e6480"
             ]
         ]
     },
@@ -16848,47 +16864,6 @@
         ]
     },
     {
-        "id": "e4022bcaa0bd51c8",
-        "type": "change",
-        "z": "aecf9ba551ec4a57",
-        "g": "3eb3d696e34bc6e2",
-        "name": "select E37 by default",
-        "rules": [
-            {
-                "t": "set",
-                "p": "name",
-                "pt": "msg",
-                "to": "E37",
-                "tot": "str",
-                "dc": true
-            },
-            {
-                "t": "set",
-                "p": "path",
-                "pt": "msg",
-                "to": "\"settings.products.E37\"",
-                "tot": "jsonata"
-            },
-            {
-                "t": "set",
-                "p": "store",
-                "pt": "msg",
-                "to": "file",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 400,
-        "y": 660,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "5767f47b4724ad35",
         "type": "debug",
         "z": "aecf9ba551ec4a57",
@@ -16905,6 +16880,66 @@
         "x": 600,
         "y": 700,
         "wires": []
+    },
+    {
+        "id": "958a6cae8b828ca7",
+        "type": "change",
+        "z": "aecf9ba551ec4a57",
+        "g": "3eb3d696e34bc6e2",
+        "name": "get selected",
+        "rules": [
+            {
+                "t": "set",
+                "p": "name",
+                "pt": "msg",
+                "to": "payload.features.name",
+                "tot": "msg",
+                "dc": true
+            },
+            {
+                "t": "set",
+                "p": "path",
+                "pt": "msg",
+                "to": "\"settings.products.\" & name",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "store",
+                "pt": "msg",
+                "to": "file",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 660,
+        "wires": [
+            [
+                "fcc9e240227e6480"
+            ]
+        ]
+    },
+    {
+        "id": "e44533fbd5fe579e",
+        "type": "link in",
+        "z": "aecf9ba551ec4a57",
+        "g": "3eb3d696e34bc6e2",
+        "name": "link in 13",
+        "links": [
+            "4667f931d82fbdd7"
+        ],
+        "x": 225,
+        "y": 660,
+        "wires": [
+            [
+                "958a6cae8b828ca7"
+            ]
+        ]
     },
     {
         "id": "717eb08060b5029d",
