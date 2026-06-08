@@ -3229,7 +3229,7 @@
         "type": "debug",
         "z": "a7c7ec5294135863",
         "name": "debug 2",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -18394,7 +18394,6 @@
         "id": "317d543d19730e1d",
         "type": "inject",
         "z": "31b99f8067ff832b",
-        "d": true,
         "name": "",
         "props": [
             {
@@ -18408,7 +18407,7 @@
         "topic": "",
         "payload": "[{\"id\":1,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"cycleCntGripper\\\"\"}},{\"id\":2,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToWorkGripper\\\"\"}},{\"id\":3,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToHomeGripper\\\"\"}},{\"id\":4,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"cycleCntForce\\\"\"}},{\"id\":5,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToWorkForce\\\"\"}},{\"id\":6,\"method\":\"PlcProgram.Read\",\"params\":{\"var\":\"\\\"timeToHomeForce\\\"\"}}]",
         "payloadType": "json",
-        "x": 270,
+        "x": 230,
         "y": 980,
         "wires": [
             [
