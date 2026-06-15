@@ -790,13 +790,13 @@
         "id": "aa2d79e10e1daf07",
         "type": "junction",
         "z": "a7c7ec5294135863",
-        "x": 2780,
-        "y": 260,
+        "x": 2840,
+        "y": 200,
         "wires": [
             [
                 "d3dc04d0dd689a5f",
-                "ecf737098bfe44dd",
-                "a5b79fba1b173ac2"
+                "a5b79fba1b173ac2",
+                "ecf737098bfe44dd"
             ]
         ]
     },
@@ -816,8 +816,8 @@
         "id": "ecf737098bfe44dd",
         "type": "junction",
         "z": "a7c7ec5294135863",
-        "x": 2540,
-        "y": 320,
+        "x": 2880,
+        "y": 340,
         "wires": [
             [
                 "16467ac59c660a5d",
@@ -3237,8 +3237,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 2700,
-        "y": 120,
+        "x": 2680,
+        "y": 80,
         "wires": []
     },
     {
@@ -3247,12 +3247,12 @@
         "z": "a7c7ec5294135863",
         "name": "inPlcApi",
         "links": [],
-        "x": 2385,
-        "y": 260,
+        "x": 2255,
+        "y": 200,
         "wires": [
             [
-                "1ea18d41c6283f27",
-                "a5b79fba1b173ac2"
+                "a5b79fba1b173ac2",
+                "d66e41cdbad0edec"
             ]
         ]
     },
@@ -3292,8 +3292,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 2490,
-        "y": 260,
+        "x": 2650,
+        "y": 220,
         "wires": [
             [
                 "bb226ab3ba523fe8"
@@ -3307,8 +3307,8 @@
         "name": "outPlcApi",
         "mode": "return",
         "links": [],
-        "x": 2845,
-        "y": 260,
+        "x": 2945,
+        "y": 200,
         "wires": []
     },
     {
@@ -3373,7 +3373,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 2680,
+        "x": 3000,
         "y": 400,
         "wires": [
             [
@@ -3390,7 +3390,7 @@
         "links": [
             "a99397716ebf30c5"
         ],
-        "x": 2805,
+        "x": 3125,
         "y": 400,
         "wires": []
     },
@@ -3409,7 +3409,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 1,
-        "x": 2690,
+        "x": 3010,
         "y": 360,
         "wires": [
             [
@@ -3510,7 +3510,7 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 2680,
+        "x": 3000,
         "y": 320,
         "wires": [
             [
@@ -3527,7 +3527,7 @@
         "links": [
             "a3c91dfac5415cc6"
         ],
-        "x": 2805,
+        "x": 3125,
         "y": 320,
         "wires": []
     },
@@ -3951,6 +3951,62 @@
             [
                 "9ca3cd1e4cfebc65",
                 "6bd3bd101ab625ba"
+            ]
+        ]
+    },
+    {
+        "id": "d66e41cdbad0edec",
+        "type": "switch",
+        "z": "a7c7ec5294135863",
+        "name": "if auto ping enabled",
+        "property": "auto_ping",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "else"
+            },
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2410,
+        "y": 200,
+        "wires": [
+            [
+                "ba8f73435a394e86"
+            ],
+            [
+                "1ea18d41c6283f27"
+            ]
+        ]
+    },
+    {
+        "id": "ba8f73435a394e86",
+        "type": "change",
+        "z": "a7c7ec5294135863",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "API not connected",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 2640,
+        "y": 180,
+        "wires": [
+            [
+                "aa2d79e10e1daf07"
             ]
         ]
     },
