@@ -18481,11 +18481,11 @@
         ],
         "linkType": "static",
         "timeout": "30",
-        "x": 450,
+        "x": 370,
         "y": 980,
         "wires": [
             [
-                "3763b289c1978976"
+                "05dae721bd90659a"
             ]
         ]
     },
@@ -18501,7 +18501,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
+        "x": 630,
         "y": 980,
         "wires": [
             [
@@ -20091,6 +20091,31 @@
         "wires": [
             [
                 "b1d08124a02ef56c"
+            ]
+        ]
+    },
+    {
+        "id": "05dae721bd90659a",
+        "type": "switch",
+        "z": "31b99f8067ff832b",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "array",
+                "vt": "array"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 510,
+        "y": 980,
+        "wires": [
+            [
+                "3763b289c1978976"
             ]
         ]
     },
