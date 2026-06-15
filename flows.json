@@ -3963,10 +3963,10 @@
         "propertyType": "flow",
         "rules": [
             {
-                "t": "else"
+                "t": "true"
             },
             {
-                "t": "true"
+                "t": "else"
             }
         ],
         "checkall": "true",
@@ -3976,10 +3976,10 @@
         "y": 200,
         "wires": [
             [
-                "ba8f73435a394e86"
+                "1ea18d41c6283f27"
             ],
             [
-                "1ea18d41c6283f27"
+                "ba8f73435a394e86"
             ]
         ]
     },
