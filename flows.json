@@ -5765,7 +5765,7 @@
         "type": "function",
         "z": "c4157bddbbb8817a",
         "name": "format_data",
-        "func": "const math = global.get('Mathjs')\nconst every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);\n\nconst data = ['stage_results', flow.get('stage', 'file'), msg.payload.setup, msg.payload.results]\n\nconst sig = msg.payload.signals\nconst samples = 125;\nconst interval = math.floor(sig.x.length / 125);\nconst graph = sig.x.map((v, i) => ({timestamp: v, a: sig.a_y[i], b: sig.b_y[i]})).filter((e, i) => i % interval === 0)\n\ndata[3].signal = graph\n\nmsg.data = data\nreturn [msg, {payload: graph}];\n",
+        "func": "const math = global.get('mathjs')\nconst every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);\n\nconst data = ['stage_results', flow.get('stage', 'file'), msg.payload.setup, msg.payload.results]\n\nconst sig = msg.payload.signals\nconst samples = 125;\nconst interval = math.floor(sig.x.length / 125);\nconst graph = sig.x.map((v, i) => ({timestamp: v, a: sig.a_y[i], b: sig.b_y[i]})).filter((e, i) => i % interval === 0)\n\ndata[3].signal = graph\n\nmsg.data = data\nreturn [msg, {payload: graph}];\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -6388,8 +6388,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 800,
-        "y": 980,
+        "x": 740,
+        "y": 920,
         "wires": []
     },
     {
