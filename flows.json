@@ -5765,7 +5765,7 @@
         "type": "function",
         "z": "c4157bddbbb8817a",
         "name": "format_data",
-        "func": "const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);\n\nconst data = ['stage_results', flow.get('stage', 'file'), msg.payload.setup, msg.payload.results]\n\nconst sig = msg.payload.signals\nconst graph = sig.x.map((v, i) => ({timestamp: v, a: sig.a_y[i], b: sig.b_y[i]})).filter((e, i) => i % 1000 === 1000 - 1)\n\ndata[3].signal = graph\n\nmsg.data = data\nreturn [msg, {payload: graph}];\n",
+        "func": "const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);\n\nconst data = ['stage_results', flow.get('stage', 'file'), msg.payload.setup, msg.payload.results]\n\nconst sig = msg.payload.signals\nconst graph = sig.x.map((v, i) => ({timestamp: v, a: sig.a_y[i], b: sig.b_y[i]})) //.filter((e, i) => i % 1000 === 1000 - 1)\n\ndata[3].signal = graph\n\nmsg.data = data\nreturn [msg, {payload: graph}];\n",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
@@ -6914,8 +6914,7 @@
         "y": 800,
         "wires": [
             [
-                "cc73ea3b870e8294",
-                "3b599c7445785f9c"
+                "cc73ea3b870e8294"
             ]
         ]
     },
@@ -7396,7 +7395,7 @@
         "type": "debug",
         "z": "f0b99c790d575624",
         "name": "debug 1",
-        "active": false,
+        "active": true,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -7405,23 +7404,6 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 580,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "3b599c7445785f9c",
-        "type": "debug",
-        "z": "f0b99c790d575624",
-        "name": "debug 12",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "true",
-        "targetType": "full",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 380,
         "y": 700,
         "wires": []
     },
